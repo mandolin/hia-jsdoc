@@ -1,0 +1,7 @@
+{
+  "name": "@hia-doc/jsdoc-extra-plugin-registry",
+  "version": "0.0.0",
+  "private": true,
+  "description": "User JSDoc plugin registry and diagnostics.",
+  "license": "MIT"
+}

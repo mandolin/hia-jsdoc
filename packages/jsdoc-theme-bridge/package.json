@@ -1,0 +1,7 @@
+{
+  "name": "@hia-doc/jsdoc-theme-bridge",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Bridge for @mandolin/jsdoc-theme-hia.",
+  "license": "MIT"
+}

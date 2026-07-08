@@ -1,0 +1,7 @@
+{
+  "name": "@hia-doc/jsdoc-runner",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Standalone and HIA integration runner for JSDoc.",
+  "license": "MIT"
+}
