@@ -3,5 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "description": "Bridge for @mandolin/jsdoc-theme-hia.",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "dependencies": {
+    "@mandolin/jsdoc-theme-hia": "0.1.0"
+  }
 }

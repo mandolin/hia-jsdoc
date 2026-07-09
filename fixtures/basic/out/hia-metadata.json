@@ -1,0 +1,284 @@
+[
+  {
+    "name": "add",
+    "longname": "add",
+    "kind": "function",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "fixtures/basic/src/math.js",
+        "language": "javascript",
+        "position": {
+          "line": 1,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+          "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L1",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:function:add",
+        "relativePath": "fixtures/basic/src/math.js",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 11,
+            "column": 1
+          },
+          "end": {
+            "line": 13,
+            "column": 2
+          }
+        },
+        "content": "export function add(left, right) {\n  return left + right;\n}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+          "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L11-L13",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export function add(left, right) {\n  return left + right;\n}",
+          "range": {
+            "start": {
+              "line": 11,
+              "column": 1
+            },
+            "end": {
+              "line": 13,
+              "column": 2
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 4,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "Calculator",
+    "longname": "Calculator",
+    "kind": "class",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "fixtures/basic/src/math.js",
+        "language": "javascript",
+        "position": {
+          "line": 20,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 20,
+            "column": 1
+          },
+          "end": {
+            "line": 20,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+          "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L20",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:class:Calculator",
+        "relativePath": "fixtures/basic/src/math.js",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 20,
+            "column": 1
+          },
+          "end": {
+            "line": 31,
+            "column": 2
+          }
+        },
+        "content": "export class Calculator {\n  /**\n   * Adds two numbers through the facade.\n   *\n   * @param {number} left Left operand.\n   * @param {number} right Right operand.\n   * @returns {number} Sum of both operands.\n   */\n  add(left, right) {\n    return add(left, right);\n  }\n}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+          "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L20-L31",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export class Calculator {\n  /**\n   * Adds two numbers through the facade.\n   *\n   * @param {number} left Left operand.\n   * @param {number} right Right operand.\n   * @returns {number} Sum of both operands.\n   */\n  add(left, right) {\n    return add(left, right);\n  }\n}",
+          "range": {
+            "start": {
+              "line": 20,
+              "column": 1
+            },
+            "end": {
+              "line": 31,
+              "column": 2
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "add",
+    "longname": "Calculator#add",
+    "kind": "function",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "fixtures/basic/src/math.js",
+        "language": "javascript",
+        "position": {
+          "line": 28,
+          "column": 2
+        },
+        "range": {
+          "start": {
+            "line": 28,
+            "column": 2
+          },
+          "end": {
+            "line": 28,
+            "column": 2
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+          "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L28",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:function:Calculator#add",
+        "relativePath": "fixtures/basic/src/math.js",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 28,
+            "column": 1
+          },
+          "end": {
+            "line": 30,
+            "column": 4
+          }
+        },
+        "content": "  add(left, right) {\n    return add(left, right);\n  }",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+          "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L28-L30",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "  add(left, right) {\n    return add(left, right);\n  }",
+          "range": {
+            "start": {
+              "line": 28,
+              "column": 1
+            },
+            "end": {
+              "line": 30,
+              "column": 4
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 4,
+      "missingLocales": []
+    }
+  }
+]

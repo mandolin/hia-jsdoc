@@ -3,5 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "description": "Bridge for @mandolin/jsdoc-plugin-hia-sys.",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "dependencies": {
+    "@mandolin/jsdoc-plugin-hia-sys": "0.1.0"
+  }
 }

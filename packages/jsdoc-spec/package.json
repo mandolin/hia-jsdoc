@@ -3,5 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "description": "JSDoc usage, configuration and rule drafts for HIA.",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  }
 }

@@ -3,5 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "description": "JSDoc config preset and merge helpers.",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "dependencies": {
+    "@hia-doc/jsdoc-extra-plugin-registry": "0.0.0",
+    "@hia-doc/jsdoc-plugin-hia-bridge": "0.0.0",
+    "@hia-doc/jsdoc-spec": "0.0.0",
+    "@hia-doc/jsdoc-theme-bridge": "0.0.0"
+  }
 }

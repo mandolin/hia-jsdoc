@@ -1,0 +1,92 @@
+{
+  "plugins": [
+    "node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs"
+  ],
+  "source": {
+    "include": [
+      "fixtures/basic/src"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|[/\\\\])_"
+  },
+  "opts": {
+    "destination": "fixtures/basic/out",
+    "recurse": true,
+    "hia": {
+      "mode": "standalone",
+      "source": {
+        "basePath": ".",
+        "mode": "all",
+        "link": {
+          "enabled": true,
+          "rootUrl": "https://example.invalid/hia-jsdoc",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false
+        },
+        "references": {
+          "enabled": true,
+          "defaultExpanded": false
+        }
+      },
+      "i18n": {
+        "enabled": false,
+        "defaultLocale": "en",
+        "fallbackLocale": "en",
+        "locales": [
+          "en"
+        ],
+        "mode": "runtimeSwitch",
+        "resources": []
+      },
+      "theme": {
+        "skin": "classic",
+        "collapse": {
+          "docletsDefaultExpanded": true,
+          "sectionsDefaultExpanded": true,
+          "metadataDefaultExpanded": true
+        },
+        "languageControls": {
+          "mode": "auto",
+          "dropdownThreshold": 4
+        },
+        "code": {
+          "controls": true,
+          "fontFamily": "sarasa",
+          "fontSize": 12,
+          "lineHeight": 1.55,
+          "tabSize": 2,
+          "wrap": false
+        }
+      },
+      "integration": {
+        "enabled": true,
+        "outputFile": "fixtures/basic/out/hia-integration.json"
+      },
+      "umbrella": {
+        "contract": "hia-jsdoc-umbrella-config",
+        "contractVersion": "0.1.0-draft",
+        "versions": {
+          "contract": "hia-jsdoc-umbrella-config",
+          "contractVersion": "0.1.0-draft",
+          "jsdoc": {
+            "package": "jsdoc",
+            "version": "4.0.5"
+          },
+          "plugin": {
+            "package": "@mandolin/jsdoc-plugin-hia-sys",
+            "version": "0.1.0"
+          },
+          "theme": {
+            "package": "@mandolin/jsdoc-theme-hia",
+            "version": "0.1.0"
+          }
+        },
+        "extraPluginDiagnostics": []
+      }
+    },
+    "template": "node_modules/@mandolin/jsdoc-theme-hia"
+  }
+}

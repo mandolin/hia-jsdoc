@@ -1,0 +1,38 @@
+[
+  {
+    "id": "class-calculator",
+    "kind": "class",
+    "name": "Calculator",
+    "longname": "Calculator",
+    "memberof": "",
+    "summary": "Calculator facade.",
+    "localizedSummaries": {
+      "en": "Calculator facade."
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-add",
+    "kind": "function",
+    "name": "add",
+    "longname": "add",
+    "memberof": "",
+    "summary": "Adds two numbers.",
+    "localizedSummaries": {
+      "en": "Adds two numbers."
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-calculator-add",
+    "kind": "function",
+    "name": "add",
+    "longname": "Calculator#add",
+    "memberof": "Calculator",
+    "summary": "Adds two numbers through the facade.",
+    "localizedSummaries": {
+      "en": "Adds two numbers through the facade."
+    },
+    "sourceReferences": 0
+  }
+]

@@ -3,5 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "description": "JSDoc documentation source-map inputs.",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "dependencies": {
+    "@hia-doc/jsdoc-spec": "0.0.0"
+  }
 }

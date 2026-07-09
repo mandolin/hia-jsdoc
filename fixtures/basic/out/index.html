@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIA JSDoc</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="hia-theme.css">
+</head>
+<body class="hia-skin hia-skin-classic" data-hia-skin="classic" style="--code-font-family: &quot;Cascadia Code&quot;, &quot;Cascadia Mono&quot;, Consolas, monospace; --code-font-size: 12px; --code-line-height: 1.55; --code-tab-size: 2">
+  <a class="skip-link" href="#hia-content" data-hia-label="skip.content">Skip to content</a>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow" data-hia-label="header.eyebrow">API Documentation</p>
+      <h1>HIA JSDoc</h1>
+    </div>
+    <div class="site-actions">
+      
+      <div class="summary-stat" data-hia-label="summary.symbols" data-hia-label-count="3">3 symbols</div>
+    </div>
+  </header>
+  <main class="layout">
+    <nav class="sidebar" aria-label="Symbols" data-hia-label-aria="nav.symbols">
+      <label class="search-label" for="hia-symbol-search" data-hia-label="search.label">Search symbols</label>
+      <input id="hia-symbol-search" class="search-input" type="search" placeholder="Filter by name, kind, or summary" data-hia-label-placeholder="search.placeholder" autocomplete="off" aria-controls="hia-content">
+      <form class="code-controls" data-hia-code-controls aria-label="Code display" data-hia-label-aria="code.controls">
+        <div class="code-controls-title" data-hia-label="code.controls">Code display</div>
+        <label class="code-control">
+          <span data-hia-label="code.fontFamily">Font</span>
+          <select class="code-select" data-hia-code-font-family>
+            <option value="cascadia" selected>Cascadia</option><option value="consolas">Consolas</option><option value="mono">UI Mono</option><option value="system">Monospace</option>
+          </select>
+        </label>
+        <label class="code-control compact">
+          <span data-hia-label="code.fontSize">Size</span>
+          <input class="code-input" type="number" min="10" max="20" step="1" value="12" data-hia-code-font-size>
+        </label>
+        <label class="code-control compact">
+          <span data-hia-label="code.lineHeight">Line height</span>
+          <input class="code-input" type="number" min="1.2" max="2.2" step="0.05" value="1.55" data-hia-code-line-height>
+        </label>
+        <label class="code-control compact">
+          <span data-hia-label="code.tabSize">Tab</span>
+          <input class="code-input" type="number" min="2" max="8" step="1" value="2" data-hia-code-tab-size>
+        </label>
+        <label class="code-toggle">
+          <input type="checkbox" data-hia-code-wrap>
+          <span data-hia-label="code.wrap">Wrap</span>
+        </label>
+        <button class="code-reset" type="button" data-hia-code-reset data-hia-label="code.reset">Reset</button>
+      </form>
+      <section class="nav-group">
+  <h2><span data-hia-label="kind.class">Classes</span> <span>1</span></h2>
+<a href="#class-calculator">Calculator</a>
+</section>
+<section class="nav-group">
+  <h2><span data-hia-label="kind.function">Functions</span> <span>2</span></h2>
+<a href="#function-add">add</a>
+<a href="#function-calculator-add">add</a>
+</section>
+    </nav>
+    <section class="content" id="hia-content" tabindex="-1">
+      <article class="doclet" id="class-calculator" data-kind="class">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>Calculator</h2>
+<div class="badges"><span class="badge">class</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>Calculator()</code></pre>
+<div class="i18n-description-set"><div class="description i18n-description" data-hia-locale="en" data-hia-fallback-from="doclet">
+<p>Calculator facade.</p>
+</div></div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - fixtures/basic/src/math.js:20</div>
+  <div class="source-links"><a href="https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js" target="_blank" rel="noreferrer" data-hia-label="source.file">File</a><a href="https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L20" target="_blank" rel="noreferrer" data-hia-label="source.lines">Lines</a></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="20" data-hia-label-end="31">Lines 20-31</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="20"><span class="tok-keyword">export</span> <span class="tok-keyword">class</span> Calculator {</span>
+<span class="code-line" data-line="21">  /**</span>
+<span class="code-line" data-line="22">   * Adds two numbers through the facade.</span>
+<span class="code-line" data-line="23">   *</span>
+<span class="code-line" data-line="24">   * @param {number} left Left operand.</span>
+<span class="code-line" data-line="25">   * @param {number} right Right operand.</span>
+<span class="code-line" data-line="26">   * @returns {number} Sum <span class="tok-keyword">of</span> both operands.</span>
+<span class="code-line" data-line="27">   */</span>
+<span class="code-line" data-line="28">  add(left, right) {</span>
+<span class="code-line" data-line="29">    <span class="tok-keyword">return</span> add(left, right);</span>
+<span class="code-line" data-line="30">  }</span>
+<span class="code-line" data-line="31">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>class</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>Calculator</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>Calculator</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>fixtures/basic/src/math.js:20</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-add" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>add</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>add(left, right) -&gt; number</code></pre>
+<div class="i18n-description-set"><div class="description i18n-description" data-hia-locale="en">
+<p>Adds two numbers.</p>
+</div></div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>left</code></th>
+  <td><code>number</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>Left operand.</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>right</code></th>
+  <td><code>number</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>Right operand.</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>number</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>Sum of both operands.</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - fixtures/basic/src/math.js:1</div>
+  <div class="source-links"><a href="https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js" target="_blank" rel="noreferrer" data-hia-label="source.file">File</a><a href="https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L1" target="_blank" rel="noreferrer" data-hia-label="source.lines">Lines</a></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="11" data-hia-label-end="13">Lines 11-13</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="11"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> add(left, right) {</span>
+<span class="code-line" data-line="12">  <span class="tok-keyword">return</span> left + right;</span>
+<span class="code-line" data-line="13">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>add</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>add</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>fixtures/basic/src/math.js:1</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>4</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-calculator-add" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>Calculator#add</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">instance</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>add(left, right) -&gt; number</code></pre>
+<div class="i18n-description-set"><div class="description i18n-description" data-hia-locale="en">
+<p>Adds two numbers through the facade.</p>
+</div></div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>left</code></th>
+  <td><code>number</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>Left operand.</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>right</code></th>
+  <td><code>number</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>Right operand.</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>number</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>Sum of both operands.</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - fixtures/basic/src/math.js:28</div>
+  <div class="source-links"><a href="https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js" target="_blank" rel="noreferrer" data-hia-label="source.file">File</a><a href="https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L28" target="_blank" rel="noreferrer" data-hia-label="source.lines">Lines</a></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="28" data-hia-label-end="30">Lines 28-30</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="28">  add(left, right) {</span>
+<span class="code-line" data-line="29">    <span class="tok-keyword">return</span> add(left, right);</span>
+<span class="code-line" data-line="30">  }</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>add</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>Calculator#add</dd>
+  <dt data-hia-label="meta.memberof">Member of</dt><dd>Calculator</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>fixtures/basic/src/math.js:28</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>4</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+    </section>
+  </main>
+  <script type="application/json" id="hia-search-data">[{"id":"class-calculator","kind":"class","name":"Calculator","longname":"Calculator","memberof":"","summary":"Calculator facade.","localizedSummaries":{"en":"Calculator facade."},"sourceReferences":0},{"id":"function-add","kind":"function","name":"add","longname":"add","memberof":"","summary":"Adds two numbers.","localizedSummaries":{"en":"Adds two numbers."},"sourceReferences":0},{"id":"function-calculator-add","kind":"function","name":"add","longname":"Calculator#add","memberof":"Calculator","summary":"Adds two numbers through the facade.","localizedSummaries":{"en":"Adds two numbers through the facade."},"sourceReferences":0}]</script>
+  <script type="application/json" id="hia-i18n-data">{"enabled":true,"mode":"runtimeSwitch","runtimeSwitch":true,"currentLocale":"en","defaultLocale":"en","fallbackLocale":"en","locales":["en"],"labels":{"en":{"skip.content":"Skip to content","header.eyebrow":"API Documentation","summary.symbols":"{count} symbols","nav.symbols":"Symbols","search.label":"Search symbols","search.placeholder":"Filter by name, kind, or summary","empty.symbols":"No document symbols.","language.controls":"Languages","language.select":"Select language","language.runtime":"runtime","code.controls":"Code display","code.fontFamily":"Font","code.fontSize":"Size","code.lineHeight":"Line height","code.tabSize":"Tab","code.wrap":"Wrap","code.reset":"Reset","section.parameters":"Parameters","section.properties":"Properties","section.returns":"Returns","section.examples":"Examples","section.source":"Source","section.sourceReferences":"Source References","section.metadata":"Metadata","source.file":"File","source.lines":"Lines","source.lineRange":"Lines {start}-{end}","source.preview":"Source preview","source.unresolved":"Source fragment metadata is missing or unresolved.","source.previewDisabled":"Source preview is disabled for this fragment.","source.definedIn":"Defined in","source.reference":"Reference {index}","table.name":"Name","table.type":"Type","table.default":"Default","table.attributes":"Attributes","table.description":"Description","attr.optional":"optional","attr.nullable":"nullable","attr.repeatable":"repeatable","meta.kind":"Kind","meta.name":"Name","meta.longname":"Longname","meta.memberof":"Member of","meta.definedIn":"Defined in","meta.hiaMetadata":"HIA metadata","meta.microPlugins":"Micro plugins","meta.sourceRefs":"Source refs","meta.locales":"Locales","meta.defaultLocale":"Default locale","meta.fallbackLocale":"Fallback locale","meta.i18nMode":"I18N mode","meta.i18nFields":"I18N fields","meta.missingLocales":"Missing locales","value.yes":"yes","value.no":"no","value.empty":"-","example.default":"Example {index}","kind.module":"Modules","kind.namespace":"Namespaces","kind.class":"Classes","kind.interface":"Interfaces","kind.mixin":"Mixins","kind.function":"Functions","kind.member":"Members","kind.constant":"Constants","kind.typedef":"Typedefs","kind.event":"Events","kind.external":"Externals","kind.unknown":"Other"},"zh-CN":{"skip.content":"跳到内容","header.eyebrow":"API 文档","summary.symbols":"{count} 个符号","nav.symbols":"符号","search.label":"搜索符号","search.placeholder":"按名称、类型或摘要筛选","empty.symbols":"没有文档符号。","language.controls":"语言","language.select":"选择语言","language.runtime":"运行时","code.controls":"代码显示","code.fontFamily":"字体","code.fontSize":"字号","code.lineHeight":"行高","code.tabSize":"缩进","code.wrap":"换行","code.reset":"重置","section.parameters":"参数","section.properties":"属性","section.returns":"返回值","section.examples":"示例","section.source":"源码","section.sourceReferences":"源码引用","section.metadata":"元数据","source.file":"文件","source.lines":"行","source.lineRange":"行 {start}-{end}","source.preview":"源码预览","source.unresolved":"源码片段元数据缺失或未解析。","source.previewDisabled":"此源码片段的预览已禁用。","source.definedIn":"定义于","source.reference":"引用 {index}","table.name":"名称","table.type":"类型","table.default":"默认值","table.attributes":"属性","table.description":"描述","attr.optional":"可选","attr.nullable":"可空","attr.repeatable":"可重复","meta.kind":"类型","meta.name":"名称","meta.longname":"完整名称","meta.memberof":"所属","meta.definedIn":"定义于","meta.hiaMetadata":"HIA metadata","meta.microPlugins":"微插件","meta.sourceRefs":"源码引用数","meta.locales":"语言","meta.defaultLocale":"默认语言","meta.fallbackLocale":"Fallback 语言","meta.i18nMode":"I18N 模式","meta.i18nFields":"I18N 字段数","meta.missingLocales":"缺失语言","value.yes":"是","value.no":"否","value.empty":"-","example.default":"示例 {index}","kind.module":"模块","kind.namespace":"命名空间","kind.class":"类","kind.interface":"接口","kind.mixin":"Mixin","kind.function":"函数","kind.member":"成员","kind.constant":"常量","kind.typedef":"类型定义","kind.event":"事件","kind.external":"外部项","kind.unknown":"其它"}},"perLocalePages":{"en":"index.en.html"}}</script>
+  <script type="application/json" id="hia-theme-data">{"code":{"controls":true,"fontFamily":"cascadia","fontSize":12,"lineHeight":1.55,"tabSize":2,"wrap":false}}</script>
+  <script src="hia-theme.js" defer></script>
+</body>
+</html>

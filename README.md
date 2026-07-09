@@ -16,10 +16,19 @@ This repository is planned as a preset, runner and bridge layer around JSDoc, `@
 
 ## Status
 
-This workspace is currently a bootstrap skeleton. It does not migrate or absorb the existing plugin and theme repositories.
+This workspace contains the W-P9.5 umbrella baseline:
+
+- a JSDoc preset that composes published JPHS/JTH package paths;
+- an extra plugin registry for before/after ordering diagnostics;
+- a runner that writes a standard JSDoc config and calls the real JSDoc CLI;
+- a fixture that emits JSDoc HTML, theme metadata and HIA Integration JSON.
+
+It does not migrate or absorb the existing plugin and theme repositories.
 
 ## Development
 
 ```sh
+npm run build:fixtures
+npm run check:fixtures
 npm run release:gate
 ```

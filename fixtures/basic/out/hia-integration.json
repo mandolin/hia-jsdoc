@@ -1,0 +1,1278 @@
+{
+  "contract": "hia-jsdoc-integration",
+  "contractVersion": "0.1.0",
+  "pluginVersion": "0.1.0",
+  "mode": "standalone",
+  "artifactKind": "hia-integration",
+  "parserBoundary": {
+    "adapter": "parser-jsdoc",
+    "owns": [
+      "JSDoc doclet normalization",
+      "JSDoc tag to HIA metadata mapping",
+      "source fragment reference extraction",
+      "doc-i18n metadata extraction"
+    ],
+    "handsOff": [
+      "language-neutral HIA IR evolution",
+      "non-JavaScript parser implementations",
+      "IDE protocol and LSP transport"
+    ]
+  },
+  "ir": {
+    "version": "0.1.0",
+    "source": "jsdoc",
+    "nodes": [
+      {
+        "id": "jsdoc:function:add",
+        "kind": "function",
+        "name": "add",
+        "longname": "add",
+        "title": "add",
+        "summary": "Adds two numbers.",
+        "jsdoc": {
+          "docletId": "add",
+          "kind": "function",
+          "name": "add",
+          "longname": "add",
+          "memberof": "",
+          "scope": "global",
+          "params": [
+            {
+              "type": {
+                "names": [
+                  "number"
+                ]
+              },
+              "description": "Left operand.",
+              "name": "left"
+            },
+            {
+              "type": {
+                "names": [
+                  "number"
+                ]
+              },
+              "description": "Right operand.",
+              "name": "right"
+            }
+          ],
+          "returns": [
+            {
+              "type": {
+                "names": [
+                  "number"
+                ]
+              },
+              "description": "Sum of both operands."
+            }
+          ],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ]
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "fixtures/basic/src/math.js",
+            "language": "javascript",
+            "position": {
+              "line": 1,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 1,
+                "column": 1
+              },
+              "end": {
+                "line": 1,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+              "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L1",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:function:add",
+            "relativePath": "fixtures/basic/src/math.js",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 11,
+                "column": 1
+              },
+              "end": {
+                "line": 13,
+                "column": 2
+              }
+            },
+            "content": "export function add(left, right) {\n  return left + right;\n}",
+            "rangeSource": "parser-js",
+            "confidence": "high",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+              "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L11-L13",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export function add(left, right) {\n  return left + right;\n}",
+              "range": {
+                "start": {
+                  "line": 11,
+                  "column": 1
+                },
+                "end": {
+                  "line": 13,
+                  "column": 2
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "https://example.invalid/hia-jsdoc",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": false,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "math.add",
+          "path": "api.math.add",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Adds two numbers.",
+              "source": "doclet.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Adds two numbers."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "params.left.description": {
+              "fieldPath": "params.left.description",
+              "kind": "param.description",
+              "defaultLocale": "en",
+              "defaultText": "Left operand.",
+              "source": "doclet.params.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Left operand."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "params.right.description": {
+              "fieldPath": "params.right.description",
+              "kind": "param.description",
+              "defaultLocale": "en",
+              "defaultText": "Right operand.",
+              "source": "doclet.params.1.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Right operand."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "returns.0.description": {
+              "fieldPath": "returns.0.description",
+              "kind": "return.description",
+              "defaultLocale": "en",
+              "defaultText": "Sum of both operands.",
+              "source": "doclet.returns.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Sum of both operands."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Adds two numbers.",
+              "block": "",
+              "source": "description"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Adds two numbers.",
+                "block": "",
+                "source": "description"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Adds two numbers.",
+                  "block": "",
+                  "source": "description"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Adds two numbers.",
+                  "source": "doclet.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Adds two numbers."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.left.description": {
+                  "fieldPath": "params.left.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Left operand.",
+                  "source": "doclet.params.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Left operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.right.description": {
+                  "fieldPath": "params.right.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Right operand.",
+                  "source": "doclet.params.1.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Right operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Sum of both operands.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Sum of both operands."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Adds two numbers.",
+                  "block": "",
+                  "source": "description"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Adds two numbers.",
+                  "source": "doclet.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Adds two numbers."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.left.description": {
+                  "fieldPath": "params.left.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Left operand.",
+                  "source": "doclet.params.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Left operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.right.description": {
+                  "fieldPath": "params.right.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Right operand.",
+                  "source": "doclet.params.1.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Right operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Sum of both operands.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Sum of both operands."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:class:Calculator",
+        "kind": "class",
+        "name": "Calculator",
+        "longname": "Calculator",
+        "title": "Calculator",
+        "summary": "Calculator facade.",
+        "jsdoc": {
+          "docletId": "Calculator",
+          "kind": "class",
+          "name": "Calculator",
+          "longname": "Calculator",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ]
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "fixtures/basic/src/math.js",
+            "language": "javascript",
+            "position": {
+              "line": 20,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 20,
+                "column": 1
+              },
+              "end": {
+                "line": 20,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+              "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L20",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:class:Calculator",
+            "relativePath": "fixtures/basic/src/math.js",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 20,
+                "column": 1
+              },
+              "end": {
+                "line": 31,
+                "column": 2
+              }
+            },
+            "content": "export class Calculator {\n  /**\n   * Adds two numbers through the facade.\n   *\n   * @param {number} left Left operand.\n   * @param {number} right Right operand.\n   * @returns {number} Sum of both operands.\n   */\n  add(left, right) {\n    return add(left, right);\n  }\n}",
+            "rangeSource": "parser-js",
+            "confidence": "high",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+              "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L20-L31",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export class Calculator {\n  /**\n   * Adds two numbers through the facade.\n   *\n   * @param {number} left Left operand.\n   * @param {number} right Right operand.\n   * @returns {number} Sum of both operands.\n   */\n  add(left, right) {\n    return add(left, right);\n  }\n}",
+              "range": {
+                "start": {
+                  "line": 20,
+                  "column": 1
+                },
+                "end": {
+                  "line": 31,
+                  "column": 2
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "https://example.invalid/hia-jsdoc",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": false,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "Calculator",
+          "locale": "",
+          "fields": {
+            "classdesc": {
+              "fieldPath": "classdesc",
+              "kind": "classdesc",
+              "defaultLocale": "en",
+              "defaultText": "Calculator facade.",
+              "source": "doclet.classdesc",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Calculator facade."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {},
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": null
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en"
+              ],
+              "fallbackLocale": "en",
+              "content": {},
+              "fields": {
+                "classdesc": {
+                  "fieldPath": "classdesc",
+                  "kind": "classdesc",
+                  "defaultLocale": "en",
+                  "defaultText": "Calculator facade.",
+                  "source": "doclet.classdesc",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Calculator facade."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {},
+              "fields": {
+                "classdesc": {
+                  "fieldPath": "classdesc",
+                  "kind": "classdesc",
+                  "defaultLocale": "en",
+                  "defaultText": "Calculator facade.",
+                  "source": "doclet.classdesc",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Calculator facade."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:function:Calculator#add",
+        "kind": "function",
+        "name": "add",
+        "longname": "Calculator#add",
+        "title": "Calculator#add",
+        "summary": "Adds two numbers through the facade.",
+        "jsdoc": {
+          "docletId": "Calculator#add",
+          "kind": "function",
+          "name": "add",
+          "longname": "Calculator#add",
+          "memberof": "Calculator",
+          "scope": "instance",
+          "params": [
+            {
+              "type": {
+                "names": [
+                  "number"
+                ]
+              },
+              "description": "Left operand.",
+              "name": "left"
+            },
+            {
+              "type": {
+                "names": [
+                  "number"
+                ]
+              },
+              "description": "Right operand.",
+              "name": "right"
+            }
+          ],
+          "returns": [
+            {
+              "type": {
+                "names": [
+                  "number"
+                ]
+              },
+              "description": "Sum of both operands."
+            }
+          ],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ]
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "fixtures/basic/src/math.js",
+            "language": "javascript",
+            "position": {
+              "line": 28,
+              "column": 2
+            },
+            "range": {
+              "start": {
+                "line": 28,
+                "column": 2
+              },
+              "end": {
+                "line": 28,
+                "column": 2
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+              "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L28",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:function:Calculator#add",
+            "relativePath": "fixtures/basic/src/math.js",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 28,
+                "column": 1
+              },
+              "end": {
+                "line": 30,
+                "column": 4
+              }
+            },
+            "content": "  add(left, right) {\n    return add(left, right);\n  }",
+            "rangeSource": "parser-js",
+            "confidence": "high",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js",
+              "lineUrl": "https://example.invalid/hia-jsdoc/fixtures/basic/src/math.js#L28-L30",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "  add(left, right) {\n    return add(left, right);\n  }",
+              "range": {
+                "start": {
+                  "line": 28,
+                  "column": 1
+                },
+                "end": {
+                  "line": 30,
+                  "column": 4
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "https://example.invalid/hia-jsdoc",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": false,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "Calculator",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Adds two numbers through the facade.",
+              "source": "doclet.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Adds two numbers through the facade."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "params.left.description": {
+              "fieldPath": "params.left.description",
+              "kind": "param.description",
+              "defaultLocale": "en",
+              "defaultText": "Left operand.",
+              "source": "doclet.params.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Left operand."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "params.right.description": {
+              "fieldPath": "params.right.description",
+              "kind": "param.description",
+              "defaultLocale": "en",
+              "defaultText": "Right operand.",
+              "source": "doclet.params.1.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Right operand."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "returns.0.description": {
+              "fieldPath": "returns.0.description",
+              "kind": "return.description",
+              "defaultLocale": "en",
+              "defaultText": "Sum of both operands.",
+              "source": "doclet.returns.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Sum of both operands."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Adds two numbers through the facade.",
+              "block": "",
+              "source": "description"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Adds two numbers through the facade.",
+                "block": "",
+                "source": "description"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Adds two numbers through the facade.",
+                  "block": "",
+                  "source": "description"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Adds two numbers through the facade.",
+                  "source": "doclet.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Adds two numbers through the facade."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.left.description": {
+                  "fieldPath": "params.left.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Left operand.",
+                  "source": "doclet.params.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Left operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.right.description": {
+                  "fieldPath": "params.right.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Right operand.",
+                  "source": "doclet.params.1.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Right operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Sum of both operands.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Sum of both operands."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Adds two numbers through the facade.",
+                  "block": "",
+                  "source": "description"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Adds two numbers through the facade.",
+                  "source": "doclet.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Adds two numbers through the facade."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.left.description": {
+                  "fieldPath": "params.left.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Left operand.",
+                  "source": "doclet.params.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Left operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.right.description": {
+                  "fieldPath": "params.right.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Right operand.",
+                  "source": "doclet.params.1.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Right operand."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Sum of both operands.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Sum of both operands."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      }
+    ]
+  },
+  "sourceFragments": [],
+  "localizationResources": [],
+  "diagnostics": [],
+  "diagnosticCounts": {},
+  "docletNodeMap": [
+    {
+      "docletId": "add",
+      "nodeId": "jsdoc:function:add",
+      "kind": "function",
+      "name": "add",
+      "longname": "add"
+    },
+    {
+      "docletId": "Calculator",
+      "nodeId": "jsdoc:class:Calculator",
+      "kind": "class",
+      "name": "Calculator",
+      "longname": "Calculator"
+    },
+    {
+      "docletId": "Calculator#add",
+      "nodeId": "jsdoc:function:Calculator#add",
+      "kind": "function",
+      "name": "add",
+      "longname": "Calculator#add"
+    }
+  ]
+}

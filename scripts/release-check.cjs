@@ -19,4 +19,18 @@ if (rootPackage.private !== true) {
   process.exit(1);
 }
 
+const fixtureConfig = JSON.parse(fs.readFileSync(path.join(root, "fixtures/basic/generated/jsdoc.conf.json"), "utf8"));
+if (!fixtureConfig.plugins?.includes("node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs")) {
+  console.error("Generated fixture config must use the published JPHS package path.");
+  process.exit(1);
+}
+if (fixtureConfig.opts?.template !== "node_modules/@mandolin/jsdoc-theme-hia") {
+  console.error("Generated fixture config must use the published JTH package path.");
+  process.exit(1);
+}
+if (fs.existsSync(path.join(root, "hia-doc-hia-jsdoc-workspace-0.0.0.tgz"))) {
+  console.error("Dry-run tarball must not remain in the workspace.");
+  process.exit(1);
+}
+
 console.log("HIA JSDoc release check passed.");
