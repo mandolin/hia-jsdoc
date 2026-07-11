@@ -24,5 +24,161 @@
       "zh-CN": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"
     },
     "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_extra_plugin_phases",
+    "kind": "constant",
+    "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "longname": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "memberof": "",
+    "summary": "Lists plugin insertion phases supported by the extra plugin registry.",
+    "localizedSummaries": {
+      "en": "Lists plugin insertion phases supported by the extra plugin registry.",
+      "zh-CN": "列出额外插件注册表支持的插件插入阶段。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_output_modes",
+    "kind": "constant",
+    "name": "HIA_JSDOC_OUTPUT_MODES",
+    "longname": "HIA_JSDOC_OUTPUT_MODES",
+    "memberof": "",
+    "summary": "Lists supported HIA JSDoc output modes for config normalization.",
+    "localizedSummaries": {
+      "en": "Lists supported HIA JSDoc output modes for config normalization.",
+      "zh-CN": "列出配置规范化可接受的 HIA JSDoc 输出模式。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_plugin_package",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PLUGIN_PACKAGE",
+    "longname": "HIA_JSDOC_PLUGIN_PACKAGE",
+    "memberof": "",
+    "summary": "Names the published HIA JSDoc plugin package consumed by the umbrella preset.",
+    "localizedSummaries": {
+      "en": "Names the published HIA JSDoc plugin package consumed by the umbrella preset.",
+      "zh-CN": "记录 umbrella preset 消费的已发布 HIA JSDoc 插件包名。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_plugin_path",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PLUGIN_PATH",
+    "longname": "HIA_JSDOC_PLUGIN_PATH",
+    "memberof": "",
+    "summary": "Points JSDoc config generation at the local plugin entry resolved from dependencies.",
+    "localizedSummaries": {
+      "en": "Points JSDoc config generation at the local plugin entry resolved from dependencies.",
+      "zh-CN": "指向从依赖中解析出的本地插件入口，用于生成 JSDoc 配置。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_plugin_version",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PLUGIN_VERSION",
+    "longname": "HIA_JSDOC_PLUGIN_VERSION",
+    "memberof": "",
+    "summary": "Pins the published HIA JSDoc plugin version used by this compatibility layer.",
+    "localizedSummaries": {
+      "en": "Pins the published HIA JSDoc plugin version used by this compatibility layer.",
+      "zh-CN": "固定当前兼容层使用的已发布 HIA JSDoc 插件版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_theme_package",
+    "kind": "constant",
+    "name": "HIA_JSDOC_THEME_PACKAGE",
+    "longname": "HIA_JSDOC_THEME_PACKAGE",
+    "memberof": "",
+    "summary": "Names the published HIA JSDoc theme package consumed by the umbrella preset.",
+    "localizedSummaries": {
+      "en": "Names the published HIA JSDoc theme package consumed by the umbrella preset.",
+      "zh-CN": "记录 umbrella preset 消费的已发布 HIA JSDoc 主题包名。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_theme_template",
+    "kind": "constant",
+    "name": "HIA_JSDOC_THEME_TEMPLATE",
+    "longname": "HIA_JSDOC_THEME_TEMPLATE",
+    "memberof": "",
+    "summary": "Points JSDoc config generation at the theme template resolved from dependencies.",
+    "localizedSummaries": {
+      "en": "Points JSDoc config generation at the theme template resolved from dependencies.",
+      "zh-CN": "指向从依赖中解析出的主题模板路径，用于生成 JSDoc 配置。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_theme_version",
+    "kind": "constant",
+    "name": "HIA_JSDOC_THEME_VERSION",
+    "longname": "HIA_JSDOC_THEME_VERSION",
+    "memberof": "",
+    "summary": "Pins the published HIA JSDoc theme version used by this compatibility layer.",
+    "localizedSummaries": {
+      "en": "Pins the published HIA JSDoc theme version used by this compatibility layer.",
+      "zh-CN": "固定当前兼容层使用的已发布 HIA JSDoc 主题版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_umbrella_contract",
+    "kind": "constant",
+    "name": "HIA_JSDOC_UMBRELLA_CONTRACT",
+    "longname": "HIA_JSDOC_UMBRELLA_CONTRACT",
+    "memberof": "",
+    "summary": "Identifies the umbrella configuration contract emitted by the HIA JSDoc preset.",
+    "localizedSummaries": {
+      "en": "Identifies the umbrella configuration contract emitted by the HIA JSDoc preset.",
+      "zh-CN": "标识 HIA JSDoc preset 输出的 umbrella 配置合同。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_umbrella_contract_version",
+    "kind": "constant",
+    "name": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+    "longname": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+    "memberof": "",
+    "summary": "Declares the draft version of the HIA JSDoc umbrella configuration contract.",
+    "localizedSummaries": {
+      "en": "Declares the draft version of the HIA JSDoc umbrella configuration contract.",
+      "zh-CN": "声明 HIA JSDoc umbrella 配置合同的草案版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-jsdoc_package",
+    "kind": "constant",
+    "name": "JSDOC_PACKAGE",
+    "longname": "JSDOC_PACKAGE",
+    "memberof": "",
+    "summary": "Names the upstream JSDoc package used by the HIA JSDoc runner.",
+    "localizedSummaries": {
+      "en": "Names the upstream JSDoc package used by the HIA JSDoc runner.",
+      "zh-CN": "记录 HIA JSDoc runner 使用的上游 JSDoc 包名。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-jsdoc_version",
+    "kind": "constant",
+    "name": "JSDOC_VERSION",
+    "longname": "JSDOC_VERSION",
+    "memberof": "",
+    "summary": "Pins the upstream JSDoc version used by the HIA JSDoc runner.",
+    "localizedSummaries": {
+      "en": "Pins the upstream JSDoc version used by the HIA JSDoc runner.",
+      "zh-CN": "固定 HIA JSDoc runner 使用的上游 JSDoc 版本。"
+    },
+    "sourceReferences": 0
   }
 ]

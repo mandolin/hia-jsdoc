@@ -1,5 +1,1145 @@
 [
   {
+    "name": "HIA_JSDOC_UMBRELLA_CONTRACT",
+    "longname": "HIA_JSDOC_UMBRELLA_CONTRACT",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 8,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 8,
+            "column": 1
+          },
+          "end": {
+            "line": 8,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_UMBRELLA_CONTRACT",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 8,
+            "column": 1
+          },
+          "end": {
+            "line": 13,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT = \"hia-jsdoc-umbrella-config\";\n\n/**\n * Declares the draft version of the HIA JSDoc umbrella configuration contract.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT = \"hia-jsdoc-umbrella-config\";\n\n/**\n * Declares the draft version of the HIA JSDoc umbrella configuration contract.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 8,
+              "column": 1
+            },
+            "end": {
+              "line": 13,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+    "longname": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 17,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 17,
+            "column": 1
+          },
+          "end": {
+            "line": 17,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 17,
+            "column": 1
+          },
+          "end": {
+            "line": 22,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = \"0.1.0-draft\";\n\n/**\n * Names the published HIA JSDoc plugin package consumed by the umbrella preset.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = \"0.1.0-draft\";\n\n/**\n * Names the published HIA JSDoc plugin package consumed by the umbrella preset.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 17,
+              "column": 1
+            },
+            "end": {
+              "line": 22,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_PLUGIN_PACKAGE",
+    "longname": "HIA_JSDOC_PLUGIN_PACKAGE",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 26,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 26,
+            "column": 1
+          },
+          "end": {
+            "line": 26,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_PLUGIN_PACKAGE",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 26,
+            "column": 1
+          },
+          "end": {
+            "line": 31,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_PLUGIN_PACKAGE = \"@mandolin/jsdoc-plugin-hia-sys\";\n\n/**\n * Pins the published HIA JSDoc plugin version used by this compatibility layer.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PLUGIN_PACKAGE = \"@mandolin/jsdoc-plugin-hia-sys\";\n\n/**\n * Pins the published HIA JSDoc plugin version used by this compatibility layer.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 26,
+              "column": 1
+            },
+            "end": {
+              "line": 31,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_PLUGIN_VERSION",
+    "longname": "HIA_JSDOC_PLUGIN_VERSION",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 35,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 35,
+            "column": 1
+          },
+          "end": {
+            "line": 35,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_PLUGIN_VERSION",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 35,
+            "column": 1
+          },
+          "end": {
+            "line": 40,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_PLUGIN_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the local plugin entry resolved from dependencies.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PLUGIN_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the local plugin entry resolved from dependencies.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 35,
+              "column": 1
+            },
+            "end": {
+              "line": 40,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_PLUGIN_PATH",
+    "longname": "HIA_JSDOC_PLUGIN_PATH",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 44,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 44,
+            "column": 1
+          },
+          "end": {
+            "line": 44,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_PLUGIN_PATH",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 44,
+            "column": 1
+          },
+          "end": {
+            "line": 49,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_PLUGIN_PATH = \"node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs\";\n\n/**\n * Names the published HIA JSDoc theme package consumed by the umbrella preset.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PLUGIN_PATH = \"node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs\";\n\n/**\n * Names the published HIA JSDoc theme package consumed by the umbrella preset.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 44,
+              "column": 1
+            },
+            "end": {
+              "line": 49,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_THEME_PACKAGE",
+    "longname": "HIA_JSDOC_THEME_PACKAGE",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 53,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 53,
+            "column": 1
+          },
+          "end": {
+            "line": 53,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_THEME_PACKAGE",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 53,
+            "column": 1
+          },
+          "end": {
+            "line": 58,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_THEME_PACKAGE = \"@mandolin/jsdoc-theme-hia\";\n\n/**\n * Pins the published HIA JSDoc theme version used by this compatibility layer.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_THEME_PACKAGE = \"@mandolin/jsdoc-theme-hia\";\n\n/**\n * Pins the published HIA JSDoc theme version used by this compatibility layer.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 53,
+              "column": 1
+            },
+            "end": {
+              "line": 58,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_THEME_VERSION",
+    "longname": "HIA_JSDOC_THEME_VERSION",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 62,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 62,
+            "column": 1
+          },
+          "end": {
+            "line": 62,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_THEME_VERSION",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 62,
+            "column": 1
+          },
+          "end": {
+            "line": 67,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_THEME_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the theme template resolved from dependencies.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_THEME_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the theme template resolved from dependencies.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 62,
+              "column": 1
+            },
+            "end": {
+              "line": 67,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_THEME_TEMPLATE",
+    "longname": "HIA_JSDOC_THEME_TEMPLATE",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 71,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 71,
+            "column": 1
+          },
+          "end": {
+            "line": 71,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_THEME_TEMPLATE",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 71,
+            "column": 1
+          },
+          "end": {
+            "line": 76,
+            "column": 22
+          }
+        },
+        "content": "export const HIA_JSDOC_THEME_TEMPLATE = \"node_modules/@mandolin/jsdoc-theme-hia\";\n\n/**\n * Names the upstream JSDoc package used by the HIA JSDoc runner.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_THEME_TEMPLATE = \"node_modules/@mandolin/jsdoc-theme-hia\";\n\n/**\n * Names the upstream JSDoc package used by the HIA JSDoc runner.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 71,
+              "column": 1
+            },
+            "end": {
+              "line": 76,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "JSDOC_PACKAGE",
+    "longname": "JSDOC_PACKAGE",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 80,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 80,
+            "column": 1
+          },
+          "end": {
+            "line": 80,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:JSDOC_PACKAGE",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 80,
+            "column": 1
+          },
+          "end": {
+            "line": 85,
+            "column": 22
+          }
+        },
+        "content": "export const JSDOC_PACKAGE = \"jsdoc\";\n\n/**\n * Pins the upstream JSDoc version used by the HIA JSDoc runner.\n *\n * @constant {string}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const JSDOC_PACKAGE = \"jsdoc\";\n\n/**\n * Pins the upstream JSDoc version used by the HIA JSDoc runner.\n *\n * @constant {string}",
+          "range": {
+            "start": {
+              "line": 80,
+              "column": 1
+            },
+            "end": {
+              "line": 85,
+              "column": 22
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "JSDOC_VERSION",
+    "longname": "JSDOC_VERSION",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 89,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 89,
+            "column": 1
+          },
+          "end": {
+            "line": 89,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:JSDOC_VERSION",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 89,
+            "column": 1
+          },
+          "end": {
+            "line": 94,
+            "column": 37
+          }
+        },
+        "content": "export const JSDOC_VERSION = \"4.0.5\";\n\n/**\n * Lists supported HIA JSDoc output modes for config normalization.\n *\n * @constant {ReadonlyArray<string>}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const JSDOC_VERSION = \"4.0.5\";\n\n/**\n * Lists supported HIA JSDoc output modes for config normalization.\n *\n * @constant {ReadonlyArray<string>}",
+          "range": {
+            "start": {
+              "line": 89,
+              "column": 1
+            },
+            "end": {
+              "line": 94,
+              "column": 37
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_OUTPUT_MODES",
+    "longname": "HIA_JSDOC_OUTPUT_MODES",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 98,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 98,
+            "column": 1
+          },
+          "end": {
+            "line": 98,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_OUTPUT_MODES",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 98,
+            "column": 1
+          },
+          "end": {
+            "line": 103,
+            "column": 37
+          }
+        },
+        "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);\n\n/**\n * Lists plugin insertion phases supported by the extra plugin registry.\n *\n * @constant {ReadonlyArray<string>}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);\n\n/**\n * Lists plugin insertion phases supported by the extra plugin registry.\n *\n * @constant {ReadonlyArray<string>}",
+          "range": {
+            "start": {
+              "line": 98,
+              "column": 1
+            },
+            "end": {
+              "line": 103,
+              "column": 37
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "longname": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 107,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 107,
+            "column": 1
+          },
+          "end": {
+            "line": 107,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 107,
+            "column": 1
+          },
+          "end": {
+            "line": 112,
+            "column": 100
+          }
+        },
+        "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);\n\n/**\n * Normalizes an HIA JSDoc output mode and rejects unknown modes.\n *\n * @param {string} [mode=\"both\"] <lang><en>Candidate output mode.</en><zh-CN>候选输出模式。</zh-CN></lang>",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);\n\n/**\n * Normalizes an HIA JSDoc output mode and rejects unknown modes.\n *\n * @param {string} [mode=\"both\"] <lang><en>Candidate output mode.</en><zh-CN>候选输出模式。</zh-CN></lang>",
+          "range": {
+            "start": {
+              "line": 107,
+              "column": 1
+            },
+            "end": {
+              "line": 112,
+              "column": 100
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
     "name": "normalizeHiaJsdocMode",
     "longname": "normalizeHiaJsdocMode",
     "kind": "function",
@@ -19,16 +1159,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 27,
+          "line": 118,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 27,
+            "line": 118,
             "column": 1
           },
           "end": {
-            "line": 27,
+            "line": 118,
             "column": 1
           }
         },
@@ -46,11 +1186,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 27,
+            "line": 118,
             "column": 1
           },
           "end": {
-            "line": 32,
+            "line": 123,
             "column": 2
           }
         },
@@ -71,11 +1211,11 @@
           "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
           "range": {
             "start": {
-              "line": 27,
+              "line": 118,
               "column": 1
             },
             "end": {
-              "line": 32,
+              "line": 123,
               "column": 2
             }
           }
@@ -114,16 +1254,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 41,
+          "line": 132,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 41,
+            "line": 132,
             "column": 1
           },
           "end": {
-            "line": 41,
+            "line": 132,
             "column": 1
           }
         },
@@ -141,11 +1281,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 41,
+            "line": 132,
             "column": 1
           },
           "end": {
-            "line": 58,
+            "line": 149,
             "column": 2
           }
         },
@@ -166,11 +1306,11 @@
           "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
           "range": {
             "start": {
-              "line": 41,
+              "line": 132,
               "column": 1
             },
             "end": {
-              "line": 58,
+              "line": 149,
               "column": 2
             }
           }
