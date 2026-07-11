@@ -1,0 +1,36 @@
+{
+  "$schema": "https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-0.1.0-draft.schema.json",
+  "schemaVersion": "0.1.0-draft",
+  "workspaceRoot": ".",
+  "outputDirectory": "dist/hia-jsdoc",
+  "inputs": [
+    {
+      "kind": "javascript-source",
+      "path": "src"
+    }
+  ],
+  "options": {
+    "mode": "both",
+    "includePattern": ".+\\.js$",
+    "writeResultManifest": true,
+    "plugin": {
+      "pluginPath": "../../node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs"
+    },
+    "theme": {
+      "template": "../../node_modules/@mandolin/jsdoc-theme-hia"
+    },
+    "hia": {
+      "i18n": {
+        "enabled": true,
+        "defaultLocale": "en",
+        "fallbackLocale": "en",
+        "locales": ["en", "zh-CN"]
+      },
+      "theme": {
+        "code": {
+          "fontFamily": "sarasa"
+        }
+      }
+    }
+  }
+}

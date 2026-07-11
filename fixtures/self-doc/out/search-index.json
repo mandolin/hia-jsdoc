@@ -1,0 +1,28 @@
+[
+  {
+    "id": "function-createhiajsdocversionsummary",
+    "kind": "function",
+    "name": "createHiaJsdocVersionSummary",
+    "longname": "createHiaJsdocVersionSummary",
+    "memberof": "",
+    "summary": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+    "localizedSummaries": {
+      "en": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+      "zh-CN": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-normalizehiajsdocmode",
+    "kind": "function",
+    "name": "normalizeHiaJsdocMode",
+    "longname": "normalizeHiaJsdocMode",
+    "memberof": "",
+    "summary": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+    "localizedSummaries": {
+      "en": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+      "zh-CN": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"
+    },
+    "sourceReferences": 0
+  }
+]

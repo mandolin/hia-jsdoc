@@ -19,6 +19,14 @@ if (rootPackage.private !== true) {
   process.exit(1);
 }
 
+const npmIgnore = fs.readFileSync(path.join(root, ".npmignore"), "utf8");
+for (const requiredPattern of ["node_modules/", "packages/*/node_modules/", "*.tgz"]) {
+  if (!npmIgnore.includes(requiredPattern)) {
+    console.error(`Missing .npmignore release safety pattern: ${requiredPattern}`);
+    process.exit(1);
+  }
+}
+
 const fixtureConfig = JSON.parse(fs.readFileSync(path.join(root, "fixtures/basic/generated/jsdoc.conf.json"), "utf8"));
 if (!fixtureConfig.plugins?.includes("node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs")) {
   console.error("Generated fixture config must use the published JPHS package path.");
@@ -30,6 +38,12 @@ if (fixtureConfig.opts?.template !== "node_modules/@mandolin/jsdoc-theme-hia") {
 }
 if (fs.existsSync(path.join(root, "hia-doc-hia-jsdoc-workspace-0.0.0.tgz"))) {
   console.error("Dry-run tarball must not remain in the workspace.");
+  process.exit(1);
+}
+
+const selfDocResult = JSON.parse(fs.readFileSync(path.join(root, "fixtures/self-doc/out/hia-jsdoc.producer-result.json"), "utf8"));
+if (selfDocResult.contract !== "documentation-producer-result" || selfDocResult.status !== "success") {
+  console.error("Self-doc smoke must emit a successful producer result.");
   process.exit(1);
 }
 

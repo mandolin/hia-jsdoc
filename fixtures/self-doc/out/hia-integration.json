@@ -1,0 +1,1165 @@
+{
+  "contract": "hia-jsdoc-integration",
+  "contractVersion": "0.1.0",
+  "pluginVersion": "0.1.0",
+  "mode": "standalone",
+  "artifactKind": "hia-integration",
+  "parserBoundary": {
+    "adapter": "parser-jsdoc",
+    "owns": [
+      "JSDoc doclet normalization",
+      "JSDoc tag to HIA metadata mapping",
+      "source fragment reference extraction",
+      "doc-i18n metadata extraction"
+    ],
+    "handsOff": [
+      "language-neutral HIA IR evolution",
+      "non-JavaScript parser implementations",
+      "IDE protocol and LSP transport"
+    ]
+  },
+  "ir": {
+    "version": "0.1.0",
+    "source": "jsdoc",
+    "nodes": [
+      {
+        "id": "jsdoc:function:normalizeHiaJsdocMode",
+        "kind": "function",
+        "name": "normalizeHiaJsdocMode",
+        "longname": "normalizeHiaJsdocMode",
+        "title": "normalizeHiaJsdocMode",
+        "summary": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+        "jsdoc": {
+          "docletId": "normalizeHiaJsdocMode",
+          "kind": "function",
+          "name": "normalizeHiaJsdocMode",
+          "longname": "normalizeHiaJsdocMode",
+          "memberof": "",
+          "scope": "global",
+          "params": [
+            {
+              "type": {
+                "names": [
+                  "string"
+                ]
+              },
+              "optional": true,
+              "defaultvalue": "\"both\"",
+              "description": "Candidate output mode.",
+              "name": "mode"
+            }
+          ],
+          "returns": [
+            {
+              "type": {
+                "names": [
+                  "string"
+                ]
+              },
+              "description": "Supported output mode."
+            }
+          ],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ]
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 27,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 27,
+                "column": 1
+              },
+              "end": {
+                "line": 27,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:function:normalizeHiaJsdocMode",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 27,
+                "column": 1
+              },
+              "end": {
+                "line": 32,
+                "column": 2
+              }
+            },
+            "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
+            "rangeSource": "parser-js",
+            "confidence": "high",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
+              "range": {
+                "start": {
+                  "line": 27,
+                  "column": 1
+                },
+                "end": {
+                  "line": 32,
+                  "column": 2
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "normalizeHiaJsdocMode",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                "zh-CN": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "params.mode.description": {
+              "fieldPath": "params.mode.description",
+              "kind": "param.description",
+              "defaultLocale": "en",
+              "defaultText": "Candidate output mode.",
+              "source": "doclet.params.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Candidate output mode.",
+                "zh-CN": "Candidate output mode."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": true,
+                  "missing": false
+                }
+              },
+              "missingLocales": [
+                "zh-CN"
+              ]
+            },
+            "returns.0.description": {
+              "fieldPath": "returns.0.description",
+              "kind": "return.description",
+              "defaultLocale": "en",
+              "defaultText": "Supported output mode.",
+              "source": "doclet.returns.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Supported output mode.",
+                "zh-CN": "Supported output mode."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": true,
+                  "missing": false
+                }
+              },
+              "missingLocales": [
+                "zh-CN"
+              ]
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                    "zh-CN": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.mode.description": {
+                  "fieldPath": "params.mode.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Candidate output mode.",
+                  "source": "doclet.params.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Candidate output mode.",
+                    "zh-CN": "Candidate output mode."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": true,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": [
+                    "zh-CN"
+                  ]
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Supported output mode.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Supported output mode.",
+                    "zh-CN": "Supported output mode."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": true,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": [
+                    "zh-CN"
+                  ]
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Normalizes an HIA JSDoc output mode and rejects unknown modes.",
+                    "zh-CN": "规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "params.mode.description": {
+                  "fieldPath": "params.mode.description",
+                  "kind": "param.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Candidate output mode.",
+                  "source": "doclet.params.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Candidate output mode.",
+                    "zh-CN": "Candidate output mode."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": true,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": [
+                    "zh-CN"
+                  ]
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Supported output mode.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Supported output mode.",
+                    "zh-CN": "Supported output mode."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": true,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": [
+                    "zh-CN"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:function:createHiaJsdocVersionSummary",
+        "kind": "function",
+        "name": "createHiaJsdocVersionSummary",
+        "longname": "createHiaJsdocVersionSummary",
+        "title": "createHiaJsdocVersionSummary",
+        "summary": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+        "jsdoc": {
+          "docletId": "createHiaJsdocVersionSummary",
+          "kind": "function",
+          "name": "createHiaJsdocVersionSummary",
+          "longname": "createHiaJsdocVersionSummary",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [
+            {
+              "type": {
+                "names": [
+                  "object"
+                ]
+              },
+              "description": "Version summary for JSDoc, JPHS and JTH dependencies."
+            }
+          ],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ]
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 41,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 41,
+                "column": 1
+              },
+              "end": {
+                "line": 41,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:function:createHiaJsdocVersionSummary",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 41,
+                "column": 1
+              },
+              "end": {
+                "line": 58,
+                "column": 2
+              }
+            },
+            "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
+            "rangeSource": "parser-js",
+            "confidence": "high",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
+              "range": {
+                "start": {
+                  "line": 41,
+                  "column": 1
+                },
+                "end": {
+                  "line": 58,
+                  "column": 2
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "createHiaJsdocVersionSummary",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                "zh-CN": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "returns.0.description": {
+              "fieldPath": "returns.0.description",
+              "kind": "return.description",
+              "defaultLocale": "en",
+              "defaultText": "Version summary for JSDoc, JPHS and JTH dependencies.",
+              "source": "doclet.returns.0.description",
+              "blocks": [],
+              "segments": [],
+              "localizedText": {
+                "en": "Version summary for JSDoc, JPHS and JTH dependencies.",
+                "zh-CN": "Version summary for JSDoc, JPHS and JTH dependencies."
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": true,
+                  "missing": false
+                }
+              },
+              "missingLocales": [
+                "zh-CN"
+              ]
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                    "zh-CN": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Version summary for JSDoc, JPHS and JTH dependencies.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Version summary for JSDoc, JPHS and JTH dependencies.",
+                    "zh-CN": "Version summary for JSDoc, JPHS and JTH dependencies."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": true,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": [
+                    "zh-CN"
+                  ]
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
+                    "zh-CN": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "Version summary for JSDoc, JPHS and JTH dependencies.",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Version summary for JSDoc, JPHS and JTH dependencies.",
+                    "zh-CN": "Version summary for JSDoc, JPHS and JTH dependencies."
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": true,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": [
+                    "zh-CN"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      }
+    ]
+  },
+  "sourceFragments": [],
+  "localizationResources": [],
+  "diagnostics": [],
+  "diagnosticCounts": {},
+  "docletNodeMap": [
+    {
+      "docletId": "normalizeHiaJsdocMode",
+      "nodeId": "jsdoc:function:normalizeHiaJsdocMode",
+      "kind": "function",
+      "name": "normalizeHiaJsdocMode",
+      "longname": "normalizeHiaJsdocMode"
+    },
+    {
+      "docletId": "createHiaJsdocVersionSummary",
+      "nodeId": "jsdoc:function:createHiaJsdocVersionSummary",
+      "kind": "function",
+      "name": "createHiaJsdocVersionSummary",
+      "longname": "createHiaJsdocVersionSummary"
+    }
+  ]
+}

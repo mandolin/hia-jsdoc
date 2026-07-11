@@ -9,6 +9,7 @@ This repository is planned as a preset, runner and bridge layer around JSDoc, `@
 - `@hia-doc/jsdoc-spec`: JSDoc usage, configuration and rule drafts for HIA.
 - `@hia-doc/jsdoc-preset`: JSDoc config preset and merge helpers.
 - `@hia-doc/jsdoc-runner`: Standalone and HIA integration runner.
+- `@hia-doc/jsdoc-producer`: Documentation producer adapter for HIA project builds.
 - `@hia-doc/jsdoc-plugin-hia-bridge`: Bridge for `@mandolin/jsdoc-plugin-hia-sys`.
 - `@hia-doc/jsdoc-theme-bridge`: Bridge for `@mandolin/jsdoc-theme-hia`.
 - `@hia-doc/jsdoc-extra-plugin-registry`: User plugin registry and diagnostics.
@@ -22,6 +23,8 @@ This workspace contains the W-P9.5 umbrella baseline:
 - an extra plugin registry for before/after ordering diagnostics;
 - a runner that writes a standard JSDoc config and calls the real JSDoc CLI;
 - a fixture that emits JSDoc HTML, theme metadata and HIA Integration JSON.
+- a W-P11.3 project runner/producer surface that emits a `documentation-producer-result` manifest.
+- a first-party self-doc smoke using canonical `@lang` tags.
 
 It does not migrate or absorb the existing plugin and theme repositories.
 

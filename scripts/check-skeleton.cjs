@@ -9,6 +9,7 @@ const requiredPaths = [
   "RELEASE_CHECKLIST.md",
   "THIRD_PARTY_NOTICES.md",
   "LICENSE",
+  ".npmignore",
   "package.json",
   "package-lock.json",
   "pnpm-workspace.yaml",
@@ -19,6 +20,8 @@ const requiredPaths = [
   "fixtures/basic/out/hia-integration.json",
   "fixtures/basic/out/hia-metadata.json",
   "fixtures/basic/out/index.html",
+  "fixtures/self-doc/out/hia-integration.json",
+  "fixtures/self-doc/out/hia-jsdoc.producer-result.json",
   "test/README.md",
   "test/hia-jsdoc.test.mjs",
   "packages/jsdoc-spec/package.json",
@@ -26,7 +29,11 @@ const requiredPaths = [
   "packages/jsdoc-preset/package.json",
   "packages/jsdoc-preset/src/index.mjs",
   "packages/jsdoc-runner/package.json",
+  "packages/jsdoc-runner/src/schema.mjs",
   "packages/jsdoc-runner/src/index.mjs",
+  "packages/jsdoc-runner/src/cli.mjs",
+  "packages/jsdoc-producer/package.json",
+  "packages/jsdoc-producer/src/index.mjs",
   "packages/jsdoc-plugin-hia-bridge/package.json",
   "packages/jsdoc-plugin-hia-bridge/src/index.mjs",
   "packages/jsdoc-theme-bridge/package.json",
@@ -36,7 +43,9 @@ const requiredPaths = [
   "packages/jsdoc-doc-source-map/package.json",
   "packages/jsdoc-doc-source-map/src/index.mjs",
   "scripts/build-fixtures.cjs",
-  "scripts/check-fixtures.cjs"
+  "scripts/check-fixtures.cjs",
+  "scripts/check-pack.cjs",
+  "scripts/check-standalone.cjs"
 ];
 
 let failed = false;

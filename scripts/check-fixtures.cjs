@@ -4,12 +4,16 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const fixtureRoot = path.join(root, "fixtures", "basic");
 const outputRoot = path.join(fixtureRoot, "out");
+const selfDocRoot = path.join(root, "fixtures", "self-doc");
+const selfDocOutput = path.join(selfDocRoot, "out");
 
 let failed = false;
 
 const config = readJson(path.join(fixtureRoot, "generated", "jsdoc.conf.json"));
 const integration = readJson(path.join(outputRoot, "hia-integration.json"));
 const metadata = readJson(path.join(outputRoot, "hia-metadata.json"));
+const selfDocIntegration = readJson(path.join(selfDocOutput, "hia-integration.json"));
+const selfDocManifest = readJson(path.join(selfDocOutput, "hia-jsdoc.producer-result.json"));
 
 expectArrayContains(config.plugins, "node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs", "JSDoc plugin list");
 expectEqual(config.opts?.template, "node_modules/@mandolin/jsdoc-theme-hia", "JSDoc theme template");
@@ -25,6 +29,10 @@ if (!Array.isArray(metadata) || metadata.length === 0) {
   fail("Theme metadata must contain at least one doclet metadata entry.");
 }
 expectSymbolLike({ metadata }, "Calculator");
+expectEqual(selfDocManifest.contract, "documentation-producer-result", "Self-doc producer result contract");
+expectEqual(selfDocManifest.status, "success", "Self-doc producer result status");
+expectSymbolLike(selfDocIntegration, "createHiaJsdocVersionSummary");
+expectSymbolLike(selfDocIntegration, "zh-CN");
 
 for (const requiredFile of ["index.html", "search-index.json", "hia-theme.css", "hia-theme.js"]) {
   if (!fs.existsSync(path.join(outputRoot, requiredFile))) {
@@ -33,6 +41,7 @@ for (const requiredFile of ["index.html", "search-index.json", "hia-theme.css", 
 }
 
 expectNoLocalPathLeakage(fixtureRoot);
+expectNoLocalPathLeakage(selfDocRoot);
 
 if (failed) {
   process.exit(1);

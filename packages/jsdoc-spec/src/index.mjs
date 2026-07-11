@@ -15,6 +15,15 @@ export const JSDOC_VERSION = "4.0.5";
 export const HIA_JSDOC_OUTPUT_MODES = Object.freeze(["standalone", "hiaIntegration", "both"]);
 export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze(["before", "after"]);
 
+/**
+ * Normalizes an HIA JSDoc output mode and rejects unknown modes.
+ *
+ * @param {string} [mode="both"] Candidate output mode.
+ * @returns {string} Supported output mode.
+ * @throws {Error} When the mode is not part of the HIA JSDoc mode registry.
+ * @lang zh-CN 规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。
+ * @lang en Normalizes an HIA JSDoc output mode and rejects unknown modes.
+ */
 export function normalizeHiaJsdocMode(mode = "both") {
   if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {
     throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);
@@ -22,6 +31,13 @@ export function normalizeHiaJsdocMode(mode = "both") {
   return mode;
 }
 
+/**
+ * Creates the dependency version summary embedded into generated HIA JSDoc configs.
+ *
+ * @returns {object} Version summary for JSDoc, JPHS and JTH dependencies.
+ * @lang zh-CN 创建写入 HIA JSDoc 生成配置的依赖版本摘要。
+ * @lang en Creates the dependency version summary embedded into generated HIA JSDoc configs.
+ */
 export function createHiaJsdocVersionSummary() {
   return {
     contract: HIA_JSDOC_UMBRELLA_CONTRACT,

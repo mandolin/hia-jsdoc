@@ -1,10 +1,19 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile, rm } from "node:fs/promises";
+import path from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 
 import { normalizeExtraPluginRegistry } from "../packages/jsdoc-extra-plugin-registry/src/index.mjs";
 import { createHiaJsdocConfig } from "../packages/jsdoc-preset/src/index.mjs";
 import { createHiaJsdocVersionSummary } from "../packages/jsdoc-spec/src/index.mjs";
+import {
+  HIA_JSDOC_CONFIG_SCHEMA_ID,
+  HIA_JSDOC_CONFIG_SCHEMA_VERSION,
+  loadHiaJsdocConfig,
+  runHiaJsdocProject
+} from "../packages/jsdoc-runner/src/index.mjs";
+import { jsdocProducer } from "../packages/jsdoc-producer/src/index.mjs";
 
 test("createHiaJsdocConfig creates a standard JSDoc config", () => {
   const config = createHiaJsdocConfig({
@@ -42,4 +51,49 @@ test("fixture build emits HIA integration output", async () => {
   const integration = JSON.parse(await readFile(new URL("../fixtures/basic/out/hia-integration.json", import.meta.url), "utf8"));
   assert.equal(integration.contract, "hia-jsdoc-integration");
   assert.equal(integration.artifactKind, "hia-integration");
+});
+
+test("runHiaJsdocProject emits a producer result for self-doc", async () => {
+  const root = fileURLToPath(new URL("..", import.meta.url));
+  const outputDirectory = path.join(root, "fixtures", "self-doc", `.tmp-${process.pid}`);
+  await mkdir(outputDirectory, { recursive: true });
+  try {
+    const result = runHiaJsdocProject({
+      workspaceRoot: root,
+      outputDirectory,
+      inputs: [{ kind: "javascript-module", path: "packages/jsdoc-spec/src" }],
+      options: {
+        includePattern: ".+\\.mjs$",
+        hia: {
+          i18n: {
+            enabled: true,
+            locales: ["en", "zh-CN"]
+          }
+        }
+      }
+    });
+
+    assert.equal(result.contract, "documentation-producer-result");
+    assert.equal(result.status, "success");
+    assert.ok(result.artifacts.some((artifact) => artifact.kind === "jsdoc-integration"));
+  } finally {
+    await rm(outputDirectory, { recursive: true, force: true });
+  }
+});
+
+test("loadHiaJsdocConfig normalizes versioned config", () => {
+  const request = loadHiaJsdocConfig("examples/standalone/hia-jsdoc.config.json", {
+    cwd: fileURLToPath(new URL("..", import.meta.url))
+  });
+
+  assert.equal(request.inputs[0].path, "src");
+  assert.equal(request.options.mode, "both");
+  assert.equal(request.options.writeResultManifest, true);
+  assert.equal(HIA_JSDOC_CONFIG_SCHEMA_ID.includes("hia-jsdoc-config"), true);
+  assert.equal(HIA_JSDOC_CONFIG_SCHEMA_VERSION, "0.1.0-draft");
+});
+
+test("jsdoc producer delegates to project runner", () => {
+  assert.equal(jsdocProducer.descriptor.contract, "documentation-producer");
+  assert.ok(jsdocProducer.descriptor.outputKinds.includes("jsdoc-integration"));
 });

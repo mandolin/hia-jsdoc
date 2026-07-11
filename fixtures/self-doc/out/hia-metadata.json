@@ -1,0 +1,192 @@
+[
+  {
+    "name": "normalizeHiaJsdocMode",
+    "longname": "normalizeHiaJsdocMode",
+    "kind": "function",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 27,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 27,
+            "column": 1
+          },
+          "end": {
+            "line": 27,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:function:normalizeHiaJsdocMode",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 27,
+            "column": 1
+          },
+          "end": {
+            "line": 32,
+            "column": 2
+          }
+        },
+        "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
+          "range": {
+            "start": {
+              "line": 27,
+              "column": 1
+            },
+            "end": {
+              "line": 32,
+              "column": 2
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 3,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "createHiaJsdocVersionSummary",
+    "longname": "createHiaJsdocVersionSummary",
+    "kind": "function",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 41,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 41,
+            "column": 1
+          },
+          "end": {
+            "line": 41,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:function:createHiaJsdocVersionSummary",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 41,
+            "column": 1
+          },
+          "end": {
+            "line": 58,
+            "column": 2
+          }
+        },
+        "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
+          "range": {
+            "start": {
+              "line": 41,
+              "column": 1
+            },
+            "end": {
+              "line": 58,
+              "column": 2
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 2,
+      "missingLocales": []
+    }
+  }
+]

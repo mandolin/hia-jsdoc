@@ -1,0 +1,54 @@
+{
+  "contract": "documentation-producer-result",
+  "contractVersion": "0.1.0-draft",
+  "producer": {
+    "id": "jsdoc",
+    "version": "0.0.0"
+  },
+  "status": "success",
+  "artifacts": [
+    {
+      "id": "jsdoc-html",
+      "kind": "jsdoc-html",
+      "path": "index.html",
+      "language": "html",
+      "mediaType": "text/html",
+      "profileIds": [
+        "jsdoc"
+      ]
+    },
+    {
+      "id": "jsdoc-search-index",
+      "kind": "jsdoc-search-index",
+      "path": "search-index.json",
+      "language": "json",
+      "mediaType": "application/json",
+      "profileIds": [
+        "jsdoc"
+      ]
+    },
+    {
+      "id": "jsdoc-theme-metadata",
+      "kind": "jsdoc-theme-metadata",
+      "path": "hia-metadata.json",
+      "language": "json",
+      "mediaType": "application/json",
+      "profileIds": [
+        "jsdoc"
+      ]
+    },
+    {
+      "id": "jsdoc-integration",
+      "kind": "jsdoc-integration",
+      "path": "hia-integration.json",
+      "language": "json",
+      "mediaType": "application/json",
+      "profileIds": [
+        "jsdoc"
+      ],
+      "contract": "hia-jsdoc-integration",
+      "contractVersion": "0.1.0"
+    }
+  ],
+  "diagnostics": []
+}
