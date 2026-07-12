@@ -4,7 +4,14 @@
   ],
   "source": {
     "include": [
-      "packages/jsdoc-spec/src"
+      "packages/jsdoc-doc-source-map/src",
+      "packages/jsdoc-extra-plugin-registry/src",
+      "packages/jsdoc-plugin-hia-bridge/src",
+      "packages/jsdoc-preset/src",
+      "packages/jsdoc-producer/src",
+      "packages/jsdoc-runner/src",
+      "packages/jsdoc-spec/src",
+      "packages/jsdoc-theme-bridge/src"
     ],
     "includePattern": ".+\\.mjs$",
     "excludePattern": "(^|[/\\\\])_"

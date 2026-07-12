@@ -6,6 +6,16 @@ const root = path.resolve(__dirname, "..");
 const fixtureRoot = path.join(root, "fixtures", "basic");
 const outputRoot = path.join(fixtureRoot, "out");
 const generatedRoot = path.join(fixtureRoot, "generated");
+const selfDocInputPaths = [
+  "packages/jsdoc-doc-source-map/src",
+  "packages/jsdoc-extra-plugin-registry/src",
+  "packages/jsdoc-plugin-hia-bridge/src",
+  "packages/jsdoc-preset/src",
+  "packages/jsdoc-producer/src",
+  "packages/jsdoc-runner/src",
+  "packages/jsdoc-spec/src",
+  "packages/jsdoc-theme-bridge/src"
+];
 let jsdocRunner;
 
 main().catch((error) => {
@@ -60,15 +70,16 @@ async function buildSelfDocFixture() {
   const selfDocRoot = path.join(root, "fixtures", "self-doc");
   const selfDocOutput = path.join(selfDocRoot, "out");
   fs.rmSync(selfDocOutput, { recursive: true, force: true });
+
+  // 中文：W-P13.2 将自文档化 fixture 从单包试点扩展到 hia-jsdoc umbrella package set。
+  // English: W-P13.2 expands the self-doc fixture from one package to the full hia-jsdoc umbrella package set.
   const result = jsdocRunner.runHiaJsdocProject({
     workspaceRoot: root,
     outputDirectory: selfDocOutput,
-    inputs: [
-      {
-        kind: "javascript-module",
-        path: "packages/jsdoc-spec/src"
-      }
-    ],
+    inputs: selfDocInputPaths.map((inputPath) => ({
+      kind: "javascript-module",
+      path: inputPath
+    })),
     options: {
       includePattern: ".+\\.mjs$",
       writeResultManifest: true,

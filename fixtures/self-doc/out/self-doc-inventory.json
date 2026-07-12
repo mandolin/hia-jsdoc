@@ -3,8 +3,66 @@
   "contractVersion": "0.1.0-draft",
   "scope": {
     "repository": "HIA/hia-jsdoc",
-    "packageName": "@hia-doc/jsdoc-spec",
-    "sourceRoot": "packages/jsdoc-spec/src",
+    "packageSetName": "hia-jsdoc-umbrella-packages",
+    "packages": [
+      {
+        "packageName": "@hia-doc/jsdoc-doc-source-map",
+        "sourceRoot": "packages/jsdoc-doc-source-map/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-extra-plugin-registry",
+        "sourceRoot": "packages/jsdoc-extra-plugin-registry/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-plugin-hia-bridge",
+        "sourceRoot": "packages/jsdoc-plugin-hia-bridge/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-preset",
+        "sourceRoot": "packages/jsdoc-preset/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-producer",
+        "sourceRoot": "packages/jsdoc-producer/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-runner",
+        "sourceRoot": "packages/jsdoc-runner/src",
+        "sourceFiles": [
+          "index.mjs",
+          "schema.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-spec",
+        "sourceRoot": "packages/jsdoc-spec/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      },
+      {
+        "packageName": "@hia-doc/jsdoc-theme-bridge",
+        "sourceRoot": "packages/jsdoc-theme-bridge/src",
+        "sourceFiles": [
+          "index.mjs"
+        ]
+      }
+    ],
     "artifactPath": "fixtures/self-doc/out/hia-integration.json"
   },
   "policy": {
@@ -17,14 +75,2105 @@
     "earlyCompatibleTag": "@hiaText"
   },
   "summary": {
-    "exportCount": 14,
-    "documentedExportCount": 14,
-    "integrationCoveredCount": 14,
-    "bilingualExportCount": 14,
-    "missingLocaleFieldCount": 0
+    "packageCount": 8,
+    "coveredPackageCount": 8,
+    "bilingualPackageCount": 8,
+    "exportCount": 34,
+    "documentedExportCount": 34,
+    "integrationCoveredCount": 34,
+    "bilingualExportCount": 34,
+    "missingLocaleFieldCount": 0,
+    "rawMissingLocaleFieldCount": 0,
+    "staleRawMissingLocaleFieldCount": 33
   },
+  "packages": [
+    {
+      "packageName": "@hia-doc/jsdoc-doc-source-map",
+      "sourceRoot": "packages/jsdoc-doc-source-map/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 1,
+        "documentedExportCount": 1,
+        "integrationCoveredCount": 1,
+        "bilingualExportCount": 1,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 4
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-doc-source-map",
+          "name": "createJsdocDocSourceMapRef",
+          "kind": "function",
+          "path": "packages/jsdoc-doc-source-map/src/index.mjs",
+          "line": 3,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:createJsdocDocSourceMapRef",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 5,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 4,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "params.options_href.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "params.options_sourcesContentPolicy.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-extra-plugin-registry",
+      "sourceRoot": "packages/jsdoc-extra-plugin-registry/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 1,
+        "documentedExportCount": 1,
+        "integrationCoveredCount": 1,
+        "bilingualExportCount": 1,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 2
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-extra-plugin-registry",
+          "name": "normalizeExtraPluginRegistry",
+          "kind": "function",
+          "path": "packages/jsdoc-extra-plugin-registry/src/index.mjs",
+          "line": 3,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:normalizeExtraPluginRegistry",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.input.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-plugin-hia-bridge",
+      "sourceRoot": "packages/jsdoc-plugin-hia-bridge/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 2,
+        "documentedExportCount": 2,
+        "integrationCoveredCount": 2,
+        "bilingualExportCount": 2,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 4
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-plugin-hia-bridge",
+          "name": "createHiaJsdocPluginBridge",
+          "kind": "function",
+          "path": "packages/jsdoc-plugin-hia-bridge/src/index.mjs",
+          "line": 7,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:createHiaJsdocPluginBridge",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-plugin-hia-bridge",
+          "name": "getHiaJsdocPluginPath",
+          "kind": "function",
+          "path": "packages/jsdoc-plugin-hia-bridge/src/index.mjs",
+          "line": 24,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:getHiaJsdocPluginPath",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-preset",
+      "sourceRoot": "packages/jsdoc-preset/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 2,
+        "documentedExportCount": 2,
+        "integrationCoveredCount": 2,
+        "bilingualExportCount": 2,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 5
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-preset",
+          "name": "createHiaJsdocConfig",
+          "kind": "function",
+          "path": "packages/jsdoc-preset/src/index.mjs",
+          "line": 11,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:createHiaJsdocConfig",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-preset",
+          "name": "mergeJsdocConfig",
+          "kind": "function",
+          "path": "packages/jsdoc-preset/src/index.mjs",
+          "line": 110,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:mergeJsdocConfig",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 4,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 3,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.preset.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "params.userConfig.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-producer",
+      "sourceRoot": "packages/jsdoc-producer/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 2,
+        "documentedExportCount": 2,
+        "integrationCoveredCount": 2,
+        "bilingualExportCount": 2,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 0
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-producer",
+          "name": "jsdocProducerDescriptor",
+          "kind": "const",
+          "path": "packages/jsdoc-producer/src/index.mjs",
+          "line": 8,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:jsdocProducerDescriptor",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-producer",
+          "name": "jsdocProducer",
+          "kind": "const",
+          "path": "packages/jsdoc-producer/src/index.mjs",
+          "line": 30,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:jsdocProducer",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "sourceRoot": "packages/jsdoc-runner/src",
+      "sourceFiles": [
+        "index.mjs",
+        "schema.mjs"
+      ],
+      "summary": {
+        "exportCount": 10,
+        "documentedExportCount": 10,
+        "integrationCoveredCount": 10,
+        "bilingualExportCount": 10,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 11
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "HIA_JSDOC_RUNNER_VERSION",
+          "kind": "const",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 16,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_RUNNER_VERSION",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "HIA_JSDOC_INPUT_KINDS",
+          "kind": "const",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 25,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_INPUT_KINDS",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "HIA_JSDOC_OUTPUT_KINDS",
+          "kind": "const",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 34,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_OUTPUT_KINDS",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "writeHiaJsdocConfig",
+          "kind": "function",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 53,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:writeHiaJsdocConfig",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 4,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 3,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.filePath.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "runHiaJsdocProject",
+          "kind": "function",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 74,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:runHiaJsdocProject",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 4,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 3,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.request.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "params.context.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "loadHiaJsdocConfig",
+          "kind": "function",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 158,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:loadHiaJsdocConfig",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 4,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 3,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.configPath.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "runHiaJsdoc",
+          "kind": "function",
+          "path": "packages/jsdoc-runner/src/index.mjs",
+          "line": 194,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:runHiaJsdoc",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+          "kind": "const",
+          "path": "packages/jsdoc-runner/src/schema.mjs",
+          "line": 1,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "HIA_JSDOC_CONFIG_SCHEMA_ID",
+          "kind": "const",
+          "path": "packages/jsdoc-runner/src/schema.mjs",
+          "line": 10,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_CONFIG_SCHEMA_ID",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-runner",
+          "name": "HIA_JSDOC_CONFIG_JSON_SCHEMA",
+          "kind": "const",
+          "path": "packages/jsdoc-runner/src/schema.mjs",
+          "line": 30,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_CONFIG_JSON_SCHEMA",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-spec",
+      "sourceRoot": "packages/jsdoc-spec/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 14,
+        "documentedExportCount": 14,
+        "integrationCoveredCount": 14,
+        "bilingualExportCount": 14,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 3
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_UMBRELLA_CONTRACT",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 1,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_UMBRELLA_CONTRACT",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 10,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_PLUGIN_PACKAGE",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 19,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_PLUGIN_PACKAGE",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_PLUGIN_VERSION",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 28,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_PLUGIN_VERSION",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_PLUGIN_PATH",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 37,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_PLUGIN_PATH",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_THEME_PACKAGE",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 46,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_THEME_PACKAGE",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_THEME_VERSION",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 55,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_THEME_VERSION",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_THEME_TEMPLATE",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 64,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_THEME_TEMPLATE",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "JSDOC_PACKAGE",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 73,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:JSDOC_PACKAGE",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "JSDOC_VERSION",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 82,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:JSDOC_VERSION",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_OUTPUT_MODES",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 91,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_OUTPUT_MODES",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+          "kind": "const",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 100,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "normalizeHiaJsdocMode",
+          "kind": "function",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 109,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:normalizeHiaJsdocMode",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.mode.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-spec",
+          "name": "createHiaJsdocVersionSummary",
+          "kind": "function",
+          "path": "packages/jsdoc-spec/src/index.mjs",
+          "line": 125,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:createHiaJsdocVersionSummary",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 2,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 1,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-theme-bridge",
+      "sourceRoot": "packages/jsdoc-theme-bridge/src",
+      "sourceFiles": [
+        "index.mjs"
+      ],
+      "summary": {
+        "exportCount": 2,
+        "documentedExportCount": 2,
+        "integrationCoveredCount": 2,
+        "bilingualExportCount": 2,
+        "missingLocaleFieldCount": 0,
+        "rawMissingLocaleFieldCount": 0,
+        "staleRawMissingLocaleFieldCount": 4
+      },
+      "publicExports": [
+        {
+          "packageName": "@hia-doc/jsdoc-theme-bridge",
+          "name": "createHiaJsdocThemeBridge",
+          "kind": "function",
+          "path": "packages/jsdoc-theme-bridge/src/index.mjs",
+          "line": 7,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:createHiaJsdocThemeBridge",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-theme-bridge",
+          "name": "getHiaJsdocThemeTemplate",
+          "kind": "function",
+          "path": "packages/jsdoc-theme-bridge/src/index.mjs",
+          "line": 24,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:function:getHiaJsdocThemeTemplate",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 3,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 2,
+            "staleRawMissingFields": [
+              {
+                "fieldPath": "params.options.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              },
+              {
+                "fieldPath": "returns.0.description",
+                "originalMissingLocales": [
+                  "zh-CN"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "publicExports": [
     {
+      "packageName": "@hia-doc/jsdoc-doc-source-map",
+      "name": "createJsdocDocSourceMapRef",
+      "kind": "function",
+      "path": "packages/jsdoc-doc-source-map/src/index.mjs",
+      "line": 3,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:createJsdocDocSourceMapRef",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 5,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 4,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "params.options_href.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "params.options_sourcesContentPolicy.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-extra-plugin-registry",
+      "name": "normalizeExtraPluginRegistry",
+      "kind": "function",
+      "path": "packages/jsdoc-extra-plugin-registry/src/index.mjs",
+      "line": 3,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:normalizeExtraPluginRegistry",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.input.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-plugin-hia-bridge",
+      "name": "createHiaJsdocPluginBridge",
+      "kind": "function",
+      "path": "packages/jsdoc-plugin-hia-bridge/src/index.mjs",
+      "line": 7,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:createHiaJsdocPluginBridge",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-plugin-hia-bridge",
+      "name": "getHiaJsdocPluginPath",
+      "kind": "function",
+      "path": "packages/jsdoc-plugin-hia-bridge/src/index.mjs",
+      "line": 24,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:getHiaJsdocPluginPath",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-preset",
+      "name": "createHiaJsdocConfig",
+      "kind": "function",
+      "path": "packages/jsdoc-preset/src/index.mjs",
+      "line": 11,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:createHiaJsdocConfig",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-preset",
+      "name": "mergeJsdocConfig",
+      "kind": "function",
+      "path": "packages/jsdoc-preset/src/index.mjs",
+      "line": 110,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:mergeJsdocConfig",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 4,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 3,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.preset.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "params.userConfig.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-producer",
+      "name": "jsdocProducerDescriptor",
+      "kind": "const",
+      "path": "packages/jsdoc-producer/src/index.mjs",
+      "line": 8,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:jsdocProducerDescriptor",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-producer",
+      "name": "jsdocProducer",
+      "kind": "const",
+      "path": "packages/jsdoc-producer/src/index.mjs",
+      "line": 30,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:jsdocProducer",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "HIA_JSDOC_RUNNER_VERSION",
+      "kind": "const",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 16,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:HIA_JSDOC_RUNNER_VERSION",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "HIA_JSDOC_INPUT_KINDS",
+      "kind": "const",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 25,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:HIA_JSDOC_INPUT_KINDS",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "HIA_JSDOC_OUTPUT_KINDS",
+      "kind": "const",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 34,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:HIA_JSDOC_OUTPUT_KINDS",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "writeHiaJsdocConfig",
+      "kind": "function",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 53,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:writeHiaJsdocConfig",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 4,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 3,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.filePath.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "runHiaJsdocProject",
+      "kind": "function",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 74,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:runHiaJsdocProject",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 4,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 3,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.request.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "params.context.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "loadHiaJsdocConfig",
+      "kind": "function",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 158,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:loadHiaJsdocConfig",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 4,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 3,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.configPath.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "runHiaJsdoc",
+      "kind": "function",
+      "path": "packages/jsdoc-runner/src/index.mjs",
+      "line": 194,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:runHiaJsdoc",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+      "kind": "const",
+      "path": "packages/jsdoc-runner/src/schema.mjs",
+      "line": 1,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "HIA_JSDOC_CONFIG_SCHEMA_ID",
+      "kind": "const",
+      "path": "packages/jsdoc-runner/src/schema.mjs",
+      "line": 10,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:HIA_JSDOC_CONFIG_SCHEMA_ID",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-runner",
+      "name": "HIA_JSDOC_CONFIG_JSON_SCHEMA",
+      "kind": "const",
+      "path": "packages/jsdoc-runner/src/schema.mjs",
+      "line": 30,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:HIA_JSDOC_CONFIG_JSON_SCHEMA",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_UMBRELLA_CONTRACT",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -48,10 +2197,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -75,10 +2227,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_PLUGIN_PACKAGE",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -102,10 +2257,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_PLUGIN_VERSION",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -129,10 +2287,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_PLUGIN_PATH",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -156,10 +2317,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_THEME_PACKAGE",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -183,10 +2347,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_THEME_VERSION",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -210,10 +2377,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_THEME_TEMPLATE",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -237,10 +2407,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "JSDOC_PACKAGE",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -264,10 +2437,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "JSDOC_VERSION",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -291,10 +2467,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_OUTPUT_MODES",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -318,10 +2497,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
       "kind": "const",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -345,10 +2527,13 @@
         "missingLocaleFieldCount": 0,
         "missingFields": [],
         "rawMissingLocaleFieldCount": 0,
-        "rawMissingFields": []
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "normalizeHiaJsdocMode",
       "kind": "function",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -371,17 +2556,19 @@
         "fieldCount": 3,
         "missingLocaleFieldCount": 0,
         "missingFields": [],
-        "rawMissingLocaleFieldCount": 2,
-        "rawMissingFields": [
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
           {
             "fieldPath": "params.mode.description",
-            "missingLocales": [
+            "originalMissingLocales": [
               "zh-CN"
             ]
           },
           {
             "fieldPath": "returns.0.description",
-            "missingLocales": [
+            "originalMissingLocales": [
               "zh-CN"
             ]
           }
@@ -389,6 +2576,7 @@
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-spec",
       "name": "createHiaJsdocVersionSummary",
       "kind": "function",
       "path": "packages/jsdoc-spec/src/index.mjs",
@@ -411,11 +2599,99 @@
         "fieldCount": 2,
         "missingLocaleFieldCount": 0,
         "missingFields": [],
-        "rawMissingLocaleFieldCount": 1,
-        "rawMissingFields": [
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 1,
+        "staleRawMissingFields": [
           {
             "fieldPath": "returns.0.description",
-            "missingLocales": [
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-theme-bridge",
+      "name": "createHiaJsdocThemeBridge",
+      "kind": "function",
+      "path": "packages/jsdoc-theme-bridge/src/index.mjs",
+      "line": 7,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:createHiaJsdocThemeBridge",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-theme-bridge",
+      "name": "getHiaJsdocThemeTemplate",
+      "kind": "function",
+      "path": "packages/jsdoc-theme-bridge/src/index.mjs",
+      "line": 24,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:function:getHiaJsdocThemeTemplate",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 3,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 2,
+        "staleRawMissingFields": [
+          {
+            "fieldPath": "params.options.description",
+            "originalMissingLocales": [
+              "zh-CN"
+            ]
+          },
+          {
+            "fieldPath": "returns.0.description",
+            "originalMissingLocales": [
               "zh-CN"
             ]
           }
@@ -425,7 +2701,14 @@
   ],
   "gate": {
     "status": "pass",
-    "requiredForW12_5": [
+    "requiredForW13_2": [
+      "all umbrella package public exports have adjacent JSDoc blocks",
+      "all umbrella package public exports appear in HIA JSDoc integration output",
+      "all umbrella package public exports carry @lang en and @lang zh-CN",
+      "generated i18n fields have no missing required locale",
+      "raw missing locale diagnostics are effective gaps, not stale localizedText false positives"
+    ],
+    "carriedFromW12_5": [
       "all public exports have adjacent JSDoc blocks",
       "all public exports appear in HIA JSDoc integration output",
       "all public exports carry @lang en and @lang zh-CN",

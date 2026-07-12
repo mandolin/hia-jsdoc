@@ -1,5 +1,44 @@
 [
   {
+    "id": "function-createhiajsdocconfig",
+    "kind": "function",
+    "name": "createHiaJsdocConfig",
+    "longname": "createHiaJsdocConfig",
+    "memberof": "",
+    "summary": "Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.",
+    "localizedSummaries": {
+      "en": "Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.",
+      "zh-CN": "创建串接 HIA 插件、HIA 主题、integration 输出和额外插件的 JSDoc 配置。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-createhiajsdocpluginbridge",
+    "kind": "function",
+    "name": "createHiaJsdocPluginBridge",
+    "longname": "createHiaJsdocPluginBridge",
+    "memberof": "",
+    "summary": "Creates the bridge descriptor for the HIA JSDoc plugin package.",
+    "localizedSummaries": {
+      "en": "Creates the bridge descriptor for the HIA JSDoc plugin package.",
+      "zh-CN": "创建 HIA JSDoc 插件包的 bridge descriptor。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-createhiajsdocthemebridge",
+    "kind": "function",
+    "name": "createHiaJsdocThemeBridge",
+    "longname": "createHiaJsdocThemeBridge",
+    "memberof": "",
+    "summary": "Creates the bridge descriptor for the HIA JSDoc theme package.",
+    "localizedSummaries": {
+      "en": "Creates the bridge descriptor for the HIA JSDoc theme package.",
+      "zh-CN": "创建 HIA JSDoc 主题包的 bridge descriptor。"
+    },
+    "sourceReferences": 0
+  },
+  {
     "id": "function-createhiajsdocversionsummary",
     "kind": "function",
     "name": "createHiaJsdocVersionSummary",
@@ -9,6 +48,84 @@
     "localizedSummaries": {
       "en": "Creates the dependency version summary embedded into generated HIA JSDoc configs.",
       "zh-CN": "创建写入 HIA JSDoc 生成配置的依赖版本摘要。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-createjsdocdocsourcemapref",
+    "kind": "function",
+    "name": "createJsdocDocSourceMapRef",
+    "longname": "createJsdocDocSourceMapRef",
+    "memberof": "",
+    "summary": "Creates a neutral doc-source-map reference object for JSDoc-derived artifacts.",
+    "localizedSummaries": {
+      "en": "Creates a neutral doc-source-map reference object for JSDoc-derived artifacts.",
+      "zh-CN": "创建面向 JSDoc 产物的中性 documentation source map 引用对象。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-gethiajsdocpluginpath",
+    "kind": "function",
+    "name": "getHiaJsdocPluginPath",
+    "longname": "getHiaJsdocPluginPath",
+    "memberof": "",
+    "summary": "Resolves the JSDoc plugin path from the HIA plugin bridge descriptor.",
+    "localizedSummaries": {
+      "en": "Resolves the JSDoc plugin path from the HIA plugin bridge descriptor.",
+      "zh-CN": "从 HIA 插件 bridge descriptor 中解析 JSDoc 插件路径。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-gethiajsdocthemetemplate",
+    "kind": "function",
+    "name": "getHiaJsdocThemeTemplate",
+    "longname": "getHiaJsdocThemeTemplate",
+    "memberof": "",
+    "summary": "Resolves the JSDoc theme template path from the HIA theme bridge descriptor.",
+    "localizedSummaries": {
+      "en": "Resolves the JSDoc theme template path from the HIA theme bridge descriptor.",
+      "zh-CN": "从 HIA 主题 bridge descriptor 中解析 JSDoc theme template 路径。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-loadhiajsdocconfig",
+    "kind": "function",
+    "name": "loadHiaJsdocConfig",
+    "longname": "loadHiaJsdocConfig",
+    "memberof": "",
+    "summary": "Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.",
+    "localizedSummaries": {
+      "en": "Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.",
+      "zh-CN": "读取 versioned HIA JSDoc JSON config，并转成 project runner request。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-mergejsdocconfig",
+    "kind": "function",
+    "name": "mergeJsdocConfig",
+    "longname": "mergeJsdocConfig",
+    "memberof": "",
+    "summary": "Merges a generated HIA JSDoc preset with a user-supplied JSDoc config.",
+    "localizedSummaries": {
+      "en": "Merges a generated HIA JSDoc preset with a user-supplied JSDoc config.",
+      "zh-CN": "将生成的 HIA JSDoc preset 与使用者提供的 JSDoc 配置合并。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-normalizeextrapluginregistry",
+    "kind": "function",
+    "name": "normalizeExtraPluginRegistry",
+    "longname": "normalizeExtraPluginRegistry",
+    "memberof": "",
+    "summary": "Normalizes user-supplied extra JSDoc plugin configuration into ordered bridge phases.",
+    "localizedSummaries": {
+      "en": "Normalizes user-supplied extra JSDoc plugin configuration into ordered umbrella bridge phases.",
+      "zh-CN": "将使用者传入的额外 JSDoc 插件配置规范化为 umbrella bridge 可消费的有序阶段。"
     },
     "sourceReferences": 0
   },
@@ -26,6 +143,84 @@
     "sourceReferences": 0
   },
   {
+    "id": "function-runhiajsdoc",
+    "kind": "function",
+    "name": "runHiaJsdoc",
+    "longname": "runHiaJsdoc",
+    "memberof": "",
+    "summary": "Executes the JSDoc CLI through the generated HIA JSDoc config.",
+    "localizedSummaries": {
+      "en": "Executes the JSDoc CLI through the generated HIA JSDoc config.",
+      "zh-CN": "通过生成的 HIA JSDoc config 执行 JSDoc CLI。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-runhiajsdocproject",
+    "kind": "function",
+    "name": "runHiaJsdocProject",
+    "longname": "runHiaJsdocProject",
+    "memberof": "",
+    "summary": "Runs one project-oriented JSDoc build and emits an HIA documentation producer result.",
+    "localizedSummaries": {
+      "en": "Runs one project-oriented JSDoc build and emits an HIA documentation producer result.",
+      "zh-CN": "运行一次面向项目的 JSDoc 生产链，并输出 HIA documentation producer result。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-writehiajsdocconfig",
+    "kind": "function",
+    "name": "writeHiaJsdocConfig",
+    "longname": "writeHiaJsdocConfig",
+    "memberof": "",
+    "summary": "Writes a generated HIA JSDoc config file and returns both the path and config object.",
+    "localizedSummaries": {
+      "en": "Writes a generated HIA JSDoc config file and returns both the path and config object.",
+      "zh-CN": "写入生成的 HIA JSDoc config 文件，并返回路径和配置对象。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_config_json_schema",
+    "kind": "constant",
+    "name": "HIA_JSDOC_CONFIG_JSON_SCHEMA",
+    "longname": "HIA_JSDOC_CONFIG_JSON_SCHEMA",
+    "memberof": "",
+    "summary": "Defines the JSON Schema contract accepted by the HIA JSDoc project runner.",
+    "localizedSummaries": {
+      "en": "Defines the JSON Schema contract accepted by the HIA JSDoc project runner.",
+      "zh-CN": "定义 HIA JSDoc project runner 接受的 JSON Schema 配置契约。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_config_schema_id",
+    "kind": "constant",
+    "name": "HIA_JSDOC_CONFIG_SCHEMA_ID",
+    "longname": "HIA_JSDOC_CONFIG_SCHEMA_ID",
+    "memberof": "",
+    "summary": "Declares the public schema identifier for HIA JSDoc runner config files.",
+    "localizedSummaries": {
+      "en": "Declares the public schema identifier for HIA JSDoc runner config files.",
+      "zh-CN": "声明 HIA JSDoc runner 配置文件使用的公开 schema 标识符。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_config_schema_version",
+    "kind": "constant",
+    "name": "HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+    "longname": "HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+    "memberof": "",
+    "summary": "Declares the draft version of the HIA JSDoc runner config schema.",
+    "localizedSummaries": {
+      "en": "Declares the draft version of the HIA JSDoc runner config schema.",
+      "zh-CN": "声明 HIA JSDoc runner 配置 schema 的草案版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
     "id": "constant-hia_jsdoc_extra_plugin_phases",
     "kind": "constant",
     "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
@@ -35,6 +230,32 @@
     "localizedSummaries": {
       "en": "Lists plugin insertion phases supported by the extra plugin registry.",
       "zh-CN": "列出额外插件注册表支持的插件插入阶段。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_input_kinds",
+    "kind": "constant",
+    "name": "HIA_JSDOC_INPUT_KINDS",
+    "longname": "HIA_JSDOC_INPUT_KINDS",
+    "memberof": "",
+    "summary": "Lists the input kinds accepted by the HIA JSDoc project runner.",
+    "localizedSummaries": {
+      "en": "Lists the input kinds accepted by the HIA JSDoc project runner.",
+      "zh-CN": "列出 HIA JSDoc project runner 接受的输入类型。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_output_kinds",
+    "kind": "constant",
+    "name": "HIA_JSDOC_OUTPUT_KINDS",
+    "longname": "HIA_JSDOC_OUTPUT_KINDS",
+    "memberof": "",
+    "summary": "Lists the artifact kinds that the HIA JSDoc project runner may produce.",
+    "localizedSummaries": {
+      "en": "Lists the artifact kinds that the HIA JSDoc project runner may produce.",
+      "zh-CN": "列出 HIA JSDoc project runner 可能产出的 artifact 类型。"
     },
     "sourceReferences": 0
   },
@@ -87,6 +308,19 @@
     "localizedSummaries": {
       "en": "Pins the published HIA JSDoc plugin version used by this compatibility layer.",
       "zh-CN": "固定当前兼容层使用的已发布 HIA JSDoc 插件版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_runner_version",
+    "kind": "constant",
+    "name": "HIA_JSDOC_RUNNER_VERSION",
+    "longname": "HIA_JSDOC_RUNNER_VERSION",
+    "memberof": "",
+    "summary": "Declares the runtime version of the HIA JSDoc runner package.",
+    "localizedSummaries": {
+      "en": "Declares the runtime version of the HIA JSDoc runner package.",
+      "zh-CN": "声明 HIA JSDoc runner 包的运行时版本。"
     },
     "sourceReferences": 0
   },
@@ -178,6 +412,32 @@
     "localizedSummaries": {
       "en": "Pins the upstream JSDoc version used by the HIA JSDoc runner.",
       "zh-CN": "固定 HIA JSDoc runner 使用的上游 JSDoc 版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-jsdocproducer",
+    "kind": "constant",
+    "name": "jsdocProducer",
+    "longname": "jsdocProducer",
+    "memberof": "",
+    "summary": "Runs the HIA JSDoc producer implementation behind the generic documentation producer contract.",
+    "localizedSummaries": {
+      "en": "Runs the HIA JSDoc producer implementation behind the generic documentation producer contract.",
+      "zh-CN": "在通用 documentation producer contract 后封装 HIA JSDoc 的执行实现。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-jsdocproducerdescriptor",
+    "kind": "constant",
+    "name": "jsdocProducerDescriptor",
+    "longname": "jsdocProducerDescriptor",
+    "memberof": "",
+    "summary": "Describes the HIA JSDoc documentation producer for orchestration layers.",
+    "localizedSummaries": {
+      "en": "Describes the HIA JSDoc documentation producer for orchestration layers.",
+      "zh-CN": "描述供 HIA 编排层发现和选择的 JSDoc documentation producer 能力。"
     },
     "sourceReferences": 0
   }

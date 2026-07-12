@@ -19,7 +19,7 @@
 <a class="language-link active" href="index.en.html" aria-current="page">en</a><a class="language-link" href="index.zh-CN.html">zh-CN</a>
 <a class="language-link" href="index.html" data-hia-label="language.runtime">runtime</a>
 </nav>
-      <div class="summary-stat" data-hia-label="summary.symbols" data-hia-label-count="14">14 symbols</div>
+      <div class="summary-stat" data-hia-label="summary.symbols" data-hia-label-count="34">34 symbols</div>
     </div>
   </header>
   <main class="layout">
@@ -53,17 +53,35 @@
         <button class="code-reset" type="button" data-hia-code-reset data-hia-label="code.reset">Reset</button>
       </form>
       <section class="nav-group">
-  <h2><span data-hia-label="kind.function">Functions</span> <span>2</span></h2>
+  <h2><span data-hia-label="kind.function">Functions</span> <span>14</span></h2>
+<a href="#function-createhiajsdocconfig">createHiaJsdocConfig</a>
+<a href="#function-createhiajsdocpluginbridge">createHiaJsdocPluginBridge</a>
+<a href="#function-createhiajsdocthemebridge">createHiaJsdocThemeBridge</a>
 <a href="#function-createhiajsdocversionsummary">createHiaJsdocVersionSummary</a>
+<a href="#function-createjsdocdocsourcemapref">createJsdocDocSourceMapRef</a>
+<a href="#function-gethiajsdocpluginpath">getHiaJsdocPluginPath</a>
+<a href="#function-gethiajsdocthemetemplate">getHiaJsdocThemeTemplate</a>
+<a href="#function-loadhiajsdocconfig">loadHiaJsdocConfig</a>
+<a href="#function-mergejsdocconfig">mergeJsdocConfig</a>
+<a href="#function-normalizeextrapluginregistry">normalizeExtraPluginRegistry</a>
 <a href="#function-normalizehiajsdocmode">normalizeHiaJsdocMode</a>
+<a href="#function-runhiajsdoc">runHiaJsdoc</a>
+<a href="#function-runhiajsdocproject">runHiaJsdocProject</a>
+<a href="#function-writehiajsdocconfig">writeHiaJsdocConfig</a>
 </section>
 <section class="nav-group">
-  <h2><span data-hia-label="kind.constant">Constants</span> <span>12</span></h2>
+  <h2><span data-hia-label="kind.constant">Constants</span> <span>20</span></h2>
+<a href="#constant-hia_jsdoc_config_json_schema">HIA_JSDOC_CONFIG_JSON_SCHEMA</a>
+<a href="#constant-hia_jsdoc_config_schema_id">HIA_JSDOC_CONFIG_SCHEMA_ID</a>
+<a href="#constant-hia_jsdoc_config_schema_version">HIA_JSDOC_CONFIG_SCHEMA_VERSION</a>
 <a href="#constant-hia_jsdoc_extra_plugin_phases">HIA_JSDOC_EXTRA_PLUGIN_PHASES</a>
+<a href="#constant-hia_jsdoc_input_kinds">HIA_JSDOC_INPUT_KINDS</a>
+<a href="#constant-hia_jsdoc_output_kinds">HIA_JSDOC_OUTPUT_KINDS</a>
 <a href="#constant-hia_jsdoc_output_modes">HIA_JSDOC_OUTPUT_MODES</a>
 <a href="#constant-hia_jsdoc_plugin_package">HIA_JSDOC_PLUGIN_PACKAGE</a>
 <a href="#constant-hia_jsdoc_plugin_path">HIA_JSDOC_PLUGIN_PATH</a>
 <a href="#constant-hia_jsdoc_plugin_version">HIA_JSDOC_PLUGIN_VERSION</a>
+<a href="#constant-hia_jsdoc_runner_version">HIA_JSDOC_RUNNER_VERSION</a>
 <a href="#constant-hia_jsdoc_theme_package">HIA_JSDOC_THEME_PACKAGE</a>
 <a href="#constant-hia_jsdoc_theme_template">HIA_JSDOC_THEME_TEMPLATE</a>
 <a href="#constant-hia_jsdoc_theme_version">HIA_JSDOC_THEME_VERSION</a>
@@ -71,10 +89,297 @@
 <a href="#constant-hia_jsdoc_umbrella_contract_version">HIA_JSDOC_UMBRELLA_CONTRACT_VERSION</a>
 <a href="#constant-jsdoc_package">JSDOC_PACKAGE</a>
 <a href="#constant-jsdoc_version">JSDOC_VERSION</a>
+<a href="#constant-jsdocproducer">jsdocProducer</a>
+<a href="#constant-jsdocproducerdescriptor">jsdocProducerDescriptor</a>
 </section>
     </nav>
     <section class="content" id="hia-content" tabindex="-1">
-      <article class="doclet" id="function-createhiajsdocversionsummary" data-kind="function">
+      <article class="doclet" id="function-createhiajsdocconfig" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>createHiaJsdocConfig</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>createHiaJsdocConfig(options?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;HIA JSDoc preset 配置覆盖项。&lt;/lang&gt;&lt;lang en&gt;Configuration overrides for the HIA JSDoc preset.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;可直接写入 JSDoc config file 的配置对象。&lt;/lang&gt;&lt;lang en&gt;A configuration object that can be written directly to a JSDoc config file.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-preset/src/index.mjs:20</div>
+  <div class="source-links"><span>packages/jsdoc-preset/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="20" data-hia-label-end="21">Lines 20-21</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="20"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> createHiaJsdocConfig(options = {}) {</span>
+<span class="code-line" data-line="21">  <span class="tok-keyword">const</span> mode = normalizeHiaJsdocMode(options.mode ?? &quot;both&quot;);</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>createHiaJsdocConfig</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>createHiaJsdocConfig</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-preset/src/index.mjs:20</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-createhiajsdocpluginbridge" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>createHiaJsdocPluginBridge</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>createHiaJsdocPluginBridge(options?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Creates the bridge descriptor for the HIA JSDoc plugin package.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;插件包名、版本、路径或顺序覆盖项。&lt;/lang&gt;&lt;lang en&gt;Plugin package, version, path, or ordering overrides.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;用于 preset/runner 组装 JSDoc 插件链的 bridge descriptor。&lt;/lang&gt;&lt;lang en&gt;A bridge descriptor used by the preset and runner to assemble the JSDoc plugin chain.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-plugin-hia-bridge/src/index.mjs:15</div>
+  <div class="source-links"><span>packages/jsdoc-plugin-hia-bridge/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="15" data-hia-label-end="22">Lines 15-22</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="15"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> createHiaJsdocPluginBridge(options = {}) {</span>
+<span class="code-line" data-line="16">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="17">    package: options.packageName ?? HIA_JSDOC_PLUGIN_PACKAGE,</span>
+<span class="code-line" data-line="18">    version: options.version ?? HIA_JSDOC_PLUGIN_VERSION,</span>
+<span class="code-line" data-line="19">    pluginPath: options.pluginPath ?? HIA_JSDOC_PLUGIN_PATH,</span>
+<span class="code-line" data-line="20">    order: options.order ?? &quot;hia-core&quot;</span>
+<span class="code-line" data-line="21">  };</span>
+<span class="code-line" data-line="22">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>createHiaJsdocPluginBridge</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>createHiaJsdocPluginBridge</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-plugin-hia-bridge/src/index.mjs:15</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-createhiajsdocthemebridge" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>createHiaJsdocThemeBridge</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>createHiaJsdocThemeBridge(options?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Creates the bridge descriptor for the HIA JSDoc theme package.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;主题包名、版本、模板路径或启用状态覆盖项。&lt;/lang&gt;&lt;lang en&gt;Theme package, version, template path, or enabled-state overrides.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;用于 preset/runner 选择 JSDoc theme template 的 bridge descriptor。&lt;/lang&gt;&lt;lang en&gt;A bridge descriptor used by the preset and runner to select the JSDoc theme template.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-theme-bridge/src/index.mjs:15</div>
+  <div class="source-links"><span>packages/jsdoc-theme-bridge/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="15" data-hia-label-end="22">Lines 15-22</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="15"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> createHiaJsdocThemeBridge(options = {}) {</span>
+<span class="code-line" data-line="16">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="17">    package: options.packageName ?? HIA_JSDOC_THEME_PACKAGE,</span>
+<span class="code-line" data-line="18">    version: options.version ?? HIA_JSDOC_THEME_VERSION,</span>
+<span class="code-line" data-line="19">    template: options.template ?? HIA_JSDOC_THEME_TEMPLATE,</span>
+<span class="code-line" data-line="20">    enabled: options.enabled ?? true</span>
+<span class="code-line" data-line="21">  };</span>
+<span class="code-line" data-line="22">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>createHiaJsdocThemeBridge</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>createHiaJsdocThemeBridge</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-theme-bridge/src/index.mjs:15</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-createhiajsdocversionsummary" data-kind="function">
   <details class="doclet-details" open>
     <summary class="doclet-summary collapse-summary">
       <div class="doclet-summary-main">
@@ -149,6 +454,663 @@
   <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
   <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
   <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>2</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-createjsdocdocsourcemapref" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>createJsdocDocSourceMapRef</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>createJsdocDocSourceMapRef(options?, options.href?, options.sourcesContentPolicy?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Creates a neutral doc-source-map reference object for JSDoc-derived artifacts.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.default">Default</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td>-</td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;可选引用配置。&lt;/lang&gt;&lt;lang en&gt;Optional reference configuration.&lt;/lang&gt;</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>options.href?</code></th>
+  <td><code>string | null</code></td>
+  <td>-</td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;指向 documentation source map manifest 的链接。&lt;/lang&gt;&lt;lang en&gt;Link to the documentation source map manifest.&lt;/lang&gt;</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>options.sourcesContentPolicy?</code></th>
+  <td><code>&quot;none&quot; | &quot;reference&quot; | &quot;embed&quot;</code></td>
+  <td><code>&quot;none&quot;</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;源码内容策略，默认不内嵌源码。&lt;/lang&gt;&lt;lang en&gt;Source content policy; source text is not embedded by default.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;可放入 JSDoc artifact metadata 的 source map 引用。&lt;/lang&gt;&lt;lang en&gt;A source map reference suitable for JSDoc artifact metadata.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-doc-source-map/src/index.mjs:13</div>
+  <div class="source-links"><span>packages/jsdoc-doc-source-map/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="13" data-hia-label-end="21">Lines 13-21</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="13"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> createJsdocDocSourceMapRef(options = {}) {</span>
+<span class="code-line" data-line="14">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="15">    kind: &quot;hia-doc-source-map-ref&quot;,</span>
+<span class="code-line" data-line="16">    profile: &quot;jsdoc&quot;,</span>
+<span class="code-line" data-line="17">    profileVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,</span>
+<span class="code-line" data-line="18">    href: options.href ?? null,</span>
+<span class="code-line" data-line="19">    sourcesContentPolicy: options.sourcesContentPolicy ?? &quot;none&quot;</span>
+<span class="code-line" data-line="20">  };</span>
+<span class="code-line" data-line="21">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>createJsdocDocSourceMapRef</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>createJsdocDocSourceMapRef</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-doc-source-map/src/index.mjs:13</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>5</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-gethiajsdocpluginpath" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>getHiaJsdocPluginPath</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>getHiaJsdocPluginPath(options?) -&gt; string</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Resolves the JSDoc plugin path from the HIA plugin bridge descriptor.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;传递给插件 bridge descriptor 的覆盖项。&lt;/lang&gt;&lt;lang en&gt;Overrides passed to the plugin bridge descriptor.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>string</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;JSDoc 可加载的插件路径。&lt;/lang&gt;&lt;lang en&gt;The plugin path loadable by JSDoc.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-plugin-hia-bridge/src/index.mjs:32</div>
+  <div class="source-links"><span>packages/jsdoc-plugin-hia-bridge/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="32" data-hia-label-end="34">Lines 32-34</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="32"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> getHiaJsdocPluginPath(options = {}) {</span>
+<span class="code-line" data-line="33">  <span class="tok-keyword">return</span> createHiaJsdocPluginBridge(options).pluginPath;</span>
+<span class="code-line" data-line="34">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>getHiaJsdocPluginPath</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>getHiaJsdocPluginPath</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-plugin-hia-bridge/src/index.mjs:32</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-gethiajsdocthemetemplate" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>getHiaJsdocThemeTemplate</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>getHiaJsdocThemeTemplate(options?) -&gt; string</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Resolves the JSDoc theme template path from the HIA theme bridge descriptor.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;传递给主题 bridge descriptor 的覆盖项。&lt;/lang&gt;&lt;lang en&gt;Overrides passed to the theme bridge descriptor.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>string</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;JSDoc 可使用的 theme template 路径。&lt;/lang&gt;&lt;lang en&gt;The theme template path usable by JSDoc.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-theme-bridge/src/index.mjs:32</div>
+  <div class="source-links"><span>packages/jsdoc-theme-bridge/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="32" data-hia-label-end="34">Lines 32-34</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="32"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> getHiaJsdocThemeTemplate(options = {}) {</span>
+<span class="code-line" data-line="33">  <span class="tok-keyword">return</span> createHiaJsdocThemeBridge(options).template;</span>
+<span class="code-line" data-line="34">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>getHiaJsdocThemeTemplate</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>getHiaJsdocThemeTemplate</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-theme-bridge/src/index.mjs:32</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-loadhiajsdocconfig" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>loadHiaJsdocConfig</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>loadHiaJsdocConfig(configPath, options?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>configPath</code></th>
+  <td><code>string</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;相对于 cwd 或绝对路径的配置文件路径。&lt;/lang&gt;&lt;lang en&gt;Config file path, relative to cwd or absolute.&lt;/lang&gt;</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;可选加载选项；cwd 控制相对路径基准。&lt;/lang&gt;&lt;lang en&gt;Optional loading options; cwd controls the base for relative paths.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;规范化后的 HIA JSDoc project request。&lt;/lang&gt;&lt;lang en&gt;The normalized HIA JSDoc project request.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:168</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="168" data-hia-label-end="192">Lines 168-192</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="168"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> loadHiaJsdocConfig(configPath, options = {}) {</span>
+<span class="code-line" data-line="169">  <span class="tok-keyword">const</span> absoluteConfigPath = path.resolve(options.cwd ?? process.cwd(), configPath);</span>
+<span class="code-line" data-line="170">  <span class="tok-keyword">const</span> config = JSON.parse(fs.readFileSync(absoluteConfigPath, &quot;utf8&quot;));</span>
+<span class="code-line" data-line="171">  assertRecord(config, &quot;HIA JSDoc config must be a JSON object.&quot;);</span>
+<span class="code-line" data-line="172">  assertKnownKeys(config, [&quot;$schema&quot;, &quot;schemaVersion&quot;, &quot;workspaceRoot&quot;, &quot;outputDirectory&quot;, &quot;inputs&quot;, &quot;options&quot;, &quot;profileIds&quot;], &quot;config&quot;);</span>
+<span class="code-line" data-line="173">  <span class="tok-keyword">if</span> (config.schemaVersion !== HIA_JSDOC_CONFIG_SCHEMA_VERSION) {</span>
+<span class="code-line" data-line="174">    <span class="tok-keyword">throw</span> <span class="tok-keyword">new</span> TypeError(`schemaVersion must be ${HIA_JSDOC_CONFIG_SCHEMA_VERSION}.`);</span>
+<span class="code-line" data-line="175">  }</span>
+<span class="code-line" data-line="176">  <span class="tok-keyword">if</span> (config.$schema !== undefined &amp;&amp; config.$schema !== HIA_JSDOC_CONFIG_SCHEMA_ID) {</span>
+<span class="code-line" data-line="177">    <span class="tok-keyword">throw</span> <span class="tok-keyword">new</span> TypeError(`$schema must be ${HIA_JSDOC_CONFIG_SCHEMA_ID}.`);</span>
+<span class="code-line" data-line="178">  }</span>
+<span class="code-line" data-line="179"> </span>
+<span class="code-line" data-line="180">  <span class="tok-keyword">const</span> configDirectory = path.dirname(absoluteConfigPath);</span>
+<span class="code-line" data-line="181">  <span class="tok-keyword">const</span> workspaceDirectory = normalizeConfigDirectory(config.workspaceRoot ?? &quot;.&quot;, &quot;workspaceRoot&quot;);</span>
+<span class="code-line" data-line="182">  <span class="tok-keyword">const</span> outputDirectory = normalizeConfigDirectory(config.outputDirectory ?? &quot;dist/hia-jsdoc&quot;, &quot;outputDirectory&quot;);</span>
+<span class="code-line" data-line="183">  <span class="tok-keyword">const</span> workspaceRoot = path.resolve(configDirectory, workspaceDirectory);</span>
+<span class="code-line" data-line="184"> </span>
+<span class="code-line" data-line="185">  <span class="tok-keyword">return</span> normalizeProjectRequest({</span>
+<span class="code-line" data-line="186">    workspaceRoot,</span>
+<span class="code-line" data-line="187">    outputDirectory: path.resolve(workspaceRoot, outputDirectory),</span>
+<span class="code-line" data-line="188">    inputs: config.inputs,</span>
+<span class="code-line" data-line="189">    options: config.options,</span>
+<span class="code-line" data-line="190">    profileIds: config.profileIds</span>
+<span class="code-line" data-line="191">  });</span>
+<span class="code-line" data-line="192">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>loadHiaJsdocConfig</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>loadHiaJsdocConfig</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:168</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>4</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-mergejsdocconfig" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>mergeJsdocConfig</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>mergeJsdocConfig(preset, userConfig?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Merges a generated HIA JSDoc preset with a user-supplied JSDoc config.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>preset</code></th>
+  <td><code>object</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;由 HIA preset 生成的基础配置。&lt;/lang&gt;&lt;lang en&gt;The base configuration generated by the HIA preset.&lt;/lang&gt;</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>userConfig?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;使用者提供的 JSDoc 配置覆盖项。&lt;/lang&gt;&lt;lang en&gt;User-supplied JSDoc configuration overrides.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;合并后的 JSDoc 配置；插件数组会去重，HIA 子配置会逐层合并。&lt;/lang&gt;&lt;lang en&gt;The merged JSDoc config; plugin arrays are deduplicated and HIA sub-config is merged by section.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-preset/src/index.mjs:119</div>
+  <div class="source-links"><span>packages/jsdoc-preset/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="119" data-hia-label-end="157">Lines 119-157</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="119"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> mergeJsdocConfig(preset, userConfig = {}) {</span>
+<span class="code-line" data-line="120">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="121">    ...preset,</span>
+<span class="code-line" data-line="122">    ...userConfig,</span>
+<span class="code-line" data-line="123">    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),</span>
+<span class="code-line" data-line="124">    source: {</span>
+<span class="code-line" data-line="125">      ...(preset.source ?? {}),</span>
+<span class="code-line" data-line="126">      ...(userConfig.source ?? {})</span>
+<span class="code-line" data-line="127">    },</span>
+<span class="code-line" data-line="128">    opts: {</span>
+<span class="code-line" data-line="129">      ...(preset.opts ?? {}),</span>
+<span class="code-line" data-line="130">      ...(userConfig.opts ?? {}),</span>
+<span class="code-line" data-line="131">      hia: {</span>
+<span class="code-line" data-line="132">        ...(preset.opts?.hia ?? {}),</span>
+<span class="code-line" data-line="133">        ...(userConfig.opts?.hia ?? {}),</span>
+<span class="code-line" data-line="134">        source: {</span>
+<span class="code-line" data-line="135">          ...(preset.opts?.hia?.source ?? {}),</span>
+<span class="code-line" data-line="136">          ...(userConfig.opts?.hia?.source ?? {})</span>
+<span class="code-line" data-line="137">        },</span>
+<span class="code-line" data-line="138">        i18n: {</span>
+<span class="code-line" data-line="139">          ...(preset.opts?.hia?.i18n ?? {}),</span>
+<span class="code-line" data-line="140">          ...(userConfig.opts?.hia?.i18n ?? {})</span>
+<span class="code-line" data-line="141">        },</span>
+<span class="code-line" data-line="142">        theme: {</span>
+<span class="code-line" data-line="143">          ...(preset.opts?.hia?.theme ?? {}),</span>
+<span class="code-line" data-line="144">          ...(userConfig.opts?.hia?.theme ?? {})</span>
+<span class="code-line" data-line="145">        },</span>
+<span class="code-line" data-line="146">        integration: {</span>
+<span class="code-line" data-line="147">          ...(preset.opts?.hia?.integration ?? {}),</span>
+<span class="code-line" data-line="148">          ...(userConfig.opts?.hia?.integration ?? {})</span>
+<span class="code-line" data-line="149">        },</span>
+<span class="code-line" data-line="150">        umbrella: {</span>
+<span class="code-line" data-line="151">          ...(preset.opts?.hia?.umbrella ?? {}),</span>
+<span class="code-line" data-line="152">          ...(userConfig.opts?.hia?.umbrella ?? {})</span>
+<span class="code-line" data-line="153">        }</span>
+<span class="code-line" data-line="154">      }</span>
+<span class="code-line" data-line="155">    }</span>
+<span class="code-line" data-line="156">  };</span>
+<span class="code-line" data-line="157">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>mergeJsdocConfig</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>mergeJsdocConfig</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-preset/src/index.mjs:119</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>4</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-normalizeextrapluginregistry" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>normalizeExtraPluginRegistry</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>normalizeExtraPluginRegistry(input?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Normalizes user-supplied extra JSDoc plugin configuration into ordered umbrella bridge phases.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>input?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;用户提供的 before/after 或 pre/post 插件配置。&lt;/lang&gt;&lt;lang en&gt;User supplied before/after or pre/post plugin configuration.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;规范化插件阶段、诊断列表和最终插件加载顺序。&lt;/lang&gt;&lt;lang en&gt;Normalized plugin phases, diagnostics, and final plugin load order.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-extra-plugin-registry/src/index.mjs:11</div>
+  <div class="source-links"><span>packages/jsdoc-extra-plugin-registry/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="11" data-hia-label-end="26">Lines 11-26</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="11"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> normalizeExtraPluginRegistry(input = {}) {</span>
+<span class="code-line" data-line="12">  <span class="tok-keyword">const</span> diagnostics = [];</span>
+<span class="code-line" data-line="13">  <span class="tok-keyword">const</span> before = normalizePluginList(input.before ?? input.pre ?? [], &quot;before&quot;, diagnostics);</span>
+<span class="code-line" data-line="14">  <span class="tok-keyword">const</span> after = normalizePluginList(input.after ?? input.post ?? [], &quot;after&quot;, diagnostics);</span>
+<span class="code-line" data-line="15"> </span>
+<span class="code-line" data-line="16">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="17">    before,</span>
+<span class="code-line" data-line="18">    after,</span>
+<span class="code-line" data-line="19">    diagnostics,</span>
+<span class="code-line" data-line="20">    order: [</span>
+<span class="code-line" data-line="21">      ...before.map((plugin) =&gt; plugin.<span class="tok-keyword">module</span>),</span>
+<span class="code-line" data-line="22">      &quot;hia-jsdoc-plugin&quot;,</span>
+<span class="code-line" data-line="23">      ...after.map((plugin) =&gt; plugin.<span class="tok-keyword">module</span>)</span>
+<span class="code-line" data-line="24">    ]</span>
+<span class="code-line" data-line="25">  };</span>
+<span class="code-line" data-line="26">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>normalizeExtraPluginRegistry</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>normalizeExtraPluginRegistry</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-extra-plugin-registry/src/index.mjs:11</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
   <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
 </dl>
   </div>
@@ -253,6 +1215,606 @@
     </div>
   </details>
 </article>
+<article class="doclet" id="function-runhiajsdoc" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>runHiaJsdoc</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>runHiaJsdoc(options?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Executes the JSDoc CLI through the generated HIA JSDoc config.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;JSDoc 执行选项、preset 覆盖项和 configPath/cwd。&lt;/lang&gt;&lt;lang en&gt;JSDoc execution options, preset overrides, and configPath/cwd.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;包含退出状态、stdout/stderr、写入配置路径和配置对象的同步执行结果。&lt;/lang&gt;&lt;lang en&gt;A synchronous execution result containing exit status, stdout/stderr, written config path, and config object.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:203</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="203" data-hia-label-end="222">Lines 203-222</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="203"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> runHiaJsdoc(options = {}) {</span>
+<span class="code-line" data-line="204">  <span class="tok-keyword">const</span> cwd = path.resolve(options.cwd ?? process.cwd());</span>
+<span class="code-line" data-line="205">  <span class="tok-keyword">const</span> configPath = options.configPath ?? &quot;hia-jsdoc.conf.json&quot;;</span>
+<span class="code-line" data-line="206">  <span class="tok-keyword">const</span> written = writeHiaJsdocConfig(configPath, { ...options, cwd });</span>
+<span class="code-line" data-line="207">  <span class="tok-keyword">const</span> jsdocBin = require.resolve(&quot;jsdoc/jsdoc.js&quot;);</span>
+<span class="code-line" data-line="208">  <span class="tok-keyword">const</span> result = spawnSync(process.execPath, [jsdocBin, &quot;-c&quot;, written.path], {</span>
+<span class="code-line" data-line="209">    cwd,</span>
+<span class="code-line" data-line="210">    encoding: &quot;utf8&quot;,</span>
+<span class="code-line" data-line="211">    shell: false</span>
+<span class="code-line" data-line="212">  });</span>
+<span class="code-line" data-line="213"> </span>
+<span class="code-line" data-line="214">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="215">    ok: result.status === 0,</span>
+<span class="code-line" data-line="216">    status: result.status,</span>
+<span class="code-line" data-line="217">    stdout: result.stdout,</span>
+<span class="code-line" data-line="218">    stderr: result.stderr,</span>
+<span class="code-line" data-line="219">    configPath: written.path,</span>
+<span class="code-line" data-line="220">    config: written.config</span>
+<span class="code-line" data-line="221">  };</span>
+<span class="code-line" data-line="222">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>runHiaJsdoc</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>runHiaJsdoc</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:203</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>3</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-runhiajsdocproject" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>runHiaJsdocProject</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>runHiaJsdocProject(request, context?) -&gt; object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Runs one project-oriented JSDoc build and emits an HIA documentation producer result.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>request</code></th>
+  <td><code>object</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;HIA JSDoc project request，包含 workspaceRoot、outputDirectory、inputs 与 options。&lt;/lang&gt;&lt;lang en&gt;HIA JSDoc project request containing workspaceRoot, outputDirectory, inputs, and options.&lt;/lang&gt;</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>context?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;可选 producer runtime context，用于中断与进度回调。&lt;/lang&gt;&lt;lang en&gt;Optional producer runtime context for cancellation and progress callbacks.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;符合 documentation producer result contract 的运行结果。&lt;/lang&gt;&lt;lang en&gt;A runtime result that follows the documentation producer result contract.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:84</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="84" data-hia-label-end="156">Lines 84-156</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="84"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> runHiaJsdocProject(request, context = {}) {</span>
+<span class="code-line" data-line="85">  <span class="tok-keyword">const</span> normalized = normalizeProjectRequest(request);</span>
+<span class="code-line" data-line="86">  fs.mkdirSync(normalized.outputDirectory, { recursive: true });</span>
+<span class="code-line" data-line="87"> </span>
+<span class="code-line" data-line="88">  <span class="tok-keyword">if</span> (context.signal?.aborted) {</span>
+<span class="code-line" data-line="89">    <span class="tok-keyword">return</span> createProducerResult(&quot;failed&quot;, [], [</span>
+<span class="code-line" data-line="90">      createDiagnostic(&quot;HIA_JSDOC_RUNNER_ABORTED&quot;, &quot;HIA JSDoc runner was aborted before it started.&quot;, &quot;error&quot;)</span>
+<span class="code-line" data-line="91">    ]);</span>
+<span class="code-line" data-line="92">  }</span>
+<span class="code-line" data-line="93"> </span>
+<span class="code-line" data-line="94">  context.reportProgress?.({</span>
+<span class="code-line" data-line="95">    phase: &quot;extract&quot;,</span>
+<span class="code-line" data-line="96">    current: 0,</span>
+<span class="code-line" data-line="97">    total: normalized.inputs.length,</span>
+<span class="code-line" data-line="98">    message: &quot;jsdoc&quot;</span>
+<span class="code-line" data-line="99">  });</span>
+<span class="code-line" data-line="100"> </span>
+<span class="code-line" data-line="101">  <span class="tok-keyword">const</span> outputDirectoryRelative = relativeFromWorkspaceRoot(normalized.workspaceRoot, normalized.outputDirectory, &quot;outputDirectory&quot;);</span>
+<span class="code-line" data-line="102">  <span class="tok-keyword">const</span> configPath = path.join(normalized.outputDirectory, &quot;.hia-jsdoc&quot;, &quot;jsdoc.conf.json&quot;);</span>
+<span class="code-line" data-line="103">  <span class="tok-keyword">const</span> integrationOutputFile = `${outputDirectoryRelative}/hia-integration.json`;</span>
+<span class="code-line" data-line="104">  <span class="tok-keyword">const</span> execution = runHiaJsdoc({</span>
+<span class="code-line" data-line="105">    cwd: normalized.workspaceRoot,</span>
+<span class="code-line" data-line="106">    configPath,</span>
+<span class="code-line" data-line="107">    mode: normalized.options.mode,</span>
+<span class="code-line" data-line="108">    source: {</span>
+<span class="code-line" data-line="109">      include: normalized.inputs.map((input) =&gt; input.path),</span>
+<span class="code-line" data-line="110">      includePattern: normalized.options.includePattern,</span>
+<span class="code-line" data-line="111">      excludePattern: normalized.options.excludePattern</span>
+<span class="code-line" data-line="112">    },</span>
+<span class="code-line" data-line="113">    destination: outputDirectoryRelative,</span>
+<span class="code-line" data-line="114">    integrationOutputFile,</span>
+<span class="code-line" data-line="115">    recurse: normalized.options.recurse,</span>
+<span class="code-line" data-line="116">    extraPlugins: normalized.options.extraPlugins,</span>
+<span class="code-line" data-line="117">    plugin: normalized.options.plugin,</span>
+<span class="code-line" data-line="118">    hia: normalized.options.hia,</span>
+<span class="code-line" data-line="119">    theme: normalized.options.theme,</span>
+<span class="code-line" data-line="120">    baseConfig: normalized.options.baseConfig</span>
+<span class="code-line" data-line="121">  });</span>
+<span class="code-line" data-line="122"> </span>
+<span class="code-line" data-line="123">  <span class="tok-keyword">const</span> diagnostics = [</span>
+<span class="code-line" data-line="124">    ...pluginDiagnosticsFromConfig(execution.config),</span>
+<span class="code-line" data-line="125">    ...(execution.ok ? [] : [</span>
+<span class="code-line" data-line="126">      createDiagnostic(</span>
+<span class="code-line" data-line="127">        &quot;HIA_JSDOC_RUNNER_FAILED&quot;,</span>
+<span class="code-line" data-line="128">        execution.stderr || execution.stdout || &quot;JSDoc CLI failed.&quot;,</span>
+<span class="code-line" data-line="129">        &quot;error&quot;</span>
+<span class="code-line" data-line="130">      )</span>
+<span class="code-line" data-line="131">    ])</span>
+<span class="code-line" data-line="132">  ];</span>
+<span class="code-line" data-line="133">  <span class="tok-keyword">const</span> artifacts = execution.ok</span>
+<span class="code-line" data-line="134">    ? collectArtifacts(normalized.outputDirectory, normalized.profileIds)</span>
+<span class="code-line" data-line="135">    : [];</span>
+<span class="code-line" data-line="136">  <span class="tok-keyword">const</span> status = diagnostics.some((diagnostic) =&gt; diagnostic.severity === &quot;error&quot;)</span>
+<span class="code-line" data-line="137">    ? (artifacts.length &gt; 0 ? &quot;partial&quot; : &quot;failed&quot;)</span>
+<span class="code-line" data-line="138">    : &quot;success&quot;;</span>
+<span class="code-line" data-line="139">  <span class="tok-keyword">const</span> result = createProducerResult(status, artifacts, diagnostics);</span>
+<span class="code-line" data-line="140"> </span>
+<span class="code-line" data-line="141">  <span class="tok-keyword">if</span> (normalized.options.writeResultManifest) {</span>
+<span class="code-line" data-line="142">    fs.writeFileSync(</span>
+<span class="code-line" data-line="143">      path.join(normalized.outputDirectory, &quot;hia-jsdoc.producer-result.json&quot;),</span>
+<span class="code-line" data-line="144">      `${JSON.stringify(result, null, 2)}\n`,</span>
+<span class="code-line" data-line="145">      &quot;utf8&quot;</span>
+<span class="code-line" data-line="146">    );</span>
+<span class="code-line" data-line="147">  }</span>
+<span class="code-line" data-line="148"> </span>
+<span class="code-line" data-line="149">  context.reportProgress?.({</span>
+<span class="code-line" data-line="150">    phase: &quot;complete&quot;,</span>
+<span class="code-line" data-line="151">    current: normalized.inputs.length,</span>
+<span class="code-line" data-line="152">    total: normalized.inputs.length</span>
+<span class="code-line" data-line="153">  });</span>
+<span class="code-line" data-line="154"> </span>
+<span class="code-line" data-line="155">  <span class="tok-keyword">return</span> result;</span>
+<span class="code-line" data-line="156">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>runHiaJsdocProject</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>runHiaJsdocProject</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:84</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>4</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="function-writehiajsdocconfig" data-kind="function">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>writeHiaJsdocConfig</h2>
+<div class="badges"><span class="badge">function</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>writeHiaJsdocConfig(filePath, options?) -&gt; Object</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Writes a generated HIA JSDoc config file and returns both the path and config object.</p>
+</div>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.parameters">Parameters</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th data-hia-label="table.name">Name</th>
+          <th data-hia-label="table.type">Type</th>
+          <th data-hia-label="table.attributes">Attributes</th>
+          <th data-hia-label="table.description">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <th scope="row"><code>filePath</code></th>
+  <td><code>string</code></td>
+  <td>-</td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;相对于 cwd 或绝对路径的目标配置文件路径。&lt;/lang&gt;&lt;lang en&gt;Target config file path, relative to cwd or absolute.&lt;/lang&gt;</p></div></td>
+</tr>
+<tr>
+  <th scope="row"><code>options?</code></th>
+  <td><code>object</code></td>
+  <td><span data-hia-label="attr.optional">optional</span></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;传递给 HIA JSDoc preset 的选项；cwd 控制相对路径基准。&lt;/lang&gt;&lt;lang en&gt;Options passed to the HIA JSDoc preset; cwd controls the base for relative paths.&lt;/lang&gt;</p></div></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.returns">Returns</h3></summary>
+  <div class="section-body">
+  <div class="table-wrap">
+    <table class="doc-table compact">
+      <thead><tr><th data-hia-label="table.type">Type</th><th data-hia-label="table.description">Description</th></tr></thead>
+      <tbody><tr>
+  <td><code>Object</code></td>
+  <td><div class="i18n-field" data-hia-locale="en"><p>&lt;lang zh-CN&gt;写入后的绝对路径与生成配置对象。&lt;/lang&gt;&lt;lang en&gt;The written absolute path and generated config object.&lt;/lang&gt;</p></div></td>
+</tr></tbody>
+    </table>
+  </div>
+  </div>
+</details>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:63</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="63" data-hia-label-end="72">Lines 63-72</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="63"><span class="tok-keyword">export</span> <span class="tok-keyword">function</span> writeHiaJsdocConfig(filePath, options = {}) {</span>
+<span class="code-line" data-line="64">  <span class="tok-keyword">const</span> config = createHiaJsdocConfig(options);</span>
+<span class="code-line" data-line="65">  <span class="tok-keyword">const</span> absolutePath = path.resolve(options.cwd ?? process.cwd(), filePath);</span>
+<span class="code-line" data-line="66">  fs.mkdirSync(path.dirname(absolutePath), { recursive: true });</span>
+<span class="code-line" data-line="67">  fs.writeFileSync(absolutePath, `${JSON.stringify(config, null, 2)}\n`, &quot;utf8&quot;);</span>
+<span class="code-line" data-line="68">  <span class="tok-keyword">return</span> {</span>
+<span class="code-line" data-line="69">    path: absolutePath,</span>
+<span class="code-line" data-line="70">    config</span>
+<span class="code-line" data-line="71">  };</span>
+<span class="code-line" data-line="72">}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>function</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>writeHiaJsdocConfig</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>writeHiaJsdocConfig</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:63</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>4</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-hia_jsdoc_config_json_schema" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>HIA_JSDOC_CONFIG_JSON_SCHEMA</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>HIA_JSDOC_CONFIG_JSON_SCHEMA</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Defines the JSON Schema contract accepted by the HIA JSDoc project runner.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/schema.mjs:37</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/schema.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="37" data-hia-label-end="86">Lines 37-86</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="37"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({</span>
+<span class="code-line" data-line="38">  $schema: &quot;https:<span class="tok-comment">//json-schema.org/draft/2020-12/schema&quot;,</span></span>
+<span class="code-line" data-line="39">  $id: HIA_JSDOC_CONFIG_SCHEMA_ID,</span>
+<span class="code-line" data-line="40">  title: &quot;HIA JSDoc Config&quot;,</span>
+<span class="code-line" data-line="41">  type: &quot;object&quot;,</span>
+<span class="code-line" data-line="42">  additionalProperties: false,</span>
+<span class="code-line" data-line="43">  required: [&quot;schemaVersion&quot;, &quot;workspaceRoot&quot;, &quot;outputDirectory&quot;, &quot;inputs&quot;],</span>
+<span class="code-line" data-line="44">  properties: {</span>
+<span class="code-line" data-line="45">    $schema: { <span class="tok-keyword">const</span>: HIA_JSDOC_CONFIG_SCHEMA_ID },</span>
+<span class="code-line" data-line="46">    schemaVersion: { <span class="tok-keyword">const</span>: HIA_JSDOC_CONFIG_SCHEMA_VERSION },</span>
+<span class="code-line" data-line="47">    workspaceRoot: relativePath,</span>
+<span class="code-line" data-line="48">    outputDirectory: relativePath,</span>
+<span class="code-line" data-line="49">    inputs: {</span>
+<span class="code-line" data-line="50">      type: &quot;array&quot;,</span>
+<span class="code-line" data-line="51">      minItems: 1,</span>
+<span class="code-line" data-line="52">      items: {</span>
+<span class="code-line" data-line="53">        type: &quot;object&quot;,</span>
+<span class="code-line" data-line="54">        additionalProperties: false,</span>
+<span class="code-line" data-line="55">        required: [&quot;kind&quot;, &quot;path&quot;],</span>
+<span class="code-line" data-line="56">        properties: {</span>
+<span class="code-line" data-line="57">          kind: { enum: [&quot;javascript-source&quot;, &quot;javascript-<span class="tok-keyword">module</span>&quot;] },</span>
+<span class="code-line" data-line="58">          path: relativePath</span>
+<span class="code-line" data-line="59">        }</span>
+<span class="code-line" data-line="60">      }</span>
+<span class="code-line" data-line="61">    },</span>
+<span class="code-line" data-line="62">    options: {</span>
+<span class="code-line" data-line="63">      type: &quot;object&quot;,</span>
+<span class="code-line" data-line="64">      additionalProperties: true,</span>
+<span class="code-line" data-line="65">      properties: {</span>
+<span class="code-line" data-line="66">        mode: { enum: [&quot;standalone&quot;, &quot;hiaIntegration&quot;, &quot;both&quot;] },</span>
+<span class="code-line" data-line="67">        includePattern: { type: &quot;string&quot;, minLength: 1 },</span>
+<span class="code-line" data-line="68">        excludePattern: { type: &quot;string&quot;, minLength: 1 },</span>
+<span class="code-line" data-line="69">        recurse: { type: &quot;boolean&quot; },</span>
+<span class="code-line" data-line="70">        writeResultManifest: { type: &quot;boolean&quot; },</span>
+<span class="code-line" data-line="71">        sourcesContentPolicy: { enum: [&quot;none&quot;, &quot;reference&quot;, &quot;embed&quot;] },</span>
+<span class="code-line" data-line="72">        extraPlugins: { type: &quot;object&quot; },</span>
+<span class="code-line" data-line="73">        plugin: { type: &quot;object&quot; },</span>
+<span class="code-line" data-line="74">        hia: { type: &quot;object&quot; },</span>
+<span class="code-line" data-line="75">        theme: { type: &quot;object&quot; },</span>
+<span class="code-line" data-line="76">        baseConfig: { type: &quot;object&quot; }</span>
+<span class="code-line" data-line="77">      }</span>
+<span class="code-line" data-line="78">    },</span>
+<span class="code-line" data-line="79">    profileIds: {</span>
+<span class="code-line" data-line="80">      type: &quot;array&quot;,</span>
+<span class="code-line" data-line="81">      minItems: 1,</span>
+<span class="code-line" data-line="82">      uniqueItems: true,</span>
+<span class="code-line" data-line="83">      items: { type: &quot;string&quot;, pattern: &quot;^[a-z0-9][a-z0-9._-]*$&quot; }</span>
+<span class="code-line" data-line="84">    }</span>
+<span class="code-line" data-line="85">  }</span>
+<span class="code-line" data-line="86">});</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_CONFIG_JSON_SCHEMA</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_CONFIG_JSON_SCHEMA</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/schema.mjs:37</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-hia_jsdoc_config_schema_id" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>HIA_JSDOC_CONFIG_SCHEMA_ID</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>HIA_JSDOC_CONFIG_SCHEMA_ID</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Declares the public schema identifier for HIA JSDoc runner config files.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/schema.mjs:17</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/schema.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="17" data-hia-label-end="28">Lines 17-28</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="17"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> HIA_JSDOC_CONFIG_SCHEMA_ID = &quot;https:<span class="tok-comment">//mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-0.1.0-draft.schema.json&quot;;</span></span>
+<span class="code-line" data-line="18"> </span>
+<span class="code-line" data-line="19"><span class="tok-keyword">const</span> relativePath = {</span>
+<span class="code-line" data-line="20">  type: &quot;string&quot;,</span>
+<span class="code-line" data-line="21">  minLength: 1,</span>
+<span class="code-line" data-line="22">  not: {</span>
+<span class="code-line" data-line="23">    anyOf: [</span>
+<span class="code-line" data-line="24">      { pattern: &quot;^(?:[A-Za-z]:|/|\\\\|[A-Za-z][A-Za-z0-9+.-]*:)&quot; },</span>
+<span class="code-line" data-line="25">      { pattern: &quot;(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)&quot; }</span>
+<span class="code-line" data-line="26">    ]</span>
+<span class="code-line" data-line="27">  }</span>
+<span class="code-line" data-line="28">};</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_CONFIG_SCHEMA_ID</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_CONFIG_SCHEMA_ID</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/schema.mjs:17</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-hia_jsdoc_config_schema_version" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>HIA_JSDOC_CONFIG_SCHEMA_VERSION</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>HIA_JSDOC_CONFIG_SCHEMA_VERSION</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Declares the draft version of the HIA JSDoc runner config schema.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/schema.mjs:8</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/schema.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="8" data-hia-label-end="13">Lines 8-13</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="8"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> HIA_JSDOC_CONFIG_SCHEMA_VERSION = &quot;0.1.0-draft&quot;;</span>
+<span class="code-line" data-line="9"> </span>
+<span class="code-line" data-line="10">/**</span>
+<span class="code-line" data-line="11"> * Declares the public schema identifier <span class="tok-keyword">for</span> HIA JSDoc runner config files.</span>
+<span class="code-line" data-line="12"> *</span>
+<span class="code-line" data-line="13"> * @constant {string}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_CONFIG_SCHEMA_VERSION</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_CONFIG_SCHEMA_VERSION</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/schema.mjs:8</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
 <article class="doclet" id="constant-hia_jsdoc_extra_plugin_phases" data-kind="constant">
   <details class="doclet-details" open>
     <summary class="doclet-summary collapse-summary">
@@ -294,6 +1856,128 @@
   <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_EXTRA_PLUGIN_PHASES</dd>
   <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_EXTRA_PLUGIN_PHASES</dd>
   <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-spec/src/index.mjs:107</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-hia_jsdoc_input_kinds" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>HIA_JSDOC_INPUT_KINDS</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>HIA_JSDOC_INPUT_KINDS</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Lists the input kinds accepted by the HIA JSDoc project runner.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:32</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="32" data-hia-label-end="37">Lines 32-37</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="32"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> HIA_JSDOC_INPUT_KINDS = Object.freeze([&quot;javascript-source&quot;, &quot;javascript-<span class="tok-keyword">module</span>&quot;]);</span>
+<span class="code-line" data-line="33"> </span>
+<span class="code-line" data-line="34">/**</span>
+<span class="code-line" data-line="35"> * Lists the artifact kinds that the HIA JSDoc project runner may produce.</span>
+<span class="code-line" data-line="36"> *</span>
+<span class="code-line" data-line="37"> * @constant {string[]}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_INPUT_KINDS</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_INPUT_KINDS</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:32</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-hia_jsdoc_output_kinds" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>HIA_JSDOC_OUTPUT_KINDS</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>HIA_JSDOC_OUTPUT_KINDS</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Lists the artifact kinds that the HIA JSDoc project runner may produce.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:41</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="41" data-hia-label-end="56">Lines 41-56</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="41"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> HIA_JSDOC_OUTPUT_KINDS = Object.freeze([</span>
+<span class="code-line" data-line="42">  &quot;jsdoc-html&quot;,</span>
+<span class="code-line" data-line="43">  &quot;jsdoc-search-index&quot;,</span>
+<span class="code-line" data-line="44">  &quot;jsdoc-theme-metadata&quot;,</span>
+<span class="code-line" data-line="45">  &quot;jsdoc-integration&quot;</span>
+<span class="code-line" data-line="46">]);</span>
+<span class="code-line" data-line="47"> </span>
+<span class="code-line" data-line="48"><span class="tok-keyword">const</span> RESULT_CONTRACT = &quot;documentation-producer-result&quot;;</span>
+<span class="code-line" data-line="49"><span class="tok-keyword">const</span> RESULT_CONTRACT_VERSION = &quot;0.1.0-draft&quot;;</span>
+<span class="code-line" data-line="50"><span class="tok-keyword">const</span> PRODUCER_ID = &quot;jsdoc&quot;;</span>
+<span class="code-line" data-line="51"><span class="tok-keyword">const</span> SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;</span>
+<span class="code-line" data-line="52"> </span>
+<span class="code-line" data-line="53">/**</span>
+<span class="code-line" data-line="54"> * Writes a generated HIA JSDoc config file and returns both the path and config object.</span>
+<span class="code-line" data-line="55"> *</span>
+<span class="code-line" data-line="56"> * @param {string} filePath &lt;lang zh-CN&gt;相对于 cwd 或绝对路径的目标配置文件路径。&lt;/lang&gt;&lt;lang en&gt;Target config file path, relative to cwd or absolute.&lt;/lang&gt;</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_OUTPUT_KINDS</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_OUTPUT_KINDS</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:41</dd>
   <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
   <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
   <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
@@ -518,6 +2202,62 @@
   <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_PLUGIN_VERSION</dd>
   <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_PLUGIN_VERSION</dd>
   <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-spec/src/index.mjs:35</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-hia_jsdoc_runner_version" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>HIA_JSDOC_RUNNER_VERSION</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>HIA_JSDOC_RUNNER_VERSION</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Declares the runtime version of the HIA JSDoc runner package.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-runner/src/index.mjs:23</div>
+  <div class="source-links"><span>packages/jsdoc-runner/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="23" data-hia-label-end="28">Lines 23-28</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="23"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> HIA_JSDOC_RUNNER_VERSION = &quot;0.0.0&quot;;</span>
+<span class="code-line" data-line="24"> </span>
+<span class="code-line" data-line="25">/**</span>
+<span class="code-line" data-line="26"> * Lists the input kinds accepted by the HIA JSDoc project runner.</span>
+<span class="code-line" data-line="27"> *</span>
+<span class="code-line" data-line="28"> * @constant {string[]}</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>HIA_JSDOC_RUNNER_VERSION</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>HIA_JSDOC_RUNNER_VERSION</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-runner/src/index.mjs:23</dd>
   <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
   <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
   <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
@@ -925,9 +2665,129 @@
     </div>
   </details>
 </article>
+<article class="doclet" id="constant-jsdocproducer" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>jsdocProducer</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>jsdocProducer</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Runs the HIA JSDoc producer implementation behind the generic documentation producer contract.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-producer/src/index.mjs:37</div>
+  <div class="source-links"><span>packages/jsdoc-producer/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="37" data-hia-label-end="42">Lines 37-42</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="37"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> jsdocProducer = Object.freeze({</span>
+<span class="code-line" data-line="38">  descriptor: jsdocProducerDescriptor,</span>
+<span class="code-line" data-line="39">  produce(request, context = {}) {</span>
+<span class="code-line" data-line="40">    <span class="tok-keyword">return</span> runHiaJsdocProject(request, context);</span>
+<span class="code-line" data-line="41">  }</span>
+<span class="code-line" data-line="42">});</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>jsdocProducer</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>jsdocProducer</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-producer/src/index.mjs:37</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
+<article class="doclet" id="constant-jsdocproducerdescriptor" data-kind="constant">
+  <details class="doclet-details" open>
+    <summary class="doclet-summary collapse-summary">
+      <div class="doclet-summary-main">
+        <h2>jsdocProducerDescriptor</h2>
+<div class="badges"><span class="badge">constant</span><span class="badge muted">global</span><span class="badge hia">HIA</span></div>
+      </div>
+    </summary>
+    <div class="doclet-body">
+      <pre class="signature"><code>jsdocProducerDescriptor</code></pre>
+<div class="description i18n-description" data-hia-i18n="single" data-hia-locale="en">
+<p>Describes the HIA JSDoc documentation producer for orchestration layers.</p>
+</div>
+<details class="doc-section source-section doclet-source collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.source">Source</h3></summary>
+  <div class="section-body">
+  <div class="source-reference primary-source">
+    <div class="source-caption"><span data-hia-label="source.definedIn">Defined in</span> - packages/jsdoc-producer/src/index.mjs:15</div>
+  <div class="source-links"><span>packages/jsdoc-producer/src/index.mjs</span></div>
+  <details class="source-preview">
+    <summary data-hia-label="source.lineRange" data-hia-label-start="15" data-hia-label-end="28">Lines 15-28</summary>
+    <pre class="code-block" data-language="javascript"><code class="language-javascript">
+<span class="code-line" data-line="15"><span class="tok-keyword">export</span> <span class="tok-keyword">const</span> jsdocProducerDescriptor = Object.freeze({</span>
+<span class="code-line" data-line="16">  contract: &quot;documentation-producer&quot;,</span>
+<span class="code-line" data-line="17">  contractVersion: &quot;0.1.0-draft&quot;,</span>
+<span class="code-line" data-line="18">  id: &quot;jsdoc&quot;,</span>
+<span class="code-line" data-line="19">  version: HIA_JSDOC_RUNNER_VERSION,</span>
+<span class="code-line" data-line="20">  displayName: &quot;HIA JSDoc&quot;,</span>
+<span class="code-line" data-line="21">  inputKinds: [...HIA_JSDOC_INPUT_KINDS],</span>
+<span class="code-line" data-line="22">  outputKinds: [...HIA_JSDOC_OUTPUT_KINDS],</span>
+<span class="code-line" data-line="23">  capabilities: {</span>
+<span class="code-line" data-line="24">    sourceLinkage: true,</span>
+<span class="code-line" data-line="25">    incremental: false,</span>
+<span class="code-line" data-line="26">    watch: false</span>
+<span class="code-line" data-line="27">  }</span>
+<span class="code-line" data-line="28">});</span>
+    </code></pre>
+  </details>
+  </div>
+  </div>
+</details>
+<details class="doc-section metadata-section collapsible-section" open>
+  <summary class="section-summary collapse-summary"><h3 data-hia-label="section.metadata">Metadata</h3></summary>
+  <div class="section-body">
+<dl class="meta-list">
+  <dt data-hia-label="meta.kind">Kind</dt><dd>constant</dd>
+  <dt data-hia-label="meta.name">Name</dt><dd>jsdocProducerDescriptor</dd>
+  <dt data-hia-label="meta.longname">Longname</dt><dd>jsdocProducerDescriptor</dd>
+  <dt data-hia-label="meta.definedIn">Defined in</dt><dd>packages/jsdoc-producer/src/index.mjs:15</dd>
+  <dt data-hia-label="meta.hiaMetadata">HIA metadata</dt><dd data-hia-label="value.yes">yes</dd>
+  <dt data-hia-label="meta.microPlugins">Micro plugins</dt><dd>code-fragment, source-link, source-preview, doc-i18n, doclet-normalizer, diagnostics</dd>
+  <dt data-hia-label="meta.sourceRefs">Source refs</dt><dd>0</dd>
+  <dt data-hia-label="meta.locales">Locales</dt><dd>en, zh-CN</dd>
+  <dt data-hia-label="meta.defaultLocale">Default locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.fallbackLocale">Fallback locale</dt><dd>en</dd>
+  <dt data-hia-label="meta.i18nMode">I18N mode</dt><dd>runtimeSwitch</dd>
+  <dt data-hia-label="meta.i18nFields">I18N fields</dt><dd>1</dd>
+  <dt data-hia-label="meta.missingLocales">Missing locales</dt><dd>-</dd>
+</dl>
+  </div>
+</details>
+    </div>
+  </details>
+</article>
     </section>
   </main>
-  <script type="application/json" id="hia-search-data">[{"id":"function-createhiajsdocversionsummary","kind":"function","name":"createHiaJsdocVersionSummary","longname":"createHiaJsdocVersionSummary","memberof":"","summary":"Creates the dependency version summary embedded into generated HIA JSDoc configs.","localizedSummaries":{"en":"Creates the dependency version summary embedded into generated HIA JSDoc configs.","zh-CN":"创建写入 HIA JSDoc 生成配置的依赖版本摘要。"},"sourceReferences":0},{"id":"function-normalizehiajsdocmode","kind":"function","name":"normalizeHiaJsdocMode","longname":"normalizeHiaJsdocMode","memberof":"","summary":"Normalizes an HIA JSDoc output mode and rejects unknown modes.","localizedSummaries":{"en":"Normalizes an HIA JSDoc output mode and rejects unknown modes.","zh-CN":"规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_extra_plugin_phases","kind":"constant","name":"HIA_JSDOC_EXTRA_PLUGIN_PHASES","longname":"HIA_JSDOC_EXTRA_PLUGIN_PHASES","memberof":"","summary":"Lists plugin insertion phases supported by the extra plugin registry.","localizedSummaries":{"en":"Lists plugin insertion phases supported by the extra plugin registry.","zh-CN":"列出额外插件注册表支持的插件插入阶段。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_output_modes","kind":"constant","name":"HIA_JSDOC_OUTPUT_MODES","longname":"HIA_JSDOC_OUTPUT_MODES","memberof":"","summary":"Lists supported HIA JSDoc output modes for config normalization.","localizedSummaries":{"en":"Lists supported HIA JSDoc output modes for config normalization.","zh-CN":"列出配置规范化可接受的 HIA JSDoc 输出模式。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_plugin_package","kind":"constant","name":"HIA_JSDOC_PLUGIN_PACKAGE","longname":"HIA_JSDOC_PLUGIN_PACKAGE","memberof":"","summary":"Names the published HIA JSDoc plugin package consumed by the umbrella preset.","localizedSummaries":{"en":"Names the published HIA JSDoc plugin package consumed by the umbrella preset.","zh-CN":"记录 umbrella preset 消费的已发布 HIA JSDoc 插件包名。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_plugin_path","kind":"constant","name":"HIA_JSDOC_PLUGIN_PATH","longname":"HIA_JSDOC_PLUGIN_PATH","memberof":"","summary":"Points JSDoc config generation at the local plugin entry resolved from dependencies.","localizedSummaries":{"en":"Points JSDoc config generation at the local plugin entry resolved from dependencies.","zh-CN":"指向从依赖中解析出的本地插件入口，用于生成 JSDoc 配置。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_plugin_version","kind":"constant","name":"HIA_JSDOC_PLUGIN_VERSION","longname":"HIA_JSDOC_PLUGIN_VERSION","memberof":"","summary":"Pins the published HIA JSDoc plugin version used by this compatibility layer.","localizedSummaries":{"en":"Pins the published HIA JSDoc plugin version used by this compatibility layer.","zh-CN":"固定当前兼容层使用的已发布 HIA JSDoc 插件版本。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_theme_package","kind":"constant","name":"HIA_JSDOC_THEME_PACKAGE","longname":"HIA_JSDOC_THEME_PACKAGE","memberof":"","summary":"Names the published HIA JSDoc theme package consumed by the umbrella preset.","localizedSummaries":{"en":"Names the published HIA JSDoc theme package consumed by the umbrella preset.","zh-CN":"记录 umbrella preset 消费的已发布 HIA JSDoc 主题包名。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_theme_template","kind":"constant","name":"HIA_JSDOC_THEME_TEMPLATE","longname":"HIA_JSDOC_THEME_TEMPLATE","memberof":"","summary":"Points JSDoc config generation at the theme template resolved from dependencies.","localizedSummaries":{"en":"Points JSDoc config generation at the theme template resolved from dependencies.","zh-CN":"指向从依赖中解析出的主题模板路径，用于生成 JSDoc 配置。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_theme_version","kind":"constant","name":"HIA_JSDOC_THEME_VERSION","longname":"HIA_JSDOC_THEME_VERSION","memberof":"","summary":"Pins the published HIA JSDoc theme version used by this compatibility layer.","localizedSummaries":{"en":"Pins the published HIA JSDoc theme version used by this compatibility layer.","zh-CN":"固定当前兼容层使用的已发布 HIA JSDoc 主题版本。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_umbrella_contract","kind":"constant","name":"HIA_JSDOC_UMBRELLA_CONTRACT","longname":"HIA_JSDOC_UMBRELLA_CONTRACT","memberof":"","summary":"Identifies the umbrella configuration contract emitted by the HIA JSDoc preset.","localizedSummaries":{"en":"Identifies the umbrella configuration contract emitted by the HIA JSDoc preset.","zh-CN":"标识 HIA JSDoc preset 输出的 umbrella 配置合同。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_umbrella_contract_version","kind":"constant","name":"HIA_JSDOC_UMBRELLA_CONTRACT_VERSION","longname":"HIA_JSDOC_UMBRELLA_CONTRACT_VERSION","memberof":"","summary":"Declares the draft version of the HIA JSDoc umbrella configuration contract.","localizedSummaries":{"en":"Declares the draft version of the HIA JSDoc umbrella configuration contract.","zh-CN":"声明 HIA JSDoc umbrella 配置合同的草案版本。"},"sourceReferences":0},{"id":"constant-jsdoc_package","kind":"constant","name":"JSDOC_PACKAGE","longname":"JSDOC_PACKAGE","memberof":"","summary":"Names the upstream JSDoc package used by the HIA JSDoc runner.","localizedSummaries":{"en":"Names the upstream JSDoc package used by the HIA JSDoc runner.","zh-CN":"记录 HIA JSDoc runner 使用的上游 JSDoc 包名。"},"sourceReferences":0},{"id":"constant-jsdoc_version","kind":"constant","name":"JSDOC_VERSION","longname":"JSDOC_VERSION","memberof":"","summary":"Pins the upstream JSDoc version used by the HIA JSDoc runner.","localizedSummaries":{"en":"Pins the upstream JSDoc version used by the HIA JSDoc runner.","zh-CN":"固定 HIA JSDoc runner 使用的上游 JSDoc 版本。"},"sourceReferences":0}]</script>
+  <script type="application/json" id="hia-search-data">[{"id":"function-createhiajsdocconfig","kind":"function","name":"createHiaJsdocConfig","longname":"createHiaJsdocConfig","memberof":"","summary":"Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.","localizedSummaries":{"en":"Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.","zh-CN":"创建串接 HIA 插件、HIA 主题、integration 输出和额外插件的 JSDoc 配置。"},"sourceReferences":0},{"id":"function-createhiajsdocpluginbridge","kind":"function","name":"createHiaJsdocPluginBridge","longname":"createHiaJsdocPluginBridge","memberof":"","summary":"Creates the bridge descriptor for the HIA JSDoc plugin package.","localizedSummaries":{"en":"Creates the bridge descriptor for the HIA JSDoc plugin package.","zh-CN":"创建 HIA JSDoc 插件包的 bridge descriptor。"},"sourceReferences":0},{"id":"function-createhiajsdocthemebridge","kind":"function","name":"createHiaJsdocThemeBridge","longname":"createHiaJsdocThemeBridge","memberof":"","summary":"Creates the bridge descriptor for the HIA JSDoc theme package.","localizedSummaries":{"en":"Creates the bridge descriptor for the HIA JSDoc theme package.","zh-CN":"创建 HIA JSDoc 主题包的 bridge descriptor。"},"sourceReferences":0},{"id":"function-createhiajsdocversionsummary","kind":"function","name":"createHiaJsdocVersionSummary","longname":"createHiaJsdocVersionSummary","memberof":"","summary":"Creates the dependency version summary embedded into generated HIA JSDoc configs.","localizedSummaries":{"en":"Creates the dependency version summary embedded into generated HIA JSDoc configs.","zh-CN":"创建写入 HIA JSDoc 生成配置的依赖版本摘要。"},"sourceReferences":0},{"id":"function-createjsdocdocsourcemapref","kind":"function","name":"createJsdocDocSourceMapRef","longname":"createJsdocDocSourceMapRef","memberof":"","summary":"Creates a neutral doc-source-map reference object for JSDoc-derived artifacts.","localizedSummaries":{"en":"Creates a neutral doc-source-map reference object for JSDoc-derived artifacts.","zh-CN":"创建面向 JSDoc 产物的中性 documentation source map 引用对象。"},"sourceReferences":0},{"id":"function-gethiajsdocpluginpath","kind":"function","name":"getHiaJsdocPluginPath","longname":"getHiaJsdocPluginPath","memberof":"","summary":"Resolves the JSDoc plugin path from the HIA plugin bridge descriptor.","localizedSummaries":{"en":"Resolves the JSDoc plugin path from the HIA plugin bridge descriptor.","zh-CN":"从 HIA 插件 bridge descriptor 中解析 JSDoc 插件路径。"},"sourceReferences":0},{"id":"function-gethiajsdocthemetemplate","kind":"function","name":"getHiaJsdocThemeTemplate","longname":"getHiaJsdocThemeTemplate","memberof":"","summary":"Resolves the JSDoc theme template path from the HIA theme bridge descriptor.","localizedSummaries":{"en":"Resolves the JSDoc theme template path from the HIA theme bridge descriptor.","zh-CN":"从 HIA 主题 bridge descriptor 中解析 JSDoc theme template 路径。"},"sourceReferences":0},{"id":"function-loadhiajsdocconfig","kind":"function","name":"loadHiaJsdocConfig","longname":"loadHiaJsdocConfig","memberof":"","summary":"Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.","localizedSummaries":{"en":"Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.","zh-CN":"读取 versioned HIA JSDoc JSON config，并转成 project runner request。"},"sourceReferences":0},{"id":"function-mergejsdocconfig","kind":"function","name":"mergeJsdocConfig","longname":"mergeJsdocConfig","memberof":"","summary":"Merges a generated HIA JSDoc preset with a user-supplied JSDoc config.","localizedSummaries":{"en":"Merges a generated HIA JSDoc preset with a user-supplied JSDoc config.","zh-CN":"将生成的 HIA JSDoc preset 与使用者提供的 JSDoc 配置合并。"},"sourceReferences":0},{"id":"function-normalizeextrapluginregistry","kind":"function","name":"normalizeExtraPluginRegistry","longname":"normalizeExtraPluginRegistry","memberof":"","summary":"Normalizes user-supplied extra JSDoc plugin configuration into ordered bridge phases.","localizedSummaries":{"en":"Normalizes user-supplied extra JSDoc plugin configuration into ordered umbrella bridge phases.","zh-CN":"将使用者传入的额外 JSDoc 插件配置规范化为 umbrella bridge 可消费的有序阶段。"},"sourceReferences":0},{"id":"function-normalizehiajsdocmode","kind":"function","name":"normalizeHiaJsdocMode","longname":"normalizeHiaJsdocMode","memberof":"","summary":"Normalizes an HIA JSDoc output mode and rejects unknown modes.","localizedSummaries":{"en":"Normalizes an HIA JSDoc output mode and rejects unknown modes.","zh-CN":"规范化 HIA JSDoc 输出模式，并拒绝未登记的模式。"},"sourceReferences":0},{"id":"function-runhiajsdoc","kind":"function","name":"runHiaJsdoc","longname":"runHiaJsdoc","memberof":"","summary":"Executes the JSDoc CLI through the generated HIA JSDoc config.","localizedSummaries":{"en":"Executes the JSDoc CLI through the generated HIA JSDoc config.","zh-CN":"通过生成的 HIA JSDoc config 执行 JSDoc CLI。"},"sourceReferences":0},{"id":"function-runhiajsdocproject","kind":"function","name":"runHiaJsdocProject","longname":"runHiaJsdocProject","memberof":"","summary":"Runs one project-oriented JSDoc build and emits an HIA documentation producer result.","localizedSummaries":{"en":"Runs one project-oriented JSDoc build and emits an HIA documentation producer result.","zh-CN":"运行一次面向项目的 JSDoc 生产链，并输出 HIA documentation producer result。"},"sourceReferences":0},{"id":"function-writehiajsdocconfig","kind":"function","name":"writeHiaJsdocConfig","longname":"writeHiaJsdocConfig","memberof":"","summary":"Writes a generated HIA JSDoc config file and returns both the path and config object.","localizedSummaries":{"en":"Writes a generated HIA JSDoc config file and returns both the path and config object.","zh-CN":"写入生成的 HIA JSDoc config 文件，并返回路径和配置对象。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_config_json_schema","kind":"constant","name":"HIA_JSDOC_CONFIG_JSON_SCHEMA","longname":"HIA_JSDOC_CONFIG_JSON_SCHEMA","memberof":"","summary":"Defines the JSON Schema contract accepted by the HIA JSDoc project runner.","localizedSummaries":{"en":"Defines the JSON Schema contract accepted by the HIA JSDoc project runner.","zh-CN":"定义 HIA JSDoc project runner 接受的 JSON Schema 配置契约。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_config_schema_id","kind":"constant","name":"HIA_JSDOC_CONFIG_SCHEMA_ID","longname":"HIA_JSDOC_CONFIG_SCHEMA_ID","memberof":"","summary":"Declares the public schema identifier for HIA JSDoc runner config files.","localizedSummaries":{"en":"Declares the public schema identifier for HIA JSDoc runner config files.","zh-CN":"声明 HIA JSDoc runner 配置文件使用的公开 schema 标识符。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_config_schema_version","kind":"constant","name":"HIA_JSDOC_CONFIG_SCHEMA_VERSION","longname":"HIA_JSDOC_CONFIG_SCHEMA_VERSION","memberof":"","summary":"Declares the draft version of the HIA JSDoc runner config schema.","localizedSummaries":{"en":"Declares the draft version of the HIA JSDoc runner config schema.","zh-CN":"声明 HIA JSDoc runner 配置 schema 的草案版本。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_extra_plugin_phases","kind":"constant","name":"HIA_JSDOC_EXTRA_PLUGIN_PHASES","longname":"HIA_JSDOC_EXTRA_PLUGIN_PHASES","memberof":"","summary":"Lists plugin insertion phases supported by the extra plugin registry.","localizedSummaries":{"en":"Lists plugin insertion phases supported by the extra plugin registry.","zh-CN":"列出额外插件注册表支持的插件插入阶段。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_input_kinds","kind":"constant","name":"HIA_JSDOC_INPUT_KINDS","longname":"HIA_JSDOC_INPUT_KINDS","memberof":"","summary":"Lists the input kinds accepted by the HIA JSDoc project runner.","localizedSummaries":{"en":"Lists the input kinds accepted by the HIA JSDoc project runner.","zh-CN":"列出 HIA JSDoc project runner 接受的输入类型。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_output_kinds","kind":"constant","name":"HIA_JSDOC_OUTPUT_KINDS","longname":"HIA_JSDOC_OUTPUT_KINDS","memberof":"","summary":"Lists the artifact kinds that the HIA JSDoc project runner may produce.","localizedSummaries":{"en":"Lists the artifact kinds that the HIA JSDoc project runner may produce.","zh-CN":"列出 HIA JSDoc project runner 可能产出的 artifact 类型。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_output_modes","kind":"constant","name":"HIA_JSDOC_OUTPUT_MODES","longname":"HIA_JSDOC_OUTPUT_MODES","memberof":"","summary":"Lists supported HIA JSDoc output modes for config normalization.","localizedSummaries":{"en":"Lists supported HIA JSDoc output modes for config normalization.","zh-CN":"列出配置规范化可接受的 HIA JSDoc 输出模式。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_plugin_package","kind":"constant","name":"HIA_JSDOC_PLUGIN_PACKAGE","longname":"HIA_JSDOC_PLUGIN_PACKAGE","memberof":"","summary":"Names the published HIA JSDoc plugin package consumed by the umbrella preset.","localizedSummaries":{"en":"Names the published HIA JSDoc plugin package consumed by the umbrella preset.","zh-CN":"记录 umbrella preset 消费的已发布 HIA JSDoc 插件包名。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_plugin_path","kind":"constant","name":"HIA_JSDOC_PLUGIN_PATH","longname":"HIA_JSDOC_PLUGIN_PATH","memberof":"","summary":"Points JSDoc config generation at the local plugin entry resolved from dependencies.","localizedSummaries":{"en":"Points JSDoc config generation at the local plugin entry resolved from dependencies.","zh-CN":"指向从依赖中解析出的本地插件入口，用于生成 JSDoc 配置。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_plugin_version","kind":"constant","name":"HIA_JSDOC_PLUGIN_VERSION","longname":"HIA_JSDOC_PLUGIN_VERSION","memberof":"","summary":"Pins the published HIA JSDoc plugin version used by this compatibility layer.","localizedSummaries":{"en":"Pins the published HIA JSDoc plugin version used by this compatibility layer.","zh-CN":"固定当前兼容层使用的已发布 HIA JSDoc 插件版本。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_runner_version","kind":"constant","name":"HIA_JSDOC_RUNNER_VERSION","longname":"HIA_JSDOC_RUNNER_VERSION","memberof":"","summary":"Declares the runtime version of the HIA JSDoc runner package.","localizedSummaries":{"en":"Declares the runtime version of the HIA JSDoc runner package.","zh-CN":"声明 HIA JSDoc runner 包的运行时版本。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_theme_package","kind":"constant","name":"HIA_JSDOC_THEME_PACKAGE","longname":"HIA_JSDOC_THEME_PACKAGE","memberof":"","summary":"Names the published HIA JSDoc theme package consumed by the umbrella preset.","localizedSummaries":{"en":"Names the published HIA JSDoc theme package consumed by the umbrella preset.","zh-CN":"记录 umbrella preset 消费的已发布 HIA JSDoc 主题包名。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_theme_template","kind":"constant","name":"HIA_JSDOC_THEME_TEMPLATE","longname":"HIA_JSDOC_THEME_TEMPLATE","memberof":"","summary":"Points JSDoc config generation at the theme template resolved from dependencies.","localizedSummaries":{"en":"Points JSDoc config generation at the theme template resolved from dependencies.","zh-CN":"指向从依赖中解析出的主题模板路径，用于生成 JSDoc 配置。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_theme_version","kind":"constant","name":"HIA_JSDOC_THEME_VERSION","longname":"HIA_JSDOC_THEME_VERSION","memberof":"","summary":"Pins the published HIA JSDoc theme version used by this compatibility layer.","localizedSummaries":{"en":"Pins the published HIA JSDoc theme version used by this compatibility layer.","zh-CN":"固定当前兼容层使用的已发布 HIA JSDoc 主题版本。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_umbrella_contract","kind":"constant","name":"HIA_JSDOC_UMBRELLA_CONTRACT","longname":"HIA_JSDOC_UMBRELLA_CONTRACT","memberof":"","summary":"Identifies the umbrella configuration contract emitted by the HIA JSDoc preset.","localizedSummaries":{"en":"Identifies the umbrella configuration contract emitted by the HIA JSDoc preset.","zh-CN":"标识 HIA JSDoc preset 输出的 umbrella 配置合同。"},"sourceReferences":0},{"id":"constant-hia_jsdoc_umbrella_contract_version","kind":"constant","name":"HIA_JSDOC_UMBRELLA_CONTRACT_VERSION","longname":"HIA_JSDOC_UMBRELLA_CONTRACT_VERSION","memberof":"","summary":"Declares the draft version of the HIA JSDoc umbrella configuration contract.","localizedSummaries":{"en":"Declares the draft version of the HIA JSDoc umbrella configuration contract.","zh-CN":"声明 HIA JSDoc umbrella 配置合同的草案版本。"},"sourceReferences":0},{"id":"constant-jsdoc_package","kind":"constant","name":"JSDOC_PACKAGE","longname":"JSDOC_PACKAGE","memberof":"","summary":"Names the upstream JSDoc package used by the HIA JSDoc runner.","localizedSummaries":{"en":"Names the upstream JSDoc package used by the HIA JSDoc runner.","zh-CN":"记录 HIA JSDoc runner 使用的上游 JSDoc 包名。"},"sourceReferences":0},{"id":"constant-jsdoc_version","kind":"constant","name":"JSDOC_VERSION","longname":"JSDOC_VERSION","memberof":"","summary":"Pins the upstream JSDoc version used by the HIA JSDoc runner.","localizedSummaries":{"en":"Pins the upstream JSDoc version used by the HIA JSDoc runner.","zh-CN":"固定 HIA JSDoc runner 使用的上游 JSDoc 版本。"},"sourceReferences":0},{"id":"constant-jsdocproducer","kind":"constant","name":"jsdocProducer","longname":"jsdocProducer","memberof":"","summary":"Runs the HIA JSDoc producer implementation behind the generic documentation producer contract.","localizedSummaries":{"en":"Runs the HIA JSDoc producer implementation behind the generic documentation producer contract.","zh-CN":"在通用 documentation producer contract 后封装 HIA JSDoc 的执行实现。"},"sourceReferences":0},{"id":"constant-jsdocproducerdescriptor","kind":"constant","name":"jsdocProducerDescriptor","longname":"jsdocProducerDescriptor","memberof":"","summary":"Describes the HIA JSDoc documentation producer for orchestration layers.","localizedSummaries":{"en":"Describes the HIA JSDoc documentation producer for orchestration layers.","zh-CN":"描述供 HIA 编排层发现和选择的 JSDoc documentation producer 能力。"},"sourceReferences":0}]</script>
   <script type="application/json" id="hia-i18n-data">{"enabled":true,"mode":"runtimeSwitch","runtimeSwitch":false,"currentLocale":"en","defaultLocale":"en","fallbackLocale":"en","locales":["en","zh-CN"],"labels":{"en":{"skip.content":"Skip to content","header.eyebrow":"API Documentation","summary.symbols":"{count} symbols","nav.symbols":"Symbols","search.label":"Search symbols","search.placeholder":"Filter by name, kind, or summary","empty.symbols":"No document symbols.","language.controls":"Languages","language.select":"Select language","language.runtime":"runtime","code.controls":"Code display","code.fontFamily":"Font","code.fontSize":"Size","code.lineHeight":"Line height","code.tabSize":"Tab","code.wrap":"Wrap","code.reset":"Reset","section.parameters":"Parameters","section.properties":"Properties","section.returns":"Returns","section.examples":"Examples","section.source":"Source","section.sourceReferences":"Source References","section.metadata":"Metadata","source.file":"File","source.lines":"Lines","source.lineRange":"Lines {start}-{end}","source.preview":"Source preview","source.unresolved":"Source fragment metadata is missing or unresolved.","source.previewDisabled":"Source preview is disabled for this fragment.","source.definedIn":"Defined in","source.reference":"Reference {index}","table.name":"Name","table.type":"Type","table.default":"Default","table.attributes":"Attributes","table.description":"Description","attr.optional":"optional","attr.nullable":"nullable","attr.repeatable":"repeatable","meta.kind":"Kind","meta.name":"Name","meta.longname":"Longname","meta.memberof":"Member of","meta.definedIn":"Defined in","meta.hiaMetadata":"HIA metadata","meta.microPlugins":"Micro plugins","meta.sourceRefs":"Source refs","meta.locales":"Locales","meta.defaultLocale":"Default locale","meta.fallbackLocale":"Fallback locale","meta.i18nMode":"I18N mode","meta.i18nFields":"I18N fields","meta.missingLocales":"Missing locales","value.yes":"yes","value.no":"no","value.empty":"-","example.default":"Example {index}","kind.module":"Modules","kind.namespace":"Namespaces","kind.class":"Classes","kind.interface":"Interfaces","kind.mixin":"Mixins","kind.function":"Functions","kind.member":"Members","kind.constant":"Constants","kind.typedef":"Typedefs","kind.event":"Events","kind.external":"Externals","kind.unknown":"Other"},"zh-CN":{"skip.content":"跳到内容","header.eyebrow":"API 文档","summary.symbols":"{count} 个符号","nav.symbols":"符号","search.label":"搜索符号","search.placeholder":"按名称、类型或摘要筛选","empty.symbols":"没有文档符号。","language.controls":"语言","language.select":"选择语言","language.runtime":"运行时","code.controls":"代码显示","code.fontFamily":"字体","code.fontSize":"字号","code.lineHeight":"行高","code.tabSize":"缩进","code.wrap":"换行","code.reset":"重置","section.parameters":"参数","section.properties":"属性","section.returns":"返回值","section.examples":"示例","section.source":"源码","section.sourceReferences":"源码引用","section.metadata":"元数据","source.file":"文件","source.lines":"行","source.lineRange":"行 {start}-{end}","source.preview":"源码预览","source.unresolved":"源码片段元数据缺失或未解析。","source.previewDisabled":"此源码片段的预览已禁用。","source.definedIn":"定义于","source.reference":"引用 {index}","table.name":"名称","table.type":"类型","table.default":"默认值","table.attributes":"属性","table.description":"描述","attr.optional":"可选","attr.nullable":"可空","attr.repeatable":"可重复","meta.kind":"类型","meta.name":"名称","meta.longname":"完整名称","meta.memberof":"所属","meta.definedIn":"定义于","meta.hiaMetadata":"HIA metadata","meta.microPlugins":"微插件","meta.sourceRefs":"源码引用数","meta.locales":"语言","meta.defaultLocale":"默认语言","meta.fallbackLocale":"Fallback 语言","meta.i18nMode":"I18N 模式","meta.i18nFields":"I18N 字段数","meta.missingLocales":"缺失语言","value.yes":"是","value.no":"否","value.empty":"-","example.default":"示例 {index}","kind.module":"模块","kind.namespace":"命名空间","kind.class":"类","kind.interface":"接口","kind.mixin":"Mixin","kind.function":"函数","kind.member":"成员","kind.constant":"常量","kind.typedef":"类型定义","kind.event":"事件","kind.external":"外部项","kind.unknown":"其它"}},"perLocalePages":{"en":"index.en.html","zh-CN":"index.zh-CN.html"}}</script>
   <script type="application/json" id="hia-theme-data">{"code":{"controls":true,"fontFamily":"cascadia","fontSize":12,"lineHeight":1.55,"tabSize":2,"wrap":false}}</script>
   <script src="hia-theme.js" defer></script>
