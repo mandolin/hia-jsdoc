@@ -22,6 +22,8 @@ function main() {
   assert.equal(inventory.summary.exportCount, inventory.summary.bilingualExportCount);
   assert.equal(inventory.summary.missingLocaleFieldCount, 0);
   assert.equal(inventory.summary.rawMissingLocaleFieldCount, 0);
+  assert.equal(inventory.summary.invalidInlineLangTagCount, 0, "inline <lang> tags must use canonical child-locale syntax.");
+  assert.equal(inventory.summary.malformedInlineLangDiagnosticCount, 0, "integration output must not contain malformed inline lang diagnostics.");
 
   for (const packageReport of inventory.packages) {
     assert.ok(packageReport.packageName, "package report must include packageName.");

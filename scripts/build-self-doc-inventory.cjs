@@ -29,7 +29,7 @@ const selfDocPackages = [
   {
     packageName: "@hia-doc/jsdoc-producer",
     sourceRoot: "packages/jsdoc-producer/src",
-    sourceFiles: ["index.mjs"]
+    sourceFiles: ["index.mjs", "staged.mjs"]
   },
   {
     packageName: "@hia-doc/jsdoc-runner",
@@ -53,6 +53,8 @@ function main() {
   const integrationNodes = new Map((integration.ir?.nodes ?? []).map((node) => [node.name, node]));
   const packageReports = selfDocPackages.map((packageInfo) => collectPackageReport(packageInfo, integrationNodes));
   const publicExports = packageReports.flatMap((packageReport) => packageReport.publicExports);
+  const invalidInlineLangTagCount = countInvalidInlineLangTags();
+  const malformedInlineLangDiagnosticCount = countMalformedInlineLangDiagnostics(integration);
   const summary = {
     packageCount: packageReports.length,
     coveredPackageCount: packageReports.filter((packageReport) => packageReport.summary.exportCount === packageReport.summary.integrationCoveredCount).length,
@@ -63,7 +65,9 @@ function main() {
     bilingualExportCount: publicExports.filter((item) => item.docBlockLocales.includes("en") && item.docBlockLocales.includes("zh-CN")).length,
     missingLocaleFieldCount: publicExports.reduce((total, item) => total + item.i18n.missingLocaleFieldCount, 0),
     rawMissingLocaleFieldCount: publicExports.reduce((total, item) => total + item.i18n.rawMissingLocaleFieldCount, 0),
-    staleRawMissingLocaleFieldCount: publicExports.reduce((total, item) => total + item.i18n.staleRawMissingLocaleFieldCount, 0)
+    staleRawMissingLocaleFieldCount: publicExports.reduce((total, item) => total + item.i18n.staleRawMissingLocaleFieldCount, 0),
+    invalidInlineLangTagCount,
+    malformedInlineLangDiagnosticCount
   };
 
   const inventory = {
@@ -94,6 +98,8 @@ function main() {
         && summary.exportCount === summary.bilingualExportCount
         && summary.missingLocaleFieldCount === 0
         && summary.rawMissingLocaleFieldCount === 0
+        && summary.invalidInlineLangTagCount === 0
+        && summary.malformedInlineLangDiagnosticCount === 0
         ? "pass"
         : "baseline-with-gaps",
       requiredForW13_2: [
@@ -101,7 +107,9 @@ function main() {
         "all umbrella package public exports appear in HIA JSDoc integration output",
         "all umbrella package public exports carry @lang en and @lang zh-CN",
         "generated i18n fields have no missing required locale",
-        "raw missing locale diagnostics are effective gaps, not stale localizedText false positives"
+        "raw missing locale diagnostics are effective gaps, not stale localizedText false positives",
+        "inline <lang> segments use canonical child-locale syntax instead of invalid attribute-style tags",
+        "integration output has no HIA_I18N_INLINE_LANG_MALFORMED diagnostics"
       ],
       carriedFromW12_5: [
         "all public exports have adjacent JSDoc blocks",
@@ -230,6 +238,27 @@ function createEmptyI18nReport() {
     staleRawMissingLocaleFieldCount: 0,
     staleRawMissingFields: []
   };
+}
+
+/**
+ * Rejects the invalid historical-looking `<lang zh-CN>` form before JSDoc can turn it into producer diagnostics.
+ *
+ * @returns {number} <lang><zh-CN>检测到的无效 attribute-style inline lang tag 数量。</zh-CN><en>Number of invalid attribute-style inline lang tags detected.</en></lang>
+ * @lang zh-CN 统计 umbrella package 源码中不符合 canonical child-locale 规则的 inline lang tag。
+ * @lang en Counts inline lang tags in umbrella package sources that violate the canonical child-locale form.
+ */
+function countInvalidInlineLangTags() {
+  return selfDocPackages.reduce((total, packageInfo) => total + packageInfo.sourceFiles.reduce((packageTotal, sourceFileName) => {
+    const sourceText = fs.readFileSync(path.join(root, packageInfo.sourceRoot, sourceFileName), "utf8");
+    return packageTotal + (sourceText.match(/<lang\s+[A-Za-z][\w-]*\s*>/g) ?? []).length;
+  }, 0), 0);
+}
+
+function countMalformedInlineLangDiagnostics(integration) {
+  return (integration.ir?.nodes ?? [])
+    .flatMap((node) => Array.isArray(node.diagnostics) ? node.diagnostics : [])
+    .filter((diagnostic) => diagnostic?.code === "HIA_I18N_INLINE_LANG_MALFORMED")
+    .length;
 }
 
 main();

@@ -440,5 +440,31 @@
       "zh-CN": "描述供 HIA 编排层发现和选择的 JSDoc documentation producer 能力。"
     },
     "sourceReferences": 0
+  },
+  {
+    "id": "constant-stagedjsdocproducer",
+    "kind": "constant",
+    "name": "stagedJsdocProducer",
+    "longname": "stagedJsdocProducer",
+    "memberof": "",
+    "summary": "Runs JSDoc with an in-workspace staging directory, then copies result artifacts into the caller-controlled output directory.",
+    "localizedSummaries": {
+      "en": "Runs JSDoc in a temporary staging directory inside workspaceRoot, then copies artifacts to the caller-controlled outputDirectory to satisfy both JSDoc and generic producer path boundaries.",
+      "zh-CN": "先在 workspaceRoot 内建立临时 staging 目录运行 JSDoc，再复制到调用方控制的 outputDirectory，以同时满足 JSDoc 和通用 producer 的路径边界。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-stagedjsdocproducerdescriptor",
+    "kind": "constant",
+    "name": "stagedJsdocProducerDescriptor",
+    "longname": "stagedJsdocProducerDescriptor",
+    "memberof": "",
+    "summary": "Describes the JSDoc adapter that stages output inside its source workspace before publishing it to an orchestration output directory.",
+    "localizedSummaries": {
+      "en": "Describes the adapter that builds inside the JSDoc source workspace before copying verified artifacts to an orchestration output directory.",
+      "zh-CN": "描述先在 JSDoc 源工作区内完成生成，再将已验证产物复制到编排输出目录的 adapter。"
+    },
+    "sourceReferences": 0
   }
 ]

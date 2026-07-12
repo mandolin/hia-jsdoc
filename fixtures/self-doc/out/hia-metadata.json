@@ -760,6 +760,196 @@
     }
   },
   {
+    "name": "stagedJsdocProducerDescriptor",
+    "longname": "stagedJsdocProducerDescriptor",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-producer/src/staged.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 12,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 12,
+            "column": 1
+          },
+          "end": {
+            "line": 12,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:stagedJsdocProducerDescriptor",
+        "relativePath": "packages/jsdoc-producer/src/staged.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 12,
+            "column": 1
+          },
+          "end": {
+            "line": 15,
+            "column": 4
+          }
+        },
+        "content": "export const stagedJsdocProducerDescriptor = Object.freeze({\n  ...jsdocProducerDescriptor,\n  displayName: \"HIA JSDoc Staged Adapter\"\n});",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const stagedJsdocProducerDescriptor = Object.freeze({\n  ...jsdocProducerDescriptor,\n  displayName: \"HIA JSDoc Staged Adapter\"\n});",
+          "range": {
+            "start": {
+              "line": 12,
+              "column": 1
+            },
+            "end": {
+              "line": 15,
+              "column": 4
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "stagedJsdocProducer",
+    "longname": "stagedJsdocProducer",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-producer/src/staged.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 24,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 24,
+            "column": 1
+          },
+          "end": {
+            "line": 24,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:stagedJsdocProducer",
+        "relativePath": "packages/jsdoc-producer/src/staged.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 24,
+            "column": 1
+          },
+          "end": {
+            "line": 51,
+            "column": 4
+          }
+        },
+        "content": "export const stagedJsdocProducer = Object.freeze({\n  descriptor: stagedJsdocProducerDescriptor,\n  produce(request, context = {}) {\n    const workspaceRoot = normalizeAbsolutePath(request?.workspaceRoot, \"workspaceRoot\");\n    const outputDirectory = normalizeAbsolutePath(request?.outputDirectory, \"outputDirectory\");\n    const stagingRoot = path.join(workspaceRoot, \".hia-jsdoc-staging\");\n    const stagingDirectory = path.join(stagingRoot, `${process.pid}-${createStagingName(outputDirectory)}`);\n\n    try {\n      fs.rmSync(stagingDirectory, { recursive: true, force: true });\n      const result = jsdocProducer.produce({\n        ...request,\n        workspaceRoot,\n        outputDirectory: stagingDirectory\n      }, context);\n\n      if (fs.existsSync(stagingDirectory)) {\n        fs.mkdirSync(outputDirectory, { recursive: true });\n        fs.cpSync(stagingDirectory, outputDirectory, { recursive: true, force: true });\n      }\n\n      return result;\n    } finally {\n      fs.rmSync(stagingDirectory, { recursive: true, force: true });\n      removeEmptyDirectory(stagingRoot);\n    }\n  }\n});",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const stagedJsdocProducer = Object.freeze({\n  descriptor: stagedJsdocProducerDescriptor,\n  produce(request, context = {}) {\n    const workspaceRoot = normalizeAbsolutePath(request?.workspaceRoot, \"workspaceRoot\");\n    const outputDirectory = normalizeAbsolutePath(request?.outputDirectory, \"outputDirectory\");\n    const stagingRoot = path.join(workspaceRoot, \".hia-jsdoc-staging\");\n    const stagingDirectory = path.join(stagingRoot, `${process.pid}-${createStagingName(outputDirectory)}`);\n\n    try {\n      fs.rmSync(stagingDirectory, { recursive: true, force: true });\n      const result = jsdocProducer.produce({\n        ...request,\n        workspaceRoot,\n        outputDirectory: stagingDirectory\n      }, context);\n\n      if (fs.existsSync(stagingDirectory)) {\n        fs.mkdirSync(outputDirectory, { recursive: true });\n        fs.cpSync(stagingDirectory, outputDirectory, { recursive: true, force: true });\n      }\n\n      return result;\n    } finally {\n      fs.rmSync(stagingDirectory, { recursive: true, force: true });\n      removeEmptyDirectory(stagingRoot);\n    }\n  }\n});",
+          "range": {
+            "start": {
+              "line": 24,
+              "column": 1
+            },
+            "end": {
+              "line": 51,
+              "column": 4
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
     "name": "HIA_JSDOC_RUNNER_VERSION",
     "longname": "HIA_JSDOC_RUNNER_VERSION",
     "kind": "constant",
@@ -1001,10 +1191,10 @@
           },
           "end": {
             "line": 56,
-            "column": 140
+            "column": 142
           }
         },
-        "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\"\n]);\n\nconst RESULT_CONTRACT = \"documentation-producer-result\";\nconst RESULT_CONTRACT_VERSION = \"0.1.0-draft\";\nconst PRODUCER_ID = \"jsdoc\";\nconst SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;\n\n/**\n * Writes a generated HIA JSDoc config file and returns both the path and config object.\n *\n * @param {string} filePath <lang zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</lang><lang en>Target config file path, relative to cwd or absolute.</lang>",
+        "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\"\n]);\n\nconst RESULT_CONTRACT = \"documentation-producer-result\";\nconst RESULT_CONTRACT_VERSION = \"0.1.0-draft\";\nconst PRODUCER_ID = \"jsdoc\";\nconst SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;\n\n/**\n * Writes a generated HIA JSDoc config file and returns both the path and config object.\n *\n * @param {string} filePath <lang><zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</zh-CN><en>Target config file path, relative to cwd or absolute.</en></lang>",
         "rangeSource": "parser-js",
         "confidence": "high",
         "diagnostics": [],
@@ -1018,7 +1208,7 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\"\n]);\n\nconst RESULT_CONTRACT = \"documentation-producer-result\";\nconst RESULT_CONTRACT_VERSION = \"0.1.0-draft\";\nconst PRODUCER_ID = \"jsdoc\";\nconst SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;\n\n/**\n * Writes a generated HIA JSDoc config file and returns both the path and config object.\n *\n * @param {string} filePath <lang zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</lang><lang en>Target config file path, relative to cwd or absolute.</lang>",
+          "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\"\n]);\n\nconst RESULT_CONTRACT = \"documentation-producer-result\";\nconst RESULT_CONTRACT_VERSION = \"0.1.0-draft\";\nconst PRODUCER_ID = \"jsdoc\";\nconst SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;\n\n/**\n * Writes a generated HIA JSDoc config file and returns both the path and config object.\n *\n * @param {string} filePath <lang><zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</zh-CN><en>Target config file path, relative to cwd or absolute.</en></lang>",
           "range": {
             "start": {
               "line": 41,
@@ -1026,7 +1216,7 @@
             },
             "end": {
               "line": 56,
-              "column": 140
+              "column": 142
             }
           }
         }

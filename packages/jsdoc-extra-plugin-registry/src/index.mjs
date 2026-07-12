@@ -3,8 +3,8 @@ import { HIA_JSDOC_EXTRA_PLUGIN_PHASES } from "@hia-doc/jsdoc-spec";
 /**
  * Normalizes user-supplied extra JSDoc plugin configuration into ordered bridge phases.
  *
- * @param {object} [input] <lang zh-CN>用户提供的 before/after 或 pre/post 插件配置。</lang><lang en>User supplied before/after or pre/post plugin configuration.</lang>
- * @returns {object} <lang zh-CN>规范化插件阶段、诊断列表和最终插件加载顺序。</lang><lang en>Normalized plugin phases, diagnostics, and final plugin load order.</lang>
+ * @param {object} [input] <lang><zh-CN>用户提供的 before/after 或 pre/post 插件配置。</zh-CN><en>User supplied before/after or pre/post plugin configuration.</en></lang>
+ * @returns {object} <lang><zh-CN>规范化插件阶段、诊断列表和最终插件加载顺序。</zh-CN><en>Normalized plugin phases, diagnostics, and final plugin load order.</en></lang>
  * @lang zh-CN 将使用者传入的额外 JSDoc 插件配置规范化为 umbrella bridge 可消费的有序阶段。
  * @lang en Normalizes user-supplied extra JSDoc plugin configuration into ordered umbrella bridge phases.
  */

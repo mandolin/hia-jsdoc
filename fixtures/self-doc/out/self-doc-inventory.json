@@ -37,7 +37,8 @@
         "packageName": "@hia-doc/jsdoc-producer",
         "sourceRoot": "packages/jsdoc-producer/src",
         "sourceFiles": [
-          "index.mjs"
+          "index.mjs",
+          "staged.mjs"
         ]
       },
       {
@@ -78,13 +79,15 @@
     "packageCount": 8,
     "coveredPackageCount": 8,
     "bilingualPackageCount": 8,
-    "exportCount": 34,
-    "documentedExportCount": 34,
-    "integrationCoveredCount": 34,
-    "bilingualExportCount": 34,
+    "exportCount": 36,
+    "documentedExportCount": 36,
+    "integrationCoveredCount": 36,
+    "bilingualExportCount": 36,
     "missingLocaleFieldCount": 0,
     "rawMissingLocaleFieldCount": 0,
-    "staleRawMissingLocaleFieldCount": 33
+    "staleRawMissingLocaleFieldCount": 33,
+    "invalidInlineLangTagCount": 0,
+    "malformedInlineLangDiagnosticCount": 0
   },
   "packages": [
     {
@@ -439,13 +442,14 @@
       "packageName": "@hia-doc/jsdoc-producer",
       "sourceRoot": "packages/jsdoc-producer/src",
       "sourceFiles": [
-        "index.mjs"
+        "index.mjs",
+        "staged.mjs"
       ],
       "summary": {
-        "exportCount": 2,
-        "documentedExportCount": 2,
-        "integrationCoveredCount": 2,
-        "bilingualExportCount": 2,
+        "exportCount": 4,
+        "documentedExportCount": 4,
+        "integrationCoveredCount": 4,
+        "bilingualExportCount": 4,
         "missingLocaleFieldCount": 0,
         "rawMissingLocaleFieldCount": 0,
         "staleRawMissingLocaleFieldCount": 0
@@ -496,6 +500,66 @@
           "hasEarlyCompatibleHiaText": false,
           "integrationCovered": true,
           "integrationNodeId": "jsdoc:constant:jsdocProducer",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-producer",
+          "name": "stagedJsdocProducerDescriptor",
+          "kind": "const",
+          "path": "packages/jsdoc-producer/src/staged.mjs",
+          "line": 5,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:stagedJsdocProducerDescriptor",
+          "i18n": {
+            "enabled": true,
+            "locales": [
+              "en",
+              "zh-CN"
+            ],
+            "fieldCount": 1,
+            "missingLocaleFieldCount": 0,
+            "missingFields": [],
+            "rawMissingLocaleFieldCount": 0,
+            "rawMissingFields": [],
+            "staleRawMissingLocaleFieldCount": 0,
+            "staleRawMissingFields": []
+          }
+        },
+        {
+          "packageName": "@hia-doc/jsdoc-producer",
+          "name": "stagedJsdocProducer",
+          "kind": "const",
+          "path": "packages/jsdoc-producer/src/staged.mjs",
+          "line": 17,
+          "hasDocBlock": true,
+          "docBlockLocales": [
+            "en",
+            "zh-CN"
+          ],
+          "hasCanonicalLang": true,
+          "hasEarlyCompatibleHiaText": false,
+          "integrationCovered": true,
+          "integrationNodeId": "jsdoc:constant:stagedJsdocProducer",
           "i18n": {
             "enabled": true,
             "locales": [
@@ -1803,6 +1867,66 @@
       }
     },
     {
+      "packageName": "@hia-doc/jsdoc-producer",
+      "name": "stagedJsdocProducerDescriptor",
+      "kind": "const",
+      "path": "packages/jsdoc-producer/src/staged.mjs",
+      "line": 5,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:stagedJsdocProducerDescriptor",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
+      "packageName": "@hia-doc/jsdoc-producer",
+      "name": "stagedJsdocProducer",
+      "kind": "const",
+      "path": "packages/jsdoc-producer/src/staged.mjs",
+      "line": 17,
+      "hasDocBlock": true,
+      "docBlockLocales": [
+        "en",
+        "zh-CN"
+      ],
+      "hasCanonicalLang": true,
+      "hasEarlyCompatibleHiaText": false,
+      "integrationCovered": true,
+      "integrationNodeId": "jsdoc:constant:stagedJsdocProducer",
+      "i18n": {
+        "enabled": true,
+        "locales": [
+          "en",
+          "zh-CN"
+        ],
+        "fieldCount": 1,
+        "missingLocaleFieldCount": 0,
+        "missingFields": [],
+        "rawMissingLocaleFieldCount": 0,
+        "rawMissingFields": [],
+        "staleRawMissingLocaleFieldCount": 0,
+        "staleRawMissingFields": []
+      }
+    },
+    {
       "packageName": "@hia-doc/jsdoc-runner",
       "name": "HIA_JSDOC_RUNNER_VERSION",
       "kind": "const",
@@ -2706,7 +2830,9 @@
       "all umbrella package public exports appear in HIA JSDoc integration output",
       "all umbrella package public exports carry @lang en and @lang zh-CN",
       "generated i18n fields have no missing required locale",
-      "raw missing locale diagnostics are effective gaps, not stale localizedText false positives"
+      "raw missing locale diagnostics are effective gaps, not stale localizedText false positives",
+      "inline <lang> segments use canonical child-locale syntax instead of invalid attribute-style tags",
+      "integration output has no HIA_I18N_INLINE_LANG_MALFORMED diagnostics"
     ],
     "carriedFromW12_5": [
       "all public exports have adjacent JSDoc blocks",

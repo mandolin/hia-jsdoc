@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
-import { mkdir, readFile, rm } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -14,6 +16,7 @@ import {
   runHiaJsdocProject
 } from "../packages/jsdoc-runner/src/index.mjs";
 import { jsdocProducer } from "../packages/jsdoc-producer/src/index.mjs";
+import { stagedJsdocProducer } from "../packages/jsdoc-producer/src/staged.mjs";
 
 test("createHiaJsdocConfig creates a standard JSDoc config", () => {
   const config = createHiaJsdocConfig({
@@ -51,6 +54,15 @@ test("fixture build emits HIA integration output", async () => {
   const integration = JSON.parse(await readFile(new URL("../fixtures/basic/out/hia-integration.json", import.meta.url), "utf8"));
   assert.equal(integration.contract, "hia-jsdoc-integration");
   assert.equal(integration.artifactKind, "hia-integration");
+});
+
+test("self-doc fixture keeps inline lang syntax canonical", async () => {
+  const integration = JSON.parse(await readFile(new URL("../fixtures/self-doc/out/hia-integration.json", import.meta.url), "utf8"));
+  const malformedDiagnostics = (integration.ir?.nodes ?? [])
+    .flatMap((node) => Array.isArray(node.diagnostics) ? node.diagnostics : [])
+    .filter((diagnostic) => diagnostic?.code === "HIA_I18N_INLINE_LANG_MALFORMED");
+
+  assert.equal(malformedDiagnostics.length, 0);
 });
 
 test("runHiaJsdocProject emits a producer result for self-doc", async () => {
@@ -96,4 +108,33 @@ test("loadHiaJsdocConfig normalizes versioned config", () => {
 test("jsdoc producer delegates to project runner", () => {
   assert.equal(jsdocProducer.descriptor.contract, "documentation-producer");
   assert.ok(jsdocProducer.descriptor.outputKinds.includes("jsdoc-integration"));
+});
+
+test("staged jsdoc producer copies artifacts to an external orchestration output", async () => {
+  const root = fileURLToPath(new URL("..", import.meta.url));
+  const outputDirectory = await mkdtemp(path.join(os.tmpdir(), "hia-jsdoc-staged-"));
+
+  try {
+    const result = stagedJsdocProducer.produce({
+      workspaceRoot: root,
+      outputDirectory,
+      inputs: [{ kind: "javascript-module", path: "packages/jsdoc-spec/src" }],
+      options: {
+        includePattern: ".+\\.mjs$",
+        hia: {
+          i18n: {
+            enabled: true,
+            locales: ["en", "zh-CN"]
+          }
+        }
+      }
+    });
+
+    assert.equal(result.status, "success");
+    assert.ok(result.artifacts.some((artifact) => artifact.kind === "jsdoc-integration"));
+    assert.ok(existsSync(path.join(outputDirectory, "hia-integration.json")));
+    assert.equal(existsSync(path.join(root, ".hia-jsdoc-staging")), false);
+  } finally {
+    await rm(outputDirectory, { recursive: true, force: true });
+  }
 });

@@ -53,10 +53,10 @@ const SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;
 /**
  * Writes a generated HIA JSDoc config file and returns both the path and config object.
  *
- * @param {string} filePath <lang zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</lang><lang en>Target config file path, relative to cwd or absolute.</lang>
- * @param {object} [options] <lang zh-CN>传递给 HIA JSDoc preset 的选项；cwd 控制相对路径基准。</lang><lang en>Options passed to the HIA JSDoc preset; cwd controls the base for relative paths.</lang>
- * @returns {{ path: string, config: object }} <lang zh-CN>写入后的绝对路径与生成配置对象。</lang><lang en>The written absolute path and generated config object.</lang>
- * @throws {TypeError} <lang zh-CN>当 preset 选项无法规范化时抛出。</lang><lang en>Thrown when preset options cannot be normalized.</lang>
+ * @param {string} filePath <lang><zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</zh-CN><en>Target config file path, relative to cwd or absolute.</en></lang>
+ * @param {object} [options] <lang><zh-CN>传递给 HIA JSDoc preset 的选项；cwd 控制相对路径基准。</zh-CN><en>Options passed to the HIA JSDoc preset; cwd controls the base for relative paths.</en></lang>
+ * @returns {{ path: string, config: object }} <lang><zh-CN>写入后的绝对路径与生成配置对象。</zh-CN><en>The written absolute path and generated config object.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>当 preset 选项无法规范化时抛出。</zh-CN><en>Thrown when preset options cannot be normalized.</en></lang>
  * @lang zh-CN 写入生成的 HIA JSDoc config 文件，并返回路径和配置对象。
  * @lang en Writes a generated HIA JSDoc config file and returns both the path and config object.
  */
@@ -74,10 +74,10 @@ export function writeHiaJsdocConfig(filePath, options = {}) {
 /**
  * Runs one project-oriented JSDoc build and emits an HIA documentation producer result.
  *
- * @param {object} request <lang zh-CN>HIA JSDoc project request，包含 workspaceRoot、outputDirectory、inputs 与 options。</lang><lang en>HIA JSDoc project request containing workspaceRoot, outputDirectory, inputs, and options.</lang>
- * @param {object} [context] <lang zh-CN>可选 producer runtime context，用于中断与进度回调。</lang><lang en>Optional producer runtime context for cancellation and progress callbacks.</lang>
- * @returns {object} <lang zh-CN>符合 documentation producer result contract 的运行结果。</lang><lang en>A runtime result that follows the documentation producer result contract.</lang>
- * @throws {TypeError} <lang zh-CN>当 request 的路径、输入类型或 profile id 不合法时抛出。</lang><lang en>Thrown when request paths, input kinds, or profile ids are invalid.</lang>
+ * @param {object} request <lang><zh-CN>HIA JSDoc project request，包含 workspaceRoot、outputDirectory、inputs 与 options。</zh-CN><en>HIA JSDoc project request containing workspaceRoot, outputDirectory, inputs, and options.</en></lang>
+ * @param {object} [context] <lang><zh-CN>可选 producer runtime context，用于中断与进度回调。</zh-CN><en>Optional producer runtime context for cancellation and progress callbacks.</en></lang>
+ * @returns {object} <lang><zh-CN>符合 documentation producer result contract 的运行结果。</zh-CN><en>A runtime result that follows the documentation producer result contract.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>当 request 的路径、输入类型或 profile id 不合法时抛出。</zh-CN><en>Thrown when request paths, input kinds, or profile ids are invalid.</en></lang>
  * @lang zh-CN 运行一次面向项目的 JSDoc 生产链，并输出 HIA documentation producer result。
  * @lang en Runs one project-oriented JSDoc build and emits an HIA documentation producer result.
  */
@@ -158,10 +158,10 @@ export function runHiaJsdocProject(request, context = {}) {
 /**
  * Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.
  *
- * @param {string} configPath <lang zh-CN>相对于 cwd 或绝对路径的配置文件路径。</lang><lang en>Config file path, relative to cwd or absolute.</lang>
- * @param {object} [options] <lang zh-CN>可选加载选项；cwd 控制相对路径基准。</lang><lang en>Optional loading options; cwd controls the base for relative paths.</lang>
- * @returns {object} <lang zh-CN>规范化后的 HIA JSDoc project request。</lang><lang en>The normalized HIA JSDoc project request.</lang>
- * @throws {TypeError} <lang zh-CN>当 schemaVersion、$schema、路径或输入配置不符合 contract 时抛出。</lang><lang en>Thrown when schemaVersion, $schema, paths, or input config violate the contract.</lang>
+ * @param {string} configPath <lang><zh-CN>相对于 cwd 或绝对路径的配置文件路径。</zh-CN><en>Config file path, relative to cwd or absolute.</en></lang>
+ * @param {object} [options] <lang><zh-CN>可选加载选项；cwd 控制相对路径基准。</zh-CN><en>Optional loading options; cwd controls the base for relative paths.</en></lang>
+ * @returns {object} <lang><zh-CN>规范化后的 HIA JSDoc project request。</zh-CN><en>The normalized HIA JSDoc project request.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>当 schemaVersion、$schema、路径或输入配置不符合 contract 时抛出。</zh-CN><en>Thrown when schemaVersion, $schema, paths, or input config violate the contract.</en></lang>
  * @lang zh-CN 读取 versioned HIA JSDoc JSON config，并转成 project runner request。
  * @lang en Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.
  */
@@ -194,9 +194,9 @@ export function loadHiaJsdocConfig(configPath, options = {}) {
 /**
  * Executes the JSDoc CLI through the generated HIA JSDoc config.
  *
- * @param {object} [options] <lang zh-CN>JSDoc 执行选项、preset 覆盖项和 configPath/cwd。</lang><lang en>JSDoc execution options, preset overrides, and configPath/cwd.</lang>
- * @returns {object} <lang zh-CN>包含退出状态、stdout/stderr、写入配置路径和配置对象的同步执行结果。</lang><lang en>A synchronous execution result containing exit status, stdout/stderr, written config path, and config object.</lang>
- * @throws {TypeError} <lang zh-CN>当配置生成过程无法规范化用户选项时抛出。</lang><lang en>Thrown when config generation cannot normalize user options.</lang>
+ * @param {object} [options] <lang><zh-CN>JSDoc 执行选项、preset 覆盖项和 configPath/cwd。</zh-CN><en>JSDoc execution options, preset overrides, and configPath/cwd.</en></lang>
+ * @returns {object} <lang><zh-CN>包含退出状态、stdout/stderr、写入配置路径和配置对象的同步执行结果。</zh-CN><en>A synchronous execution result containing exit status, stdout/stderr, written config path, and config object.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>当配置生成过程无法规范化用户选项时抛出。</zh-CN><en>Thrown when config generation cannot normalize user options.</en></lang>
  * @lang zh-CN 通过生成的 HIA JSDoc config 执行 JSDoc CLI。
  * @lang en Executes the JSDoc CLI through the generated HIA JSDoc config.
  */
