@@ -58,6 +58,12 @@ if (!Array.isArray(pageMap.pages) || pageMap.pages.length === 0) {
 if (/"sourceBody"\s*:/.test(JSON.stringify(presentationProfile))) {
   fail("Presentation profile must not contain sourceBody.");
 }
+// <lang><zh-CN>已提交的自文档站点必须锁定 source asset 字节，避免 Windows 检出破坏摘要。</zh-CN><en>The committed self-documentation site must pin source-asset bytes so Windows checkout cannot invalidate digests.</en></lang>
+expectEqual(
+  fs.readFileSync(path.join(selfDocOutput, ".gitattributes"), "utf8"),
+  "sources/*.txt -text\n",
+  "Self-doc source byte-stability rule"
+);
 
 expectNoLocalPathLeakage(fixtureRoot);
 expectNoLocalPathLeakage(selfDocRoot);
