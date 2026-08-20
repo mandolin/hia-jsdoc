@@ -1,0 +1,1 @@
+export const HIA_JSDOC_PLUGIN_PATH = "node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs";

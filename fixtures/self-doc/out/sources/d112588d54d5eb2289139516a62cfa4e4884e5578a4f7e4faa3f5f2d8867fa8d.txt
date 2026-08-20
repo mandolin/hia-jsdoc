@@ -1,0 +1,8 @@
+export function createHiaJsdocPluginBridge(options = {}) {
+  return {
+    package: options.packageName ?? HIA_JSDOC_PLUGIN_PACKAGE,
+    version: options.version ?? HIA_JSDOC_PLUGIN_VERSION,
+    pluginPath: options.pluginPath ?? HIA_JSDOC_PLUGIN_PATH,
+    order: options.order ?? "hia-core"
+  };
+}

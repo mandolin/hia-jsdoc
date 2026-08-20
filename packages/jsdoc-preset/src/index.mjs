@@ -6,7 +6,7 @@ import {
   createHiaJsdocVersionSummary,
   normalizeHiaJsdocMode
 } from "@hia-doc/jsdoc-spec";
-import { getHiaJsdocThemeTemplate } from "@hia-doc/jsdoc-theme-bridge";
+import { createHiaJsdocThemeBridge } from "@hia-doc/jsdoc-theme-bridge";
 
 /**
  * Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.
@@ -24,6 +24,13 @@ export function createHiaJsdocConfig(options = {}) {
   const extraPlugins = normalizeExtraPluginRegistry(options.extraPlugins ?? {});
   const themeEnabled = options.theme?.enabled ?? mode !== "hiaIntegration";
   const integrationEnabled = options.integration?.enabled ?? mode !== "standalone";
+  // <lang><zh-CN>themeBridge 是 template/catalog owner 的唯一 descriptor；preset 不复制 JTH 皮肤。</zh-CN><en>ThemeBridge is the sole template/catalog-owner descriptor; the preset does not copy JTH skins.</en></lang>
+  const themeBridge = createHiaJsdocThemeBridge({
+    ...(options.theme ?? {}),
+    skin: options.hia?.theme?.skin,
+    scheme: options.hia?.theme?.scheme,
+    presentation: options.hia?.presentation
+  });
 
   const config = {
     plugins: [
@@ -66,8 +73,13 @@ export function createHiaJsdocConfig(options = {}) {
           mode: options.hia?.i18n?.mode ?? "runtimeSwitch",
           resources: options.hia?.i18n?.resources ?? []
         },
+        presentation: {
+          pageMode: options.hia?.presentation?.pageMode ?? "multi-page",
+          sourceMode: options.hia?.presentation?.sourceMode ?? "fetch"
+        },
         theme: {
           skin: options.hia?.theme?.skin ?? "classic",
+          scheme: options.hia?.theme?.scheme ?? "system",
           collapse: {
             docletsDefaultExpanded: options.hia?.theme?.collapse?.docletsDefaultExpanded ?? true,
             sectionsDefaultExpanded: options.hia?.theme?.collapse?.sectionsDefaultExpanded ?? true,
@@ -94,6 +106,7 @@ export function createHiaJsdocConfig(options = {}) {
           contract: HIA_JSDOC_UMBRELLA_CONTRACT,
           contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,
           versions: createHiaJsdocVersionSummary(),
+          themeBridge,
           extraPluginDiagnostics: extraPlugins.diagnostics
         }
       }
@@ -101,7 +114,7 @@ export function createHiaJsdocConfig(options = {}) {
   };
 
   if (themeEnabled) {
-    config.opts.template = getHiaJsdocThemeTemplate(options.theme);
+    config.opts.template = themeBridge.template;
   }
 
   return mergeJsdocConfig(config, options.baseConfig ?? {});
@@ -138,6 +151,10 @@ export function mergeJsdocConfig(preset, userConfig = {}) {
         i18n: {
           ...(preset.opts?.hia?.i18n ?? {}),
           ...(userConfig.opts?.hia?.i18n ?? {})
+        },
+        presentation: {
+          ...(preset.opts?.hia?.presentation ?? {}),
+          ...(userConfig.opts?.hia?.presentation ?? {})
         },
         theme: {
           ...(preset.opts?.hia?.theme ?? {}),

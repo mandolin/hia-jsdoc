@@ -1,0 +1,4 @@
+export const stagedJsdocProducerDescriptor = Object.freeze({
+  ...jsdocProducerDescriptor,
+  displayName: "HIA JSDoc Staged Adapter"
+});

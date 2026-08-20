@@ -56,6 +56,10 @@ async function buildBasicFixture() {
         code: {
           fontFamily: "sarasa"
         }
+      },
+      presentation: {
+        pageMode: "multi-page",
+        sourceMode: "fetch"
       }
     }
   });
@@ -83,6 +87,12 @@ async function buildSelfDocFixture() {
     options: {
       includePattern: ".+\\.mjs$",
       writeResultManifest: true,
+      plugin: {
+        pluginPath: "../jsdoc-plugin-hia-sys/src/index.cjs"
+      },
+      theme: {
+        template: "../jsdoc-theme-hia"
+      },
       hia: {
         i18n: {
           enabled: true,
@@ -94,6 +104,10 @@ async function buildSelfDocFixture() {
           code: {
             fontFamily: "sarasa"
           }
+        },
+        presentation: {
+          pageMode: "multi-page",
+          sourceMode: "fetch"
         }
       }
     }

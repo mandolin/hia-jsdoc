@@ -1,0 +1,6 @@
+export const jsdocProducer = Object.freeze({
+  descriptor: jsdocProducerDescriptor,
+  produce(request, context = {}) {
+    return runHiaJsdocProject(request, context);
+  }
+});

@@ -20,6 +20,11 @@ expectEqual(config.opts?.template, "node_modules/@mandolin/jsdoc-theme-hia", "JS
 expectEqual(config.opts?.hia?.integration?.enabled, true, "HIA integration enabled");
 expectEqual(config.opts?.hia?.integration?.outputFile, "fixtures/basic/out/hia-integration.json", "HIA integration output path");
 expectEqual(config.opts?.hia?.umbrella?.contract, "hia-jsdoc-umbrella-config", "Umbrella config contract");
+expectEqual(config.opts?.hia?.presentation?.pageMode, "multi-page", "Presentation page default");
+expectEqual(config.opts?.hia?.presentation?.sourceMode, "fetch", "Presentation source default");
+expectEqual(config.opts?.hia?.theme?.scheme, "system", "Presentation scheme default");
+expectEqual(config.opts?.hia?.umbrella?.themeBridge?.presentation?.contract, "documentation-presentation-profile", "Theme bridge presentation contract");
+expectEqual(config.opts?.hia?.umbrella?.themeBridge?.presentation?.skinCatalog?.ownerPackage, "@mandolin/jsdoc-theme-hia", "Theme bridge skin catalog owner");
 
 expectEqual(integration.contract, "hia-jsdoc-integration", "Integration contract");
 expectEqual(integration.contractVersion, "0.1.0", "Integration contract version");
@@ -38,6 +43,20 @@ for (const requiredFile of ["index.html", "search-index.json", "hia-theme.css", 
   if (!fs.existsSync(path.join(outputRoot, requiredFile))) {
     fail(`Missing generated JSDoc output file: ${requiredFile}`);
   }
+}
+
+const presentationProfile = readJson(path.join(selfDocOutput, "documentation-presentation-profile.json"));
+const pageMap = readJson(path.join(selfDocOutput, "hia-page-map.json"));
+expectEqual(presentationProfile.contract, "documentation-presentation-profile", "Presentation profile contract");
+expectEqual(presentationProfile.pagePartition?.mode, "multi-page", "Presentation profile page mode");
+expectEqual(presentationProfile.source?.mode, "fetch", "Presentation profile source mode");
+expectEqual(presentationProfile.theme?.skins?.length, 3, "Presentation profile skin count");
+expectEqual(pageMap.contract, "jsdoc-theme-hia/page-map", "JTH page-map contract");
+if (!Array.isArray(pageMap.pages) || pageMap.pages.length === 0) {
+  fail("JTH page map must contain at least one page.");
+}
+if (/"sourceBody"\s*:/.test(JSON.stringify(presentationProfile))) {
+  fail("Presentation profile must not contain sourceBody.");
 }
 
 expectNoLocalPathLeakage(fixtureRoot);

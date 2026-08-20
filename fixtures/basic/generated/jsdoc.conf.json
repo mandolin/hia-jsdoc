@@ -41,8 +41,13 @@
         "mode": "runtimeSwitch",
         "resources": []
       },
+      "presentation": {
+        "pageMode": "multi-page",
+        "sourceMode": "fetch"
+      },
       "theme": {
         "skin": "classic",
+        "scheme": "system",
         "collapse": {
           "docletsDefaultExpanded": true,
           "sectionsDefaultExpanded": true,
@@ -82,6 +87,24 @@
           "theme": {
             "package": "@mandolin/jsdoc-theme-hia",
             "version": "0.1.0"
+          }
+        },
+        "themeBridge": {
+          "package": "@mandolin/jsdoc-theme-hia",
+          "version": "0.1.0",
+          "template": "node_modules/@mandolin/jsdoc-theme-hia",
+          "enabled": true,
+          "presentation": {
+            "contract": "documentation-presentation-profile",
+            "contractVersion": "0.1.0-draft",
+            "pageMode": "multi-page",
+            "sourceMode": "fetch",
+            "skinId": "classic",
+            "scheme": "system",
+            "skinCatalog": {
+              "ownerPackage": "@mandolin/jsdoc-theme-hia",
+              "projection": "documentation-presentation-profile.theme.skins"
+            }
           }
         },
         "extraPluginDiagnostics": []

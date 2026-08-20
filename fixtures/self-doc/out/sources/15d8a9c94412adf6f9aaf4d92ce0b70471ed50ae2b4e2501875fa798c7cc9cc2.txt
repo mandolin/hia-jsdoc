@@ -1,0 +1,10 @@
+export function writeHiaJsdocConfig(filePath, options = {}) {
+  const config = createHiaJsdocConfig(options);
+  const absolutePath = path.resolve(options.cwd ?? process.cwd(), filePath);
+  fs.mkdirSync(path.dirname(absolutePath), { recursive: true });
+  fs.writeFileSync(absolutePath, `${JSON.stringify(config, null, 2)}\n`, "utf8");
+  return {
+    path: absolutePath,
+    config
+  };
+}

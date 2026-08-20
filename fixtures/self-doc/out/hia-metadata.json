@@ -83,6 +83,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:createJsdocDocSourceMapRef",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -178,6 +180,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:normalizeExtraPluginRegistry",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -273,6 +277,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:createHiaJsdocPluginBridge",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -368,6 +374,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:getHiaJsdocPluginPath",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -463,6 +471,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:createHiaJsdocConfig",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -494,16 +504,16 @@
         "relativePath": "packages/jsdoc-preset/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 119,
+          "line": 132,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 119,
+            "line": 132,
             "column": 1
           },
           "end": {
-            "line": 119,
+            "line": 132,
             "column": 1
           }
         },
@@ -521,15 +531,15 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 119,
+            "line": 132,
             "column": 1
           },
           "end": {
-            "line": 157,
+            "line": 174,
             "column": 2
           }
         },
-        "content": "export function mergeJsdocConfig(preset, userConfig = {}) {\n  return {\n    ...preset,\n    ...userConfig,\n    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),\n    source: {\n      ...(preset.source ?? {}),\n      ...(userConfig.source ?? {})\n    },\n    opts: {\n      ...(preset.opts ?? {}),\n      ...(userConfig.opts ?? {}),\n      hia: {\n        ...(preset.opts?.hia ?? {}),\n        ...(userConfig.opts?.hia ?? {}),\n        source: {\n          ...(preset.opts?.hia?.source ?? {}),\n          ...(userConfig.opts?.hia?.source ?? {})\n        },\n        i18n: {\n          ...(preset.opts?.hia?.i18n ?? {}),\n          ...(userConfig.opts?.hia?.i18n ?? {})\n        },\n        theme: {\n          ...(preset.opts?.hia?.theme ?? {}),\n          ...(userConfig.opts?.hia?.theme ?? {})\n        },\n        integration: {\n          ...(preset.opts?.hia?.integration ?? {}),\n          ...(userConfig.opts?.hia?.integration ?? {})\n        },\n        umbrella: {\n          ...(preset.opts?.hia?.umbrella ?? {}),\n          ...(userConfig.opts?.hia?.umbrella ?? {})\n        }\n      }\n    }\n  };\n}",
+        "content": "export function mergeJsdocConfig(preset, userConfig = {}) {\n  return {\n    ...preset,\n    ...userConfig,\n    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),\n    source: {\n      ...(preset.source ?? {}),\n      ...(userConfig.source ?? {})\n    },\n    opts: {\n      ...(preset.opts ?? {}),\n      ...(userConfig.opts ?? {}),\n      hia: {\n        ...(preset.opts?.hia ?? {}),\n        ...(userConfig.opts?.hia ?? {}),\n        source: {\n          ...(preset.opts?.hia?.source ?? {}),\n          ...(userConfig.opts?.hia?.source ?? {})\n        },\n        i18n: {\n          ...(preset.opts?.hia?.i18n ?? {}),\n          ...(userConfig.opts?.hia?.i18n ?? {})\n        },\n        presentation: {\n          ...(preset.opts?.hia?.presentation ?? {}),\n          ...(userConfig.opts?.hia?.presentation ?? {})\n        },\n        theme: {\n          ...(preset.opts?.hia?.theme ?? {}),\n          ...(userConfig.opts?.hia?.theme ?? {})\n        },\n        integration: {\n          ...(preset.opts?.hia?.integration ?? {}),\n          ...(userConfig.opts?.hia?.integration ?? {})\n        },\n        umbrella: {\n          ...(preset.opts?.hia?.umbrella ?? {}),\n          ...(userConfig.opts?.hia?.umbrella ?? {})\n        }\n      }\n    }\n  };\n}",
         "rangeSource": "parser-js",
         "confidence": "high",
         "diagnostics": [],
@@ -543,14 +553,14 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export function mergeJsdocConfig(preset, userConfig = {}) {\n  return {\n    ...preset,\n    ...userConfig,\n    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),\n    source: {\n      ...(preset.source ?? {}),\n      ...(userConfig.source ?? {})\n    },\n    opts: {\n      ...(preset.opts ?? {}),\n      ...(userConfig.opts ?? {}),\n      hia: {\n        ...(preset.opts?.hia ?? {}),\n        ...(userConfig.opts?.hia ?? {}),\n        source: {\n          ...(preset.opts?.hia?.source ?? {}),\n          ...(userConfig.opts?.hia?.source ?? {})\n        },\n        i18n: {\n          ...(preset.opts?.hia?.i18n ?? {}),\n          ...(userConfig.opts?.hia?.i18n ?? {})\n        },\n        theme: {\n          ...(preset.opts?.hia?.theme ?? {}),\n          ...(userConfig.opts?.hia?.theme ?? {})\n        },\n        integration: {\n          ...(preset.opts?.hia?.integration ?? {}),\n          ...(userConfig.opts?.hia?.integration ?? {})\n        },\n        umbrella: {\n          ...(preset.opts?.hia?.umbrella ?? {}),\n          ...(userConfig.opts?.hia?.umbrella ?? {})\n        }\n      }\n    }\n  };\n}",
+          "content": "export function mergeJsdocConfig(preset, userConfig = {}) {\n  return {\n    ...preset,\n    ...userConfig,\n    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),\n    source: {\n      ...(preset.source ?? {}),\n      ...(userConfig.source ?? {})\n    },\n    opts: {\n      ...(preset.opts ?? {}),\n      ...(userConfig.opts ?? {}),\n      hia: {\n        ...(preset.opts?.hia ?? {}),\n        ...(userConfig.opts?.hia ?? {}),\n        source: {\n          ...(preset.opts?.hia?.source ?? {}),\n          ...(userConfig.opts?.hia?.source ?? {})\n        },\n        i18n: {\n          ...(preset.opts?.hia?.i18n ?? {}),\n          ...(userConfig.opts?.hia?.i18n ?? {})\n        },\n        presentation: {\n          ...(preset.opts?.hia?.presentation ?? {}),\n          ...(userConfig.opts?.hia?.presentation ?? {})\n        },\n        theme: {\n          ...(preset.opts?.hia?.theme ?? {}),\n          ...(userConfig.opts?.hia?.theme ?? {})\n        },\n        integration: {\n          ...(preset.opts?.hia?.integration ?? {}),\n          ...(userConfig.opts?.hia?.integration ?? {})\n        },\n        umbrella: {\n          ...(preset.opts?.hia?.umbrella ?? {}),\n          ...(userConfig.opts?.hia?.umbrella ?? {})\n        }\n      }\n    }\n  };\n}",
           "range": {
             "start": {
-              "line": 119,
+              "line": 132,
               "column": 1
             },
             "end": {
-              "line": 157,
+              "line": 174,
               "column": 2
             }
           }
@@ -558,6 +568,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:mergeJsdocConfig",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -626,7 +638,7 @@
         },
         "content": "export const jsdocProducerDescriptor = Object.freeze({\n  contract: \"documentation-producer\",\n  contractVersion: \"0.1.0-draft\",\n  id: \"jsdoc\",\n  version: HIA_JSDOC_RUNNER_VERSION,\n  displayName: \"HIA JSDoc\",\n  inputKinds: [...HIA_JSDOC_INPUT_KINDS],\n  outputKinds: [...HIA_JSDOC_OUTPUT_KINDS],\n  capabilities: {\n    sourceLinkage: true,\n    incremental: false,\n    watch: false\n  }\n});",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -653,6 +665,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:jsdocProducerDescriptor",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -721,7 +735,7 @@
         },
         "content": "export const jsdocProducer = Object.freeze({\n  descriptor: jsdocProducerDescriptor,\n  produce(request, context = {}) {\n    return runHiaJsdocProject(request, context);\n  }\n});",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -748,6 +762,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:jsdocProducer",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -816,7 +832,7 @@
         },
         "content": "export const stagedJsdocProducerDescriptor = Object.freeze({\n  ...jsdocProducerDescriptor,\n  displayName: \"HIA JSDoc Staged Adapter\"\n});",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -843,6 +859,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:stagedJsdocProducerDescriptor",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -911,7 +929,7 @@
         },
         "content": "export const stagedJsdocProducer = Object.freeze({\n  descriptor: stagedJsdocProducerDescriptor,\n  produce(request, context = {}) {\n    const workspaceRoot = normalizeAbsolutePath(request?.workspaceRoot, \"workspaceRoot\");\n    const outputDirectory = normalizeAbsolutePath(request?.outputDirectory, \"outputDirectory\");\n    const stagingRoot = path.join(workspaceRoot, \".hia-jsdoc-staging\");\n    const stagingDirectory = path.join(stagingRoot, `${process.pid}-${createStagingName(outputDirectory)}`);\n\n    try {\n      fs.rmSync(stagingDirectory, { recursive: true, force: true });\n      const result = jsdocProducer.produce({\n        ...request,\n        workspaceRoot,\n        outputDirectory: stagingDirectory\n      }, context);\n\n      if (fs.existsSync(stagingDirectory)) {\n        fs.mkdirSync(outputDirectory, { recursive: true });\n        fs.cpSync(stagingDirectory, outputDirectory, { recursive: true, force: true });\n      }\n\n      return result;\n    } finally {\n      fs.rmSync(stagingDirectory, { recursive: true, force: true });\n      removeEmptyDirectory(stagingRoot);\n    }\n  }\n});",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -938,6 +956,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:stagedJsdocProducer",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1000,13 +1020,13 @@
             "column": 1
           },
           "end": {
-            "line": 28,
-            "column": 24
+            "line": 23,
+            "column": 49
           }
         },
-        "content": "export const HIA_JSDOC_RUNNER_VERSION = \"0.0.0\";\n\n/**\n * Lists the input kinds accepted by the HIA JSDoc project runner.\n *\n * @constant {string[]}",
+        "content": "export const HIA_JSDOC_RUNNER_VERSION = \"0.0.0\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1018,21 +1038,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_RUNNER_VERSION = \"0.0.0\";\n\n/**\n * Lists the input kinds accepted by the HIA JSDoc project runner.\n *\n * @constant {string[]}",
+          "content": "export const HIA_JSDOC_RUNNER_VERSION = \"0.0.0\";",
           "range": {
             "start": {
               "line": 23,
               "column": 1
             },
             "end": {
-              "line": 28,
-              "column": 24
+              "line": 23,
+              "column": 49
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_RUNNER_VERSION",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1095,13 +1117,13 @@
             "column": 1
           },
           "end": {
-            "line": 37,
-            "column": 24
+            "line": 32,
+            "column": 96
           }
         },
-        "content": "export const HIA_JSDOC_INPUT_KINDS = Object.freeze([\"javascript-source\", \"javascript-module\"]);\n\n/**\n * Lists the artifact kinds that the HIA JSDoc project runner may produce.\n *\n * @constant {string[]}",
+        "content": "export const HIA_JSDOC_INPUT_KINDS = Object.freeze([\"javascript-source\", \"javascript-module\"]);",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1113,21 +1135,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_INPUT_KINDS = Object.freeze([\"javascript-source\", \"javascript-module\"]);\n\n/**\n * Lists the artifact kinds that the HIA JSDoc project runner may produce.\n *\n * @constant {string[]}",
+          "content": "export const HIA_JSDOC_INPUT_KINDS = Object.freeze([\"javascript-source\", \"javascript-module\"]);",
           "range": {
             "start": {
               "line": 32,
               "column": 1
             },
             "end": {
-              "line": 37,
-              "column": 24
+              "line": 32,
+              "column": 96
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_INPUT_KINDS",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1190,13 +1214,13 @@
             "column": 1
           },
           "end": {
-            "line": 56,
-            "column": 142
+            "line": 48,
+            "column": 4
           }
         },
-        "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\"\n]);\n\nconst RESULT_CONTRACT = \"documentation-producer-result\";\nconst RESULT_CONTRACT_VERSION = \"0.1.0-draft\";\nconst PRODUCER_ID = \"jsdoc\";\nconst SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;\n\n/**\n * Writes a generated HIA JSDoc config file and returns both the path and config object.\n *\n * @param {string} filePath <lang><zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</zh-CN><en>Target config file path, relative to cwd or absolute.</en></lang>",
+        "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\",\n  \"documentation-presentation-profile\",\n  \"jsdoc-page-map\"\n]);",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1208,21 +1232,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\"\n]);\n\nconst RESULT_CONTRACT = \"documentation-producer-result\";\nconst RESULT_CONTRACT_VERSION = \"0.1.0-draft\";\nconst PRODUCER_ID = \"jsdoc\";\nconst SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;\n\n/**\n * Writes a generated HIA JSDoc config file and returns both the path and config object.\n *\n * @param {string} filePath <lang><zh-CN>相对于 cwd 或绝对路径的目标配置文件路径。</zh-CN><en>Target config file path, relative to cwd or absolute.</en></lang>",
+          "content": "export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([\n  \"jsdoc-html\",\n  \"jsdoc-search-index\",\n  \"jsdoc-theme-metadata\",\n  \"jsdoc-integration\",\n  \"documentation-presentation-profile\",\n  \"jsdoc-page-map\"\n]);",
           "range": {
             "start": {
               "line": 41,
               "column": 1
             },
             "end": {
-              "line": 56,
-              "column": 142
+              "line": 48,
+              "column": 4
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_OUTPUT_KINDS",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1254,16 +1280,16 @@
         "relativePath": "packages/jsdoc-runner/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 63,
+          "line": 65,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 63,
+            "line": 65,
             "column": 1
           },
           "end": {
-            "line": 63,
+            "line": 65,
             "column": 1
           }
         },
@@ -1281,11 +1307,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 63,
+            "line": 65,
             "column": 1
           },
           "end": {
-            "line": 72,
+            "line": 74,
             "column": 2
           }
         },
@@ -1306,11 +1332,11 @@
           "content": "export function writeHiaJsdocConfig(filePath, options = {}) {\n  const config = createHiaJsdocConfig(options);\n  const absolutePath = path.resolve(options.cwd ?? process.cwd(), filePath);\n  fs.mkdirSync(path.dirname(absolutePath), { recursive: true });\n  fs.writeFileSync(absolutePath, `${JSON.stringify(config, null, 2)}\\n`, \"utf8\");\n  return {\n    path: absolutePath,\n    config\n  };\n}",
           "range": {
             "start": {
-              "line": 63,
+              "line": 65,
               "column": 1
             },
             "end": {
-              "line": 72,
+              "line": 74,
               "column": 2
             }
           }
@@ -1318,6 +1344,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:writeHiaJsdocConfig",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1349,16 +1377,16 @@
         "relativePath": "packages/jsdoc-runner/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 84,
+          "line": 86,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 84,
+            "line": 86,
             "column": 1
           },
           "end": {
-            "line": 84,
+            "line": 86,
             "column": 1
           }
         },
@@ -1376,11 +1404,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 84,
+            "line": 86,
             "column": 1
           },
           "end": {
-            "line": 156,
+            "line": 158,
             "column": 2
           }
         },
@@ -1401,11 +1429,11 @@
           "content": "export function runHiaJsdocProject(request, context = {}) {\n  const normalized = normalizeProjectRequest(request);\n  fs.mkdirSync(normalized.outputDirectory, { recursive: true });\n\n  if (context.signal?.aborted) {\n    return createProducerResult(\"failed\", [], [\n      createDiagnostic(\"HIA_JSDOC_RUNNER_ABORTED\", \"HIA JSDoc runner was aborted before it started.\", \"error\")\n    ]);\n  }\n\n  context.reportProgress?.({\n    phase: \"extract\",\n    current: 0,\n    total: normalized.inputs.length,\n    message: \"jsdoc\"\n  });\n\n  const outputDirectoryRelative = relativeFromWorkspaceRoot(normalized.workspaceRoot, normalized.outputDirectory, \"outputDirectory\");\n  const configPath = path.join(normalized.outputDirectory, \".hia-jsdoc\", \"jsdoc.conf.json\");\n  const integrationOutputFile = `${outputDirectoryRelative}/hia-integration.json`;\n  const execution = runHiaJsdoc({\n    cwd: normalized.workspaceRoot,\n    configPath,\n    mode: normalized.options.mode,\n    source: {\n      include: normalized.inputs.map((input) => input.path),\n      includePattern: normalized.options.includePattern,\n      excludePattern: normalized.options.excludePattern\n    },\n    destination: outputDirectoryRelative,\n    integrationOutputFile,\n    recurse: normalized.options.recurse,\n    extraPlugins: normalized.options.extraPlugins,\n    plugin: normalized.options.plugin,\n    hia: normalized.options.hia,\n    theme: normalized.options.theme,\n    baseConfig: normalized.options.baseConfig\n  });\n\n  const diagnostics = [\n    ...pluginDiagnosticsFromConfig(execution.config),\n    ...(execution.ok ? [] : [\n      createDiagnostic(\n        \"HIA_JSDOC_RUNNER_FAILED\",\n        execution.stderr || execution.stdout || \"JSDoc CLI failed.\",\n        \"error\"\n      )\n    ])\n  ];\n  const artifacts = execution.ok\n    ? collectArtifacts(normalized.outputDirectory, normalized.profileIds)\n    : [];\n  const status = diagnostics.some((diagnostic) => diagnostic.severity === \"error\")\n    ? (artifacts.length > 0 ? \"partial\" : \"failed\")\n    : \"success\";\n  const result = createProducerResult(status, artifacts, diagnostics);\n\n  if (normalized.options.writeResultManifest) {\n    fs.writeFileSync(\n      path.join(normalized.outputDirectory, \"hia-jsdoc.producer-result.json\"),\n      `${JSON.stringify(result, null, 2)}\\n`,\n      \"utf8\"\n    );\n  }\n\n  context.reportProgress?.({\n    phase: \"complete\",\n    current: normalized.inputs.length,\n    total: normalized.inputs.length\n  });\n\n  return result;\n}",
           "range": {
             "start": {
-              "line": 84,
+              "line": 86,
               "column": 1
             },
             "end": {
-              "line": 156,
+              "line": 158,
               "column": 2
             }
           }
@@ -1413,6 +1441,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:runHiaJsdocProject",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1444,16 +1474,16 @@
         "relativePath": "packages/jsdoc-runner/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 168,
+          "line": 170,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 168,
+            "line": 170,
             "column": 1
           },
           "end": {
-            "line": 168,
+            "line": 170,
             "column": 1
           }
         },
@@ -1471,11 +1501,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 168,
+            "line": 170,
             "column": 1
           },
           "end": {
-            "line": 192,
+            "line": 194,
             "column": 2
           }
         },
@@ -1496,11 +1526,11 @@
           "content": "export function loadHiaJsdocConfig(configPath, options = {}) {\n  const absoluteConfigPath = path.resolve(options.cwd ?? process.cwd(), configPath);\n  const config = JSON.parse(fs.readFileSync(absoluteConfigPath, \"utf8\"));\n  assertRecord(config, \"HIA JSDoc config must be a JSON object.\");\n  assertKnownKeys(config, [\"$schema\", \"schemaVersion\", \"workspaceRoot\", \"outputDirectory\", \"inputs\", \"options\", \"profileIds\"], \"config\");\n  if (config.schemaVersion !== HIA_JSDOC_CONFIG_SCHEMA_VERSION) {\n    throw new TypeError(`schemaVersion must be ${HIA_JSDOC_CONFIG_SCHEMA_VERSION}.`);\n  }\n  if (config.$schema !== undefined && config.$schema !== HIA_JSDOC_CONFIG_SCHEMA_ID) {\n    throw new TypeError(`$schema must be ${HIA_JSDOC_CONFIG_SCHEMA_ID}.`);\n  }\n\n  const configDirectory = path.dirname(absoluteConfigPath);\n  const workspaceDirectory = normalizeConfigDirectory(config.workspaceRoot ?? \".\", \"workspaceRoot\");\n  const outputDirectory = normalizeConfigDirectory(config.outputDirectory ?? \"dist/hia-jsdoc\", \"outputDirectory\");\n  const workspaceRoot = path.resolve(configDirectory, workspaceDirectory);\n\n  return normalizeProjectRequest({\n    workspaceRoot,\n    outputDirectory: path.resolve(workspaceRoot, outputDirectory),\n    inputs: config.inputs,\n    options: config.options,\n    profileIds: config.profileIds\n  });\n}",
           "range": {
             "start": {
-              "line": 168,
+              "line": 170,
               "column": 1
             },
             "end": {
-              "line": 192,
+              "line": 194,
               "column": 2
             }
           }
@@ -1508,6 +1538,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:loadHiaJsdocConfig",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1539,16 +1571,16 @@
         "relativePath": "packages/jsdoc-runner/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 203,
+          "line": 205,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 203,
+            "line": 205,
             "column": 1
           },
           "end": {
-            "line": 203,
+            "line": 205,
             "column": 1
           }
         },
@@ -1566,11 +1598,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 203,
+            "line": 205,
             "column": 1
           },
           "end": {
-            "line": 222,
+            "line": 224,
             "column": 2
           }
         },
@@ -1591,11 +1623,11 @@
           "content": "export function runHiaJsdoc(options = {}) {\n  const cwd = path.resolve(options.cwd ?? process.cwd());\n  const configPath = options.configPath ?? \"hia-jsdoc.conf.json\";\n  const written = writeHiaJsdocConfig(configPath, { ...options, cwd });\n  const jsdocBin = require.resolve(\"jsdoc/jsdoc.js\");\n  const result = spawnSync(process.execPath, [jsdocBin, \"-c\", written.path], {\n    cwd,\n    encoding: \"utf8\",\n    shell: false\n  });\n\n  return {\n    ok: result.status === 0,\n    status: result.status,\n    stdout: result.stdout,\n    stderr: result.stderr,\n    configPath: written.path,\n    config: written.config\n  };\n}",
           "range": {
             "start": {
-              "line": 203,
+              "line": 205,
               "column": 1
             },
             "end": {
-              "line": 222,
+              "line": 224,
               "column": 2
             }
           }
@@ -1603,6 +1635,105 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:runHiaJsdoc",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 3,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "normalizeHiaOptions",
+    "longname": "normalizeHiaOptions",
+    "kind": "function",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-runner/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 337,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 337,
+            "column": 1
+          },
+          "end": {
+            "line": 337,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:function:normalizeHiaOptions",
+        "relativePath": "packages/jsdoc-runner/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 337,
+            "column": 1
+          },
+          "end": {
+            "line": 371,
+            "column": 2
+          }
+        },
+        "content": "function normalizeHiaOptions(value) {\n  assertRecord(value, \"options.hia must be an object.\");\n  // <lang><zh-CN>presentation 只接受两个中性选择字段，不吸收 owner DOM/CSS 配置。</zh-CN><en>Presentation accepts only the two neutral selection fields and absorbs no owner DOM/CSS configuration.</en></lang>\n  const presentation = value.presentation ?? {};\n  assertRecord(presentation, \"options.hia.presentation must be an object.\");\n  assertKnownKeys(presentation, [\"pageMode\", \"sourceMode\"], \"options.hia.presentation\");\n  if (presentation.pageMode !== undefined && ![\"multi-page\", \"single-page\"].includes(presentation.pageMode)) {\n    throw new TypeError(`Unsupported presentation pageMode: ${presentation.pageMode}`);\n  }\n  if (presentation.sourceMode !== undefined && ![\"fetch\", \"embed\", \"link\", \"none\"].includes(presentation.sourceMode)) {\n    throw new TypeError(`Unsupported presentation sourceMode: ${presentation.sourceMode}`);\n  }\n  // <lang><zh-CN>theme 的其他既有字段保持开放；只验证新增 scheme 与非空 skin selection。</zh-CN><en>Other existing theme fields remain open; only the new scheme and non-empty skin selection are validated.</en></lang>\n  const theme = value.theme ?? {};\n  assertRecord(theme, \"options.hia.theme must be an object.\");\n  if (theme.scheme !== undefined && ![\"dark\", \"light\", \"system\"].includes(theme.scheme)) {\n    throw new TypeError(`Unsupported theme scheme: ${theme.scheme}`);\n  }\n  if (theme.skin !== undefined && (typeof theme.skin !== \"string\" || !theme.skin.trim())) {\n    throw new TypeError(\"theme.skin must be a non-empty string when provided.\");\n  }\n\n  return {\n    ...value,\n    presentation: {\n      pageMode: presentation.pageMode ?? \"multi-page\",\n      sourceMode: presentation.sourceMode ?? \"fetch\"\n    },\n    theme: {\n      ...theme,\n      skin: theme.skin ?? \"classic\",\n      scheme: theme.scheme ?? \"system\"\n    }\n  };\n}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "function normalizeHiaOptions(value) {\n  assertRecord(value, \"options.hia must be an object.\");\n  // <lang><zh-CN>presentation 只接受两个中性选择字段，不吸收 owner DOM/CSS 配置。</zh-CN><en>Presentation accepts only the two neutral selection fields and absorbs no owner DOM/CSS configuration.</en></lang>\n  const presentation = value.presentation ?? {};\n  assertRecord(presentation, \"options.hia.presentation must be an object.\");\n  assertKnownKeys(presentation, [\"pageMode\", \"sourceMode\"], \"options.hia.presentation\");\n  if (presentation.pageMode !== undefined && ![\"multi-page\", \"single-page\"].includes(presentation.pageMode)) {\n    throw new TypeError(`Unsupported presentation pageMode: ${presentation.pageMode}`);\n  }\n  if (presentation.sourceMode !== undefined && ![\"fetch\", \"embed\", \"link\", \"none\"].includes(presentation.sourceMode)) {\n    throw new TypeError(`Unsupported presentation sourceMode: ${presentation.sourceMode}`);\n  }\n  // <lang><zh-CN>theme 的其他既有字段保持开放；只验证新增 scheme 与非空 skin selection。</zh-CN><en>Other existing theme fields remain open; only the new scheme and non-empty skin selection are validated.</en></lang>\n  const theme = value.theme ?? {};\n  assertRecord(theme, \"options.hia.theme must be an object.\");\n  if (theme.scheme !== undefined && ![\"dark\", \"light\", \"system\"].includes(theme.scheme)) {\n    throw new TypeError(`Unsupported theme scheme: ${theme.scheme}`);\n  }\n  if (theme.skin !== undefined && (typeof theme.skin !== \"string\" || !theme.skin.trim())) {\n    throw new TypeError(\"theme.skin must be a non-empty string when provided.\");\n  }\n\n  return {\n    ...value,\n    presentation: {\n      pageMode: presentation.pageMode ?? \"multi-page\",\n      sourceMode: presentation.sourceMode ?? \"fetch\"\n    },\n    theme: {\n      ...theme,\n      skin: theme.skin ?? \"classic\",\n      scheme: theme.scheme ?? \"system\"\n    }\n  };\n}",
+          "range": {
+            "start": {
+              "line": 337,
+              "column": 1
+            },
+            "end": {
+              "line": 371,
+              "column": 2
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:normalizeHiaOptions",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1665,13 +1796,13 @@
             "column": 1
           },
           "end": {
-            "line": 13,
-            "column": 22
+            "line": 8,
+            "column": 62
           }
         },
-        "content": "export const HIA_JSDOC_CONFIG_SCHEMA_VERSION = \"0.1.0-draft\";\n\n/**\n * Declares the public schema identifier for HIA JSDoc runner config files.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_CONFIG_SCHEMA_VERSION = \"0.1.0-draft\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1683,21 +1814,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_CONFIG_SCHEMA_VERSION = \"0.1.0-draft\";\n\n/**\n * Declares the public schema identifier for HIA JSDoc runner config files.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_CONFIG_SCHEMA_VERSION = \"0.1.0-draft\";",
           "range": {
             "start": {
               "line": 8,
               "column": 1
             },
             "end": {
-              "line": 13,
-              "column": 22
+              "line": 8,
+              "column": 62
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_CONFIG_SCHEMA_VERSION",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1760,13 +1893,13 @@
             "column": 1
           },
           "end": {
-            "line": 28,
-            "column": 3
+            "line": 17,
+            "column": 139
           }
         },
-        "content": "export const HIA_JSDOC_CONFIG_SCHEMA_ID = \"https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-0.1.0-draft.schema.json\";\n\nconst relativePath = {\n  type: \"string\",\n  minLength: 1,\n  not: {\n    anyOf: [\n      { pattern: \"^(?:[A-Za-z]:|/|\\\\\\\\|[A-Za-z][A-Za-z0-9+.-]*:)\" },\n      { pattern: \"(?:^|[\\\\\\\\/])\\\\.\\\\.(?:[\\\\\\\\/]|$)\" }\n    ]\n  }\n};",
+        "content": "export const HIA_JSDOC_CONFIG_SCHEMA_ID = \"https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-0.1.0-draft.schema.json\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1778,21 +1911,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_CONFIG_SCHEMA_ID = \"https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-0.1.0-draft.schema.json\";\n\nconst relativePath = {\n  type: \"string\",\n  minLength: 1,\n  not: {\n    anyOf: [\n      { pattern: \"^(?:[A-Za-z]:|/|\\\\\\\\|[A-Za-z][A-Za-z0-9+.-]*:)\" },\n      { pattern: \"(?:^|[\\\\\\\\/])\\\\.\\\\.(?:[\\\\\\\\/]|$)\" }\n    ]\n  }\n};",
+          "content": "export const HIA_JSDOC_CONFIG_SCHEMA_ID = \"https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-0.1.0-draft.schema.json\";",
           "range": {
             "start": {
               "line": 17,
               "column": 1
             },
             "end": {
-              "line": 28,
-              "column": 3
+              "line": 17,
+              "column": 139
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_CONFIG_SCHEMA_ID",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1855,13 +1990,13 @@
             "column": 1
           },
           "end": {
-            "line": 86,
+            "line": 107,
             "column": 4
           }
         },
-        "content": "export const HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({\n  $schema: \"https://json-schema.org/draft/2020-12/schema\",\n  $id: HIA_JSDOC_CONFIG_SCHEMA_ID,\n  title: \"HIA JSDoc Config\",\n  type: \"object\",\n  additionalProperties: false,\n  required: [\"schemaVersion\", \"workspaceRoot\", \"outputDirectory\", \"inputs\"],\n  properties: {\n    $schema: { const: HIA_JSDOC_CONFIG_SCHEMA_ID },\n    schemaVersion: { const: HIA_JSDOC_CONFIG_SCHEMA_VERSION },\n    workspaceRoot: relativePath,\n    outputDirectory: relativePath,\n    inputs: {\n      type: \"array\",\n      minItems: 1,\n      items: {\n        type: \"object\",\n        additionalProperties: false,\n        required: [\"kind\", \"path\"],\n        properties: {\n          kind: { enum: [\"javascript-source\", \"javascript-module\"] },\n          path: relativePath\n        }\n      }\n    },\n    options: {\n      type: \"object\",\n      additionalProperties: true,\n      properties: {\n        mode: { enum: [\"standalone\", \"hiaIntegration\", \"both\"] },\n        includePattern: { type: \"string\", minLength: 1 },\n        excludePattern: { type: \"string\", minLength: 1 },\n        recurse: { type: \"boolean\" },\n        writeResultManifest: { type: \"boolean\" },\n        sourcesContentPolicy: { enum: [\"none\", \"reference\", \"embed\"] },\n        extraPlugins: { type: \"object\" },\n        plugin: { type: \"object\" },\n        hia: { type: \"object\" },\n        theme: { type: \"object\" },\n        baseConfig: { type: \"object\" }\n      }\n    },\n    profileIds: {\n      type: \"array\",\n      minItems: 1,\n      uniqueItems: true,\n      items: { type: \"string\", pattern: \"^[a-z0-9][a-z0-9._-]*$\" }\n    }\n  }\n});",
+        "content": "export const HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({\n  $schema: \"https://json-schema.org/draft/2020-12/schema\",\n  $id: HIA_JSDOC_CONFIG_SCHEMA_ID,\n  title: \"HIA JSDoc Config\",\n  type: \"object\",\n  additionalProperties: false,\n  required: [\"schemaVersion\", \"workspaceRoot\", \"outputDirectory\", \"inputs\"],\n  properties: {\n    $schema: { const: HIA_JSDOC_CONFIG_SCHEMA_ID },\n    schemaVersion: { const: HIA_JSDOC_CONFIG_SCHEMA_VERSION },\n    workspaceRoot: relativePath,\n    outputDirectory: relativePath,\n    inputs: {\n      type: \"array\",\n      minItems: 1,\n      items: {\n        type: \"object\",\n        additionalProperties: false,\n        required: [\"kind\", \"path\"],\n        properties: {\n          kind: { enum: [\"javascript-source\", \"javascript-module\"] },\n          path: relativePath\n        }\n      }\n    },\n    options: {\n      type: \"object\",\n      additionalProperties: true,\n      properties: {\n        mode: { enum: [\"standalone\", \"hiaIntegration\", \"both\"] },\n        includePattern: { type: \"string\", minLength: 1 },\n        excludePattern: { type: \"string\", minLength: 1 },\n        recurse: { type: \"boolean\" },\n        writeResultManifest: { type: \"boolean\" },\n        sourcesContentPolicy: { enum: [\"none\", \"reference\", \"embed\"] },\n        extraPlugins: { type: \"object\" },\n        plugin: { type: \"object\" },\n        hia: {\n          type: \"object\",\n          additionalProperties: true,\n          properties: {\n            presentation: {\n              type: \"object\",\n              additionalProperties: false,\n              properties: {\n                pageMode: { enum: [\"multi-page\", \"single-page\"] },\n                sourceMode: { enum: [\"fetch\", \"embed\", \"link\", \"none\"] }\n              }\n            },\n            theme: {\n              type: \"object\",\n              additionalProperties: true,\n              properties: {\n                skin: { type: \"string\", minLength: 1 },\n                scheme: { enum: [\"dark\", \"light\", \"system\"] }\n              }\n            }\n          }\n        },\n        theme: { type: \"object\" },\n        baseConfig: { type: \"object\" }\n      }\n    },\n    profileIds: {\n      type: \"array\",\n      minItems: 1,\n      uniqueItems: true,\n      items: { type: \"string\", pattern: \"^[a-z0-9][a-z0-9._-]*$\" }\n    }\n  }\n});",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1873,14 +2008,14 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({\n  $schema: \"https://json-schema.org/draft/2020-12/schema\",\n  $id: HIA_JSDOC_CONFIG_SCHEMA_ID,\n  title: \"HIA JSDoc Config\",\n  type: \"object\",\n  additionalProperties: false,\n  required: [\"schemaVersion\", \"workspaceRoot\", \"outputDirectory\", \"inputs\"],\n  properties: {\n    $schema: { const: HIA_JSDOC_CONFIG_SCHEMA_ID },\n    schemaVersion: { const: HIA_JSDOC_CONFIG_SCHEMA_VERSION },\n    workspaceRoot: relativePath,\n    outputDirectory: relativePath,\n    inputs: {\n      type: \"array\",\n      minItems: 1,\n      items: {\n        type: \"object\",\n        additionalProperties: false,\n        required: [\"kind\", \"path\"],\n        properties: {\n          kind: { enum: [\"javascript-source\", \"javascript-module\"] },\n          path: relativePath\n        }\n      }\n    },\n    options: {\n      type: \"object\",\n      additionalProperties: true,\n      properties: {\n        mode: { enum: [\"standalone\", \"hiaIntegration\", \"both\"] },\n        includePattern: { type: \"string\", minLength: 1 },\n        excludePattern: { type: \"string\", minLength: 1 },\n        recurse: { type: \"boolean\" },\n        writeResultManifest: { type: \"boolean\" },\n        sourcesContentPolicy: { enum: [\"none\", \"reference\", \"embed\"] },\n        extraPlugins: { type: \"object\" },\n        plugin: { type: \"object\" },\n        hia: { type: \"object\" },\n        theme: { type: \"object\" },\n        baseConfig: { type: \"object\" }\n      }\n    },\n    profileIds: {\n      type: \"array\",\n      minItems: 1,\n      uniqueItems: true,\n      items: { type: \"string\", pattern: \"^[a-z0-9][a-z0-9._-]*$\" }\n    }\n  }\n});",
+          "content": "export const HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({\n  $schema: \"https://json-schema.org/draft/2020-12/schema\",\n  $id: HIA_JSDOC_CONFIG_SCHEMA_ID,\n  title: \"HIA JSDoc Config\",\n  type: \"object\",\n  additionalProperties: false,\n  required: [\"schemaVersion\", \"workspaceRoot\", \"outputDirectory\", \"inputs\"],\n  properties: {\n    $schema: { const: HIA_JSDOC_CONFIG_SCHEMA_ID },\n    schemaVersion: { const: HIA_JSDOC_CONFIG_SCHEMA_VERSION },\n    workspaceRoot: relativePath,\n    outputDirectory: relativePath,\n    inputs: {\n      type: \"array\",\n      minItems: 1,\n      items: {\n        type: \"object\",\n        additionalProperties: false,\n        required: [\"kind\", \"path\"],\n        properties: {\n          kind: { enum: [\"javascript-source\", \"javascript-module\"] },\n          path: relativePath\n        }\n      }\n    },\n    options: {\n      type: \"object\",\n      additionalProperties: true,\n      properties: {\n        mode: { enum: [\"standalone\", \"hiaIntegration\", \"both\"] },\n        includePattern: { type: \"string\", minLength: 1 },\n        excludePattern: { type: \"string\", minLength: 1 },\n        recurse: { type: \"boolean\" },\n        writeResultManifest: { type: \"boolean\" },\n        sourcesContentPolicy: { enum: [\"none\", \"reference\", \"embed\"] },\n        extraPlugins: { type: \"object\" },\n        plugin: { type: \"object\" },\n        hia: {\n          type: \"object\",\n          additionalProperties: true,\n          properties: {\n            presentation: {\n              type: \"object\",\n              additionalProperties: false,\n              properties: {\n                pageMode: { enum: [\"multi-page\", \"single-page\"] },\n                sourceMode: { enum: [\"fetch\", \"embed\", \"link\", \"none\"] }\n              }\n            },\n            theme: {\n              type: \"object\",\n              additionalProperties: true,\n              properties: {\n                skin: { type: \"string\", minLength: 1 },\n                scheme: { enum: [\"dark\", \"light\", \"system\"] }\n              }\n            }\n          }\n        },\n        theme: { type: \"object\" },\n        baseConfig: { type: \"object\" }\n      }\n    },\n    profileIds: {\n      type: \"array\",\n      minItems: 1,\n      uniqueItems: true,\n      items: { type: \"string\", pattern: \"^[a-z0-9][a-z0-9._-]*$\" }\n    }\n  }\n});",
           "range": {
             "start": {
               "line": 37,
               "column": 1
             },
             "end": {
-              "line": 86,
+              "line": 107,
               "column": 4
             }
           }
@@ -1888,6 +2023,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_CONFIG_JSON_SCHEMA",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -1950,13 +2087,13 @@
             "column": 1
           },
           "end": {
-            "line": 13,
-            "column": 22
+            "line": 8,
+            "column": 72
           }
         },
-        "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT = \"hia-jsdoc-umbrella-config\";\n\n/**\n * Declares the draft version of the HIA JSDoc umbrella configuration contract.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT = \"hia-jsdoc-umbrella-config\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -1968,21 +2105,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT = \"hia-jsdoc-umbrella-config\";\n\n/**\n * Declares the draft version of the HIA JSDoc umbrella configuration contract.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT = \"hia-jsdoc-umbrella-config\";",
           "range": {
             "start": {
               "line": 8,
               "column": 1
             },
             "end": {
-              "line": 13,
-              "column": 22
+              "line": 8,
+              "column": 72
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_UMBRELLA_CONTRACT",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2045,13 +2184,13 @@
             "column": 1
           },
           "end": {
-            "line": 22,
-            "column": 22
+            "line": 17,
+            "column": 66
           }
         },
-        "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = \"0.1.0-draft\";\n\n/**\n * Names the published HIA JSDoc plugin package consumed by the umbrella preset.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = \"0.1.0-draft\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2063,21 +2202,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = \"0.1.0-draft\";\n\n/**\n * Names the published HIA JSDoc plugin package consumed by the umbrella preset.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = \"0.1.0-draft\";",
           "range": {
             "start": {
               "line": 17,
               "column": 1
             },
             "end": {
-              "line": 22,
-              "column": 22
+              "line": 17,
+              "column": 66
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2140,13 +2281,13 @@
             "column": 1
           },
           "end": {
-            "line": 31,
-            "column": 22
+            "line": 26,
+            "column": 74
           }
         },
-        "content": "export const HIA_JSDOC_PLUGIN_PACKAGE = \"@mandolin/jsdoc-plugin-hia-sys\";\n\n/**\n * Pins the published HIA JSDoc plugin version used by this compatibility layer.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_PLUGIN_PACKAGE = \"@mandolin/jsdoc-plugin-hia-sys\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2158,21 +2299,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_PLUGIN_PACKAGE = \"@mandolin/jsdoc-plugin-hia-sys\";\n\n/**\n * Pins the published HIA JSDoc plugin version used by this compatibility layer.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_PLUGIN_PACKAGE = \"@mandolin/jsdoc-plugin-hia-sys\";",
           "range": {
             "start": {
               "line": 26,
               "column": 1
             },
             "end": {
-              "line": 31,
-              "column": 22
+              "line": 26,
+              "column": 74
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PLUGIN_PACKAGE",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2235,13 +2378,13 @@
             "column": 1
           },
           "end": {
-            "line": 40,
-            "column": 22
+            "line": 35,
+            "column": 49
           }
         },
-        "content": "export const HIA_JSDOC_PLUGIN_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the local plugin entry resolved from dependencies.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_PLUGIN_VERSION = \"0.1.0\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2253,21 +2396,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_PLUGIN_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the local plugin entry resolved from dependencies.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_PLUGIN_VERSION = \"0.1.0\";",
           "range": {
             "start": {
               "line": 35,
               "column": 1
             },
             "end": {
-              "line": 40,
-              "column": 22
+              "line": 35,
+              "column": 49
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PLUGIN_VERSION",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2330,13 +2475,13 @@
             "column": 1
           },
           "end": {
-            "line": 49,
-            "column": 22
+            "line": 44,
+            "column": 98
           }
         },
-        "content": "export const HIA_JSDOC_PLUGIN_PATH = \"node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs\";\n\n/**\n * Names the published HIA JSDoc theme package consumed by the umbrella preset.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_PLUGIN_PATH = \"node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2348,21 +2493,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_PLUGIN_PATH = \"node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs\";\n\n/**\n * Names the published HIA JSDoc theme package consumed by the umbrella preset.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_PLUGIN_PATH = \"node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs\";",
           "range": {
             "start": {
               "line": 44,
               "column": 1
             },
             "end": {
-              "line": 49,
-              "column": 22
+              "line": 44,
+              "column": 98
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PLUGIN_PATH",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2425,13 +2572,13 @@
             "column": 1
           },
           "end": {
-            "line": 58,
-            "column": 22
+            "line": 53,
+            "column": 68
           }
         },
-        "content": "export const HIA_JSDOC_THEME_PACKAGE = \"@mandolin/jsdoc-theme-hia\";\n\n/**\n * Pins the published HIA JSDoc theme version used by this compatibility layer.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_THEME_PACKAGE = \"@mandolin/jsdoc-theme-hia\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2443,21 +2590,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_THEME_PACKAGE = \"@mandolin/jsdoc-theme-hia\";\n\n/**\n * Pins the published HIA JSDoc theme version used by this compatibility layer.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_THEME_PACKAGE = \"@mandolin/jsdoc-theme-hia\";",
           "range": {
             "start": {
               "line": 53,
               "column": 1
             },
             "end": {
-              "line": 58,
-              "column": 22
+              "line": 53,
+              "column": 68
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_THEME_PACKAGE",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2520,13 +2669,13 @@
             "column": 1
           },
           "end": {
-            "line": 67,
-            "column": 22
+            "line": 62,
+            "column": 48
           }
         },
-        "content": "export const HIA_JSDOC_THEME_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the theme template resolved from dependencies.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_THEME_VERSION = \"0.1.0\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2538,21 +2687,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_THEME_VERSION = \"0.1.0\";\n\n/**\n * Points JSDoc config generation at the theme template resolved from dependencies.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_THEME_VERSION = \"0.1.0\";",
           "range": {
             "start": {
               "line": 62,
               "column": 1
             },
             "end": {
-              "line": 67,
-              "column": 22
+              "line": 62,
+              "column": 48
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_THEME_VERSION",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2615,13 +2766,13 @@
             "column": 1
           },
           "end": {
-            "line": 76,
-            "column": 22
+            "line": 71,
+            "column": 82
           }
         },
-        "content": "export const HIA_JSDOC_THEME_TEMPLATE = \"node_modules/@mandolin/jsdoc-theme-hia\";\n\n/**\n * Names the upstream JSDoc package used by the HIA JSDoc runner.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_THEME_TEMPLATE = \"node_modules/@mandolin/jsdoc-theme-hia\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2633,21 +2784,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_THEME_TEMPLATE = \"node_modules/@mandolin/jsdoc-theme-hia\";\n\n/**\n * Names the upstream JSDoc package used by the HIA JSDoc runner.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_THEME_TEMPLATE = \"node_modules/@mandolin/jsdoc-theme-hia\";",
           "range": {
             "start": {
               "line": 71,
               "column": 1
             },
             "end": {
-              "line": 76,
-              "column": 22
+              "line": 71,
+              "column": 82
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_THEME_TEMPLATE",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2660,8 +2813,8 @@
     }
   },
   {
-    "name": "JSDOC_PACKAGE",
-    "longname": "JSDOC_PACKAGE",
+    "name": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT",
+    "longname": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT",
     "kind": "constant",
     "hia": {
       "hasHia": true,
@@ -2701,7 +2854,7 @@
       },
       "sourcePrimaryBlock": {
         "kind": "primary-block",
-        "id": "doclet:constant:JSDOC_PACKAGE",
+        "id": "doclet:constant:HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT",
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "range": {
@@ -2710,13 +2863,13 @@
             "column": 1
           },
           "end": {
-            "line": 85,
-            "column": 22
+            "line": 80,
+            "column": 93
           }
         },
-        "content": "export const JSDOC_PACKAGE = \"jsdoc\";\n\n/**\n * Pins the upstream JSDoc version used by the HIA JSDoc runner.\n *\n * @constant {string}",
+        "content": "export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT = \"documentation-presentation-profile\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2728,21 +2881,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const JSDOC_PACKAGE = \"jsdoc\";\n\n/**\n * Pins the upstream JSDoc version used by the HIA JSDoc runner.\n *\n * @constant {string}",
+          "content": "export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT = \"documentation-presentation-profile\";",
           "range": {
             "start": {
               "line": 80,
               "column": 1
             },
             "end": {
-              "line": 85,
-              "column": 22
+              "line": 80,
+              "column": 93
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2755,8 +2910,8 @@
     }
   },
   {
-    "name": "JSDOC_VERSION",
-    "longname": "JSDOC_VERSION",
+    "name": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
+    "longname": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
     "kind": "constant",
     "hia": {
       "hasHia": true,
@@ -2796,7 +2951,7 @@
       },
       "sourcePrimaryBlock": {
         "kind": "primary-block",
-        "id": "doclet:constant:JSDOC_VERSION",
+        "id": "doclet:constant:HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "range": {
@@ -2805,13 +2960,13 @@
             "column": 1
           },
           "end": {
-            "line": 94,
-            "column": 37
+            "line": 89,
+            "column": 78
           }
         },
-        "content": "export const JSDOC_VERSION = \"4.0.5\";\n\n/**\n * Lists supported HIA JSDoc output modes for config normalization.\n *\n * @constant {ReadonlyArray<string>}",
+        "content": "export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = \"0.1.0-draft\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2823,21 +2978,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const JSDOC_VERSION = \"4.0.5\";\n\n/**\n * Lists supported HIA JSDoc output modes for config normalization.\n *\n * @constant {ReadonlyArray<string>}",
+          "content": "export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = \"0.1.0-draft\";",
           "range": {
             "start": {
               "line": 89,
               "column": 1
             },
             "end": {
-              "line": 94,
-              "column": 37
+              "line": 89,
+              "column": 78
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2850,8 +3007,8 @@
     }
   },
   {
-    "name": "HIA_JSDOC_OUTPUT_MODES",
-    "longname": "HIA_JSDOC_OUTPUT_MODES",
+    "name": "JSDOC_PACKAGE",
+    "longname": "JSDOC_PACKAGE",
     "kind": "constant",
     "hia": {
       "hasHia": true,
@@ -2891,7 +3048,7 @@
       },
       "sourcePrimaryBlock": {
         "kind": "primary-block",
-        "id": "doclet:constant:HIA_JSDOC_OUTPUT_MODES",
+        "id": "doclet:constant:JSDOC_PACKAGE",
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "range": {
@@ -2900,13 +3057,13 @@
             "column": 1
           },
           "end": {
-            "line": 103,
-            "column": 37
+            "line": 98,
+            "column": 38
           }
         },
-        "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);\n\n/**\n * Lists plugin insertion phases supported by the extra plugin registry.\n *\n * @constant {ReadonlyArray<string>}",
+        "content": "export const JSDOC_PACKAGE = \"jsdoc\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -2918,21 +3075,23 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);\n\n/**\n * Lists plugin insertion phases supported by the extra plugin registry.\n *\n * @constant {ReadonlyArray<string>}",
+          "content": "export const JSDOC_PACKAGE = \"jsdoc\";",
           "range": {
             "start": {
               "line": 98,
               "column": 1
             },
             "end": {
-              "line": 103,
-              "column": 37
+              "line": 98,
+              "column": 38
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:JSDOC_PACKAGE",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -2945,8 +3104,8 @@
     }
   },
   {
-    "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
-    "longname": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "name": "JSDOC_VERSION",
+    "longname": "JSDOC_VERSION",
     "kind": "constant",
     "hia": {
       "hasHia": true,
@@ -2986,7 +3145,7 @@
       },
       "sourcePrimaryBlock": {
         "kind": "primary-block",
-        "id": "doclet:constant:HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+        "id": "doclet:constant:JSDOC_VERSION",
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "range": {
@@ -2995,13 +3154,13 @@
             "column": 1
           },
           "end": {
-            "line": 112,
-            "column": 100
+            "line": 107,
+            "column": 38
           }
         },
-        "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);\n\n/**\n * Normalizes an HIA JSDoc output mode and rejects unknown modes.\n *\n * @param {string} [mode=\"both\"] <lang><en>Candidate output mode.</en><zh-CN>候选输出模式。</zh-CN></lang>",
+        "content": "export const JSDOC_VERSION = \"4.0.5\";",
         "rangeSource": "parser-js",
-        "confidence": "high",
+        "confidence": "medium",
         "diagnostics": [],
         "link": {
           "enabled": true,
@@ -3013,21 +3172,217 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);\n\n/**\n * Normalizes an HIA JSDoc output mode and rejects unknown modes.\n *\n * @param {string} [mode=\"both\"] <lang><en>Candidate output mode.</en><zh-CN>候选输出模式。</zh-CN></lang>",
+          "content": "export const JSDOC_VERSION = \"4.0.5\";",
           "range": {
             "start": {
               "line": 107,
               "column": 1
             },
             "end": {
-              "line": 112,
-              "column": 100
+              "line": 107,
+              "column": 38
             }
           }
         }
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:JSDOC_VERSION",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_OUTPUT_MODES",
+    "longname": "HIA_JSDOC_OUTPUT_MODES",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 116,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 116,
+            "column": 1
+          },
+          "end": {
+            "line": 116,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_OUTPUT_MODES",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 116,
+            "column": 1
+          },
+          "end": {
+            "line": 116,
+            "column": 95
+          }
+        },
+        "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);",
+        "rangeSource": "parser-js",
+        "confidence": "medium",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);",
+          "range": {
+            "start": {
+              "line": 116,
+              "column": 1
+            },
+            "end": {
+              "line": 116,
+              "column": 95
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_OUTPUT_MODES",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "longname": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 125,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 125,
+            "column": 1
+          },
+          "end": {
+            "line": 125,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 125,
+            "column": 1
+          },
+          "end": {
+            "line": 125,
+            "column": 81
+          }
+        },
+        "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);",
+        "rangeSource": "parser-js",
+        "confidence": "medium",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);",
+          "range": {
+            "start": {
+              "line": 125,
+              "column": 1
+            },
+            "end": {
+              "line": 125,
+              "column": 81
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_EXTRA_PLUGIN_PHASES",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -3059,16 +3414,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 118,
+          "line": 136,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 118,
+            "line": 136,
             "column": 1
           },
           "end": {
-            "line": 118,
+            "line": 136,
             "column": 1
           }
         },
@@ -3086,11 +3441,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 118,
+            "line": 136,
             "column": 1
           },
           "end": {
-            "line": 123,
+            "line": 141,
             "column": 2
           }
         },
@@ -3111,11 +3466,11 @@
           "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
           "range": {
             "start": {
-              "line": 118,
+              "line": 136,
               "column": 1
             },
             "end": {
-              "line": 123,
+              "line": 141,
               "column": 2
             }
           }
@@ -3123,6 +3478,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:normalizeHiaJsdocMode",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -3154,16 +3511,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 132,
+          "line": 150,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 132,
+            "line": 150,
             "column": 1
           },
           "end": {
-            "line": 132,
+            "line": 150,
             "column": 1
           }
         },
@@ -3181,11 +3538,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 132,
+            "line": 150,
             "column": 1
           },
           "end": {
-            "line": 149,
+            "line": 167,
             "column": 2
           }
         },
@@ -3206,11 +3563,11 @@
           "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
           "range": {
             "start": {
-              "line": 132,
+              "line": 150,
               "column": 1
             },
             "end": {
-              "line": 149,
+              "line": 167,
               "column": 2
             }
           }
@@ -3218,6 +3575,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:createHiaJsdocVersionSummary",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -3249,16 +3608,16 @@
         "relativePath": "packages/jsdoc-theme-bridge/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 15,
+          "line": 17,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 15,
+            "line": 17,
             "column": 1
           },
           "end": {
-            "line": 15,
+            "line": 17,
             "column": 1
           }
         },
@@ -3276,15 +3635,15 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 15,
+            "line": 17,
             "column": 1
           },
           "end": {
-            "line": 22,
+            "line": 42,
             "column": 2
           }
         },
-        "content": "export function createHiaJsdocThemeBridge(options = {}) {\n  return {\n    package: options.packageName ?? HIA_JSDOC_THEME_PACKAGE,\n    version: options.version ?? HIA_JSDOC_THEME_VERSION,\n    template: options.template ?? HIA_JSDOC_THEME_TEMPLATE,\n    enabled: options.enabled ?? true\n  };\n}",
+        "content": "export function createHiaJsdocThemeBridge(options = {}) {\n  // <lang><zh-CN>presentation 只保存 owner-neutral 选择；skin catalog 的内容仍由 JTH 生成 profile 提供。</zh-CN><en>Presentation carries only owner-neutral selections; JTH's generated profile remains the source of skin-catalog content.</en></lang>\n  const presentation = options.presentation && typeof options.presentation === \"object\"\n    ? options.presentation\n    : {};\n  // <lang><zh-CN>packageName 同时标识 template owner 与 skin catalog owner，避免复制皮肤实现。</zh-CN><en>PackageName identifies both template and skin-catalog owner, avoiding copied skin implementations.</en></lang>\n  const packageName = options.packageName ?? HIA_JSDOC_THEME_PACKAGE;\n  return {\n    package: packageName,\n    version: options.version ?? HIA_JSDOC_THEME_VERSION,\n    template: options.template ?? HIA_JSDOC_THEME_TEMPLATE,\n    enabled: options.enabled ?? true,\n    presentation: {\n      contract: HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT,\n      contractVersion: HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION,\n      pageMode: presentation.pageMode ?? \"multi-page\",\n      sourceMode: presentation.sourceMode ?? \"fetch\",\n      skinId: options.skin ?? \"classic\",\n      scheme: options.scheme ?? \"system\",\n      skinCatalog: {\n        ownerPackage: packageName,\n        projection: \"documentation-presentation-profile.theme.skins\"\n      }\n    }\n  };\n}",
         "rangeSource": "parser-js",
         "confidence": "high",
         "diagnostics": [],
@@ -3298,14 +3657,14 @@
           "enabled": true,
           "defaultExpanded": false,
           "language": "javascript",
-          "content": "export function createHiaJsdocThemeBridge(options = {}) {\n  return {\n    package: options.packageName ?? HIA_JSDOC_THEME_PACKAGE,\n    version: options.version ?? HIA_JSDOC_THEME_VERSION,\n    template: options.template ?? HIA_JSDOC_THEME_TEMPLATE,\n    enabled: options.enabled ?? true\n  };\n}",
+          "content": "export function createHiaJsdocThemeBridge(options = {}) {\n  // <lang><zh-CN>presentation 只保存 owner-neutral 选择；skin catalog 的内容仍由 JTH 生成 profile 提供。</zh-CN><en>Presentation carries only owner-neutral selections; JTH's generated profile remains the source of skin-catalog content.</en></lang>\n  const presentation = options.presentation && typeof options.presentation === \"object\"\n    ? options.presentation\n    : {};\n  // <lang><zh-CN>packageName 同时标识 template owner 与 skin catalog owner，避免复制皮肤实现。</zh-CN><en>PackageName identifies both template and skin-catalog owner, avoiding copied skin implementations.</en></lang>\n  const packageName = options.packageName ?? HIA_JSDOC_THEME_PACKAGE;\n  return {\n    package: packageName,\n    version: options.version ?? HIA_JSDOC_THEME_VERSION,\n    template: options.template ?? HIA_JSDOC_THEME_TEMPLATE,\n    enabled: options.enabled ?? true,\n    presentation: {\n      contract: HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT,\n      contractVersion: HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION,\n      pageMode: presentation.pageMode ?? \"multi-page\",\n      sourceMode: presentation.sourceMode ?? \"fetch\",\n      skinId: options.skin ?? \"classic\",\n      scheme: options.scheme ?? \"system\",\n      skinCatalog: {\n        ownerPackage: packageName,\n        projection: \"documentation-presentation-profile.theme.skins\"\n      }\n    }\n  };\n}",
           "range": {
             "start": {
-              "line": 15,
+              "line": 17,
               "column": 1
             },
             "end": {
-              "line": 22,
+              "line": 42,
               "column": 2
             }
           }
@@ -3313,6 +3672,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:createHiaJsdocThemeBridge",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"
@@ -3344,16 +3705,16 @@
         "relativePath": "packages/jsdoc-theme-bridge/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 32,
+          "line": 52,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 32,
+            "line": 52,
             "column": 1
           },
           "end": {
-            "line": 32,
+            "line": 52,
             "column": 1
           }
         },
@@ -3371,11 +3732,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 32,
+            "line": 52,
             "column": 1
           },
           "end": {
-            "line": 34,
+            "line": 54,
             "column": 2
           }
         },
@@ -3396,11 +3757,11 @@
           "content": "export function getHiaJsdocThemeTemplate(options = {}) {\n  return createHiaJsdocThemeBridge(options).template;\n}",
           "range": {
             "start": {
-              "line": 32,
+              "line": 52,
               "column": 1
             },
             "end": {
-              "line": 34,
+              "line": 54,
               "column": 2
             }
           }
@@ -3408,6 +3769,8 @@
       },
       "sourcePreviewEnabled": true,
       "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:getHiaJsdocThemeTemplate",
+      "presentationParentLongname": "",
       "locales": [
         "en",
         "zh-CN"

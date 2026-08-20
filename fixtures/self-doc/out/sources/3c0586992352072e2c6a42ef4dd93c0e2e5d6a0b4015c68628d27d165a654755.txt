@@ -1,0 +1,43 @@
+export function mergeJsdocConfig(preset, userConfig = {}) {
+  return {
+    ...preset,
+    ...userConfig,
+    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),
+    source: {
+      ...(preset.source ?? {}),
+      ...(userConfig.source ?? {})
+    },
+    opts: {
+      ...(preset.opts ?? {}),
+      ...(userConfig.opts ?? {}),
+      hia: {
+        ...(preset.opts?.hia ?? {}),
+        ...(userConfig.opts?.hia ?? {}),
+        source: {
+          ...(preset.opts?.hia?.source ?? {}),
+          ...(userConfig.opts?.hia?.source ?? {})
+        },
+        i18n: {
+          ...(preset.opts?.hia?.i18n ?? {}),
+          ...(userConfig.opts?.hia?.i18n ?? {})
+        },
+        presentation: {
+          ...(preset.opts?.hia?.presentation ?? {}),
+          ...(userConfig.opts?.hia?.presentation ?? {})
+        },
+        theme: {
+          ...(preset.opts?.hia?.theme ?? {}),
+          ...(userConfig.opts?.hia?.theme ?? {})
+        },
+        integration: {
+          ...(preset.opts?.hia?.integration ?? {}),
+          ...(userConfig.opts?.hia?.integration ?? {})
+        },
+        umbrella: {
+          ...(preset.opts?.hia?.umbrella ?? {}),
+          ...(userConfig.opts?.hia?.umbrella ?? {})
+        }
+      }
+    }
+  };
+}

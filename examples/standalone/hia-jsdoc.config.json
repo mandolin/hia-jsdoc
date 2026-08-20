@@ -20,6 +20,10 @@
       "template": "../../node_modules/@mandolin/jsdoc-theme-hia"
     },
     "hia": {
+      "presentation": {
+        "pageMode": "multi-page",
+        "sourceMode": "fetch"
+      },
       "i18n": {
         "enabled": true,
         "defaultLocale": "en",
@@ -27,6 +31,8 @@
         "locales": ["en", "zh-CN"]
       },
       "theme": {
+        "skin": "classic",
+        "scheme": "system",
         "code": {
           "fontFamily": "sarasa"
         }

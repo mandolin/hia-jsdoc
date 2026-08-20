@@ -15,6 +15,7 @@
       "header.eyebrow": "API Documentation",
       "summary.symbols": "{count} symbols",
       "nav.symbols": "Symbols",
+      "nav.containedSymbols": "{count} contained symbols",
       "search.label": "Search symbols",
       "search.placeholder": "Filter by name, kind, or summary",
       "empty.symbols": "No document symbols.",
@@ -28,6 +29,9 @@
       "code.tabSize": "Tab",
       "code.wrap": "Wrap",
       "code.reset": "Reset",
+      "theme.controls": "Theme",
+      "theme.skin": "Skin",
+      "theme.scheme": "Color scheme",
       "section.parameters": "Parameters",
       "section.properties": "Properties",
       "section.returns": "Returns",
@@ -41,8 +45,21 @@
       "source.preview": "Source preview",
       "source.unresolved": "Source fragment metadata is missing or unresolved.",
       "source.previewDisabled": "Source preview is disabled for this fragment.",
+      "source.metadataOnly": "No public source link or preview is available for this metadata.",
       "source.definedIn": "Defined in",
       "source.reference": "Reference {index}",
+      "source.load": "Load source",
+      "source.open": "Open source",
+      "source.reset": "Reset source reader",
+      "source.state.idle": "Source is ready to load.",
+      "source.state.loading": "Loading source…",
+      "source.state.ready": "Source loaded.",
+      "source.state.empty": "The source asset is empty.",
+      "source.state.denied": "Source access was denied.",
+      "source.state.not-found": "The source asset was not found.",
+      "source.state.integrity-error": "Source integrity verification failed.",
+      "source.state.network-error": "The source request failed.",
+      "source.state.aborted": "The source request was aborted.",
       "table.name": "Name",
       "table.type": "Type",
       "table.default": "Default",
@@ -87,6 +104,7 @@
       "header.eyebrow": "API 文档",
       "summary.symbols": "{count} 个符号",
       "nav.symbols": "符号",
+      "nav.containedSymbols": "包含 {count} 个符号",
       "search.label": "搜索符号",
       "search.placeholder": "按名称、类型或摘要筛选",
       "empty.symbols": "没有文档符号。",
@@ -100,6 +118,9 @@
       "code.tabSize": "缩进",
       "code.wrap": "换行",
       "code.reset": "重置",
+      "theme.controls": "主题",
+      "theme.skin": "皮肤",
+      "theme.scheme": "配色方案",
       "section.parameters": "参数",
       "section.properties": "属性",
       "section.returns": "返回值",
@@ -113,8 +134,21 @@
       "source.preview": "源码预览",
       "source.unresolved": "源码片段元数据缺失或未解析。",
       "source.previewDisabled": "此源码片段的预览已禁用。",
+      "source.metadataOnly": "该元数据没有可公开呈现的源码链接或预览。",
       "source.definedIn": "定义于",
       "source.reference": "引用 {index}",
+      "source.load": "加载源码",
+      "source.open": "打开源码",
+      "source.reset": "重置源码读取器",
+      "source.state.idle": "源码已可加载。",
+      "source.state.loading": "正在加载源码……",
+      "source.state.ready": "源码已加载。",
+      "source.state.empty": "源码资源为空。",
+      "source.state.denied": "源码访问被拒绝。",
+      "source.state.not-found": "未找到源码资源。",
+      "source.state.integrity-error": "源码完整性校验失败。",
+      "source.state.network-error": "源码请求失败。",
+      "source.state.aborted": "源码请求已中止。",
       "table.name": "名称",
       "table.type": "类型",
       "table.default": "默认值",
@@ -158,5 +192,327 @@
   "perLocalePages": {
     "en": "index.en.html",
     "zh-CN": "index.zh-CN.html"
-  }
+  },
+  "pages": [
+    {
+      "pageId": "page.home",
+      "runtime": "index.html",
+      "locales": {
+        "en": "index.en.html",
+        "zh-CN": "index.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.823145f4cc4a",
+      "runtime": "hia_jsdoc_config_json_schema-823145f4cc4a.html",
+      "locales": {
+        "en": "hia_jsdoc_config_json_schema-823145f4cc4a.en.html",
+        "zh-CN": "hia_jsdoc_config_json_schema-823145f4cc4a.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.970697ef2e75",
+      "runtime": "hia_jsdoc_config_schema_id-970697ef2e75.html",
+      "locales": {
+        "en": "hia_jsdoc_config_schema_id-970697ef2e75.en.html",
+        "zh-CN": "hia_jsdoc_config_schema_id-970697ef2e75.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.9efd7176ffc9",
+      "runtime": "hia_jsdoc_config_schema_version-9efd7176ffc9.html",
+      "locales": {
+        "en": "hia_jsdoc_config_schema_version-9efd7176ffc9.en.html",
+        "zh-CN": "hia_jsdoc_config_schema_version-9efd7176ffc9.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.81f240a7884e",
+      "runtime": "hia_jsdoc_extra_plugin_phases-81f240a7884e.html",
+      "locales": {
+        "en": "hia_jsdoc_extra_plugin_phases-81f240a7884e.en.html",
+        "zh-CN": "hia_jsdoc_extra_plugin_phases-81f240a7884e.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.4a501b44c718",
+      "runtime": "hia_jsdoc_input_kinds-4a501b44c718.html",
+      "locales": {
+        "en": "hia_jsdoc_input_kinds-4a501b44c718.en.html",
+        "zh-CN": "hia_jsdoc_input_kinds-4a501b44c718.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.f4ed636fa33c",
+      "runtime": "hia_jsdoc_output_kinds-f4ed636fa33c.html",
+      "locales": {
+        "en": "hia_jsdoc_output_kinds-f4ed636fa33c.en.html",
+        "zh-CN": "hia_jsdoc_output_kinds-f4ed636fa33c.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.d893677735ef",
+      "runtime": "hia_jsdoc_output_modes-d893677735ef.html",
+      "locales": {
+        "en": "hia_jsdoc_output_modes-d893677735ef.en.html",
+        "zh-CN": "hia_jsdoc_output_modes-d893677735ef.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.a0e4a331cc2f",
+      "runtime": "hia_jsdoc_plugin_package-a0e4a331cc2f.html",
+      "locales": {
+        "en": "hia_jsdoc_plugin_package-a0e4a331cc2f.en.html",
+        "zh-CN": "hia_jsdoc_plugin_package-a0e4a331cc2f.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.ad7ad2beb982",
+      "runtime": "hia_jsdoc_plugin_path-ad7ad2beb982.html",
+      "locales": {
+        "en": "hia_jsdoc_plugin_path-ad7ad2beb982.en.html",
+        "zh-CN": "hia_jsdoc_plugin_path-ad7ad2beb982.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.68c74ef1734d",
+      "runtime": "hia_jsdoc_plugin_version-68c74ef1734d.html",
+      "locales": {
+        "en": "hia_jsdoc_plugin_version-68c74ef1734d.en.html",
+        "zh-CN": "hia_jsdoc_plugin_version-68c74ef1734d.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.a14ea32427b9",
+      "runtime": "hia_jsdoc_presentation_profile_contract-a14ea32427b9.html",
+      "locales": {
+        "en": "hia_jsdoc_presentation_profile_contract-a14ea32427b9.en.html",
+        "zh-CN": "hia_jsdoc_presentation_profile_contract-a14ea32427b9.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.8cea383dc286",
+      "runtime": "hia_jsdoc_presentation_profile_contract_version-8cea383dc286.html",
+      "locales": {
+        "en": "hia_jsdoc_presentation_profile_contract_version-8cea383dc286.en.html",
+        "zh-CN": "hia_jsdoc_presentation_profile_contract_version-8cea383dc286.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.c345db0df8d0",
+      "runtime": "hia_jsdoc_runner_version-c345db0df8d0.html",
+      "locales": {
+        "en": "hia_jsdoc_runner_version-c345db0df8d0.en.html",
+        "zh-CN": "hia_jsdoc_runner_version-c345db0df8d0.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.42f7e332ac71",
+      "runtime": "hia_jsdoc_theme_package-42f7e332ac71.html",
+      "locales": {
+        "en": "hia_jsdoc_theme_package-42f7e332ac71.en.html",
+        "zh-CN": "hia_jsdoc_theme_package-42f7e332ac71.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.03ba3879ca4d",
+      "runtime": "hia_jsdoc_theme_template-03ba3879ca4d.html",
+      "locales": {
+        "en": "hia_jsdoc_theme_template-03ba3879ca4d.en.html",
+        "zh-CN": "hia_jsdoc_theme_template-03ba3879ca4d.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.20711ac29049",
+      "runtime": "hia_jsdoc_theme_version-20711ac29049.html",
+      "locales": {
+        "en": "hia_jsdoc_theme_version-20711ac29049.en.html",
+        "zh-CN": "hia_jsdoc_theme_version-20711ac29049.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.68401e0dc057",
+      "runtime": "hia_jsdoc_umbrella_contract-68401e0dc057.html",
+      "locales": {
+        "en": "hia_jsdoc_umbrella_contract-68401e0dc057.en.html",
+        "zh-CN": "hia_jsdoc_umbrella_contract-68401e0dc057.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.72f511d839bf",
+      "runtime": "hia_jsdoc_umbrella_contract_version-72f511d839bf.html",
+      "locales": {
+        "en": "hia_jsdoc_umbrella_contract_version-72f511d839bf.en.html",
+        "zh-CN": "hia_jsdoc_umbrella_contract_version-72f511d839bf.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.07fb29cc5982",
+      "runtime": "jsdoc_package-07fb29cc5982.html",
+      "locales": {
+        "en": "jsdoc_package-07fb29cc5982.en.html",
+        "zh-CN": "jsdoc_package-07fb29cc5982.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.aae4ec6ea388",
+      "runtime": "jsdoc_version-aae4ec6ea388.html",
+      "locales": {
+        "en": "jsdoc_version-aae4ec6ea388.en.html",
+        "zh-CN": "jsdoc_version-aae4ec6ea388.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.b4c816387164",
+      "runtime": "jsdocproducer-b4c816387164.html",
+      "locales": {
+        "en": "jsdocproducer-b4c816387164.en.html",
+        "zh-CN": "jsdocproducer-b4c816387164.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.277f29e88a63",
+      "runtime": "jsdocproducerdescriptor-277f29e88a63.html",
+      "locales": {
+        "en": "jsdocproducerdescriptor-277f29e88a63.en.html",
+        "zh-CN": "jsdocproducerdescriptor-277f29e88a63.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.798d8eea74d8",
+      "runtime": "stagedjsdocproducer-798d8eea74d8.html",
+      "locales": {
+        "en": "stagedjsdocproducer-798d8eea74d8.en.html",
+        "zh-CN": "stagedjsdocproducer-798d8eea74d8.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.20b6512ca6cb",
+      "runtime": "stagedjsdocproducerdescriptor-20b6512ca6cb.html",
+      "locales": {
+        "en": "stagedjsdocproducerdescriptor-20b6512ca6cb.en.html",
+        "zh-CN": "stagedjsdocproducerdescriptor-20b6512ca6cb.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.af7e1e2a2c42",
+      "runtime": "createhiajsdocconfig-af7e1e2a2c42.html",
+      "locales": {
+        "en": "createhiajsdocconfig-af7e1e2a2c42.en.html",
+        "zh-CN": "createhiajsdocconfig-af7e1e2a2c42.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.c454fe6d94fa",
+      "runtime": "createhiajsdocpluginbridge-c454fe6d94fa.html",
+      "locales": {
+        "en": "createhiajsdocpluginbridge-c454fe6d94fa.en.html",
+        "zh-CN": "createhiajsdocpluginbridge-c454fe6d94fa.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.08ae9609360d",
+      "runtime": "createhiajsdocthemebridge-08ae9609360d.html",
+      "locales": {
+        "en": "createhiajsdocthemebridge-08ae9609360d.en.html",
+        "zh-CN": "createhiajsdocthemebridge-08ae9609360d.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.03a9add33d1a",
+      "runtime": "createhiajsdocversionsummary-03a9add33d1a.html",
+      "locales": {
+        "en": "createhiajsdocversionsummary-03a9add33d1a.en.html",
+        "zh-CN": "createhiajsdocversionsummary-03a9add33d1a.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.e0018fee7019",
+      "runtime": "createjsdocdocsourcemapref-e0018fee7019.html",
+      "locales": {
+        "en": "createjsdocdocsourcemapref-e0018fee7019.en.html",
+        "zh-CN": "createjsdocdocsourcemapref-e0018fee7019.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.408e14aa9317",
+      "runtime": "gethiajsdocpluginpath-408e14aa9317.html",
+      "locales": {
+        "en": "gethiajsdocpluginpath-408e14aa9317.en.html",
+        "zh-CN": "gethiajsdocpluginpath-408e14aa9317.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.d2c5b698800b",
+      "runtime": "gethiajsdocthemetemplate-d2c5b698800b.html",
+      "locales": {
+        "en": "gethiajsdocthemetemplate-d2c5b698800b.en.html",
+        "zh-CN": "gethiajsdocthemetemplate-d2c5b698800b.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.dd2b3ef2a48a",
+      "runtime": "loadhiajsdocconfig-dd2b3ef2a48a.html",
+      "locales": {
+        "en": "loadhiajsdocconfig-dd2b3ef2a48a.en.html",
+        "zh-CN": "loadhiajsdocconfig-dd2b3ef2a48a.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.bfa4436a4211",
+      "runtime": "mergejsdocconfig-bfa4436a4211.html",
+      "locales": {
+        "en": "mergejsdocconfig-bfa4436a4211.en.html",
+        "zh-CN": "mergejsdocconfig-bfa4436a4211.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.4782fc25d890",
+      "runtime": "normalizeextrapluginregistry-4782fc25d890.html",
+      "locales": {
+        "en": "normalizeextrapluginregistry-4782fc25d890.en.html",
+        "zh-CN": "normalizeextrapluginregistry-4782fc25d890.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.3994eeccdfa9",
+      "runtime": "normalizehiajsdocmode-3994eeccdfa9.html",
+      "locales": {
+        "en": "normalizehiajsdocmode-3994eeccdfa9.en.html",
+        "zh-CN": "normalizehiajsdocmode-3994eeccdfa9.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.b49679987ef5",
+      "runtime": "normalizehiaoptions-b49679987ef5.html",
+      "locales": {
+        "en": "normalizehiaoptions-b49679987ef5.en.html",
+        "zh-CN": "normalizehiaoptions-b49679987ef5.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.2d2ce0d02fd1",
+      "runtime": "runhiajsdoc-2d2ce0d02fd1.html",
+      "locales": {
+        "en": "runhiajsdoc-2d2ce0d02fd1.en.html",
+        "zh-CN": "runhiajsdoc-2d2ce0d02fd1.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.322385bd36b3",
+      "runtime": "runhiajsdocproject-322385bd36b3.html",
+      "locales": {
+        "en": "runhiajsdocproject-322385bd36b3.en.html",
+        "zh-CN": "runhiajsdocproject-322385bd36b3.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.8d1a747c87ae",
+      "runtime": "writehiajsdocconfig-8d1a747c87ae.html",
+      "locales": {
+        "en": "writehiajsdocconfig-8d1a747c87ae.en.html",
+        "zh-CN": "writehiajsdocconfig-8d1a747c87ae.zh-CN.html"
+      }
+    }
+  ]
 }

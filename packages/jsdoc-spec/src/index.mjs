@@ -71,6 +71,24 @@ export const HIA_JSDOC_THEME_VERSION = "0.1.0";
 export const HIA_JSDOC_THEME_TEMPLATE = "node_modules/@mandolin/jsdoc-theme-hia";
 
 /**
+ * Identifies the renderer-neutral presentation profile adopted by the HIA JSDoc owner chain.
+ *
+ * @constant {string}
+ * @lang zh-CN 标识 HIA JSDoc owner chain 采用的 renderer-neutral presentation profile。
+ * @lang en Identifies the renderer-neutral presentation profile adopted by the HIA JSDoc owner chain.
+ */
+export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT = "documentation-presentation-profile";
+
+/**
+ * Pins the exact draft presentation profile version consumed by the HIA JSDoc bridge.
+ *
+ * @constant {string}
+ * @lang zh-CN 固定 HIA JSDoc bridge 消费的 exact draft presentation profile 版本。
+ * @lang en Pins the exact draft presentation profile version consumed by the HIA JSDoc bridge.
+ */
+export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = "0.1.0-draft";
+
+/**
  * Names the upstream JSDoc package used by the HIA JSDoc runner.
  *
  * @constant {string}

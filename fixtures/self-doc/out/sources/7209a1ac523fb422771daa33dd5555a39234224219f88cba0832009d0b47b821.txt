@@ -1,0 +1,2 @@
+export function createHiaJsdocConfig(options = {}) {
+  const mode = normalizeHiaJsdocMode(options.mode ?? "both");

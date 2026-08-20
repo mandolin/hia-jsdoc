@@ -1,0 +1,16 @@
+export function normalizeExtraPluginRegistry(input = {}) {
+  const diagnostics = [];
+  const before = normalizePluginList(input.before ?? input.pre ?? [], "before", diagnostics);
+  const after = normalizePluginList(input.after ?? input.post ?? [], "after", diagnostics);
+
+  return {
+    before,
+    after,
+    diagnostics,
+    order: [
+      ...before.map((plugin) => plugin.module),
+      "hia-jsdoc-plugin",
+      ...after.map((plugin) => plugin.module)
+    ]
+  };
+}

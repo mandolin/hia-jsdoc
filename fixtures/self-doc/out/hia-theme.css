@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  font-family: "Inter", "Noto Sans SC", "Source Han Sans SC", "Sarasa Gothic SC", sans-serif;
   color: var(--text);
   background: var(--page-bg);
   --page-bg: #f5f7fa;
@@ -17,7 +17,7 @@
   --warn: #8a5a00;
   --code-bg: #101820;
   --code-line: #d7e1ea;
-  --code-font-family: "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+  --code-font-family: "Sarasa Mono SC", "Sarasa Fixed SC", "Noto Sans Mono CJK SC", "Source Han Mono SC", "Cascadia Code", "JetBrains Mono", "Fira Code", monospace;
   --code-font-size: 12px;
   --code-line-height: 1.55;
   --code-tab-size: 2;
@@ -69,6 +69,44 @@ body.hia-skin-graphite {
   --warn: #7a4d17;
   --code-bg: #151719;
   --code-line: #e5edf3;
+}
+
+body[data-hia-scheme="dark"] {
+  color-scheme: dark;
+  --page-bg: #11161c;
+  --text: #e5edf5;
+  --border: #384653;
+  --border-strong: #526273;
+  --panel: #182129;
+  --text-muted: #a8b5c2;
+  --link: #78b9e8;
+  --link-hover: #a8d7f7;
+  --accent: #76c9ad;
+  --accent-soft: #18382f;
+  --warn-soft: #3b2f19;
+  --warn: #f1c56d;
+  --code-bg: #090d11;
+  --code-line: #dce8f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-hia-scheme="system"] {
+    color-scheme: dark;
+    --page-bg: #11161c;
+    --text: #e5edf5;
+    --border: #384653;
+    --border-strong: #526273;
+    --panel: #182129;
+    --text-muted: #a8b5c2;
+    --link: #78b9e8;
+    --link-hover: #a8d7f7;
+    --accent: #76c9ad;
+    --accent-soft: #18382f;
+    --warn-soft: #3b2f19;
+    --warn: #f1c56d;
+    --code-bg: #090d11;
+    --code-line: #dce8f3;
+  }
 }
 
 .skip-link {
@@ -240,6 +278,7 @@ summary:focus-visible,
   font: inherit;
 }
 
+.theme-controls,
 .code-controls {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -250,11 +289,32 @@ summary:focus-visible,
   background: rgba(255, 255, 255, 0.64);
 }
 
+.theme-controls-title,
 .code-controls-title {
   grid-column: 1 / -1;
   color: var(--text-muted);
   font-size: 12px;
   font-weight: 700;
+}
+
+.theme-control {
+  display: grid;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.theme-select {
+  width: 100%;
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  color: var(--text);
+  background: var(--panel);
+  font: inherit;
+  font-size: 12px;
 }
 
 .code-control {
@@ -352,6 +412,44 @@ summary:focus-visible,
   text-decoration: none;
 }
 
+/*
+ * 原生 disclosure navigation 保留普通 list/link semantics；不使用 ARIA tree 样式或角色。
+ * Native disclosure navigation retains ordinary list/link semantics; it does
+ * not style or role-model an ARIA tree.
+ */
+.nav-tree-root,
+.nav-tree-children ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-tree-item {
+  min-width: 0;
+}
+
+.nav-tree-children {
+  margin: 2px 0 0 10px;
+  padding-left: 9px;
+  border-left: 1px solid var(--border);
+}
+
+.nav-tree-children summary {
+  min-height: 26px;
+  padding: 4px 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.nav-tree-children summary:hover {
+  color: var(--link-hover);
+  background: var(--accent-soft);
+}
+
 .content {
   display: grid;
   gap: 16px;
@@ -364,6 +462,11 @@ summary:focus-visible,
   border-radius: 6px;
   padding: 18px;
   min-width: 0;
+  /*
+   * 源码块和参数表各自管理横向滚动。这里阻止它们的长内容把整页扩宽，
+   * 同时保留子元素的滚动能力，避免窄屏阅读时出现页面级横向滚动。
+   */
+  overflow-x: clip;
 }
 
 .doclet-details {
@@ -424,6 +527,16 @@ details[open] > .collapse-summary::after {
   gap: 8px;
   min-width: 0;
   padding-right: 12px;
+}
+
+.doclet-summary,
+.section-summary,
+.doclet-body,
+.section-body,
+.signature,
+.table-wrap,
+.code-block {
+  min-width: 0;
 }
 
 .doclet-body {
@@ -578,7 +691,7 @@ details[open] > .collapse-summary::after {
 }
 
 .doc-table code {
-  font-family: "Cascadia Code", Consolas, monospace;
+  font-family: var(--code-font-family);
   font-size: 12px;
   overflow-wrap: anywhere;
 }
@@ -713,6 +826,55 @@ details[open] > .collapse-summary::after {
   margin: 0;
   color: var(--warn);
   font-size: 13px;
+}
+
+.source-reader {
+  display: grid;
+  gap: 8px;
+}
+
+.source-reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.source-reader-actions button {
+  min-height: 30px;
+  padding: 4px 9px;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  color: var(--link);
+  background: var(--panel);
+  font: inherit;
+  cursor: pointer;
+}
+
+.source-reader-status {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.source-reader-output {
+  max-height: 36rem;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  color: var(--code-line);
+  background: var(--code-bg);
+  overflow: auto;
+  font-family: var(--code-font-family);
+  font-size: var(--code-font-size);
+  line-height: var(--code-line-height);
+  tab-size: var(--code-tab-size);
+}
+
+.source-reader[data-hia-source-state="integrity-error"] .source-reader-status,
+.source-reader[data-hia-source-state="network-error"] .source-reader-status,
+.source-reader[data-hia-source-state="denied"] .source-reader-status,
+.source-reader[data-hia-source-state="not-found"] .source-reader-status {
+  color: var(--warn);
 }
 
 .meta-list {

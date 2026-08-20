@@ -1,0 +1,1 @@
+export const HIA_JSDOC_OUTPUT_MODES = Object.freeze(["standalone", "hiaIntegration", "both"]);

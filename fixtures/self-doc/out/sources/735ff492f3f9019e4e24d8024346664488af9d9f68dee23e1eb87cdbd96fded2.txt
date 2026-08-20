@@ -1,0 +1,8 @@
+export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([
+  "jsdoc-html",
+  "jsdoc-search-index",
+  "jsdoc-theme-metadata",
+  "jsdoc-integration",
+  "documentation-presentation-profile",
+  "jsdoc-page-map"
+]);

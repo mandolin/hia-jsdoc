@@ -1,0 +1,25 @@
+export function loadHiaJsdocConfig(configPath, options = {}) {
+  const absoluteConfigPath = path.resolve(options.cwd ?? process.cwd(), configPath);
+  const config = JSON.parse(fs.readFileSync(absoluteConfigPath, "utf8"));
+  assertRecord(config, "HIA JSDoc config must be a JSON object.");
+  assertKnownKeys(config, ["$schema", "schemaVersion", "workspaceRoot", "outputDirectory", "inputs", "options", "profileIds"], "config");
+  if (config.schemaVersion !== HIA_JSDOC_CONFIG_SCHEMA_VERSION) {
+    throw new TypeError(`schemaVersion must be ${HIA_JSDOC_CONFIG_SCHEMA_VERSION}.`);
+  }
+  if (config.$schema !== undefined && config.$schema !== HIA_JSDOC_CONFIG_SCHEMA_ID) {
+    throw new TypeError(`$schema must be ${HIA_JSDOC_CONFIG_SCHEMA_ID}.`);
+  }
+
+  const configDirectory = path.dirname(absoluteConfigPath);
+  const workspaceDirectory = normalizeConfigDirectory(config.workspaceRoot ?? ".", "workspaceRoot");
+  const outputDirectory = normalizeConfigDirectory(config.outputDirectory ?? "dist/hia-jsdoc", "outputDirectory");
+  const workspaceRoot = path.resolve(configDirectory, workspaceDirectory);
+
+  return normalizeProjectRequest({
+    workspaceRoot,
+    outputDirectory: path.resolve(workspaceRoot, outputDirectory),
+    inputs: config.inputs,
+    options: config.options,
+    profileIds: config.profileIds
+  });
+}

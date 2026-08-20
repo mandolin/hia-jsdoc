@@ -42,7 +42,9 @@ export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([
   "jsdoc-html",
   "jsdoc-search-index",
   "jsdoc-theme-metadata",
-  "jsdoc-integration"
+  "jsdoc-integration",
+  "documentation-presentation-profile",
+  "jsdoc-page-map"
 ]);
 
 const RESULT_CONTRACT = "documentation-producer-result";
@@ -265,7 +267,7 @@ function normalizeProjectRequest(value) {
       sourcesContentPolicy,
       extraPlugins: runnerOptions.extraPlugins ?? {},
       plugin: runnerOptions.plugin ?? {},
-      hia: runnerOptions.hia ?? {},
+      hia: normalizeHiaOptions(runnerOptions.hia ?? {}),
       theme: runnerOptions.theme ?? {},
       baseConfig: runnerOptions.baseConfig ?? {}
     }
@@ -296,7 +298,76 @@ function collectArtifacts(outputDirectory, profileIds) {
       contractVersion: "0.1.0"
     });
   }
+  if (fs.existsSync(path.join(outputDirectory, "documentation-presentation-profile.json"))) {
+    artifacts.push({
+      ...artifact(
+        "documentation-presentation-profile",
+        "documentation-presentation-profile",
+        "documentation-presentation-profile.json",
+        "json",
+        "application/json",
+        profileIds
+      ),
+      contract: "documentation-presentation-profile",
+      contractVersion: "0.1.0-draft"
+    });
+  }
+  if (fs.existsSync(path.join(outputDirectory, "hia-page-map.json"))) {
+    artifacts.push({
+      ...artifact("jsdoc-page-map", "jsdoc-page-map", "hia-page-map.json", "json", "application/json", profileIds),
+      contract: "jsdoc-theme-hia/page-map",
+      contractVersion: "0.1.0"
+    });
+  }
   return artifacts;
+}
+
+/**
+ * @lang zh-CN
+ * 规范化 runner 传给 JPHS/JTH 的 HIA options；只校验本周期新增的 closed presentation/theme selection，其他既有配置原样保留。
+ *
+ * @lang en
+ * Normalizes HIA options passed from the runner to JPHS/JTH; it validates only the newly closed presentation/theme
+ * selections and preserves other existing configuration.
+ *
+ * @param {object} value HIA options 候选值。 / Candidate HIA options.
+ * @returns {object} shallow-cloned normalized options。 / Shallow-cloned normalized options.
+ * @throws {TypeError} 当 page/source/scheme/skin 选择无效。 / When page/source/scheme/skin selections are invalid.
+ */
+function normalizeHiaOptions(value) {
+  assertRecord(value, "options.hia must be an object.");
+  // <lang><zh-CN>presentation 只接受两个中性选择字段，不吸收 owner DOM/CSS 配置。</zh-CN><en>Presentation accepts only the two neutral selection fields and absorbs no owner DOM/CSS configuration.</en></lang>
+  const presentation = value.presentation ?? {};
+  assertRecord(presentation, "options.hia.presentation must be an object.");
+  assertKnownKeys(presentation, ["pageMode", "sourceMode"], "options.hia.presentation");
+  if (presentation.pageMode !== undefined && !["multi-page", "single-page"].includes(presentation.pageMode)) {
+    throw new TypeError(`Unsupported presentation pageMode: ${presentation.pageMode}`);
+  }
+  if (presentation.sourceMode !== undefined && !["fetch", "embed", "link", "none"].includes(presentation.sourceMode)) {
+    throw new TypeError(`Unsupported presentation sourceMode: ${presentation.sourceMode}`);
+  }
+  // <lang><zh-CN>theme 的其他既有字段保持开放；只验证新增 scheme 与非空 skin selection。</zh-CN><en>Other existing theme fields remain open; only the new scheme and non-empty skin selection are validated.</en></lang>
+  const theme = value.theme ?? {};
+  assertRecord(theme, "options.hia.theme must be an object.");
+  if (theme.scheme !== undefined && !["dark", "light", "system"].includes(theme.scheme)) {
+    throw new TypeError(`Unsupported theme scheme: ${theme.scheme}`);
+  }
+  if (theme.skin !== undefined && (typeof theme.skin !== "string" || !theme.skin.trim())) {
+    throw new TypeError("theme.skin must be a non-empty string when provided.");
+  }
+
+  return {
+    ...value,
+    presentation: {
+      pageMode: presentation.pageMode ?? "multi-page",
+      sourceMode: presentation.sourceMode ?? "fetch"
+    },
+    theme: {
+      ...theme,
+      skin: theme.skin ?? "classic",
+      scheme: theme.scheme ?? "system"
+    }
+  };
 }
 
 function pluginDiagnosticsFromConfig(config) {

@@ -71,7 +71,28 @@ export const HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({
         sourcesContentPolicy: { enum: ["none", "reference", "embed"] },
         extraPlugins: { type: "object" },
         plugin: { type: "object" },
-        hia: { type: "object" },
+        hia: {
+          type: "object",
+          additionalProperties: true,
+          properties: {
+            presentation: {
+              type: "object",
+              additionalProperties: false,
+              properties: {
+                pageMode: { enum: ["multi-page", "single-page"] },
+                sourceMode: { enum: ["fetch", "embed", "link", "none"] }
+              }
+            },
+            theme: {
+              type: "object",
+              additionalProperties: true,
+              properties: {
+                skin: { type: "string", minLength: 1 },
+                scheme: { enum: ["dark", "light", "system"] }
+              }
+            }
+          }
+        },
         theme: { type: "object" },
         baseConfig: { type: "object" }
       }

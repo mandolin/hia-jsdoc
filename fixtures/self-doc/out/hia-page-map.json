@@ -1,0 +1,281 @@
+{
+  "contract": "jsdoc-theme-hia/page-map",
+  "contractVersion": "0.1.0",
+  "mode": "multi-page",
+  "home": "index.html",
+  "pages": [
+    {
+      "pageId": "page.constant.03ba3879ca4d",
+      "file": "hia_jsdoc_theme_template-03ba3879ca4d.html",
+      "topicIds": [
+        "topic.constant.03ba3879ca4d760a"
+      ]
+    },
+    {
+      "pageId": "page.constant.07fb29cc5982",
+      "file": "jsdoc_package-07fb29cc5982.html",
+      "topicIds": [
+        "topic.constant.07fb29cc5982a8e4"
+      ]
+    },
+    {
+      "pageId": "page.constant.20711ac29049",
+      "file": "hia_jsdoc_theme_version-20711ac29049.html",
+      "topicIds": [
+        "topic.constant.20711ac29049a28d"
+      ]
+    },
+    {
+      "pageId": "page.constant.20b6512ca6cb",
+      "file": "stagedjsdocproducerdescriptor-20b6512ca6cb.html",
+      "topicIds": [
+        "topic.constant.20b6512ca6cb1a54"
+      ]
+    },
+    {
+      "pageId": "page.constant.277f29e88a63",
+      "file": "jsdocproducerdescriptor-277f29e88a63.html",
+      "topicIds": [
+        "topic.constant.277f29e88a635f25"
+      ]
+    },
+    {
+      "pageId": "page.constant.42f7e332ac71",
+      "file": "hia_jsdoc_theme_package-42f7e332ac71.html",
+      "topicIds": [
+        "topic.constant.42f7e332ac711271"
+      ]
+    },
+    {
+      "pageId": "page.constant.4a501b44c718",
+      "file": "hia_jsdoc_input_kinds-4a501b44c718.html",
+      "topicIds": [
+        "topic.constant.4a501b44c7189107"
+      ]
+    },
+    {
+      "pageId": "page.constant.68401e0dc057",
+      "file": "hia_jsdoc_umbrella_contract-68401e0dc057.html",
+      "topicIds": [
+        "topic.constant.68401e0dc057a378"
+      ]
+    },
+    {
+      "pageId": "page.constant.68c74ef1734d",
+      "file": "hia_jsdoc_plugin_version-68c74ef1734d.html",
+      "topicIds": [
+        "topic.constant.68c74ef1734d5c7d"
+      ]
+    },
+    {
+      "pageId": "page.constant.72f511d839bf",
+      "file": "hia_jsdoc_umbrella_contract_version-72f511d839bf.html",
+      "topicIds": [
+        "topic.constant.72f511d839bf6668"
+      ]
+    },
+    {
+      "pageId": "page.constant.798d8eea74d8",
+      "file": "stagedjsdocproducer-798d8eea74d8.html",
+      "topicIds": [
+        "topic.constant.798d8eea74d81529"
+      ]
+    },
+    {
+      "pageId": "page.constant.81f240a7884e",
+      "file": "hia_jsdoc_extra_plugin_phases-81f240a7884e.html",
+      "topicIds": [
+        "topic.constant.81f240a7884e8f33"
+      ]
+    },
+    {
+      "pageId": "page.constant.823145f4cc4a",
+      "file": "hia_jsdoc_config_json_schema-823145f4cc4a.html",
+      "topicIds": [
+        "topic.constant.823145f4cc4abeb3"
+      ]
+    },
+    {
+      "pageId": "page.constant.8cea383dc286",
+      "file": "hia_jsdoc_presentation_profile_contract_version-8cea383dc286.html",
+      "topicIds": [
+        "topic.constant.8cea383dc286aabc"
+      ]
+    },
+    {
+      "pageId": "page.constant.970697ef2e75",
+      "file": "hia_jsdoc_config_schema_id-970697ef2e75.html",
+      "topicIds": [
+        "topic.constant.970697ef2e75e19e"
+      ]
+    },
+    {
+      "pageId": "page.constant.9efd7176ffc9",
+      "file": "hia_jsdoc_config_schema_version-9efd7176ffc9.html",
+      "topicIds": [
+        "topic.constant.9efd7176ffc99dee"
+      ]
+    },
+    {
+      "pageId": "page.constant.a0e4a331cc2f",
+      "file": "hia_jsdoc_plugin_package-a0e4a331cc2f.html",
+      "topicIds": [
+        "topic.constant.a0e4a331cc2f6c8d"
+      ]
+    },
+    {
+      "pageId": "page.constant.a14ea32427b9",
+      "file": "hia_jsdoc_presentation_profile_contract-a14ea32427b9.html",
+      "topicIds": [
+        "topic.constant.a14ea32427b908ec"
+      ]
+    },
+    {
+      "pageId": "page.constant.aae4ec6ea388",
+      "file": "jsdoc_version-aae4ec6ea388.html",
+      "topicIds": [
+        "topic.constant.aae4ec6ea388db48"
+      ]
+    },
+    {
+      "pageId": "page.constant.ad7ad2beb982",
+      "file": "hia_jsdoc_plugin_path-ad7ad2beb982.html",
+      "topicIds": [
+        "topic.constant.ad7ad2beb9820ceb"
+      ]
+    },
+    {
+      "pageId": "page.constant.b4c816387164",
+      "file": "jsdocproducer-b4c816387164.html",
+      "topicIds": [
+        "topic.constant.b4c816387164ad9f"
+      ]
+    },
+    {
+      "pageId": "page.constant.c345db0df8d0",
+      "file": "hia_jsdoc_runner_version-c345db0df8d0.html",
+      "topicIds": [
+        "topic.constant.c345db0df8d037b9"
+      ]
+    },
+    {
+      "pageId": "page.constant.d893677735ef",
+      "file": "hia_jsdoc_output_modes-d893677735ef.html",
+      "topicIds": [
+        "topic.constant.d893677735ef8f58"
+      ]
+    },
+    {
+      "pageId": "page.constant.f4ed636fa33c",
+      "file": "hia_jsdoc_output_kinds-f4ed636fa33c.html",
+      "topicIds": [
+        "topic.constant.f4ed636fa33cef5a"
+      ]
+    },
+    {
+      "pageId": "page.function.03a9add33d1a",
+      "file": "createhiajsdocversionsummary-03a9add33d1a.html",
+      "topicIds": [
+        "topic.function.03a9add33d1a8339"
+      ]
+    },
+    {
+      "pageId": "page.function.08ae9609360d",
+      "file": "createhiajsdocthemebridge-08ae9609360d.html",
+      "topicIds": [
+        "topic.function.08ae9609360d7534"
+      ]
+    },
+    {
+      "pageId": "page.function.2d2ce0d02fd1",
+      "file": "runhiajsdoc-2d2ce0d02fd1.html",
+      "topicIds": [
+        "topic.function.2d2ce0d02fd10554"
+      ]
+    },
+    {
+      "pageId": "page.function.322385bd36b3",
+      "file": "runhiajsdocproject-322385bd36b3.html",
+      "topicIds": [
+        "topic.function.322385bd36b3b276"
+      ]
+    },
+    {
+      "pageId": "page.function.3994eeccdfa9",
+      "file": "normalizehiajsdocmode-3994eeccdfa9.html",
+      "topicIds": [
+        "topic.function.3994eeccdfa9bd73"
+      ]
+    },
+    {
+      "pageId": "page.function.408e14aa9317",
+      "file": "gethiajsdocpluginpath-408e14aa9317.html",
+      "topicIds": [
+        "topic.function.408e14aa931798a6"
+      ]
+    },
+    {
+      "pageId": "page.function.4782fc25d890",
+      "file": "normalizeextrapluginregistry-4782fc25d890.html",
+      "topicIds": [
+        "topic.function.4782fc25d890f0d0"
+      ]
+    },
+    {
+      "pageId": "page.function.8d1a747c87ae",
+      "file": "writehiajsdocconfig-8d1a747c87ae.html",
+      "topicIds": [
+        "topic.function.8d1a747c87ae80fd"
+      ]
+    },
+    {
+      "pageId": "page.function.af7e1e2a2c42",
+      "file": "createhiajsdocconfig-af7e1e2a2c42.html",
+      "topicIds": [
+        "topic.function.af7e1e2a2c4289e3"
+      ]
+    },
+    {
+      "pageId": "page.function.b49679987ef5",
+      "file": "normalizehiaoptions-b49679987ef5.html",
+      "topicIds": [
+        "topic.function.b49679987ef5671b"
+      ]
+    },
+    {
+      "pageId": "page.function.bfa4436a4211",
+      "file": "mergejsdocconfig-bfa4436a4211.html",
+      "topicIds": [
+        "topic.function.bfa4436a4211ba7b"
+      ]
+    },
+    {
+      "pageId": "page.function.c454fe6d94fa",
+      "file": "createhiajsdocpluginbridge-c454fe6d94fa.html",
+      "topicIds": [
+        "topic.function.c454fe6d94fa03b6"
+      ]
+    },
+    {
+      "pageId": "page.function.d2c5b698800b",
+      "file": "gethiajsdocthemetemplate-d2c5b698800b.html",
+      "topicIds": [
+        "topic.function.d2c5b698800b9969"
+      ]
+    },
+    {
+      "pageId": "page.function.dd2b3ef2a48a",
+      "file": "loadhiajsdocconfig-dd2b3ef2a48a.html",
+      "topicIds": [
+        "topic.function.dd2b3ef2a48ab1d6"
+      ]
+    },
+    {
+      "pageId": "page.function.e0018fee7019",
+      "file": "createjsdocdocsourcemapref-e0018fee7019.html",
+      "topicIds": [
+        "topic.function.e0018fee70198f5c"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 [
   {
-    "id": "function-createhiajsdocconfig",
+    "id": "function-createhiajsdocconfig-af7e1e2a2c",
     "kind": "function",
     "name": "createHiaJsdocConfig",
     "longname": "createHiaJsdocConfig",
@@ -13,7 +13,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-createhiajsdocpluginbridge",
+    "id": "function-createhiajsdocpluginbridge-c454fe6d94",
     "kind": "function",
     "name": "createHiaJsdocPluginBridge",
     "longname": "createHiaJsdocPluginBridge",
@@ -26,7 +26,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-createhiajsdocthemebridge",
+    "id": "function-createhiajsdocthemebridge-08ae960936",
     "kind": "function",
     "name": "createHiaJsdocThemeBridge",
     "longname": "createHiaJsdocThemeBridge",
@@ -39,7 +39,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-createhiajsdocversionsummary",
+    "id": "function-createhiajsdocversionsummary-03a9add33d",
     "kind": "function",
     "name": "createHiaJsdocVersionSummary",
     "longname": "createHiaJsdocVersionSummary",
@@ -52,7 +52,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-createjsdocdocsourcemapref",
+    "id": "function-createjsdocdocsourcemapref-e0018fee70",
     "kind": "function",
     "name": "createJsdocDocSourceMapRef",
     "longname": "createJsdocDocSourceMapRef",
@@ -65,7 +65,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-gethiajsdocpluginpath",
+    "id": "function-gethiajsdocpluginpath-408e14aa93",
     "kind": "function",
     "name": "getHiaJsdocPluginPath",
     "longname": "getHiaJsdocPluginPath",
@@ -78,7 +78,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-gethiajsdocthemetemplate",
+    "id": "function-gethiajsdocthemetemplate-d2c5b69880",
     "kind": "function",
     "name": "getHiaJsdocThemeTemplate",
     "longname": "getHiaJsdocThemeTemplate",
@@ -91,7 +91,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-loadhiajsdocconfig",
+    "id": "function-loadhiajsdocconfig-dd2b3ef2a4",
     "kind": "function",
     "name": "loadHiaJsdocConfig",
     "longname": "loadHiaJsdocConfig",
@@ -104,7 +104,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-mergejsdocconfig",
+    "id": "function-mergejsdocconfig-bfa4436a42",
     "kind": "function",
     "name": "mergeJsdocConfig",
     "longname": "mergeJsdocConfig",
@@ -117,7 +117,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-normalizeextrapluginregistry",
+    "id": "function-normalizeextrapluginregistry-4782fc25d8",
     "kind": "function",
     "name": "normalizeExtraPluginRegistry",
     "longname": "normalizeExtraPluginRegistry",
@@ -130,7 +130,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-normalizehiajsdocmode",
+    "id": "function-normalizehiajsdocmode-3994eeccdf",
     "kind": "function",
     "name": "normalizeHiaJsdocMode",
     "longname": "normalizeHiaJsdocMode",
@@ -143,7 +143,20 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-runhiajsdoc",
+    "id": "function-normalizehiaoptions-b49679987e",
+    "kind": "function",
+    "name": "normalizeHiaOptions",
+    "longname": "normalizeHiaOptions",
+    "memberof": "",
+    "summary": "",
+    "localizedSummaries": {
+      "en": "Normalizes HIA options passed from the runner to JPHS/JTH; it validates only the newly closed presentation/theme selections and preserves other existing configuration.",
+      "zh-CN": "规范化 runner 传给 JPHS/JTH 的 HIA options；只校验本周期新增的 closed presentation/theme selection，其他既有配置原样保留。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "function-runhiajsdoc-2d2ce0d02f",
     "kind": "function",
     "name": "runHiaJsdoc",
     "longname": "runHiaJsdoc",
@@ -156,7 +169,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-runhiajsdocproject",
+    "id": "function-runhiajsdocproject-322385bd36",
     "kind": "function",
     "name": "runHiaJsdocProject",
     "longname": "runHiaJsdocProject",
@@ -169,7 +182,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "function-writehiajsdocconfig",
+    "id": "function-writehiajsdocconfig-8d1a747c87",
     "kind": "function",
     "name": "writeHiaJsdocConfig",
     "longname": "writeHiaJsdocConfig",
@@ -182,7 +195,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_config_json_schema",
+    "id": "constant-hia_jsdoc_config_json_schema-823145f4cc",
     "kind": "constant",
     "name": "HIA_JSDOC_CONFIG_JSON_SCHEMA",
     "longname": "HIA_JSDOC_CONFIG_JSON_SCHEMA",
@@ -195,7 +208,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_config_schema_id",
+    "id": "constant-hia_jsdoc_config_schema_id-970697ef2e",
     "kind": "constant",
     "name": "HIA_JSDOC_CONFIG_SCHEMA_ID",
     "longname": "HIA_JSDOC_CONFIG_SCHEMA_ID",
@@ -208,7 +221,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_config_schema_version",
+    "id": "constant-hia_jsdoc_config_schema_version-9efd7176ff",
     "kind": "constant",
     "name": "HIA_JSDOC_CONFIG_SCHEMA_VERSION",
     "longname": "HIA_JSDOC_CONFIG_SCHEMA_VERSION",
@@ -221,7 +234,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_extra_plugin_phases",
+    "id": "constant-hia_jsdoc_extra_plugin_phases-81f240a788",
     "kind": "constant",
     "name": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
     "longname": "HIA_JSDOC_EXTRA_PLUGIN_PHASES",
@@ -234,7 +247,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_input_kinds",
+    "id": "constant-hia_jsdoc_input_kinds-4a501b44c7",
     "kind": "constant",
     "name": "HIA_JSDOC_INPUT_KINDS",
     "longname": "HIA_JSDOC_INPUT_KINDS",
@@ -247,7 +260,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_output_kinds",
+    "id": "constant-hia_jsdoc_output_kinds-f4ed636fa3",
     "kind": "constant",
     "name": "HIA_JSDOC_OUTPUT_KINDS",
     "longname": "HIA_JSDOC_OUTPUT_KINDS",
@@ -260,7 +273,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_output_modes",
+    "id": "constant-hia_jsdoc_output_modes-d893677735",
     "kind": "constant",
     "name": "HIA_JSDOC_OUTPUT_MODES",
     "longname": "HIA_JSDOC_OUTPUT_MODES",
@@ -273,7 +286,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_plugin_package",
+    "id": "constant-hia_jsdoc_plugin_package-a0e4a331cc",
     "kind": "constant",
     "name": "HIA_JSDOC_PLUGIN_PACKAGE",
     "longname": "HIA_JSDOC_PLUGIN_PACKAGE",
@@ -286,7 +299,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_plugin_path",
+    "id": "constant-hia_jsdoc_plugin_path-ad7ad2beb9",
     "kind": "constant",
     "name": "HIA_JSDOC_PLUGIN_PATH",
     "longname": "HIA_JSDOC_PLUGIN_PATH",
@@ -299,7 +312,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_plugin_version",
+    "id": "constant-hia_jsdoc_plugin_version-68c74ef173",
     "kind": "constant",
     "name": "HIA_JSDOC_PLUGIN_VERSION",
     "longname": "HIA_JSDOC_PLUGIN_VERSION",
@@ -312,7 +325,33 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_runner_version",
+    "id": "constant-hia_jsdoc_presentation_profile_contract-a14ea32427",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT",
+    "longname": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT",
+    "memberof": "",
+    "summary": "Identifies the renderer-neutral presentation profile adopted by the HIA JSDoc owner chain.",
+    "localizedSummaries": {
+      "en": "Identifies the renderer-neutral presentation profile adopted by the HIA JSDoc owner chain.",
+      "zh-CN": "标识 HIA JSDoc owner chain 采用的 renderer-neutral presentation profile。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_presentation_profile_contract_version-8cea383dc2",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
+    "longname": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
+    "memberof": "",
+    "summary": "Pins the exact draft presentation profile version consumed by the HIA JSDoc bridge.",
+    "localizedSummaries": {
+      "en": "Pins the exact draft presentation profile version consumed by the HIA JSDoc bridge.",
+      "zh-CN": "固定 HIA JSDoc bridge 消费的 exact draft presentation profile 版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_runner_version-c345db0df8",
     "kind": "constant",
     "name": "HIA_JSDOC_RUNNER_VERSION",
     "longname": "HIA_JSDOC_RUNNER_VERSION",
@@ -325,7 +364,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_theme_package",
+    "id": "constant-hia_jsdoc_theme_package-42f7e332ac",
     "kind": "constant",
     "name": "HIA_JSDOC_THEME_PACKAGE",
     "longname": "HIA_JSDOC_THEME_PACKAGE",
@@ -338,7 +377,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_theme_template",
+    "id": "constant-hia_jsdoc_theme_template-03ba3879ca",
     "kind": "constant",
     "name": "HIA_JSDOC_THEME_TEMPLATE",
     "longname": "HIA_JSDOC_THEME_TEMPLATE",
@@ -351,7 +390,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_theme_version",
+    "id": "constant-hia_jsdoc_theme_version-20711ac290",
     "kind": "constant",
     "name": "HIA_JSDOC_THEME_VERSION",
     "longname": "HIA_JSDOC_THEME_VERSION",
@@ -364,7 +403,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_umbrella_contract",
+    "id": "constant-hia_jsdoc_umbrella_contract-68401e0dc0",
     "kind": "constant",
     "name": "HIA_JSDOC_UMBRELLA_CONTRACT",
     "longname": "HIA_JSDOC_UMBRELLA_CONTRACT",
@@ -377,7 +416,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-hia_jsdoc_umbrella_contract_version",
+    "id": "constant-hia_jsdoc_umbrella_contract_version-72f511d839",
     "kind": "constant",
     "name": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
     "longname": "HIA_JSDOC_UMBRELLA_CONTRACT_VERSION",
@@ -390,7 +429,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-jsdoc_package",
+    "id": "constant-jsdoc_package-07fb29cc59",
     "kind": "constant",
     "name": "JSDOC_PACKAGE",
     "longname": "JSDOC_PACKAGE",
@@ -403,7 +442,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-jsdoc_version",
+    "id": "constant-jsdoc_version-aae4ec6ea3",
     "kind": "constant",
     "name": "JSDOC_VERSION",
     "longname": "JSDOC_VERSION",
@@ -416,7 +455,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-jsdocproducer",
+    "id": "constant-jsdocproducer-b4c8163871",
     "kind": "constant",
     "name": "jsdocProducer",
     "longname": "jsdocProducer",
@@ -429,7 +468,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-jsdocproducerdescriptor",
+    "id": "constant-jsdocproducerdescriptor-277f29e88a",
     "kind": "constant",
     "name": "jsdocProducerDescriptor",
     "longname": "jsdocProducerDescriptor",
@@ -442,7 +481,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-stagedjsdocproducer",
+    "id": "constant-stagedjsdocproducer-798d8eea74",
     "kind": "constant",
     "name": "stagedJsdocProducer",
     "longname": "stagedJsdocProducer",
@@ -455,7 +494,7 @@
     "sourceReferences": 0
   },
   {
-    "id": "constant-stagedjsdocproducerdescriptor",
+    "id": "constant-stagedjsdocproducerdescriptor-20b6512ca6",
     "kind": "constant",
     "name": "stagedJsdocProducerDescriptor",
     "longname": "stagedJsdocProducerDescriptor",

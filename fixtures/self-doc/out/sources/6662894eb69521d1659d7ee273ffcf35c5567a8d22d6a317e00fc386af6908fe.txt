@@ -1,0 +1,73 @@
+export function runHiaJsdocProject(request, context = {}) {
+  const normalized = normalizeProjectRequest(request);
+  fs.mkdirSync(normalized.outputDirectory, { recursive: true });
+
+  if (context.signal?.aborted) {
+    return createProducerResult("failed", [], [
+      createDiagnostic("HIA_JSDOC_RUNNER_ABORTED", "HIA JSDoc runner was aborted before it started.", "error")
+    ]);
+  }
+
+  context.reportProgress?.({
+    phase: "extract",
+    current: 0,
+    total: normalized.inputs.length,
+    message: "jsdoc"
+  });
+
+  const outputDirectoryRelative = relativeFromWorkspaceRoot(normalized.workspaceRoot, normalized.outputDirectory, "outputDirectory");
+  const configPath = path.join(normalized.outputDirectory, ".hia-jsdoc", "jsdoc.conf.json");
+  const integrationOutputFile = `${outputDirectoryRelative}/hia-integration.json`;
+  const execution = runHiaJsdoc({
+    cwd: normalized.workspaceRoot,
+    configPath,
+    mode: normalized.options.mode,
+    source: {
+      include: normalized.inputs.map((input) => input.path),
+      includePattern: normalized.options.includePattern,
+      excludePattern: normalized.options.excludePattern
+    },
+    destination: outputDirectoryRelative,
+    integrationOutputFile,
+    recurse: normalized.options.recurse,
+    extraPlugins: normalized.options.extraPlugins,
+    plugin: normalized.options.plugin,
+    hia: normalized.options.hia,
+    theme: normalized.options.theme,
+    baseConfig: normalized.options.baseConfig
+  });
+
+  const diagnostics = [
+    ...pluginDiagnosticsFromConfig(execution.config),
+    ...(execution.ok ? [] : [
+      createDiagnostic(
+        "HIA_JSDOC_RUNNER_FAILED",
+        execution.stderr || execution.stdout || "JSDoc CLI failed.",
+        "error"
+      )
+    ])
+  ];
+  const artifacts = execution.ok
+    ? collectArtifacts(normalized.outputDirectory, normalized.profileIds)
+    : [];
+  const status = diagnostics.some((diagnostic) => diagnostic.severity === "error")
+    ? (artifacts.length > 0 ? "partial" : "failed")
+    : "success";
+  const result = createProducerResult(status, artifacts, diagnostics);
+
+  if (normalized.options.writeResultManifest) {
+    fs.writeFileSync(
+      path.join(normalized.outputDirectory, "hia-jsdoc.producer-result.json"),
+      `${JSON.stringify(result, null, 2)}\n`,
+      "utf8"
+    );
+  }
+
+  context.reportProgress?.({
+    phase: "complete",
+    current: normalized.inputs.length,
+    total: normalized.inputs.length
+  });
+
+  return result;
+}

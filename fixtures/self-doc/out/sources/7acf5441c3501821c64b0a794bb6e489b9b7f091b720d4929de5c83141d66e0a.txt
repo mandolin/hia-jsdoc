@@ -1,0 +1,35 @@
+function normalizeHiaOptions(value) {
+  assertRecord(value, "options.hia must be an object.");
+  // <lang><zh-CN>presentation 只接受两个中性选择字段，不吸收 owner DOM/CSS 配置。</zh-CN><en>Presentation accepts only the two neutral selection fields and absorbs no owner DOM/CSS configuration.</en></lang>
+  const presentation = value.presentation ?? {};
+  assertRecord(presentation, "options.hia.presentation must be an object.");
+  assertKnownKeys(presentation, ["pageMode", "sourceMode"], "options.hia.presentation");
+  if (presentation.pageMode !== undefined && !["multi-page", "single-page"].includes(presentation.pageMode)) {
+    throw new TypeError(`Unsupported presentation pageMode: ${presentation.pageMode}`);
+  }
+  if (presentation.sourceMode !== undefined && !["fetch", "embed", "link", "none"].includes(presentation.sourceMode)) {
+    throw new TypeError(`Unsupported presentation sourceMode: ${presentation.sourceMode}`);
+  }
+  // <lang><zh-CN>theme 的其他既有字段保持开放；只验证新增 scheme 与非空 skin selection。</zh-CN><en>Other existing theme fields remain open; only the new scheme and non-empty skin selection are validated.</en></lang>
+  const theme = value.theme ?? {};
+  assertRecord(theme, "options.hia.theme must be an object.");
+  if (theme.scheme !== undefined && !["dark", "light", "system"].includes(theme.scheme)) {
+    throw new TypeError(`Unsupported theme scheme: ${theme.scheme}`);
+  }
+  if (theme.skin !== undefined && (typeof theme.skin !== "string" || !theme.skin.trim())) {
+    throw new TypeError("theme.skin must be a non-empty string when provided.");
+  }
+
+  return {
+    ...value,
+    presentation: {
+      pageMode: presentation.pageMode ?? "multi-page",
+      sourceMode: presentation.sourceMode ?? "fetch"
+    },
+    theme: {
+      ...theme,
+      skin: theme.skin ?? "classic",
+      scheme: theme.scheme ?? "system"
+    }
+  };
+}

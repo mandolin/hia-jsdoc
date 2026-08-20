@@ -1,0 +1,1 @@
+export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze(["before", "after"]);

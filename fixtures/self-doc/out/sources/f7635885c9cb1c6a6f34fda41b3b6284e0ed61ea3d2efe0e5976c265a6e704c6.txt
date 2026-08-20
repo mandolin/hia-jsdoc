@@ -1,0 +1,20 @@
+export function runHiaJsdoc(options = {}) {
+  const cwd = path.resolve(options.cwd ?? process.cwd());
+  const configPath = options.configPath ?? "hia-jsdoc.conf.json";
+  const written = writeHiaJsdocConfig(configPath, { ...options, cwd });
+  const jsdocBin = require.resolve("jsdoc/jsdoc.js");
+  const result = spawnSync(process.execPath, [jsdocBin, "-c", written.path], {
+    cwd,
+    encoding: "utf8",
+    shell: false
+  });
+
+  return {
+    ok: result.status === 0,
+    status: result.status,
+    stdout: result.stdout,
+    stderr: result.stderr,
+    configPath: written.path,
+    config: written.config
+  };
+}

@@ -1,4 +1,6 @@
 import {
+  HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT,
+  HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION,
   HIA_JSDOC_THEME_PACKAGE,
   HIA_JSDOC_THEME_TEMPLATE,
   HIA_JSDOC_THEME_VERSION
@@ -13,11 +15,29 @@ import {
  * @lang en Creates the bridge descriptor for the HIA JSDoc theme package.
  */
 export function createHiaJsdocThemeBridge(options = {}) {
+  // <lang><zh-CN>presentation 只保存 owner-neutral 选择；skin catalog 的内容仍由 JTH 生成 profile 提供。</zh-CN><en>Presentation carries only owner-neutral selections; JTH's generated profile remains the source of skin-catalog content.</en></lang>
+  const presentation = options.presentation && typeof options.presentation === "object"
+    ? options.presentation
+    : {};
+  // <lang><zh-CN>packageName 同时标识 template owner 与 skin catalog owner，避免复制皮肤实现。</zh-CN><en>PackageName identifies both template and skin-catalog owner, avoiding copied skin implementations.</en></lang>
+  const packageName = options.packageName ?? HIA_JSDOC_THEME_PACKAGE;
   return {
-    package: options.packageName ?? HIA_JSDOC_THEME_PACKAGE,
+    package: packageName,
     version: options.version ?? HIA_JSDOC_THEME_VERSION,
     template: options.template ?? HIA_JSDOC_THEME_TEMPLATE,
-    enabled: options.enabled ?? true
+    enabled: options.enabled ?? true,
+    presentation: {
+      contract: HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT,
+      contractVersion: HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION,
+      pageMode: presentation.pageMode ?? "multi-page",
+      sourceMode: presentation.sourceMode ?? "fetch",
+      skinId: options.skin ?? "classic",
+      scheme: options.scheme ?? "system",
+      skinCatalog: {
+        ownerPackage: packageName,
+        projection: "documentation-presentation-profile.theme.skins"
+      }
+    }
   };
 }
 

@@ -1,0 +1,6 @@
+export function normalizeHiaJsdocMode(mode = "both") {
+  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {
+    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);
+  }
+  return mode;
+}

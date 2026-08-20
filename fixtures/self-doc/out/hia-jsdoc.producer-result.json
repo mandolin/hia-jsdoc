@@ -48,6 +48,30 @@
       ],
       "contract": "hia-jsdoc-integration",
       "contractVersion": "0.1.0"
+    },
+    {
+      "id": "documentation-presentation-profile",
+      "kind": "documentation-presentation-profile",
+      "path": "documentation-presentation-profile.json",
+      "language": "json",
+      "mediaType": "application/json",
+      "profileIds": [
+        "jsdoc"
+      ],
+      "contract": "documentation-presentation-profile",
+      "contractVersion": "0.1.0-draft"
+    },
+    {
+      "id": "jsdoc-page-map",
+      "kind": "jsdoc-page-map",
+      "path": "hia-page-map.json",
+      "language": "json",
+      "mediaType": "application/json",
+      "profileIds": [
+        "jsdoc"
+      ],
+      "contract": "jsdoc-theme-hia/page-map",
+      "contractVersion": "0.1.0"
     }
   ],
   "diagnostics": []

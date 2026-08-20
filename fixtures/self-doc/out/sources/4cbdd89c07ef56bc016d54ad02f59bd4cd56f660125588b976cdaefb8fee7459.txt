@@ -1,0 +1,18 @@
+export function createHiaJsdocVersionSummary() {
+  return {
+    contract: HIA_JSDOC_UMBRELLA_CONTRACT,
+    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,
+    jsdoc: {
+      package: JSDOC_PACKAGE,
+      version: JSDOC_VERSION
+    },
+    plugin: {
+      package: HIA_JSDOC_PLUGIN_PACKAGE,
+      version: HIA_JSDOC_PLUGIN_VERSION
+    },
+    theme: {
+      package: HIA_JSDOC_THEME_PACKAGE,
+      version: HIA_JSDOC_THEME_VERSION
+    }
+  };
+}

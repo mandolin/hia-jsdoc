@@ -1,6 +1,6 @@
 {
   "plugins": [
-    "node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs"
+    "../jsdoc-plugin-hia-sys/src/index.cjs"
   ],
   "source": {
     "include": [
@@ -49,8 +49,13 @@
         "mode": "runtimeSwitch",
         "resources": []
       },
+      "presentation": {
+        "pageMode": "multi-page",
+        "sourceMode": "fetch"
+      },
       "theme": {
         "skin": "classic",
+        "scheme": "system",
         "collapse": {
           "docletsDefaultExpanded": true,
           "sectionsDefaultExpanded": true,
@@ -92,9 +97,27 @@
             "version": "0.1.0"
           }
         },
+        "themeBridge": {
+          "package": "@mandolin/jsdoc-theme-hia",
+          "version": "0.1.0",
+          "template": "../jsdoc-theme-hia",
+          "enabled": true,
+          "presentation": {
+            "contract": "documentation-presentation-profile",
+            "contractVersion": "0.1.0-draft",
+            "pageMode": "multi-page",
+            "sourceMode": "fetch",
+            "skinId": "classic",
+            "scheme": "system",
+            "skinCatalog": {
+              "ownerPackage": "@mandolin/jsdoc-theme-hia",
+              "projection": "documentation-presentation-profile.theme.skins"
+            }
+          }
+        },
         "extraPluginDiagnostics": []
       }
     },
-    "template": "node_modules/@mandolin/jsdoc-theme-hia"
+    "template": "../jsdoc-theme-hia"
   }
 }

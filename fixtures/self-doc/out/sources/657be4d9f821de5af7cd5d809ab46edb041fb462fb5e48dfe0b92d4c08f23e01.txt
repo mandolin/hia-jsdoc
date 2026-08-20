@@ -1,0 +1,28 @@
+export const stagedJsdocProducer = Object.freeze({
+  descriptor: stagedJsdocProducerDescriptor,
+  produce(request, context = {}) {
+    const workspaceRoot = normalizeAbsolutePath(request?.workspaceRoot, "workspaceRoot");
+    const outputDirectory = normalizeAbsolutePath(request?.outputDirectory, "outputDirectory");
+    const stagingRoot = path.join(workspaceRoot, ".hia-jsdoc-staging");
+    const stagingDirectory = path.join(stagingRoot, `${process.pid}-${createStagingName(outputDirectory)}`);
+
+    try {
+      fs.rmSync(stagingDirectory, { recursive: true, force: true });
+      const result = jsdocProducer.produce({
+        ...request,
+        workspaceRoot,
+        outputDirectory: stagingDirectory
+      }, context);
+
+      if (fs.existsSync(stagingDirectory)) {
+        fs.mkdirSync(outputDirectory, { recursive: true });
+        fs.cpSync(stagingDirectory, outputDirectory, { recursive: true, force: true });
+      }
+
+      return result;
+    } finally {
+      fs.rmSync(stagingDirectory, { recursive: true, force: true });
+      removeEmptyDirectory(stagingRoot);
+    }
+  }
+});

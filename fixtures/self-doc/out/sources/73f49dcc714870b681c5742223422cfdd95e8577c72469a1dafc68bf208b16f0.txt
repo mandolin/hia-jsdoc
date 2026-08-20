@@ -1,0 +1,1 @@
+export const HIA_JSDOC_UMBRELLA_CONTRACT = "hia-jsdoc-umbrella-config";
