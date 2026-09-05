@@ -283,6 +283,38 @@
       }
     },
     {
+      "pageId": "page.constant.ce2bcfaf1191",
+      "runtime": "hia_jsdoc_portal_ui_locale_capability-ce2bcfaf1191.html",
+      "locales": {
+        "en": "hia_jsdoc_portal_ui_locale_capability-ce2bcfaf1191.en.html",
+        "zh-CN": "hia_jsdoc_portal_ui_locale_capability-ce2bcfaf1191.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.ee0b1caff2a5",
+      "runtime": "hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2a5.html",
+      "locales": {
+        "en": "hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2a5.en.html",
+        "zh-CN": "hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2a5.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.01ce1088f5df",
+      "runtime": "hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5df.html",
+      "locales": {
+        "en": "hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5df.en.html",
+        "zh-CN": "hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5df.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.constant.56cd926b2ab1",
+      "runtime": "hia_jsdoc_portal_ui_locale_report_path-56cd926b2ab1.html",
+      "locales": {
+        "en": "hia_jsdoc_portal_ui_locale_report_path-56cd926b2ab1.en.html",
+        "zh-CN": "hia_jsdoc_portal_ui_locale_report_path-56cd926b2ab1.zh-CN.html"
+      }
+    },
+    {
       "pageId": "page.constant.a14ea32427b9",
       "runtime": "hia_jsdoc_presentation_profile_contract-a14ea32427b9.html",
       "locales": {
@@ -408,6 +440,14 @@
       "locales": {
         "en": "createhiajsdocpluginbridge-c454fe6d94fa.en.html",
         "zh-CN": "createhiajsdocpluginbridge-c454fe6d94fa.zh-CN.html"
+      }
+    },
+    {
+      "pageId": "page.function.3f6b98c0eee4",
+      "runtime": "createhiajsdocportaluilocalebridge-3f6b98c0eee4.html",
+      "locales": {
+        "en": "createhiajsdocportaluilocalebridge-3f6b98c0eee4.en.html",
+        "zh-CN": "createhiajsdocportaluilocalebridge-3f6b98c0eee4.zh-CN.html"
       }
     },
     {

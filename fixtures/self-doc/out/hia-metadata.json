@@ -407,16 +407,16 @@
         "relativePath": "packages/jsdoc-preset/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 20,
+          "line": 21,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 20,
+            "line": 21,
             "column": 1
           },
           "end": {
-            "line": 20,
+            "line": 21,
             "column": 1
           }
         },
@@ -434,11 +434,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 20,
+            "line": 21,
             "column": 1
           },
           "end": {
-            "line": 21,
+            "line": 22,
             "column": 62
           }
         },
@@ -459,11 +459,11 @@
           "content": "export function createHiaJsdocConfig(options = {}) {\n  const mode = normalizeHiaJsdocMode(options.mode ?? \"both\");",
           "range": {
             "start": {
-              "line": 20,
+              "line": 21,
               "column": 1
             },
             "end": {
-              "line": 21,
+              "line": 22,
               "column": 62
             }
           }
@@ -504,16 +504,16 @@
         "relativePath": "packages/jsdoc-preset/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 132,
+          "line": 136,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 132,
+            "line": 136,
             "column": 1
           },
           "end": {
-            "line": 132,
+            "line": 136,
             "column": 1
           }
         },
@@ -531,11 +531,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 132,
+            "line": 136,
             "column": 1
           },
           "end": {
-            "line": 174,
+            "line": 178,
             "column": 2
           }
         },
@@ -556,11 +556,11 @@
           "content": "export function mergeJsdocConfig(preset, userConfig = {}) {\n  return {\n    ...preset,\n    ...userConfig,\n    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),\n    source: {\n      ...(preset.source ?? {}),\n      ...(userConfig.source ?? {})\n    },\n    opts: {\n      ...(preset.opts ?? {}),\n      ...(userConfig.opts ?? {}),\n      hia: {\n        ...(preset.opts?.hia ?? {}),\n        ...(userConfig.opts?.hia ?? {}),\n        source: {\n          ...(preset.opts?.hia?.source ?? {}),\n          ...(userConfig.opts?.hia?.source ?? {})\n        },\n        i18n: {\n          ...(preset.opts?.hia?.i18n ?? {}),\n          ...(userConfig.opts?.hia?.i18n ?? {})\n        },\n        presentation: {\n          ...(preset.opts?.hia?.presentation ?? {}),\n          ...(userConfig.opts?.hia?.presentation ?? {})\n        },\n        theme: {\n          ...(preset.opts?.hia?.theme ?? {}),\n          ...(userConfig.opts?.hia?.theme ?? {})\n        },\n        integration: {\n          ...(preset.opts?.hia?.integration ?? {}),\n          ...(userConfig.opts?.hia?.integration ?? {})\n        },\n        umbrella: {\n          ...(preset.opts?.hia?.umbrella ?? {}),\n          ...(userConfig.opts?.hia?.umbrella ?? {})\n        }\n      }\n    }\n  };\n}",
           "range": {
             "start": {
-              "line": 132,
+              "line": 136,
               "column": 1
             },
             "end": {
-              "line": 174,
+              "line": 178,
               "column": 2
             }
           }
@@ -3007,8 +3007,8 @@
     }
   },
   {
-    "name": "JSDOC_PACKAGE",
-    "longname": "JSDOC_PACKAGE",
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
     "kind": "constant",
     "hia": {
       "hasHia": true,
@@ -3048,7 +3048,7 @@
       },
       "sourcePrimaryBlock": {
         "kind": "primary-block",
-        "id": "doclet:constant:JSDOC_PACKAGE",
+        "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "range": {
@@ -3058,6 +3058,491 @@
           },
           "end": {
             "line": 98,
+            "column": 93
+          }
+        },
+        "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = \"documentation-ui-locale-completeness\";",
+        "rangeSource": "parser-js",
+        "confidence": "medium",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = \"documentation-ui-locale-completeness\";",
+          "range": {
+            "start": {
+              "line": 98,
+              "column": 1
+            },
+            "end": {
+              "line": 98,
+              "column": 93
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 107,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 107,
+            "column": 1
+          },
+          "end": {
+            "line": 107,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 107,
+            "column": 1
+          },
+          "end": {
+            "line": 107,
+            "column": 76
+          }
+        },
+        "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = \"0.1.0-draft\";",
+        "rangeSource": "parser-js",
+        "confidence": "medium",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = \"0.1.0-draft\";",
+          "range": {
+            "start": {
+              "line": 107,
+              "column": 1
+            },
+            "end": {
+              "line": 107,
+              "column": 76
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 116,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 116,
+            "column": 1
+          },
+          "end": {
+            "line": 116,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 116,
+            "column": 1
+          },
+          "end": {
+            "line": 116,
+            "column": 80
+          }
+        },
+        "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID = \"hia-jsdoc.portal-bridge\";",
+        "rangeSource": "parser-js",
+        "confidence": "medium",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID = \"hia-jsdoc.portal-bridge\";",
+          "range": {
+            "start": {
+              "line": 116,
+              "column": 1
+            },
+            "end": {
+              "line": 116,
+              "column": 80
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 125,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 125,
+            "column": 1
+          },
+          "end": {
+            "line": 125,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 125,
+            "column": 1
+          },
+          "end": {
+            "line": 125,
+            "column": 99
+          }
+        },
+        "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH = \"documentation-ui-locale-completeness.json\";",
+        "rangeSource": "parser-js",
+        "confidence": "medium",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH = \"documentation-ui-locale-completeness.json\";",
+          "range": {
+            "start": {
+              "line": 125,
+              "column": 1
+            },
+            "end": {
+              "line": 125,
+              "column": 99
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 1,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "createHiaJsdocPortalUiLocaleBridge",
+    "longname": "createHiaJsdocPortalUiLocaleBridge",
+    "kind": "function",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 134,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 134,
+            "column": 1
+          },
+          "end": {
+            "line": 134,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:function:createHiaJsdocPortalUiLocaleBridge",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 134,
+            "column": 1
+          },
+          "end": {
+            "line": 147,
+            "column": 2
+          }
+        },
+        "content": "export function createHiaJsdocPortalUiLocaleBridge() {\n  return {\n    capability: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY,\n    capabilityVersion: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION,\n    ownerPackage: \"@hia-doc/renderer-html\",\n    profileId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    surfaceId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    reportPath: HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH,\n    uiLocales: [\"zh-CN\", \"en\"],\n    modes: [\"interactive\", \"no-script\"],\n    channels: [\"visible\", \"accessibility\", \"status\"],\n    privacy: \"metadata-only\"\n  };\n}",
+        "rangeSource": "parser-js",
+        "confidence": "high",
+        "diagnostics": [],
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        },
+        "preview": {
+          "enabled": true,
+          "defaultExpanded": false,
+          "language": "javascript",
+          "content": "export function createHiaJsdocPortalUiLocaleBridge() {\n  return {\n    capability: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY,\n    capabilityVersion: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION,\n    ownerPackage: \"@hia-doc/renderer-html\",\n    profileId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    surfaceId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    reportPath: HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH,\n    uiLocales: [\"zh-CN\", \"en\"],\n    modes: [\"interactive\", \"no-script\"],\n    channels: [\"visible\", \"accessibility\", \"status\"],\n    privacy: \"metadata-only\"\n  };\n}",
+          "range": {
+            "start": {
+              "line": 134,
+              "column": 1
+            },
+            "end": {
+              "line": 147,
+              "column": 2
+            }
+          }
+        }
+      },
+      "sourcePreviewEnabled": true,
+      "sourceLinkEnabled": true,
+      "presentationStableId": "jsdoc:function:createHiaJsdocPortalUiLocaleBridge",
+      "presentationParentLongname": "",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en",
+      "fallbackLocale": "en",
+      "i18nMode": "runtimeSwitch",
+      "i18nFieldCount": 2,
+      "missingLocales": []
+    }
+  },
+  {
+    "name": "JSDOC_PACKAGE",
+    "longname": "JSDOC_PACKAGE",
+    "kind": "constant",
+    "hia": {
+      "hasHia": true,
+      "microPlugins": [
+        "code-fragment",
+        "source-link",
+        "source-preview",
+        "doc-i18n",
+        "doclet-normalizer",
+        "diagnostics"
+      ],
+      "sourceReferenceCount": 0,
+      "sourceDefinedIn": {
+        "kind": "defined-in",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "position": {
+          "line": 156,
+          "column": 1
+        },
+        "range": {
+          "start": {
+            "line": 156,
+            "column": 1
+          },
+          "end": {
+            "line": 156,
+            "column": 1
+          }
+        },
+        "link": {
+          "enabled": true,
+          "fileUrl": "",
+          "lineUrl": "",
+          "openMode": "same-tab"
+        }
+      },
+      "sourcePrimaryBlock": {
+        "kind": "primary-block",
+        "id": "doclet:constant:JSDOC_PACKAGE",
+        "relativePath": "packages/jsdoc-spec/src/index.mjs",
+        "language": "javascript",
+        "range": {
+          "start": {
+            "line": 156,
+            "column": 1
+          },
+          "end": {
+            "line": 156,
             "column": 38
           }
         },
@@ -3078,11 +3563,11 @@
           "content": "export const JSDOC_PACKAGE = \"jsdoc\";",
           "range": {
             "start": {
-              "line": 98,
+              "line": 156,
               "column": 1
             },
             "end": {
-              "line": 98,
+              "line": 156,
               "column": 38
             }
           }
@@ -3123,16 +3608,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 107,
+          "line": 165,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 107,
+            "line": 165,
             "column": 1
           },
           "end": {
-            "line": 107,
+            "line": 165,
             "column": 1
           }
         },
@@ -3150,11 +3635,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 107,
+            "line": 165,
             "column": 1
           },
           "end": {
-            "line": 107,
+            "line": 165,
             "column": 38
           }
         },
@@ -3175,11 +3660,11 @@
           "content": "export const JSDOC_VERSION = \"4.0.5\";",
           "range": {
             "start": {
-              "line": 107,
+              "line": 165,
               "column": 1
             },
             "end": {
-              "line": 107,
+              "line": 165,
               "column": 38
             }
           }
@@ -3220,16 +3705,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 116,
+          "line": 174,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 116,
+            "line": 174,
             "column": 1
           },
           "end": {
-            "line": 116,
+            "line": 174,
             "column": 1
           }
         },
@@ -3247,11 +3732,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 116,
+            "line": 174,
             "column": 1
           },
           "end": {
-            "line": 116,
+            "line": 174,
             "column": 95
           }
         },
@@ -3272,11 +3757,11 @@
           "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);",
           "range": {
             "start": {
-              "line": 116,
+              "line": 174,
               "column": 1
             },
             "end": {
-              "line": 116,
+              "line": 174,
               "column": 95
             }
           }
@@ -3317,16 +3802,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 125,
+          "line": 183,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 125,
+            "line": 183,
             "column": 1
           },
           "end": {
-            "line": 125,
+            "line": 183,
             "column": 1
           }
         },
@@ -3344,11 +3829,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 125,
+            "line": 183,
             "column": 1
           },
           "end": {
-            "line": 125,
+            "line": 183,
             "column": 81
           }
         },
@@ -3369,11 +3854,11 @@
           "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);",
           "range": {
             "start": {
-              "line": 125,
+              "line": 183,
               "column": 1
             },
             "end": {
-              "line": 125,
+              "line": 183,
               "column": 81
             }
           }
@@ -3414,16 +3899,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 136,
+          "line": 194,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 136,
+            "line": 194,
             "column": 1
           },
           "end": {
-            "line": 136,
+            "line": 194,
             "column": 1
           }
         },
@@ -3441,11 +3926,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 136,
+            "line": 194,
             "column": 1
           },
           "end": {
-            "line": 141,
+            "line": 199,
             "column": 2
           }
         },
@@ -3466,11 +3951,11 @@
           "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
           "range": {
             "start": {
-              "line": 136,
+              "line": 194,
               "column": 1
             },
             "end": {
-              "line": 141,
+              "line": 199,
               "column": 2
             }
           }
@@ -3511,16 +3996,16 @@
         "relativePath": "packages/jsdoc-spec/src/index.mjs",
         "language": "javascript",
         "position": {
-          "line": 150,
+          "line": 208,
           "column": 1
         },
         "range": {
           "start": {
-            "line": 150,
+            "line": 208,
             "column": 1
           },
           "end": {
-            "line": 150,
+            "line": 208,
             "column": 1
           }
         },
@@ -3538,11 +4023,11 @@
         "language": "javascript",
         "range": {
           "start": {
-            "line": 150,
+            "line": 208,
             "column": 1
           },
           "end": {
-            "line": 167,
+            "line": 225,
             "column": 2
           }
         },
@@ -3563,11 +4048,11 @@
           "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
           "range": {
             "start": {
-              "line": 150,
+              "line": 208,
               "column": 1
             },
             "end": {
-              "line": 167,
+              "line": 225,
               "column": 2
             }
           }

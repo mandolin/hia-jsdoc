@@ -7,3 +7,6 @@ Provides JSDoc config preset and merge helpers.
 The preset defaults to `hia.presentation.pageMode = "multi-page"` and `hia.presentation.sourceMode = "fetch"`. Use
 `single-page` for compatibility, or select `embed`, `link` or `none` explicitly. Theme skin and scheme selections are passed
 to the JTH bridge; the preset does not implement or copy skins.
+
+The umbrella metadata also embeds `portalUiLocaleBridge`, a translation-free capability descriptor that lets Portal consumers select the
+`hia-jsdoc.portal-bridge` completeness profile while keeping the Portal renderer as the sole UI-message owner.

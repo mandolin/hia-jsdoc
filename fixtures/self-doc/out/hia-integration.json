@@ -3332,16 +3332,16 @@
             "relativePath": "packages/jsdoc-preset/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 20,
+              "line": 21,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 20,
+                "line": 21,
                 "column": 1
               },
               "end": {
-                "line": 20,
+                "line": 21,
                 "column": 1
               }
             },
@@ -3359,11 +3359,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 20,
+                "line": 21,
                 "column": 1
               },
               "end": {
-                "line": 21,
+                "line": 22,
                 "column": 62
               }
             },
@@ -3384,11 +3384,11 @@
               "content": "export function createHiaJsdocConfig(options = {}) {\n  const mode = normalizeHiaJsdocMode(options.mode ?? \"both\");",
               "range": {
                 "start": {
-                  "line": 20,
+                  "line": 21,
                   "column": 1
                 },
                 "end": {
-                  "line": 21,
+                  "line": 22,
                   "column": 62
                 }
               }
@@ -4065,16 +4065,16 @@
             "relativePath": "packages/jsdoc-preset/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 132,
+              "line": 136,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 132,
+                "line": 136,
                 "column": 1
               },
               "end": {
-                "line": 132,
+                "line": 136,
                 "column": 1
               }
             },
@@ -4092,11 +4092,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 132,
+                "line": 136,
                 "column": 1
               },
               "end": {
-                "line": 174,
+                "line": 178,
                 "column": 2
               }
             },
@@ -4117,11 +4117,11 @@
               "content": "export function mergeJsdocConfig(preset, userConfig = {}) {\n  return {\n    ...preset,\n    ...userConfig,\n    plugins: mergeUniqueArrays(preset.plugins ?? [], userConfig.plugins ?? []),\n    source: {\n      ...(preset.source ?? {}),\n      ...(userConfig.source ?? {})\n    },\n    opts: {\n      ...(preset.opts ?? {}),\n      ...(userConfig.opts ?? {}),\n      hia: {\n        ...(preset.opts?.hia ?? {}),\n        ...(userConfig.opts?.hia ?? {}),\n        source: {\n          ...(preset.opts?.hia?.source ?? {}),\n          ...(userConfig.opts?.hia?.source ?? {})\n        },\n        i18n: {\n          ...(preset.opts?.hia?.i18n ?? {}),\n          ...(userConfig.opts?.hia?.i18n ?? {})\n        },\n        presentation: {\n          ...(preset.opts?.hia?.presentation ?? {}),\n          ...(userConfig.opts?.hia?.presentation ?? {})\n        },\n        theme: {\n          ...(preset.opts?.hia?.theme ?? {}),\n          ...(userConfig.opts?.hia?.theme ?? {})\n        },\n        integration: {\n          ...(preset.opts?.hia?.integration ?? {}),\n          ...(userConfig.opts?.hia?.integration ?? {})\n        },\n        umbrella: {\n          ...(preset.opts?.hia?.umbrella ?? {}),\n          ...(userConfig.opts?.hia?.umbrella ?? {})\n        }\n      }\n    }\n  };\n}",
               "range": {
                 "start": {
-                  "line": 132,
+                  "line": 136,
                   "column": 1
                 },
                 "end": {
-                  "line": 174,
+                  "line": 178,
                   "column": 2
                 }
               }
@@ -16630,6 +16630,2104 @@
         "diagnostics": []
       },
       {
+        "id": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+        "kind": "constant",
+        "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+        "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+        "title": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+        "summary": "Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.",
+        "jsdoc": {
+          "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+          "kind": "constant",
+          "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+          "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ],
+          "presentation": {
+            "model": "hia-jsdoc-presentation",
+            "modelVersion": "0.1.0",
+            "identity": {
+              "stableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+              "kind": "constant",
+              "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY"
+            },
+            "navigation": {
+              "parentLongname": "",
+              "group": "constant"
+            }
+          }
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 98,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 98,
+                "column": 1
+              },
+              "end": {
+                "line": 98,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 98,
+                "column": 1
+              },
+              "end": {
+                "line": 98,
+                "column": 93
+              }
+            },
+            "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = \"documentation-ui-locale-completeness\";",
+            "rangeSource": "parser-js",
+            "confidence": "medium",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = \"documentation-ui-locale-completeness\";",
+              "range": {
+                "start": {
+                  "line": 98,
+                  "column": 1
+                },
+                "end": {
+                  "line": 98,
+                  "column": 93
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                "zh-CN": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                    "zh-CN": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+                    "zh-CN": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+        "kind": "constant",
+        "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+        "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+        "title": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+        "summary": "Pins the exact W-P123 capability version understood by the bridge.",
+        "jsdoc": {
+          "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+          "kind": "constant",
+          "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+          "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ],
+          "presentation": {
+            "model": "hia-jsdoc-presentation",
+            "modelVersion": "0.1.0",
+            "identity": {
+              "stableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+              "kind": "constant",
+              "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION"
+            },
+            "navigation": {
+              "parentLongname": "",
+              "group": "constant"
+            }
+          }
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 107,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 107,
+                "column": 1
+              },
+              "end": {
+                "line": 107,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 107,
+                "column": 1
+              },
+              "end": {
+                "line": 107,
+                "column": 76
+              }
+            },
+            "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = \"0.1.0-draft\";",
+            "rangeSource": "parser-js",
+            "confidence": "medium",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = \"0.1.0-draft\";",
+              "range": {
+                "start": {
+                  "line": 107,
+                  "column": 1
+                },
+                "end": {
+                  "line": 107,
+                  "column": 76
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Pins the exact W-P123 capability version understood by the bridge.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Pins the exact W-P123 capability version understood by the bridge.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Pins the exact W-P123 capability version understood by the bridge.",
+                "zh-CN": "固定 bridge 理解的 W-P123 exact capability 版本。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Pins the exact W-P123 capability version understood by the bridge.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Pins the exact W-P123 capability version understood by the bridge.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Pins the exact W-P123 capability version understood by the bridge.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Pins the exact W-P123 capability version understood by the bridge.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Pins the exact W-P123 capability version understood by the bridge.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Pins the exact W-P123 capability version understood by the bridge.",
+                    "zh-CN": "固定 bridge 理解的 W-P123 exact capability 版本。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Pins the exact W-P123 capability version understood by the bridge.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Pins the exact W-P123 capability version understood by the bridge.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "固定 bridge 理解的 W-P123 exact capability 版本。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Pins the exact W-P123 capability version understood by the bridge.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Pins the exact W-P123 capability version understood by the bridge.",
+                    "zh-CN": "固定 bridge 理解的 W-P123 exact capability 版本。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+        "kind": "constant",
+        "name": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+        "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+        "title": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+        "summary": "Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.",
+        "jsdoc": {
+          "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+          "kind": "constant",
+          "name": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+          "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ],
+          "presentation": {
+            "model": "hia-jsdoc-presentation",
+            "modelVersion": "0.1.0",
+            "identity": {
+              "stableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+              "kind": "constant",
+              "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID"
+            },
+            "navigation": {
+              "parentLongname": "",
+              "group": "constant"
+            }
+          }
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 116,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 116,
+                "column": 1
+              },
+              "end": {
+                "line": 116,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 116,
+                "column": 1
+              },
+              "end": {
+                "line": 116,
+                "column": 80
+              }
+            },
+            "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID = \"hia-jsdoc.portal-bridge\";",
+            "rangeSource": "parser-js",
+            "confidence": "medium",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID = \"hia-jsdoc.portal-bridge\";",
+              "range": {
+                "start": {
+                  "line": 116,
+                  "column": 1
+                },
+                "end": {
+                  "line": 116,
+                  "column": 80
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                "zh-CN": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                    "zh-CN": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+                    "zh-CN": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+        "kind": "constant",
+        "name": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+        "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+        "title": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+        "summary": "Declares the body-free report path emitted by the Portal owner.",
+        "jsdoc": {
+          "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+          "kind": "constant",
+          "name": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+          "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ],
+          "presentation": {
+            "model": "hia-jsdoc-presentation",
+            "modelVersion": "0.1.0",
+            "identity": {
+              "stableId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+              "kind": "constant",
+              "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH"
+            },
+            "navigation": {
+              "parentLongname": "",
+              "group": "constant"
+            }
+          }
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 125,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 125,
+                "column": 1
+              },
+              "end": {
+                "line": 125,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:constant:HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 125,
+                "column": 1
+              },
+              "end": {
+                "line": 125,
+                "column": 99
+              }
+            },
+            "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH = \"documentation-ui-locale-completeness.json\";",
+            "rangeSource": "parser-js",
+            "confidence": "medium",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export const HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH = \"documentation-ui-locale-completeness.json\";",
+              "range": {
+                "start": {
+                  "line": 125,
+                  "column": 1
+                },
+                "end": {
+                  "line": 125,
+                  "column": 99
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Declares the body-free report path emitted by the Portal owner.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                "zh-CN": "声明由 Portal owner 生成的无正文完整性报告路径。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Declares the body-free report path emitted by the Portal owner.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                    "zh-CN": "声明由 Portal owner 生成的无正文完整性报告路径。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Declares the body-free report path emitted by the Portal owner.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "声明由 Portal owner 生成的无正文完整性报告路径。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Declares the body-free completeness-report path emitted by the Portal owner.",
+                    "zh-CN": "声明由 Portal owner 生成的无正文完整性报告路径。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
+        "id": "jsdoc:function:createHiaJsdocPortalUiLocaleBridge",
+        "kind": "function",
+        "name": "createHiaJsdocPortalUiLocaleBridge",
+        "longname": "createHiaJsdocPortalUiLocaleBridge",
+        "title": "createHiaJsdocPortalUiLocaleBridge",
+        "summary": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset.",
+        "jsdoc": {
+          "docletId": "createHiaJsdocPortalUiLocaleBridge",
+          "kind": "function",
+          "name": "createHiaJsdocPortalUiLocaleBridge",
+          "longname": "createHiaJsdocPortalUiLocaleBridge",
+          "memberof": "",
+          "scope": "global",
+          "params": [],
+          "returns": [
+            {
+              "type": {
+                "names": [
+                  "object"
+                ]
+              },
+              "description": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>"
+            }
+          ],
+          "properties": [],
+          "examples": []
+        },
+        "hia": {
+          "metadataKey": "hia",
+          "microPlugins": [
+            "code-fragment",
+            "source-link",
+            "source-preview",
+            "doc-i18n",
+            "doclet-normalizer",
+            "diagnostics"
+          ],
+          "presentation": {
+            "model": "hia-jsdoc-presentation",
+            "modelVersion": "0.1.0",
+            "identity": {
+              "stableId": "jsdoc:function:createHiaJsdocPortalUiLocaleBridge",
+              "kind": "function",
+              "longname": "createHiaJsdocPortalUiLocaleBridge"
+            },
+            "navigation": {
+              "parentLongname": "",
+              "group": "function"
+            }
+          }
+        },
+        "source": {
+          "model": "hia-jsdoc-source",
+          "modelVersion": "0.2.0",
+          "mode": "all",
+          "definedIn": {
+            "kind": "defined-in",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "position": {
+              "line": 134,
+              "column": 1
+            },
+            "range": {
+              "start": {
+                "line": 134,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 1
+              }
+            },
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            }
+          },
+          "primaryBlock": {
+            "kind": "primary-block",
+            "id": "doclet:function:createHiaJsdocPortalUiLocaleBridge",
+            "relativePath": "packages/jsdoc-spec/src/index.mjs",
+            "language": "javascript",
+            "range": {
+              "start": {
+                "line": 134,
+                "column": 1
+              },
+              "end": {
+                "line": 147,
+                "column": 2
+              }
+            },
+            "content": "export function createHiaJsdocPortalUiLocaleBridge() {\n  return {\n    capability: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY,\n    capabilityVersion: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION,\n    ownerPackage: \"@hia-doc/renderer-html\",\n    profileId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    surfaceId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    reportPath: HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH,\n    uiLocales: [\"zh-CN\", \"en\"],\n    modes: [\"interactive\", \"no-script\"],\n    channels: [\"visible\", \"accessibility\", \"status\"],\n    privacy: \"metadata-only\"\n  };\n}",
+            "rangeSource": "parser-js",
+            "confidence": "high",
+            "diagnostics": [],
+            "link": {
+              "enabled": true,
+              "fileUrl": "",
+              "lineUrl": "",
+              "openMode": "same-tab"
+            },
+            "preview": {
+              "enabled": true,
+              "defaultExpanded": false,
+              "language": "javascript",
+              "content": "export function createHiaJsdocPortalUiLocaleBridge() {\n  return {\n    capability: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY,\n    capabilityVersion: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION,\n    ownerPackage: \"@hia-doc/renderer-html\",\n    profileId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    surfaceId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,\n    reportPath: HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH,\n    uiLocales: [\"zh-CN\", \"en\"],\n    modes: [\"interactive\", \"no-script\"],\n    channels: [\"visible\", \"accessibility\", \"status\"],\n    privacy: \"metadata-only\"\n  };\n}",
+              "range": {
+                "start": {
+                  "line": 134,
+                  "column": 1
+                },
+                "end": {
+                  "line": 147,
+                  "column": 2
+                }
+              }
+            }
+          },
+          "fragments": [],
+          "references": [],
+          "diagnostics": [],
+          "link": {
+            "enabled": true,
+            "rootUrl": "",
+            "openMode": "same-tab"
+          },
+          "preview": {
+            "enabled": true,
+            "defaultExpanded": false
+          }
+        },
+        "i18n": {
+          "enabled": true,
+          "model": "hia-jsdoc-text-i18n",
+          "modelVersion": "0.2.0",
+          "defaultLocale": "en",
+          "fallbackLocale": "en",
+          "locales": [
+            "en",
+            "zh-CN"
+          ],
+          "mode": "runtimeSwitch",
+          "key": "",
+          "path": "createHiaJsdocPortalUiLocaleBridge",
+          "locale": "",
+          "fields": {
+            "description": {
+              "fieldPath": "description",
+              "kind": "description",
+              "defaultLocale": "en",
+              "defaultText": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset.",
+              "source": "doclet.description",
+              "blocks": [
+                {
+                  "kind": "lang-block",
+                  "locale": "zh-CN",
+                  "fieldPath": "description",
+                  "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                },
+                {
+                  "kind": "lang-block",
+                  "locale": "en",
+                  "fieldPath": "description",
+                  "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                  "block": "",
+                  "source": "tag",
+                  "rangeInComment": null
+                }
+              ],
+              "segments": [],
+              "localizedText": {
+                "en": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                "zh-CN": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            },
+            "returns.0.description": {
+              "fieldPath": "returns.0.description",
+              "kind": "return.description",
+              "defaultLocale": "en",
+              "defaultText": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>",
+              "source": "doclet.returns.0.description",
+              "blocks": [],
+              "segments": [
+                {
+                  "kind": "lang-inline",
+                  "id": "returns.0.description.0",
+                  "key": "",
+                  "path": "",
+                  "fieldPath": "returns.0.description",
+                  "raw": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>",
+                  "localized": {
+                    "zh-CN": "仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。",
+                    "en": "A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only."
+                  },
+                  "rangeInField": {
+                    "start": 0,
+                    "end": 201
+                  }
+                }
+              ],
+              "localizedText": {
+                "en": "A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.",
+                "zh-CN": "仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。"
+              },
+              "resolutions": {
+                "en": {
+                  "requestedLocale": "en",
+                  "resolvedLocale": "en",
+                  "fallbackChain": [
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                },
+                "zh-CN": {
+                  "requestedLocale": "zh-CN",
+                  "resolvedLocale": "zh-CN",
+                  "fallbackChain": [
+                    "zh-CN",
+                    "zh",
+                    "en"
+                  ],
+                  "usedFallback": false,
+                  "missing": false
+                }
+              },
+              "missingLocales": []
+            }
+          },
+          "localized": {
+            "en": {
+              "locale": "en",
+              "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+              "block": "",
+              "source": "tag"
+            },
+            "zh-CN": {
+              "locale": "zh-CN",
+              "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+              "block": "",
+              "source": "tag"
+            }
+          },
+          "missingLocales": [],
+          "resources": [],
+          "diagnostics": [],
+          "generation": {
+            "mode": "runtimeSwitch",
+            "perLocale": {
+              "en": {
+                "locale": "en",
+                "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                "block": "",
+                "source": "tag"
+              },
+              "zh-CN": {
+                "locale": "zh-CN",
+                "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+                "block": "",
+                "source": "tag"
+              }
+            },
+            "runtimeSwitch": {
+              "locales": [
+                "en",
+                "zh-CN"
+              ],
+              "fallbackLocale": "en",
+              "content": {
+                "en": {
+                  "locale": "en",
+                  "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                    "zh-CN": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [
+                    {
+                      "kind": "lang-inline",
+                      "id": "returns.0.description.0",
+                      "key": "",
+                      "path": "",
+                      "fieldPath": "returns.0.description",
+                      "raw": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>",
+                      "localized": {
+                        "zh-CN": "仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。",
+                        "en": "A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only."
+                      },
+                      "rangeInField": {
+                        "start": 0,
+                        "end": 201
+                      }
+                    }
+                  ],
+                  "localizedText": {
+                    "en": "A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.",
+                    "zh-CN": "仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            },
+            "hiaIntegration": {
+              "localized": {
+                "en": {
+                  "locale": "en",
+                  "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                  "block": "",
+                  "source": "tag"
+                },
+                "zh-CN": {
+                  "locale": "zh-CN",
+                  "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+                  "block": "",
+                  "source": "tag"
+                }
+              },
+              "fields": {
+                "description": {
+                  "fieldPath": "description",
+                  "kind": "description",
+                  "defaultLocale": "en",
+                  "defaultText": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset.",
+                  "source": "doclet.description",
+                  "blocks": [
+                    {
+                      "kind": "lang-block",
+                      "locale": "zh-CN",
+                      "fieldPath": "description",
+                      "text": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    },
+                    {
+                      "kind": "lang-block",
+                      "locale": "en",
+                      "fieldPath": "description",
+                      "text": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                      "block": "",
+                      "source": "tag",
+                      "rangeInComment": null
+                    }
+                  ],
+                  "segments": [],
+                  "localizedText": {
+                    "en": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+                    "zh-CN": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                },
+                "returns.0.description": {
+                  "fieldPath": "returns.0.description",
+                  "kind": "return.description",
+                  "defaultLocale": "en",
+                  "defaultText": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>",
+                  "source": "doclet.returns.0.description",
+                  "blocks": [],
+                  "segments": [
+                    {
+                      "kind": "lang-inline",
+                      "id": "returns.0.description.0",
+                      "key": "",
+                      "path": "",
+                      "fieldPath": "returns.0.description",
+                      "raw": "<lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>",
+                      "localized": {
+                        "zh-CN": "仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。",
+                        "en": "A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only."
+                      },
+                      "rangeInField": {
+                        "start": 0,
+                        "end": 201
+                      }
+                    }
+                  ],
+                  "localizedText": {
+                    "en": "A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.",
+                    "zh-CN": "仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。"
+                  },
+                  "resolutions": {
+                    "en": {
+                      "requestedLocale": "en",
+                      "resolvedLocale": "en",
+                      "fallbackChain": [
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    },
+                    "zh-CN": {
+                      "requestedLocale": "zh-CN",
+                      "resolvedLocale": "zh-CN",
+                      "fallbackChain": [
+                        "zh-CN",
+                        "zh",
+                        "en"
+                      ],
+                      "usedFallback": false,
+                      "missing": false
+                    }
+                  },
+                  "missingLocales": []
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": []
+      },
+      {
         "id": "jsdoc:constant:JSDOC_PACKAGE",
         "kind": "constant",
         "name": "JSDOC_PACKAGE",
@@ -16681,16 +18779,16 @@
             "relativePath": "packages/jsdoc-spec/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 98,
+              "line": 156,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 98,
+                "line": 156,
                 "column": 1
               },
               "end": {
-                "line": 98,
+                "line": 156,
                 "column": 1
               }
             },
@@ -16708,11 +18806,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 98,
+                "line": 156,
                 "column": 1
               },
               "end": {
-                "line": 98,
+                "line": 156,
                 "column": 38
               }
             },
@@ -16733,11 +18831,11 @@
               "content": "export const JSDOC_PACKAGE = \"jsdoc\";",
               "range": {
                 "start": {
-                  "line": 98,
+                  "line": 156,
                   "column": 1
                 },
                 "end": {
-                  "line": 98,
+                  "line": 156,
                   "column": 38
                 }
               }
@@ -17067,16 +19165,16 @@
             "relativePath": "packages/jsdoc-spec/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 107,
+              "line": 165,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 107,
+                "line": 165,
                 "column": 1
               },
               "end": {
-                "line": 107,
+                "line": 165,
                 "column": 1
               }
             },
@@ -17094,11 +19192,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 107,
+                "line": 165,
                 "column": 1
               },
               "end": {
-                "line": 107,
+                "line": 165,
                 "column": 38
               }
             },
@@ -17119,11 +19217,11 @@
               "content": "export const JSDOC_VERSION = \"4.0.5\";",
               "range": {
                 "start": {
-                  "line": 107,
+                  "line": 165,
                   "column": 1
                 },
                 "end": {
-                  "line": 107,
+                  "line": 165,
                   "column": 38
                 }
               }
@@ -17453,16 +19551,16 @@
             "relativePath": "packages/jsdoc-spec/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 116,
+              "line": 174,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 116,
+                "line": 174,
                 "column": 1
               },
               "end": {
-                "line": 116,
+                "line": 174,
                 "column": 1
               }
             },
@@ -17480,11 +19578,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 116,
+                "line": 174,
                 "column": 1
               },
               "end": {
-                "line": 116,
+                "line": 174,
                 "column": 95
               }
             },
@@ -17505,11 +19603,11 @@
               "content": "export const HIA_JSDOC_OUTPUT_MODES = Object.freeze([\"standalone\", \"hiaIntegration\", \"both\"]);",
               "range": {
                 "start": {
-                  "line": 116,
+                  "line": 174,
                   "column": 1
                 },
                 "end": {
-                  "line": 116,
+                  "line": 174,
                   "column": 95
                 }
               }
@@ -17839,16 +19937,16 @@
             "relativePath": "packages/jsdoc-spec/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 125,
+              "line": 183,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 125,
+                "line": 183,
                 "column": 1
               },
               "end": {
-                "line": 125,
+                "line": 183,
                 "column": 1
               }
             },
@@ -17866,11 +19964,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 125,
+                "line": 183,
                 "column": 1
               },
               "end": {
-                "line": 125,
+                "line": 183,
                 "column": 81
               }
             },
@@ -17891,11 +19989,11 @@
               "content": "export const HIA_JSDOC_EXTRA_PLUGIN_PHASES = Object.freeze([\"before\", \"after\"]);",
               "range": {
                 "start": {
-                  "line": 125,
+                  "line": 183,
                   "column": 1
                 },
                 "end": {
-                  "line": 125,
+                  "line": 183,
                   "column": 81
                 }
               }
@@ -18246,16 +20344,16 @@
             "relativePath": "packages/jsdoc-spec/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 136,
+              "line": 194,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 136,
+                "line": 194,
                 "column": 1
               },
               "end": {
-                "line": 136,
+                "line": 194,
                 "column": 1
               }
             },
@@ -18273,11 +20371,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 136,
+                "line": 194,
                 "column": 1
               },
               "end": {
-                "line": 141,
+                "line": 199,
                 "column": 2
               }
             },
@@ -18298,11 +20396,11 @@
               "content": "export function normalizeHiaJsdocMode(mode = \"both\") {\n  if (!HIA_JSDOC_OUTPUT_MODES.includes(mode)) {\n    throw new Error(`Unsupported HIA JSDoc output mode: ${mode}`);\n  }\n  return mode;\n}",
               "range": {
                 "start": {
-                  "line": 136,
+                  "line": 194,
                   "column": 1
                 },
                 "end": {
-                  "line": 141,
+                  "line": 199,
                   "column": 2
                 }
               }
@@ -18959,16 +21057,16 @@
             "relativePath": "packages/jsdoc-spec/src/index.mjs",
             "language": "javascript",
             "position": {
-              "line": 150,
+              "line": 208,
               "column": 1
             },
             "range": {
               "start": {
-                "line": 150,
+                "line": 208,
                 "column": 1
               },
               "end": {
-                "line": 150,
+                "line": 208,
                 "column": 1
               }
             },
@@ -18986,11 +21084,11 @@
             "language": "javascript",
             "range": {
               "start": {
-                "line": 150,
+                "line": 208,
                 "column": 1
               },
               "end": {
-                "line": 167,
+                "line": 225,
                 "column": 2
               }
             },
@@ -19011,11 +21109,11 @@
               "content": "export function createHiaJsdocVersionSummary() {\n  return {\n    contract: HIA_JSDOC_UMBRELLA_CONTRACT,\n    contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,\n    jsdoc: {\n      package: JSDOC_PACKAGE,\n      version: JSDOC_VERSION\n    },\n    plugin: {\n      package: HIA_JSDOC_PLUGIN_PACKAGE,\n      version: HIA_JSDOC_PLUGIN_VERSION\n    },\n    theme: {\n      package: HIA_JSDOC_THEME_PACKAGE,\n      version: HIA_JSDOC_THEME_VERSION\n    }\n  };\n}",
               "range": {
                 "start": {
-                  "line": 150,
+                  "line": 208,
                   "column": 1
                 },
                 "end": {
-                  "line": 167,
+                  "line": 225,
                   "column": 2
                 }
               }
@@ -21123,6 +23221,41 @@
       "kind": "constant",
       "name": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION",
       "longname": "HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION"
+    },
+    {
+      "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+      "nodeId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+      "kind": "constant",
+      "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+      "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY"
+    },
+    {
+      "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+      "nodeId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+      "kind": "constant",
+      "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+      "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION"
+    },
+    {
+      "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+      "nodeId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+      "kind": "constant",
+      "name": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+      "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID"
+    },
+    {
+      "docletId": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+      "nodeId": "jsdoc:constant:HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+      "kind": "constant",
+      "name": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+      "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH"
+    },
+    {
+      "docletId": "createHiaJsdocPortalUiLocaleBridge",
+      "nodeId": "jsdoc:function:createHiaJsdocPortalUiLocaleBridge",
+      "kind": "function",
+      "name": "createHiaJsdocPortalUiLocaleBridge",
+      "longname": "createHiaJsdocPortalUiLocaleBridge"
     },
     {
       "docletId": "JSDOC_PACKAGE",

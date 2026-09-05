@@ -1,0 +1,1 @@
+export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = "documentation-ui-locale-completeness";

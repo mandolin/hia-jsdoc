@@ -26,6 +26,19 @@
     "sourceReferences": 0
   },
   {
+    "id": "function-createhiajsdocportaluilocalebridge-3f6b98c0ee",
+    "kind": "function",
+    "name": "createHiaJsdocPortalUiLocaleBridge",
+    "longname": "createHiaJsdocPortalUiLocaleBridge",
+    "memberof": "",
+    "summary": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset.",
+    "localizedSummaries": {
+      "en": "Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.",
+      "zh-CN": "创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。"
+    },
+    "sourceReferences": 0
+  },
+  {
     "id": "function-createhiajsdocthemebridge-08ae960936",
     "kind": "function",
     "name": "createHiaJsdocThemeBridge",
@@ -321,6 +334,58 @@
     "localizedSummaries": {
       "en": "Pins the published HIA JSDoc plugin version used by this compatibility layer.",
       "zh-CN": "固定当前兼容层使用的已发布 HIA JSDoc 插件版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_portal_ui_locale_capability-ce2bcfaf11",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY",
+    "memberof": "",
+    "summary": "Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.",
+    "localizedSummaries": {
+      "en": "Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.",
+      "zh-CN": "标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION",
+    "memberof": "",
+    "summary": "Pins the exact W-P123 capability version understood by the bridge.",
+    "localizedSummaries": {
+      "en": "Pins the exact W-P123 capability version understood by the bridge.",
+      "zh-CN": "固定 bridge 理解的 W-P123 exact capability 版本。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID",
+    "memberof": "",
+    "summary": "Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.",
+    "localizedSummaries": {
+      "en": "Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.",
+      "zh-CN": "为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。"
+    },
+    "sourceReferences": 0
+  },
+  {
+    "id": "constant-hia_jsdoc_portal_ui_locale_report_path-56cd926b2a",
+    "kind": "constant",
+    "name": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+    "longname": "HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH",
+    "memberof": "",
+    "summary": "Declares the body-free report path emitted by the Portal owner.",
+    "localizedSummaries": {
+      "en": "Declares the body-free completeness-report path emitted by the Portal owner.",
+      "zh-CN": "声明由 Portal owner 生成的无正文完整性报告路径。"
     },
     "sourceReferences": 0
   },

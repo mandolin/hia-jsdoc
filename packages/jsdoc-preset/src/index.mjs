@@ -3,6 +3,7 @@ import { getHiaJsdocPluginPath } from "@hia-doc/jsdoc-plugin-hia-bridge";
 import {
   HIA_JSDOC_UMBRELLA_CONTRACT,
   HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,
+  createHiaJsdocPortalUiLocaleBridge,
   createHiaJsdocVersionSummary,
   normalizeHiaJsdocMode
 } from "@hia-doc/jsdoc-spec";
@@ -31,6 +32,8 @@ export function createHiaJsdocConfig(options = {}) {
     scheme: options.hia?.theme?.scheme,
     presentation: options.hia?.presentation
   });
+  // <lang><zh-CN>Portal bridge 只声明 owner adoption metadata；完整 catalog/runtime/report 仍由 Portal owner 实现。</zh-CN><en>The Portal bridge declares owner-adoption metadata only; the complete catalog, runtime, and report remain implemented by the Portal owner.</en></lang>
+  const portalUiLocaleBridge = createHiaJsdocPortalUiLocaleBridge();
 
   const config = {
     plugins: [
@@ -107,6 +110,7 @@ export function createHiaJsdocConfig(options = {}) {
           contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,
           versions: createHiaJsdocVersionSummary(),
           themeBridge,
+          portalUiLocaleBridge,
           extraPluginDiagnostics: extraPlugins.diagnostics
         }
       }

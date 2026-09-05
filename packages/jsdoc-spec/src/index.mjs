@@ -89,6 +89,64 @@ export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT = "documentation-presentati
 export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = "0.1.0-draft";
 
 /**
+ * Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.
+ *
+ * @constant {string}
+ * @lang zh-CN 标识 hia-jsdoc Portal bridge 消费的中性 UI-locale 完整性能力；它不是新的 report contract。
+ * @lang en Identifies the neutral UI-locale completeness capability consumed by the hia-jsdoc Portal bridge; it is not a new report contract.
+ */
+export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = "documentation-ui-locale-completeness";
+
+/**
+ * Pins the exact W-P123 capability version understood by the bridge.
+ *
+ * @constant {string}
+ * @lang zh-CN 固定 bridge 理解的 W-P123 exact capability 版本。
+ * @lang en Pins the exact W-P123 capability version understood by the bridge.
+ */
+export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = "0.1.0-draft";
+
+/**
+ * Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.
+ *
+ * @constant {string}
+ * @lang zh-CN 为 hia-jsdoc Portal 投影提供稳定且不含目标仓身份的 profile/surface ID。
+ * @lang en Provides the stable target-free profile/surface ID for hia-jsdoc Portal projection.
+ */
+export const HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID = "hia-jsdoc.portal-bridge";
+
+/**
+ * Declares the body-free report path emitted by the Portal owner.
+ *
+ * @constant {string}
+ * @lang zh-CN 声明由 Portal owner 生成的无正文完整性报告路径。
+ * @lang en Declares the body-free completeness-report path emitted by the Portal owner.
+ */
+export const HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH = "documentation-ui-locale-completeness.json";
+
+/**
+ * Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset.
+ *
+ * @returns {object} <lang><zh-CN>仅含 capability、owner、surface、coverage 与 privacy metadata 的新 descriptor。</zh-CN><en>A fresh descriptor containing capability, owner, surface, coverage, and privacy metadata only.</en></lang>
+ * @lang zh-CN 创建 umbrella preset 嵌入的 owner-neutral UI-locale capability descriptor；不携带译文、DOM、CSS 或目标身份。
+ * @lang en Creates the owner-neutral UI-locale capability descriptor embedded by the umbrella preset; it carries no translations, DOM, CSS, or target identity.
+ */
+export function createHiaJsdocPortalUiLocaleBridge() {
+  return {
+    capability: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY,
+    capabilityVersion: HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION,
+    ownerPackage: "@hia-doc/renderer-html",
+    profileId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,
+    surfaceId: HIA_JSDOC_PORTAL_UI_LOCALE_PROFILE_ID,
+    reportPath: HIA_JSDOC_PORTAL_UI_LOCALE_REPORT_PATH,
+    uiLocales: ["zh-CN", "en"],
+    modes: ["interactive", "no-script"],
+    channels: ["visible", "accessibility", "status"],
+    privacy: "metadata-only"
+  };
+}
+
+/**
  * Names the upstream JSDoc package used by the HIA JSDoc runner.
  *
  * @constant {string}

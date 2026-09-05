@@ -117,13 +117,53 @@
         "canonicalReference": "page.constant.68c74ef1734d#constant-hia_jsdoc_plugin_version-68c74ef173"
       },
       {
+        "topicId": "topic.constant.ce2bcfaf119106ac",
+        "topicKind": "constant",
+        "pageId": "page.constant.ce2bcfaf1191",
+        "fragmentId": "constant-hia_jsdoc_portal_ui_locale_capability-ce2bcfaf11",
+        "navigationId": "nav.ce2bcfaf119106ac7bbe",
+        "relationIds": [],
+        "order": 10,
+        "canonicalReference": "page.constant.ce2bcfaf1191#constant-hia_jsdoc_portal_ui_locale_capability-ce2bcfaf11"
+      },
+      {
+        "topicId": "topic.constant.ee0b1caff2a5719b",
+        "topicKind": "constant",
+        "pageId": "page.constant.ee0b1caff2a5",
+        "fragmentId": "constant-hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2",
+        "navigationId": "nav.ee0b1caff2a5719be037",
+        "relationIds": [],
+        "order": 11,
+        "canonicalReference": "page.constant.ee0b1caff2a5#constant-hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2"
+      },
+      {
+        "topicId": "topic.constant.01ce1088f5df321b",
+        "topicKind": "constant",
+        "pageId": "page.constant.01ce1088f5df",
+        "fragmentId": "constant-hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5",
+        "navigationId": "nav.01ce1088f5df321bb573",
+        "relationIds": [],
+        "order": 12,
+        "canonicalReference": "page.constant.01ce1088f5df#constant-hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5"
+      },
+      {
+        "topicId": "topic.constant.56cd926b2ab158b0",
+        "topicKind": "constant",
+        "pageId": "page.constant.56cd926b2ab1",
+        "fragmentId": "constant-hia_jsdoc_portal_ui_locale_report_path-56cd926b2a",
+        "navigationId": "nav.56cd926b2ab158b04163",
+        "relationIds": [],
+        "order": 13,
+        "canonicalReference": "page.constant.56cd926b2ab1#constant-hia_jsdoc_portal_ui_locale_report_path-56cd926b2a"
+      },
+      {
         "topicId": "topic.constant.a14ea32427b908ec",
         "topicKind": "constant",
         "pageId": "page.constant.a14ea32427b9",
         "fragmentId": "constant-hia_jsdoc_presentation_profile_contract-a14ea32427",
         "navigationId": "nav.a14ea32427b908ec8765",
         "relationIds": [],
-        "order": 10,
+        "order": 14,
         "canonicalReference": "page.constant.a14ea32427b9#constant-hia_jsdoc_presentation_profile_contract-a14ea32427"
       },
       {
@@ -133,7 +173,7 @@
         "fragmentId": "constant-hia_jsdoc_presentation_profile_contract_version-8cea383dc2",
         "navigationId": "nav.8cea383dc286aabc0181",
         "relationIds": [],
-        "order": 11,
+        "order": 15,
         "canonicalReference": "page.constant.8cea383dc286#constant-hia_jsdoc_presentation_profile_contract_version-8cea383dc2"
       },
       {
@@ -143,7 +183,7 @@
         "fragmentId": "constant-hia_jsdoc_runner_version-c345db0df8",
         "navigationId": "nav.c345db0df8d037b98177",
         "relationIds": [],
-        "order": 12,
+        "order": 16,
         "canonicalReference": "page.constant.c345db0df8d0#constant-hia_jsdoc_runner_version-c345db0df8"
       },
       {
@@ -153,7 +193,7 @@
         "fragmentId": "constant-hia_jsdoc_theme_package-42f7e332ac",
         "navigationId": "nav.42f7e332ac7112712424",
         "relationIds": [],
-        "order": 13,
+        "order": 17,
         "canonicalReference": "page.constant.42f7e332ac71#constant-hia_jsdoc_theme_package-42f7e332ac"
       },
       {
@@ -163,7 +203,7 @@
         "fragmentId": "constant-hia_jsdoc_theme_template-03ba3879ca",
         "navigationId": "nav.03ba3879ca4d760ae265",
         "relationIds": [],
-        "order": 14,
+        "order": 18,
         "canonicalReference": "page.constant.03ba3879ca4d#constant-hia_jsdoc_theme_template-03ba3879ca"
       },
       {
@@ -173,7 +213,7 @@
         "fragmentId": "constant-hia_jsdoc_theme_version-20711ac290",
         "navigationId": "nav.20711ac29049a28df446",
         "relationIds": [],
-        "order": 15,
+        "order": 19,
         "canonicalReference": "page.constant.20711ac29049#constant-hia_jsdoc_theme_version-20711ac290"
       },
       {
@@ -183,7 +223,7 @@
         "fragmentId": "constant-hia_jsdoc_umbrella_contract-68401e0dc0",
         "navigationId": "nav.68401e0dc057a37851c5",
         "relationIds": [],
-        "order": 16,
+        "order": 20,
         "canonicalReference": "page.constant.68401e0dc057#constant-hia_jsdoc_umbrella_contract-68401e0dc0"
       },
       {
@@ -193,7 +233,7 @@
         "fragmentId": "constant-hia_jsdoc_umbrella_contract_version-72f511d839",
         "navigationId": "nav.72f511d839bf6668a903",
         "relationIds": [],
-        "order": 17,
+        "order": 21,
         "canonicalReference": "page.constant.72f511d839bf#constant-hia_jsdoc_umbrella_contract_version-72f511d839"
       },
       {
@@ -203,7 +243,7 @@
         "fragmentId": "constant-jsdoc_package-07fb29cc59",
         "navigationId": "nav.07fb29cc5982a8e4e519",
         "relationIds": [],
-        "order": 18,
+        "order": 22,
         "canonicalReference": "page.constant.07fb29cc5982#constant-jsdoc_package-07fb29cc59"
       },
       {
@@ -213,7 +253,7 @@
         "fragmentId": "constant-jsdoc_version-aae4ec6ea3",
         "navigationId": "nav.aae4ec6ea388db48f582",
         "relationIds": [],
-        "order": 19,
+        "order": 23,
         "canonicalReference": "page.constant.aae4ec6ea388#constant-jsdoc_version-aae4ec6ea3"
       },
       {
@@ -223,7 +263,7 @@
         "fragmentId": "constant-jsdocproducer-b4c8163871",
         "navigationId": "nav.b4c816387164ad9f4ea9",
         "relationIds": [],
-        "order": 20,
+        "order": 24,
         "canonicalReference": "page.constant.b4c816387164#constant-jsdocproducer-b4c8163871"
       },
       {
@@ -233,7 +273,7 @@
         "fragmentId": "constant-jsdocproducerdescriptor-277f29e88a",
         "navigationId": "nav.277f29e88a635f2567f4",
         "relationIds": [],
-        "order": 21,
+        "order": 25,
         "canonicalReference": "page.constant.277f29e88a63#constant-jsdocproducerdescriptor-277f29e88a"
       },
       {
@@ -243,7 +283,7 @@
         "fragmentId": "constant-stagedjsdocproducer-798d8eea74",
         "navigationId": "nav.798d8eea74d81529c3a3",
         "relationIds": [],
-        "order": 22,
+        "order": 26,
         "canonicalReference": "page.constant.798d8eea74d8#constant-stagedjsdocproducer-798d8eea74"
       },
       {
@@ -253,7 +293,7 @@
         "fragmentId": "constant-stagedjsdocproducerdescriptor-20b6512ca6",
         "navigationId": "nav.20b6512ca6cb1a5445b1",
         "relationIds": [],
-        "order": 23,
+        "order": 27,
         "canonicalReference": "page.constant.20b6512ca6cb#constant-stagedjsdocproducerdescriptor-20b6512ca6"
       },
       {
@@ -263,7 +303,7 @@
         "fragmentId": "function-createhiajsdocconfig-af7e1e2a2c",
         "navigationId": "nav.af7e1e2a2c4289e31a42",
         "relationIds": [],
-        "order": 24,
+        "order": 28,
         "canonicalReference": "page.function.af7e1e2a2c42#function-createhiajsdocconfig-af7e1e2a2c"
       },
       {
@@ -273,8 +313,18 @@
         "fragmentId": "function-createhiajsdocpluginbridge-c454fe6d94",
         "navigationId": "nav.c454fe6d94fa03b60a7c",
         "relationIds": [],
-        "order": 25,
+        "order": 29,
         "canonicalReference": "page.function.c454fe6d94fa#function-createhiajsdocpluginbridge-c454fe6d94"
+      },
+      {
+        "topicId": "topic.function.3f6b98c0eee42234",
+        "topicKind": "function",
+        "pageId": "page.function.3f6b98c0eee4",
+        "fragmentId": "function-createhiajsdocportaluilocalebridge-3f6b98c0ee",
+        "navigationId": "nav.3f6b98c0eee4223452fe",
+        "relationIds": [],
+        "order": 30,
+        "canonicalReference": "page.function.3f6b98c0eee4#function-createhiajsdocportaluilocalebridge-3f6b98c0ee"
       },
       {
         "topicId": "topic.function.08ae9609360d7534",
@@ -283,7 +333,7 @@
         "fragmentId": "function-createhiajsdocthemebridge-08ae960936",
         "navigationId": "nav.08ae9609360d7534d156",
         "relationIds": [],
-        "order": 26,
+        "order": 31,
         "canonicalReference": "page.function.08ae9609360d#function-createhiajsdocthemebridge-08ae960936"
       },
       {
@@ -293,7 +343,7 @@
         "fragmentId": "function-createhiajsdocversionsummary-03a9add33d",
         "navigationId": "nav.03a9add33d1a83393ade",
         "relationIds": [],
-        "order": 27,
+        "order": 32,
         "canonicalReference": "page.function.03a9add33d1a#function-createhiajsdocversionsummary-03a9add33d"
       },
       {
@@ -303,7 +353,7 @@
         "fragmentId": "function-createjsdocdocsourcemapref-e0018fee70",
         "navigationId": "nav.e0018fee70198f5ce35d",
         "relationIds": [],
-        "order": 28,
+        "order": 33,
         "canonicalReference": "page.function.e0018fee7019#function-createjsdocdocsourcemapref-e0018fee70"
       },
       {
@@ -313,7 +363,7 @@
         "fragmentId": "function-gethiajsdocpluginpath-408e14aa93",
         "navigationId": "nav.408e14aa931798a6c8b9",
         "relationIds": [],
-        "order": 29,
+        "order": 34,
         "canonicalReference": "page.function.408e14aa9317#function-gethiajsdocpluginpath-408e14aa93"
       },
       {
@@ -323,7 +373,7 @@
         "fragmentId": "function-gethiajsdocthemetemplate-d2c5b69880",
         "navigationId": "nav.d2c5b698800b996920b3",
         "relationIds": [],
-        "order": 30,
+        "order": 35,
         "canonicalReference": "page.function.d2c5b698800b#function-gethiajsdocthemetemplate-d2c5b69880"
       },
       {
@@ -333,7 +383,7 @@
         "fragmentId": "function-loadhiajsdocconfig-dd2b3ef2a4",
         "navigationId": "nav.dd2b3ef2a48ab1d680c7",
         "relationIds": [],
-        "order": 31,
+        "order": 36,
         "canonicalReference": "page.function.dd2b3ef2a48a#function-loadhiajsdocconfig-dd2b3ef2a4"
       },
       {
@@ -343,7 +393,7 @@
         "fragmentId": "function-mergejsdocconfig-bfa4436a42",
         "navigationId": "nav.bfa4436a4211ba7b383c",
         "relationIds": [],
-        "order": 32,
+        "order": 37,
         "canonicalReference": "page.function.bfa4436a4211#function-mergejsdocconfig-bfa4436a42"
       },
       {
@@ -353,7 +403,7 @@
         "fragmentId": "function-normalizeextrapluginregistry-4782fc25d8",
         "navigationId": "nav.4782fc25d890f0d08005",
         "relationIds": [],
-        "order": 33,
+        "order": 38,
         "canonicalReference": "page.function.4782fc25d890#function-normalizeextrapluginregistry-4782fc25d8"
       },
       {
@@ -363,7 +413,7 @@
         "fragmentId": "function-normalizehiajsdocmode-3994eeccdf",
         "navigationId": "nav.3994eeccdfa9bd73f972",
         "relationIds": [],
-        "order": 34,
+        "order": 39,
         "canonicalReference": "page.function.3994eeccdfa9#function-normalizehiajsdocmode-3994eeccdf"
       },
       {
@@ -373,7 +423,7 @@
         "fragmentId": "function-normalizehiaoptions-b49679987e",
         "navigationId": "nav.b49679987ef5671b7d3b",
         "relationIds": [],
-        "order": 35,
+        "order": 40,
         "canonicalReference": "page.function.b49679987ef5#function-normalizehiaoptions-b49679987e"
       },
       {
@@ -383,7 +433,7 @@
         "fragmentId": "function-runhiajsdoc-2d2ce0d02f",
         "navigationId": "nav.2d2ce0d02fd10554bbcd",
         "relationIds": [],
-        "order": 36,
+        "order": 41,
         "canonicalReference": "page.function.2d2ce0d02fd1#function-runhiajsdoc-2d2ce0d02f"
       },
       {
@@ -393,7 +443,7 @@
         "fragmentId": "function-runhiajsdocproject-322385bd36",
         "navigationId": "nav.322385bd36b3b2768d7f",
         "relationIds": [],
-        "order": 37,
+        "order": 42,
         "canonicalReference": "page.function.322385bd36b3#function-runhiajsdocproject-322385bd36"
       },
       {
@@ -403,7 +453,7 @@
         "fragmentId": "function-writehiajsdocconfig-8d1a747c87",
         "navigationId": "nav.8d1a747c87ae80fd53a1",
         "relationIds": [],
-        "order": 38,
+        "order": 43,
         "canonicalReference": "page.function.8d1a747c87ae#function-writehiajsdocconfig-8d1a747c87"
       }
     ]
@@ -649,6 +699,20 @@
         }
       },
       {
+        "assetId": "asset.source.7f8219c87def63809f0a",
+        "sourceId": "source.7f8219c87def63809f0a",
+        "revision": "sha256:da9f32df7a60aa5d801df03309153aac3735860807420844954953768bef05d8",
+        "classification": "public",
+        "relativeUrl": "sources/da9f32df7a60aa5d801df03309153aac3735860807420844954953768bef05d8.txt",
+        "mediaType": "text/javascript",
+        "byteLength": 75,
+        "lineCount": 1,
+        "digest": {
+          "algorithm": "sha384",
+          "value": "6sPLJF+Xn7ZAfroWHuy1mOOT9bDoXPGG/WJLmej4zSUpGcZEkxg90gz3eWHQgCSE"
+        }
+      },
+      {
         "assetId": "asset.source.7fad9d3283f95efdf603",
         "sourceId": "source.7fad9d3283f95efdf603",
         "revision": "sha256:f46099bd09f4de1ed8981be11d5bf48aa36222fd2938f69b188270881c500582",
@@ -674,6 +738,34 @@
         "digest": {
           "algorithm": "sha384",
           "value": "nQ+ohjmg61R/InjY+tuxXAz+0wBdc0BH1M6kinyy37UsrnXmpv7JyNoA8mfWRNtU"
+        }
+      },
+      {
+        "assetId": "asset.source.904c622c4ccef0e95767",
+        "sourceId": "source.904c622c4ccef0e95767",
+        "revision": "sha256:253886e2600627d406a585f148c4c7bd928651c8a438071bc075d1947614065f",
+        "classification": "public",
+        "relativeUrl": "sources/253886e2600627d406a585f148c4c7bd928651c8a438071bc075d1947614065f.txt",
+        "mediaType": "text/javascript",
+        "byteLength": 79,
+        "lineCount": 1,
+        "digest": {
+          "algorithm": "sha384",
+          "value": "v9BbnrmgnX/ydiiry5B1x7v47pwgIaw+unqSMlh95kCR+T6D+MO0qdRlYJTvSqJq"
+        }
+      },
+      {
+        "assetId": "asset.source.90b7ff14eb8b2c1ecb2d",
+        "sourceId": "source.90b7ff14eb8b2c1ecb2d",
+        "revision": "sha256:18a6325c8062dedbbdb497e7848a6b2e79993696d18a8ad70db905f214aa353a",
+        "classification": "public",
+        "relativeUrl": "sources/18a6325c8062dedbbdb497e7848a6b2e79993696d18a8ad70db905f214aa353a.txt",
+        "mediaType": "text/javascript",
+        "byteLength": 98,
+        "lineCount": 1,
+        "digest": {
+          "algorithm": "sha384",
+          "value": "ZvAqSWGlCqcRvOk+suom80w04j7pPAEjPVY3FfWqlp+r5bFAc1WSbCS7jokhDgQG"
         }
       },
       {
@@ -716,6 +808,20 @@
         "digest": {
           "algorithm": "sha384",
           "value": "DszQxm7J74xCudeK7Dap0aEx2z5jcRa6CkF/nTPnSfrUGRsjI+TvowMKViANib5e"
+        }
+      },
+      {
+        "assetId": "asset.source.9f6e3dad9ad117f716bd",
+        "sourceId": "source.9f6e3dad9ad117f716bd",
+        "revision": "sha256:3a452a8c1028767be92a83c43bb2672998e2517e20dd969fe219a5d08e4cc8be",
+        "classification": "public",
+        "relativeUrl": "sources/3a452a8c1028767be92a83c43bb2672998e2517e20dd969fe219a5d08e4cc8be.txt",
+        "mediaType": "text/javascript",
+        "byteLength": 92,
+        "lineCount": 1,
+        "digest": {
+          "algorithm": "sha384",
+          "value": "p1RncmgCpRlNYdH6OoYlkVNHW0lYm/vr1MRSbcOWUyo/6mjlbc5OFhGMT9VuIVdp"
         }
       },
       {
@@ -772,6 +878,20 @@
         "digest": {
           "algorithm": "sha384",
           "value": "0e6auV3n3eJwSWN8zShGV2vl1HqZBf41nmWxVKGKjtULHejG88f5m+x6cj10G6Vq"
+        }
+      },
+      {
+        "assetId": "asset.source.aed4ba704c740aef2af7",
+        "sourceId": "source.aed4ba704c740aef2af7",
+        "revision": "sha256:b98b3e6a5af73deb1e867015ba9a851a51a17a7903dabedcf30f2e8d7faa02e2",
+        "classification": "public",
+        "relativeUrl": "sources/b98b3e6a5af73deb1e867015ba9a851a51a17a7903dabedcf30f2e8d7faa02e2.txt",
+        "mediaType": "text/javascript",
+        "byteLength": 561,
+        "lineCount": 14,
+        "digest": {
+          "algorithm": "sha384",
+          "value": "q2YgZrszxQ1q6Vq6Y6Wf+QxKWJ8xi/vel6QbKzzXyLiSxPed+WXcqmoqG3LfI2os"
         }
       },
       {

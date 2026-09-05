@@ -107,6 +107,28 @@
             }
           }
         },
+        "portalUiLocaleBridge": {
+          "capability": "documentation-ui-locale-completeness",
+          "capabilityVersion": "0.1.0-draft",
+          "ownerPackage": "@hia-doc/renderer-html",
+          "profileId": "hia-jsdoc.portal-bridge",
+          "surfaceId": "hia-jsdoc.portal-bridge",
+          "reportPath": "documentation-ui-locale-completeness.json",
+          "uiLocales": [
+            "zh-CN",
+            "en"
+          ],
+          "modes": [
+            "interactive",
+            "no-script"
+          ],
+          "channels": [
+            "visible",
+            "accessibility",
+            "status"
+          ],
+          "privacy": "metadata-only"
+        },
         "extraPluginDiagnostics": []
       }
     },

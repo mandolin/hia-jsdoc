@@ -8,7 +8,10 @@ import { fileURLToPath } from "node:url";
 
 import { normalizeExtraPluginRegistry } from "../packages/jsdoc-extra-plugin-registry/src/index.mjs";
 import { createHiaJsdocConfig } from "../packages/jsdoc-preset/src/index.mjs";
-import { createHiaJsdocVersionSummary } from "../packages/jsdoc-spec/src/index.mjs";
+import {
+  createHiaJsdocPortalUiLocaleBridge,
+  createHiaJsdocVersionSummary
+} from "../packages/jsdoc-spec/src/index.mjs";
 import { createHiaJsdocThemeBridge } from "../packages/jsdoc-theme-bridge/src/index.mjs";
 import {
   HIA_JSDOC_CONFIG_SCHEMA_ID,
@@ -34,6 +37,31 @@ test("createHiaJsdocConfig creates a standard JSDoc config", () => {
   assert.equal(config.opts.hia.presentation.sourceMode, "fetch");
   assert.equal(config.opts.hia.theme.scheme, "system");
   assert.equal(config.opts.hia.umbrella.themeBridge.presentation.skinCatalog.ownerPackage, "@mandolin/jsdoc-theme-hia");
+  assert.equal(config.opts.hia.umbrella.portalUiLocaleBridge.profileId, "hia-jsdoc.portal-bridge");
+});
+
+test("Portal bridge declares W-P123 owner adoption without copying owner-private content", () => {
+  // <lang><zh-CN>descriptor 是跨仓公开边界，因此同时核对 exact identity 与隐私负面保证。</zh-CN><en>The descriptor is a public cross-repository boundary, so the test verifies both exact identity and negative privacy guarantees.</en></lang>
+  const descriptor = createHiaJsdocPortalUiLocaleBridge();
+  const serialized = JSON.stringify(descriptor);
+
+  assert.deepEqual(descriptor, {
+    capability: "documentation-ui-locale-completeness",
+    capabilityVersion: "0.1.0-draft",
+    ownerPackage: "@hia-doc/renderer-html",
+    profileId: "hia-jsdoc.portal-bridge",
+    surfaceId: "hia-jsdoc.portal-bridge",
+    reportPath: "documentation-ui-locale-completeness.json",
+    uiLocales: ["zh-CN", "en"],
+    modes: ["interactive", "no-script"],
+    channels: ["visible", "accessibility", "status"],
+    privacy: "metadata-only"
+  });
+  assert.equal(serialized.includes("Search"), false);
+  assert.equal(serialized.includes("搜索"), false);
+  assert.equal(serialized.includes("selector"), false);
+  assert.equal(serialized.includes("css"), false);
+  assert.equal(serialized.includes("target"), false);
 });
 
 test("theme bridge delegates the skin catalog to JTH without copying skin implementation", () => {

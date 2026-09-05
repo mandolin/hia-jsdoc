@@ -5,6 +5,13 @@
   "home": "index.html",
   "pages": [
     {
+      "pageId": "page.constant.01ce1088f5df",
+      "file": "hia_jsdoc_portal_ui_locale_profile_id-01ce1088f5df.html",
+      "topicIds": [
+        "topic.constant.01ce1088f5df321b"
+      ]
+    },
+    {
       "pageId": "page.constant.03ba3879ca4d",
       "file": "hia_jsdoc_theme_template-03ba3879ca4d.html",
       "topicIds": [
@@ -51,6 +58,13 @@
       "file": "hia_jsdoc_input_kinds-4a501b44c718.html",
       "topicIds": [
         "topic.constant.4a501b44c7189107"
+      ]
+    },
+    {
+      "pageId": "page.constant.56cd926b2ab1",
+      "file": "hia_jsdoc_portal_ui_locale_report_path-56cd926b2ab1.html",
+      "topicIds": [
+        "topic.constant.56cd926b2ab158b0"
       ]
     },
     {
@@ -159,10 +173,24 @@
       ]
     },
     {
+      "pageId": "page.constant.ce2bcfaf1191",
+      "file": "hia_jsdoc_portal_ui_locale_capability-ce2bcfaf1191.html",
+      "topicIds": [
+        "topic.constant.ce2bcfaf119106ac"
+      ]
+    },
+    {
       "pageId": "page.constant.d893677735ef",
       "file": "hia_jsdoc_output_modes-d893677735ef.html",
       "topicIds": [
         "topic.constant.d893677735ef8f58"
+      ]
+    },
+    {
+      "pageId": "page.constant.ee0b1caff2a5",
+      "file": "hia_jsdoc_portal_ui_locale_capability_version-ee0b1caff2a5.html",
+      "topicIds": [
+        "topic.constant.ee0b1caff2a5719b"
       ]
     },
     {
@@ -205,6 +233,13 @@
       "file": "normalizehiajsdocmode-3994eeccdfa9.html",
       "topicIds": [
         "topic.function.3994eeccdfa9bd73"
+      ]
+    },
+    {
+      "pageId": "page.function.3f6b98c0eee4",
+      "file": "createhiajsdocportaluilocalebridge-3f6b98c0eee4.html",
+      "topicIds": [
+        "topic.function.3f6b98c0eee42234"
       ]
     },
     {
