@@ -80,13 +80,13 @@ export const HIA_JSDOC_THEME_TEMPLATE = "node_modules/@mandolin/jsdoc-theme-hia"
 export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT = "documentation-presentation-profile";
 
 /**
- * Pins the exact draft presentation profile version consumed by the HIA JSDoc bridge.
+ * Pins the exact current presentation profile version consumed by the HIA JSDoc bridge.
  *
  * @constant {string}
- * @lang zh-CN 固定 HIA JSDoc bridge 消费的 exact draft presentation profile 版本。
- * @lang en Pins the exact draft presentation profile version consumed by the HIA JSDoc bridge.
+ * @lang zh-CN 固定HIA JSDoc bridge当前写者1.0.0身份；旧工件另由精确历史reader读取。
+ * @lang en Pins the HIA JSDoc bridge's current writer identity 1.0.0; legacy artifacts use their exact historical reader separately.
  */
-export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = "0.1.0-draft";
+export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = "1.0.0";
 
 /**
  * Identifies the neutral UI-locale completeness capability consumed by the Portal bridge.

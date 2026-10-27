@@ -133,7 +133,7 @@ export function runHiaJsdocProject(request, context = {}) {
     ])
   ];
   const artifacts = execution.ok
-    ? collectArtifacts(normalized.outputDirectory, normalized.profileIds)
+    ? collectArtifacts(normalized.outputDirectory, normalized.profileIds, diagnostics, execution.config.opts?.hia?.umbrella?.themeBridge?.presentation)
     : [];
   const status = diagnostics.some((diagnostic) => diagnostic.severity === "error")
     ? (artifacts.length > 0 ? "partial" : "failed")
@@ -280,7 +280,17 @@ function inferHiaJsdocInputKind(inputPath) {
     : "javascript-source";
 }
 
-function collectArtifacts(outputDirectory, profileIds) {
+/**
+ * @lang zh-CN 收集构建产物；呈现身份须匹配本次preset已有bridge，不引入主仓运行依赖或猜测版本。
+ * @lang en Collects build artifacts; presentation identities must match this preset's existing bridge without a main-repository runtime dependency or inferred versions.
+ * @param {string} outputDirectory 构建输出目录。 / Build output directory.
+ * @param {string[]} profileIds 所属profile身份。 / Owning profile identities.
+ * @param {object[]} diagnostics 接收固定安全产物错误的本次可变数组。 / This invocation's mutable array receiving fixed safe artifact errors.
+ * @param {object} presentation 本次preset投影的呈现bridge身份。 / Presentation bridge identity projected by this preset.
+ * @returns {object[]} 已发现且身份配对的产物清单；不是完整profile语义校验。 / Discovered identity-paired artifacts, not full semantic profile validation.
+ */
+function collectArtifacts(outputDirectory, profileIds, diagnostics, presentation) {
+  // <lang><zh-CN>数组仅归本次构建，非法呈现工件不污染其它独立产物。</zh-CN><en>The array belongs to this build only; an invalid presentation artifact does not contaminate independent artifacts.</en></lang>
   const artifacts = [];
   if (fs.existsSync(path.join(outputDirectory, "index.html"))) {
     artifacts.push(artifact("jsdoc-html", "jsdoc-html", "index.html", "html", "text/html", profileIds));
@@ -299,7 +309,9 @@ function collectArtifacts(outputDirectory, profileIds) {
     });
   }
   if (fs.existsSync(path.join(outputDirectory, "documentation-presentation-profile.json"))) {
-    artifacts.push({
+    // <lang><zh-CN>从实际产物核对身份后才登记，不能仅凭文件存在写死旧版本。</zh-CN><en>Record the identity only after checking the actual artifact; existence alone cannot justify a hard-coded legacy version.</en></lang>
+    const identity = readPresentationArtifactIdentity(outputDirectory, presentation, diagnostics);
+    if (identity) artifacts.push({
       ...artifact(
         "documentation-presentation-profile",
         "documentation-presentation-profile",
@@ -308,8 +320,7 @@ function collectArtifacts(outputDirectory, profileIds) {
         "application/json",
         profileIds
       ),
-      contract: "documentation-presentation-profile",
-      contractVersion: "0.1.0-draft"
+      ...identity
     });
   }
   if (fs.existsSync(path.join(outputDirectory, "hia-page-map.json"))) {
@@ -320,6 +331,31 @@ function collectArtifacts(outputDirectory, profileIds) {
     });
   }
   return artifacts;
+}
+
+/**
+ * @lang zh-CN 读取固定生成工件的最小身份并与bridge配对；不校验整个中性profile、不读取源码或回显异常。
+ * @lang en Reads a fixed generated artifact's minimal identity and pairs it with the bridge; does not validate the whole neutral profile, read source or echo exceptions.
+ * @param {string} outputDirectory 本次生成目录。 / This build's output directory.
+ * @param {object} expected 由既有preset提供的预期bridge身份。 / Expected bridge identity from the existing preset.
+ * @param {object[]} diagnostics 本次诊断数组，失败追加固定记录。 / Current diagnostics, receiving a fixed record on failure.
+ * @returns {{contract:string,contractVersion:string}|undefined} 已配对身份或无局部记录的拒绝。 / Paired identity or refusal without a partial record.
+ */
+function readPresentationArtifactIdentity(outputDirectory, expected, diagnostics) {
+  try {
+    // <lang><zh-CN>只解析JSON数据，不执行hooks；完整语义校验仍由契约owner与独立消费证据负责。</zh-CN><en>Parse JSON data only without hooks; full semantic validation remains with the contract owner and independent consumer evidence.</en></lang>
+    const value = JSON.parse(fs.readFileSync(path.join(outputDirectory, "documentation-presentation-profile.json"), "utf8"));
+    if (value && typeof value === "object" && !Array.isArray(value)
+      && value.contract === "documentation-presentation-profile" && value.contract === expected?.contract
+      && (value.contractVersion === "1.0.0" || value.contractVersion === "0.1.0-draft")
+      && value.contractVersion === expected?.contractVersion) {
+      return { contract: value.contract, contractVersion: value.contractVersion };
+    }
+  } catch {
+    // <lang><zh-CN>不传播文件异常、内容或绝对路径；下面统一产生安全的产物身份错误。</zh-CN><en>Do not propagate file exceptions, contents or absolute paths; emit one safe artifact-identity error below.</en></lang>
+  }
+  diagnostics.push(createDiagnostic("HIA_JSDOC_PRESENTATION_ARTIFACT_INVALID", "Presentation artifact identity is unreadable, unsupported or does not match its theme bridge.", "error"));
+  return undefined;
 }
 
 /**

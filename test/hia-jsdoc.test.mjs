@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
+import fs from "node:fs";
 import { mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -75,7 +76,7 @@ test("theme bridge delegates the skin catalog to JTH without copying skin implem
   });
 
   assert.equal(bridge.presentation.contract, "documentation-presentation-profile");
-  assert.equal(bridge.presentation.contractVersion, "0.1.0-draft");
+  assert.equal(bridge.presentation.contractVersion, "1.0.0");
   assert.equal(bridge.presentation.pageMode, "single-page");
   assert.equal(bridge.presentation.sourceMode, "embed");
   assert.equal(bridge.presentation.skinId, "graphite");
@@ -153,10 +154,42 @@ test("runHiaJsdocProject emits a producer result for self-doc", async () => {
     assert.ok(result.artifacts.some((artifact) => artifact.kind === "documentation-presentation-profile"));
     assert.ok(result.artifacts.some((artifact) => artifact.kind === "jsdoc-page-map"));
     assert.equal(existsSync(path.join(outputDirectory, "documentation-presentation-profile.json")), true);
+    const presentation = JSON.parse(await readFile(path.join(outputDirectory, "documentation-presentation-profile.json"), "utf8"));
+    assert.equal(presentation.contractVersion, "1.0.0");
+    assert.equal(result.artifacts.find((artifact) => artifact.kind === "documentation-presentation-profile").contractVersion, presentation.contractVersion);
   } finally {
     await rm(outputDirectory, { recursive: true, force: true });
   }
 });
+
+// <lang><zh-CN>只替换父进程对固定产物的读取，真实JSDoc仍生成自己的文件；每个测试结束自动恢复mock。</zh-CN><en>Replace only the parent process's fixed artifact read; real JSDoc still generates its own files, and each test automatically restores the mock.</en></lang>
+for (const kind of ["old-version", "unknown-version", "wrong-contract", "malformed-json", "read-failure"]) {
+  test(`presentation inventory refuses ${kind} without echoing input`, async (t) => {
+    // <lang><zh-CN>输出仅位于本测试fixtures直接子目录，不读取或更改业务项目。</zh-CN><en>Output is confined to this test's direct fixtures child, without reading or changing business projects.</en></lang>
+    const root = fileURLToPath(new URL("..", import.meta.url));
+    const output = await mkdtemp(path.join(root, "fixtures", ".tmp-presentation-"));
+    const original = fs.readFileSync;
+    t.mock.method(fs, "readFileSync", function (file, ...args) {
+      if (typeof file === "string" && path.basename(file) === "documentation-presentation-profile.json") {
+        if (kind === "read-failure") throw new Error("SYNTHETIC_PRIVATE_MARKER");
+        if (kind === "malformed-json") return "{SYNTHETIC_PRIVATE_MARKER";
+        return JSON.stringify({ contract: kind === "wrong-contract" ? "SYNTHETIC_PRIVATE_MARKER" : "documentation-presentation-profile", contractVersion: kind === "old-version" ? "0.1.0-draft" : "9.0.0" });
+      }
+      return original.call(this, file, ...args);
+    });
+    try {
+      const result = runHiaJsdocProject({ workspaceRoot: root, outputDirectory: output, inputs: [{ kind: "javascript-module", path: "packages/jsdoc-spec/src" }], options: { includePattern: ".+\\.mjs$", plugin: { pluginPath: "../jsdoc-plugin-hia-sys/src/index.cjs" }, theme: { template: "../jsdoc-theme-hia" } } });
+      assert.equal(result.status, "partial");
+      assert.ok(result.diagnostics.some(({ code }) => code === "HIA_JSDOC_PRESENTATION_ARTIFACT_INVALID"));
+      assert.equal(result.artifacts.some(({ kind }) => kind === "documentation-presentation-profile"), false);
+      assert.equal(JSON.stringify(result).includes("SYNTHETIC_PRIVATE_MARKER"), false);
+    } finally {
+      // <lang><zh-CN>删除前核对解析后的父目录，清理仅限本次mkdtemp返回目录。</zh-CN><en>Verify the resolved parent before deletion; cleanup is limited to this invocation's mkdtemp directory.</en></lang>
+      assert.equal(path.dirname(path.resolve(output)), path.resolve(root, "fixtures"));
+      await rm(output, { recursive: true, force: true });
+    }
+  });
+}
 
 test("loadHiaJsdocConfig normalizes versioned config", () => {
   const request = loadHiaJsdocConfig("examples/standalone/hia-jsdoc.config.json", {

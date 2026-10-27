@@ -9,3 +9,5 @@ Runs JSDoc in standalone and HIA integration modes.
 The runner validates the closed page/source/scheme selections, inventories `documentation-presentation-profile.json` and
 `hia-page-map.json`, and leaves page partitioning, source assets, reader behavior and skin implementation to
 `@mandolin/jsdoc-theme-hia`.
+
+The current theme bridge declares documentation-presentation-profile 1.0.0. Artifact inventory reads the generated contract/version and requires an admitted exact identity paired with that bridge. Unreadable, unsupported or mismatched identities produce HIA_JSDOC_PRESENTATION_ARTIFACT_INVALID without a presentation entry; independent artifacts can remain in a partial producer result. This check does not validate the complete profile or authorize source disclosure. No new runtime dependency on the main monorepo is introduced.
