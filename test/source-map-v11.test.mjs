@@ -334,6 +334,20 @@ test("JSDoc runner records an actually written 1.1.0 map beside integration", as
     assert.equal(recorded?.path, "hia-doc-source-map.json");
     assert.ok(map.entries.length > 0);
     assert.ok(map.entries.every((entry) => integration.ir.nodes.some((node) => node.id === entry.symbolId)));
+    // <lang><zh-CN>集成节点承载真实函数的注释字段与 HIA 身份。</zh-CN><en>The integration node carries the real function's documentation fields and HIA identity.</en></lang>
+    const addNode = integration.ir.nodes.find((node) => node.id === "jsdoc:function:add");
+    // <lang><zh-CN>独立地图条目必须从同一原生 AST 声明得到精确来源。</zh-CN><en>The independent map entry must derive its exact source from the same native AST declaration.</en></lang>
+    const addEntry = map.entries.find((entry) => entry.symbolId === "jsdoc:function:add");
+    assert.ok(addNode);
+    assert.equal(addNode.summary, "Adds two numbers.");
+    assert.equal(addNode.jsdoc.params.length, 2);
+    assert.equal(addNode.jsdoc.returns.length, 1);
+    assert.equal(addNode.i18n.key, "math.add");
+    assert.equal(addNode.i18n.path, "api.math.add");
+    assert.ok(addEntry);
+    assert.equal(addEntry.sourceRefs.length, 1);
+    assert.deepEqual(addEntry.sourceRefs[0].range.start, { line: 10, column: 1 });
+    assert.deepEqual(addEntry.sourceRefs[0].rangeConvention, { endBoundary: "exclusive", columnUnit: "utf16-code-unit" });
     assert.equal(JSON.stringify(map).includes(workspaceRoot), false);
     // <lang><zh-CN>同一目录随后关闭开关，旧地图不能残留为新构建的可发布文件。</zh-CN><en>After disabling the switch in the same directory, the old map must not remain as a publishable file.</en></lang>
     const disabledResult = runHiaJsdocProject({

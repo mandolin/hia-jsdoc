@@ -1,7 +1,6 @@
 /**
  * Adds two numbers.
  *
- * @function add
  * @param {number} left Left operand.
  * @param {number} right Right operand.
  * @returns {number} Sum of both operands.
