@@ -28,8 +28,12 @@ export const stagedJsdocProducer = Object.freeze({
     const outputDirectory = normalizeAbsolutePath(request?.outputDirectory, "outputDirectory");
     const stagingRoot = path.join(workspaceRoot, ".hia-jsdoc-staging");
     const stagingDirectory = path.join(stagingRoot, `${process.pid}-${createStagingName(outputDirectory)}`);
+    let stagingBoundaryVerified = false;
 
     try {
+      // <lang><zh-CN>递归清理前先核对工作区与暂存目录的真实路径；联接目录不得把清理带到仓外。</zh-CN><en>Check real workspace and staging paths before recursive cleanup; a junction must not redirect cleanup outside the repository.</en></lang>
+      verifyStagingBoundary(workspaceRoot, stagingRoot, stagingDirectory);
+      stagingBoundaryVerified = true;
       fs.rmSync(stagingDirectory, { recursive: true, force: true });
       const result = jsdocProducer.produce({
         ...request,
@@ -38,14 +42,29 @@ export const stagedJsdocProducer = Object.freeze({
       }, context);
 
       if (fs.existsSync(stagingDirectory)) {
+        verifyStagingBoundary(workspaceRoot, stagingRoot, stagingDirectory);
         fs.mkdirSync(outputDirectory, { recursive: true });
-        fs.cpSync(stagingDirectory, outputDirectory, { recursive: true, force: true });
+        // <lang><zh-CN>外部输出可能保留上一轮地图；先移除固定文件，仅复制本轮产物清单认可的地图。</zh-CN><en>The external output may retain a prior map; remove that fixed file and copy a map only when this result inventories it.</en></lang>
+        fs.rmSync(path.join(outputDirectory, "hia-doc-source-map.json"), { force: true });
+        const mapAccepted = result.artifacts.some((item) => item.kind === "doc-source-map" && item.path === "hia-doc-source-map.json");
+        if (result.status !== "failed") {
+          fs.cpSync(stagingDirectory, outputDirectory, {
+            recursive: true,
+            force: true,
+            filter(source) {
+              return source !== path.join(stagingDirectory, "hia-doc-source-map.json") || mapAccepted;
+            }
+          });
+        }
       }
 
       return result;
     } finally {
-      fs.rmSync(stagingDirectory, { recursive: true, force: true });
-      removeEmptyDirectory(stagingRoot);
+      if (stagingBoundaryVerified) {
+        verifyStagingBoundary(workspaceRoot, stagingRoot, stagingDirectory);
+        fs.rmSync(stagingDirectory, { recursive: true, force: true });
+        removeEmptyDirectory(stagingRoot);
+      }
     }
   }
 });
@@ -61,6 +80,43 @@ function normalizeAbsolutePath(value, label) {
 
 function createStagingName(outputDirectory) {
   return path.basename(outputDirectory).replace(/[^A-Za-z0-9._-]+/g, "-") || "output";
+}
+
+/**
+ * @lang zh-CN 证明递归清理目标是当前工作区内预定的直属暂存目录，且既有联接没有改变真实路径。
+ * @lang en Proves the recursive cleanup target is the intended direct staging child inside this workspace and no existing junction redirects its real path.
+ * @param {string} workspaceRoot 真实工作区候选。 / Candidate workspace root.
+ * @param {string} stagingRoot 固定暂存根。 / Fixed staging root.
+ * @param {string} stagingDirectory 本轮目标。 / This invocation's target.
+ * @returns {void} 安全时无返回值。 / No return when safe.
+ * @throws {TypeError} 词法或真实路径越界。 / Lexical or physical path escape.
+ */
+function verifyStagingBoundary(workspaceRoot, stagingRoot, stagingDirectory) {
+  try {
+    const relative = path.relative(stagingRoot, stagingDirectory);
+    if (!relative || relative === ".." || relative.startsWith(`..${path.sep}`) || path.isAbsolute(relative)
+      || path.dirname(relative) !== "." || path.basename(stagingRoot) !== ".hia-jsdoc-staging") {
+      throw new TypeError("invalid staging path");
+    }
+    const realWorkspace = fs.realpathSync(workspaceRoot);
+    for (const candidate of [stagingRoot, stagingDirectory]) {
+      try {
+        if (fs.lstatSync(candidate).isSymbolicLink()) throw new TypeError("staging junction");
+      } catch (error) {
+        if (error?.code !== "ENOENT") throw error;
+      }
+    }
+    const existing = fs.existsSync(stagingDirectory)
+      ? stagingDirectory
+      : (fs.existsSync(stagingRoot) ? stagingRoot : workspaceRoot);
+    const physical = fs.realpathSync(existing);
+    const relativePhysical = path.relative(realWorkspace, physical);
+    if (relativePhysical === ".." || relativePhysical.startsWith(`..${path.sep}`) || path.isAbsolute(relativePhysical)) {
+      throw new TypeError("staging path escaped workspace");
+    }
+  } catch {
+    throw new TypeError("JSDoc staging directory must remain inside workspaceRoot.");
+  }
 }
 
 function removeEmptyDirectory(directory) {

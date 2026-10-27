@@ -25,6 +25,9 @@ export function createHiaJsdocConfig(options = {}) {
   const extraPlugins = normalizeExtraPluginRegistry(options.extraPlugins ?? {});
   const themeEnabled = options.theme?.enabled ?? mode !== "hiaIntegration";
   const integrationEnabled = options.integration?.enabled ?? mode !== "standalone";
+  // <lang><zh-CN>独立地图仅接受固定文件名的显式开关；省略时旧配置保持原字节结构。</zh-CN><en>The standalone map accepts only an explicit fixed-file switch; omission preserves the legacy config shape.</en></lang>
+  const docSourceMap = options.hia?.docSourceMap;
+  assertDocSourceMapOption(docSourceMap);
   // <lang><zh-CN>themeBridge 是 template/catalog owner 的唯一 descriptor；preset 不复制 JTH 皮肤。</zh-CN><en>ThemeBridge is the sole template/catalog-owner descriptor; the preset does not copy JTH skins.</en></lang>
   const themeBridge = createHiaJsdocThemeBridge({
     ...(options.theme ?? {}),
@@ -105,6 +108,7 @@ export function createHiaJsdocConfig(options = {}) {
           enabled: integrationEnabled,
           outputFile: integrationOutputFile
         },
+        ...(docSourceMap === undefined ? {} : { docSourceMap: { enabled: docSourceMap.enabled } }),
         umbrella: {
           contract: HIA_JSDOC_UMBRELLA_CONTRACT,
           contractVersion: HIA_JSDOC_UMBRELLA_CONTRACT_VERSION,
@@ -121,7 +125,25 @@ export function createHiaJsdocConfig(options = {}) {
     config.opts.template = themeBridge.template;
   }
 
-  return mergeJsdocConfig(config, options.baseConfig ?? {});
+  // <lang><zh-CN>baseConfig 按既有优先级后覆盖，最终有效值仍必须符合封闭的布尔开关契约。</zh-CN><en>baseConfig retains its established later precedence, but the final effective value must still satisfy the closed boolean switch contract.</en></lang>
+  const merged = mergeJsdocConfig(config, options.baseConfig ?? {});
+  assertDocSourceMapOption(merged.opts?.hia?.docSourceMap);
+  return merged;
+}
+
+/**
+ * @lang zh-CN 验证独立地图只接受固定输出文件的布尔启用意图，不允许路径或其它后覆盖字段。
+ * @lang en Validates that standalone maps accept only boolean intent for the fixed output, never a path or another later override field.
+ * @param {unknown} value 直接或合并后的选项。 / Direct or merged option.
+ * @returns {void} 合法时无返回值。 / No return value when valid.
+ * @throws {TypeError} 选项不是封闭布尔对象。 / The option is not a closed boolean object.
+ */
+function assertDocSourceMapOption(value) {
+  if (value !== undefined && (value === null || typeof value !== "object"
+    || Array.isArray(value) || Object.keys(value).some((key) => key !== "enabled")
+    || typeof value.enabled !== "boolean")) {
+    throw new TypeError("hia.docSourceMap must contain only a boolean enabled field.");
+  }
 }
 
 /**

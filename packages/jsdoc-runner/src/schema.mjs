@@ -75,6 +75,13 @@ export const HIA_JSDOC_CONFIG_JSON_SCHEMA = Object.freeze({
           type: "object",
           additionalProperties: true,
           properties: {
+            // <lang><zh-CN>地图开关仅表达固定独立产物的布尔意图，不接收宿主输出路径。</zh-CN><en>The map switch expresses only boolean intent for the fixed standalone artifact, not a host output path.</en></lang>
+            docSourceMap: {
+              type: "object",
+              additionalProperties: false,
+              required: ["enabled"],
+              properties: { enabled: { type: "boolean" } }
+            },
             presentation: {
               type: "object",
               additionalProperties: false,

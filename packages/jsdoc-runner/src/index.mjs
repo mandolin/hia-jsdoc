@@ -3,6 +3,7 @@ import { createRequire } from "node:module";
 import fs from "node:fs";
 import path from "node:path";
 import { createHiaJsdocConfig } from "@hia-doc/jsdoc-preset";
+import { validateJsdocDocSourceMap } from "./doc-source-map-validation.mjs";
 
 const require = createRequire(import.meta.url);
 
@@ -43,6 +44,7 @@ export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([
   "jsdoc-search-index",
   "jsdoc-theme-metadata",
   "jsdoc-integration",
+  "doc-source-map",
   "documentation-presentation-profile",
   "jsdoc-page-map"
 ]);
@@ -85,25 +87,12 @@ export function writeHiaJsdocConfig(filePath, options = {}) {
  */
 export function runHiaJsdocProject(request, context = {}) {
   const normalized = normalizeProjectRequest(request);
-  fs.mkdirSync(normalized.outputDirectory, { recursive: true });
-
-  if (context.signal?.aborted) {
-    return createProducerResult("failed", [], [
-      createDiagnostic("HIA_JSDOC_RUNNER_ABORTED", "HIA JSDoc runner was aborted before it started.", "error")
-    ]);
-  }
-
-  context.reportProgress?.({
-    phase: "extract",
-    current: 0,
-    total: normalized.inputs.length,
-    message: "jsdoc"
-  });
-
-  const outputDirectoryRelative = relativeFromWorkspaceRoot(normalized.workspaceRoot, normalized.outputDirectory, "outputDirectory");
+  // <lang><zh-CN>任何创建或旧地图清理前，同时验证词法路径与已存在父目录的真实路径边界。</zh-CN><en>Before any creation or stale-map cleanup, verify both lexical containment and the real path of the existing parent.</en></lang>
+  const outputDirectoryRelative = verifyOutputDirectoryBoundary(normalized.workspaceRoot, normalized.outputDirectory);
+  // <lang><zh-CN>先计算最终配置，防止 baseConfig 后覆盖把已启用地图的关联工件写到本次构建之外。</zh-CN><en>Resolve the effective config first so a later baseConfig override cannot redirect an enabled map's paired artifact outside this build.</en></lang>
   const configPath = path.join(normalized.outputDirectory, ".hia-jsdoc", "jsdoc.conf.json");
   const integrationOutputFile = `${outputDirectoryRelative}/hia-integration.json`;
-  const execution = runHiaJsdoc({
+  const executionOptions = {
     cwd: normalized.workspaceRoot,
     configPath,
     mode: normalized.options.mode,
@@ -120,20 +109,69 @@ export function runHiaJsdocProject(request, context = {}) {
     hia: normalized.options.hia,
     theme: normalized.options.theme,
     baseConfig: normalized.options.baseConfig
+  };
+  const effectiveConfig = createHiaJsdocConfig(executionOptions);
+  const docSourceMapEnabled = effectiveConfig.opts?.hia?.docSourceMap?.enabled === true;
+  if (docSourceMapEnabled && (effectiveConfig.opts?.hia?.integration?.enabled !== true
+    || effectiveConfig.opts?.hia?.integration?.outputFile !== integrationOutputFile
+    || effectiveConfig.opts?.destination !== outputDirectoryRelative)) {
+    throw new TypeError("The enabled documentation source map requires this build's fixed integration output and destination.");
+  }
+
+  if (context.signal?.aborted) {
+    return createProducerResult("failed", [], [
+      createDiagnostic("HIA_JSDOC_RUNNER_ABORTED", "HIA JSDoc runner was aborted before it started.", "error")
+    ]);
+  }
+
+  fs.mkdirSync(normalized.outputDirectory, { recursive: true });
+  // <lang><zh-CN>清除固定的旧地图文件，防止同一输出目录内本轮关闭开关时，旧 sidecar 被下游目录复制误发布；不递归删除目录。</zh-CN><en>Clear the fixed stale map file so disabling this build cannot leave a publishable prior sidecar in the same output directory; never recursively remove a directory.</en></lang>
+  try {
+    fs.rmSync(path.join(normalized.outputDirectory, "hia-doc-source-map.json"), { force: true });
+  } catch {
+    return createProducerResult("failed", [], [
+      createDiagnostic("HIA_JSDOC_DOC_SOURCE_MAP_RESET_FAILED", "Could not prepare the documentation source map output.", "error")
+    ]);
+  }
+  // <lang><zh-CN>把本次已创建输出目录的真实身份固定下来；进度回调和子进程期间的联接替换不能被视为同一构建目录。</zh-CN><en>Pin the physical identity of this created output directory; a junction replacement during progress callbacks or the child process is not the same build directory.</en></lang>
+  const expectedOutputReal = fs.realpathSync(normalized.outputDirectory);
+  const expectedOutputStat = fs.statSync(normalized.outputDirectory);
+
+  context.reportProgress?.({
+    phase: "extract",
+    current: 0,
+    total: normalized.inputs.length,
+    message: "jsdoc"
   });
+  assertOutputDirectoryUnchanged(normalized.workspaceRoot, normalized.outputDirectory, expectedOutputReal, expectedOutputStat);
+
+  const execution = runHiaJsdoc(executionOptions);
+  assertOutputDirectoryUnchanged(normalized.workspaceRoot, normalized.outputDirectory, expectedOutputReal, expectedOutputStat);
+  const failedOutputDiagnostics = [];
+  if (!execution.ok) {
+    // <lang><zh-CN>CLI 失败可能发生在插件写图之后；该文件不属于成功工件，不能供目录级暂存复制。</zh-CN><en>The CLI may fail after the plugin wrote a map; that file is not a successful artifact and must not reach a directory-level staged copy.</en></lang>
+    removeUntrustedDocSourceMap(path.join(normalized.outputDirectory, "hia-doc-source-map.json"), failedOutputDiagnostics);
+  }
 
   const diagnostics = [
     ...pluginDiagnosticsFromConfig(execution.config),
+    ...failedOutputDiagnostics,
     ...(execution.ok ? [] : [
       createDiagnostic(
         "HIA_JSDOC_RUNNER_FAILED",
-        execution.stderr || execution.stdout || "JSDoc CLI failed.",
+        docSourceMapEnabled ? "JSDoc CLI failed while building the requested documentation source map." : (execution.stderr || execution.stdout || "JSDoc CLI failed."),
         "error"
       )
     ])
   ];
   const artifacts = execution.ok
-    ? collectArtifacts(normalized.outputDirectory, normalized.profileIds, diagnostics, execution.config.opts?.hia?.umbrella?.themeBridge?.presentation)
+    ? collectArtifacts(
+      normalized.outputDirectory,
+      normalized.profileIds,
+      diagnostics,
+      execution.config.opts?.hia?.umbrella?.themeBridge?.presentation,
+      docSourceMapEnabled
+    )
     : [];
   const status = diagnostics.some((diagnostic) => diagnostic.severity === "error")
     ? (artifacts.length > 0 ? "partial" : "failed")
@@ -153,6 +191,7 @@ export function runHiaJsdocProject(request, context = {}) {
     current: normalized.inputs.length,
     total: normalized.inputs.length
   });
+  assertOutputDirectoryUnchanged(normalized.workspaceRoot, normalized.outputDirectory, expectedOutputReal, expectedOutputStat);
 
   return result;
 }
@@ -287,9 +326,10 @@ function inferHiaJsdocInputKind(inputPath) {
  * @param {string[]} profileIds 所属profile身份。 / Owning profile identities.
  * @param {object[]} diagnostics 接收固定安全产物错误的本次可变数组。 / This invocation's mutable array receiving fixed safe artifact errors.
  * @param {object} presentation 本次preset投影的呈现bridge身份。 / Presentation bridge identity projected by this preset.
+ * @param {boolean} docSourceMapEnabled 本次显式地图开关。 / Explicit map switch for this invocation.
  * @returns {object[]} 已发现且身份配对的产物清单；不是完整profile语义校验。 / Discovered identity-paired artifacts, not full semantic profile validation.
  */
-function collectArtifacts(outputDirectory, profileIds, diagnostics, presentation) {
+function collectArtifacts(outputDirectory, profileIds, diagnostics, presentation, docSourceMapEnabled) {
   // <lang><zh-CN>数组仅归本次构建，非法呈现工件不污染其它独立产物。</zh-CN><en>The array belongs to this build only; an invalid presentation artifact does not contaminate independent artifacts.</en></lang>
   const artifacts = [];
   if (fs.existsSync(path.join(outputDirectory, "index.html"))) {
@@ -307,6 +347,25 @@ function collectArtifacts(outputDirectory, profileIds, diagnostics, presentation
       contract: "hia-jsdoc-integration",
       contractVersion: "0.1.0"
     });
+  }
+  if (docSourceMapEnabled) {
+    // <lang><zh-CN>只收集本轮真实存在且身份正确的固定 sidecar；缺失或损坏时不留下虚假产物清单。</zh-CN><en>Collect only this invocation's existing fixed sidecar with the expected identity; missing or invalid output leaves no false artifact record.</en></lang>
+    const mapPath = path.join(outputDirectory, "hia-doc-source-map.json");
+    if (fs.existsSync(mapPath) && artifacts.some((item) => item.kind === "jsdoc-integration")) {
+      const identity = readDocSourceMapArtifactIdentity(mapPath, path.join(outputDirectory, "hia-integration.json"), diagnostics);
+      if (identity) artifacts.push({
+        ...artifact("doc-source-map", "doc-source-map", "hia-doc-source-map.json", "json", "application/json", profileIds),
+        ...identity
+      });
+    } else {
+      // <lang><zh-CN>缺少 integration 时也不得留下孤立地图文件供目录级复制。</zh-CN><en>When integration is absent, do not leave an orphan map for directory-level copying.</en></lang>
+      removeUntrustedDocSourceMap(mapPath, diagnostics);
+      diagnostics.push(createDiagnostic(
+        "HIA_JSDOC_DOC_SOURCE_MAP_MISSING",
+        "The requested documentation source map or its integration artifact was not produced.",
+        "error"
+      ));
+    }
   }
   if (fs.existsSync(path.join(outputDirectory, "documentation-presentation-profile.json"))) {
     // <lang><zh-CN>从实际产物核对身份后才登记，不能仅凭文件存在写死旧版本。</zh-CN><en>Record the identity only after checking the actual artifact; existence alone cannot justify a hard-coded legacy version.</en></lang>
@@ -331,6 +390,57 @@ function collectArtifacts(outputDirectory, profileIds, diagnostics, presentation
     });
   }
   return artifacts;
+}
+
+/**
+ * @lang zh-CN 在父进程独立核对固定地图的封闭结构、隐私与同轮 integration 引用；拒绝时使用不含路径或内容的诊断。
+ * @lang en Independently checks the fixed map's closed structure, privacy and same-run integration references in the parent process; refusals use a diagnostic without path or content.
+ * @param {string} mapPath 固定生成文件路径。 / Fixed generated file path.
+ * @param {string} integrationPath 本轮固定配对文件路径。 / Fixed paired file path for this build.
+ * @param {object[]} diagnostics 本次可变诊断数组。 / Mutable diagnostics for this invocation.
+ * @returns {{contract:string,contractVersion:string}|undefined} 已核身份，或拒绝。 / Verified identity, or refusal.
+ */
+function readDocSourceMapArtifactIdentity(mapPath, integrationPath, diagnostics) {
+  try {
+    // <lang><zh-CN>两文件必须仍位于本轮真实输出根；拒绝插件或后处理创建的跨目录符号链接。</zh-CN><en>Both files must still reside in this build's real output root; reject cross-directory symlinks created by plugins or post-processing.</en></lang>
+    const outputRoot = fs.realpathSync(path.dirname(mapPath));
+    if (path.dirname(fs.realpathSync(mapPath)) === outputRoot
+      && path.dirname(fs.realpathSync(integrationPath)) === outputRoot) {
+      const value = JSON.parse(fs.readFileSync(mapPath, "utf8"));
+      const integration = JSON.parse(fs.readFileSync(integrationPath, "utf8"));
+      if (validateJsdocDocSourceMap(value, integration)) {
+        return { contract: value.contract, contractVersion: value.contractVersion };
+      }
+    }
+  } catch {
+    // <lang><zh-CN>不回显异常或原文，统一返回固定公开安全诊断。</zh-CN><en>Never echo the exception or raw content; return a fixed public-safe diagnostic.</en></lang>
+  }
+  diagnostics.push(createDiagnostic(
+    "HIA_JSDOC_DOC_SOURCE_MAP_INVALID",
+    "The requested documentation source map failed artifact validation.",
+    "error"
+  ));
+  removeUntrustedDocSourceMap(mapPath, diagnostics);
+  return undefined;
+}
+
+/**
+ * @lang zh-CN 仅删除固定的未获承认地图文件，不递归清理目录；失败时保留固定诊断。
+ * @lang en Removes only the fixed unaccepted map file without recursive directory cleanup; failure leaves a fixed diagnostic.
+ * @param {string} mapPath 本轮固定 sidecar 路径。 / This invocation's fixed sidecar path.
+ * @param {object[]} diagnostics 本轮可变诊断数组。 / Mutable diagnostics for this invocation.
+ * @returns {void} 不返回文件内容。 / Returns no file content.
+ */
+function removeUntrustedDocSourceMap(mapPath, diagnostics) {
+  try {
+    fs.rmSync(mapPath, { force: true });
+  } catch {
+    diagnostics.push(createDiagnostic(
+      "HIA_JSDOC_DOC_SOURCE_MAP_CLEANUP_FAILED",
+      "Could not remove the unaccepted documentation source map output.",
+      "error"
+    ));
+  }
 }
 
 /**
@@ -372,6 +482,14 @@ function readPresentationArtifactIdentity(outputDirectory, expected, diagnostics
  */
 function normalizeHiaOptions(value) {
   assertRecord(value, "options.hia must be an object.");
+  // <lang><zh-CN>地图开关只允许布尔值，输出名由插件固定，拒绝任意路径注入。</zh-CN><en>The map switch accepts only a boolean; the plugin fixes the output name, rejecting arbitrary path injection.</en></lang>
+  if (value.docSourceMap !== undefined) {
+    assertRecord(value.docSourceMap, "options.hia.docSourceMap must be an object.");
+    assertKnownKeys(value.docSourceMap, ["enabled"], "options.hia.docSourceMap");
+    if (typeof value.docSourceMap.enabled !== "boolean") {
+      throw new TypeError("options.hia.docSourceMap.enabled must be a boolean.");
+    }
+  }
   // <lang><zh-CN>presentation 只接受两个中性选择字段，不吸收 owner DOM/CSS 配置。</zh-CN><en>Presentation accepts only the two neutral selection fields and absorbs no owner DOM/CSS configuration.</en></lang>
   const presentation = value.presentation ?? {};
   assertRecord(presentation, "options.hia.presentation must be an object.");
@@ -446,6 +564,63 @@ function createDiagnostic(code, message, severity) {
     message,
     severity
   };
+}
+
+/**
+ * @lang zh-CN 在写入前验证输出目录既在工作区词法范围内，也不会经现有联接或符号链接落到外部。
+ * @lang en Before writing, verifies that the output is lexically inside the workspace and cannot escape through an existing junction or symlink.
+ * @param {string} workspaceRoot 已存在的工作区根。 / Existing workspace root.
+ * @param {string} outputDirectory 候选输出目录。 / Candidate output directory.
+ * @returns {string} 安全的工作区相对目录。 / Safe workspace-relative directory.
+ * @throws {TypeError} 工作区或真实输出边界不合法。 / Invalid workspace or physical output boundary.
+ */
+function verifyOutputDirectoryBoundary(workspaceRoot, outputDirectory) {
+  // <lang><zh-CN>先拒绝明显越界，再解析现有的最近祖先，避免在路径验证前创建或删除文件。</zh-CN><en>Reject obvious lexical escapes, then resolve the nearest existing ancestor before creating or removing any file.</en></lang>
+  const relativeOutput = relativeFromWorkspaceRoot(workspaceRoot, outputDirectory, "outputDirectory");
+  let realWorkspaceRoot;
+  let existingAncestor = outputDirectory;
+  try {
+    realWorkspaceRoot = fs.realpathSync(workspaceRoot);
+    while (!fs.existsSync(existingAncestor)) {
+      const parent = path.dirname(existingAncestor);
+      if (parent === existingAncestor) throw new TypeError("outputDirectory has no existing ancestor.");
+      existingAncestor = parent;
+    }
+    const realAncestor = fs.realpathSync(existingAncestor);
+    const physicalTarget = path.resolve(realAncestor, path.relative(existingAncestor, outputDirectory));
+    const physicalRelative = path.relative(realWorkspaceRoot, physicalTarget);
+    if (!physicalRelative || physicalRelative === ".." || physicalRelative.startsWith(`..${path.sep}`)
+      || path.isAbsolute(physicalRelative)) {
+      throw new TypeError("outputDirectory must stay inside workspaceRoot for JSDoc execution.");
+    }
+  } catch {
+    // <lang><zh-CN>不回显真实路径或系统异常；调用方得到稳定的边界拒绝。</zh-CN><en>Do not expose real paths or system errors; callers receive a stable boundary refusal.</en></lang>
+    throw new TypeError("outputDirectory must stay inside workspaceRoot for JSDoc execution.");
+  }
+  return relativeOutput;
+}
+
+/**
+ * @lang zh-CN 在可重入回调及子进程边界后重新证明输出仍是本轮创建的同一目录，不把替换后的联接当作成功产物。
+ * @lang en Re-proves after reentrant callbacks and the child process that output remains the same directory created for this run, never accepting a replaced junction as successful output.
+ * @param {string} workspaceRoot 工作区根。 / Workspace root.
+ * @param {string} outputDirectory 本轮输出目录。 / This build's output directory.
+ * @param {string} expectedReal 创建时真实路径。 / Real path at creation.
+ * @param {object} expectedStat 创建时目录的 stat 身份，使用 dev 与 ino。 / Directory stat identity at creation, using dev and ino.
+ * @returns {void} 身份未变时无返回值。 / No return when identity is unchanged.
+ * @throws {TypeError} 目录越界或身份被替换。 / Directory escape or replacement.
+ */
+function assertOutputDirectoryUnchanged(workspaceRoot, outputDirectory, expectedReal, expectedStat) {
+  try {
+    verifyOutputDirectoryBoundary(workspaceRoot, outputDirectory);
+    const actualStat = fs.statSync(outputDirectory);
+    if (fs.realpathSync(outputDirectory) !== expectedReal || !actualStat.isDirectory()
+      || actualStat.dev !== expectedStat.dev || actualStat.ino !== expectedStat.ino) {
+      throw new TypeError("output directory changed");
+    }
+  } catch {
+    throw new TypeError("JSDoc outputDirectory changed during this build.");
+  }
 }
 
 function relativeFromWorkspaceRoot(workspaceRoot, targetPath, label) {

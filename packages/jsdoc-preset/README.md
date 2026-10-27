@@ -10,3 +10,7 @@ to the JTH bridge; the preset does not implement or copy skins.
 
 The umbrella metadata also embeds `portalUiLocaleBridge`, a translation-free capability descriptor that lets Portal consumers select the
 `hia-jsdoc.portal-bridge` completeness profile while keeping the Portal renderer as the sole UI-message owner.
+
+The optional `hia.docSourceMap` setting accepts only `{ enabled: boolean }`. The output filename is fixed by the
+JSDoc plugin; a later `baseConfig` override must retain the same closed setting. Omitting it preserves the existing
+generated config shape.

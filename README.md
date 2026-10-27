@@ -33,6 +33,14 @@ single-page compatibility and `embed`, `link` or `none` source modes under `opts
 the skin catalog remain owned by `@mandolin/jsdoc-theme-hia`; the umbrella bridge carries only the selected skin/scheme and
 the catalog projection reference.
 
+## Optional documentation source map
+
+Set `options.hia.docSourceMap.enabled` to `true` in a project runner config to request a standalone
+`hia-doc-source-map.json` beside `hia-integration.json`. The fixed sidecar uses `doc-source-map@1.1.0` and does not embed
+source text. The default remains disabled. The runner inventories a map only after checking its structure, safe paths,
+privacy policy and symbol references against the integration output from the same build. Unsupported or unverifiable
+source positions remain without a precise range.
+
 ## Development
 
 ```sh

@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — Optional JSDoc documentation source map
+
+- Add an opt-in standalone `doc-source-map@1.1.0` sidecar to the project runner and staged producer.
+- Validate the fixed sidecar's structure, privacy, paths and symbol references before inventory; clear stale or rejected maps from reused output directories.
+- Reject enabled map configurations that redirect their paired integration output or destination outside the current build.
+
 ## Unreleased — Presentation identity pairing
 
 - Theme bridge/spec declare exact presentation profile 1.0.0. The runner reads the generated identity and pairs it with its bridge instead of hard-coding a legacy inventory version.

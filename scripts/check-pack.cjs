@@ -49,9 +49,14 @@ for (const packageRoot of packageRoots) {
       }
     }
   }
-  if (packageJson.name === "@hia-doc/jsdoc-runner" && !packedPaths.has("src/cli.mjs")) {
-    console.error("Missing src/cli.mjs in @hia-doc/jsdoc-runner pack dry-run.");
-    failed = true;
+  if (packageJson.name === "@hia-doc/jsdoc-runner") {
+    // <lang><zh-CN>运行器入口必须与它静态导入的封闭地图校验模块一起分发。</zh-CN><en>Ship the runner entry together with the closed map validator it imports statically.</en></lang>
+    for (const requiredPath of ["src/cli.mjs", "src/doc-source-map-validation.mjs"]) {
+      if (!packedPaths.has(requiredPath)) {
+        console.error(`Missing ${requiredPath} in @hia-doc/jsdoc-runner pack dry-run.`);
+        failed = true;
+      }
+    }
   }
 }
 
