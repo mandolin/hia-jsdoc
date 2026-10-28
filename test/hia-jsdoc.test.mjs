@@ -48,7 +48,7 @@ test("Portal bridge declares W-P123 owner adoption without copying owner-private
 
   assert.deepEqual(descriptor, {
     capability: "documentation-ui-locale-completeness",
-    capabilityVersion: "0.1.0-draft",
+    capabilityVersion: "1.0.0",
     ownerPackage: "@hia-doc/renderer-html",
     profileId: "hia-jsdoc.portal-bridge",
     surfaceId: "hia-jsdoc.portal-bridge",

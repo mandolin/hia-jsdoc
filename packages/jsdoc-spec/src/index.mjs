@@ -98,13 +98,13 @@ export const HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION = "1.0.0";
 export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY = "documentation-ui-locale-completeness";
 
 /**
- * Pins the exact W-P123 capability version understood by the bridge.
+ * Pins the current Portal writer capability to 1.0.0; the owner still reads exact historical 0.1.0-draft reports.
  *
  * @constant {string}
- * @lang zh-CN 固定 bridge 理解的 W-P123 exact capability 版本。
- * @lang en Pins the exact W-P123 capability version understood by the bridge.
+ * @lang zh-CN 固定当前Portal写者的1.0.0能力；历史0.1.0-draft报告仍由owner精确读取。
+ * @lang en Pins the current Portal writer capability to 1.0.0; the owner still reads exact historical 0.1.0-draft reports.
  */
-export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = "0.1.0-draft";
+export const HIA_JSDOC_PORTAL_UI_LOCALE_CAPABILITY_VERSION = "1.0.0";
 
 /**
  * Names the owner-neutral profile and surface used by hia-jsdoc Portal projection.

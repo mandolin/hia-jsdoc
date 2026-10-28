@@ -1,5 +1,10 @@
 # HIA JSDoc
 
+The Portal UI-locale bridge declares capability `1.0.0`, matching the current
+`@hia-doc/renderer-html` owner report. Historical `0.1.0-draft` reports remain an
+owner reader concern; the bridge does not relabel or rebuild them itself.
+中文：Portal界面语言桥接能力同步到1.0.0；旧报告由owner精确读取，桥接层不凭换号升级证据。此源码变更尚未发布npm包。
+
 HIA JSDoc is the JavaScript and JSDoc documentation umbrella workspace for HIA.
 
 This repository provides a preset, runner and bridge layer around JSDoc, `@mandolin/jsdoc-plugin-hia-sys`, `@mandolin/jsdoc-theme-hia`, user JSDoc plugins and HIA integration output.
