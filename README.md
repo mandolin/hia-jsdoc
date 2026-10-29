@@ -1,5 +1,14 @@
 # HIA JSDoc
 
+## Supported runtime
+
+Current source supports Node.js `^22.23.4 || ^24.22.1`. Release checks use
+Node.js 22.23.4 and 24.22.1 on Windows and Ubuntu; actual package qualification
+and npm availability remain separate. The repository default is Node.js 24.22.1.
+
+中文：当前源码运行范围为上述两条已确认版本线，CI/安装验收与实际npm发布分别核对。
+
+
 The Portal UI-locale bridge declares capability `1.0.0`, matching the current
 `@hia-doc/renderer-html` owner report. Historical `0.1.0-draft` reports remain an
 owner reader concern; the bridge does not relabel or rebuild them itself.
@@ -22,13 +31,13 @@ This repository provides a preset, runner and bridge layer around JSDoc, `@mando
 
 ## Status
 
-This workspace contains the W-P9.5 umbrella baseline:
+The workspace provides:
 
 - a JSDoc preset that composes published JPHS/JTH package paths;
 - an extra plugin registry for before/after ordering diagnostics;
 - a runner that writes a standard JSDoc config and calls the real JSDoc CLI;
 - fixtures that emit multi-page JSDoc HTML, a neutral presentation profile, theme metadata and HIA Integration JSON.
-- a W-P11.3 project runner/producer surface that emits a `documentation-producer-result` manifest.
+- a project runner/producer surface that emits a `documentation-producer-result` manifest.
 - a first-party self-doc smoke using canonical `@lang` tags.
 
 It does not migrate or absorb the existing plugin and theme repositories.

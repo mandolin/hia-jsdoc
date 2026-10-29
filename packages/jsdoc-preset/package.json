@@ -13,5 +13,8 @@
     "@hia-doc/jsdoc-plugin-hia-bridge": "0.0.0",
     "@hia-doc/jsdoc-spec": "0.0.0",
     "@hia-doc/jsdoc-theme-bridge": "0.0.0"
+  },
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1"
   }
 }

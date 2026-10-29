@@ -18,5 +18,8 @@
   "dependencies": {
     "@hia-doc/jsdoc-preset": "0.0.0",
     "jsdoc": "4.0.5"
+  },
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1"
   }
 }
