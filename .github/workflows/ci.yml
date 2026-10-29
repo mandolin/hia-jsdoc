@@ -65,5 +65,11 @@ jobs:
       - name: Install frozen dependencies
         run: npm ci --registry=https://registry.npmjs.org/
 
+      # 中文：插件从自身位置读取JSDoc peer版本，缺依赖时按契约只输出身份而不声称源码范围。
+      # English: The plugin reads its JSDoc peer from its own location; without dependencies it emits identity only, never a precise source range.
+      - name: Install pinned plugin parser peer
+        working-directory: jsdoc-plugin-hia-sys
+        run: npm ci --registry=https://registry.npmjs.org/
+
       - name: Run release gate
         run: npm run release:gate
