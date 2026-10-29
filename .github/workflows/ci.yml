@@ -12,6 +12,10 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    working-directory: hia-jsdoc
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -33,6 +37,24 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+        with:
+          path: hia-jsdoc
+
+      # 中文：自文档化与来源回归需两个相邻owner，固定已验证SHA而非开发机目录或浮动分支。
+      # English: Self-documentation and provenance tests require sibling owners pinned to verified SHAs, not developer folders or floating branches.
+      - name: Check out source plugin owner
+        uses: actions/checkout@v6
+        with:
+          repository: mandolin/jsdoc-plugin-hia-sys
+          ref: d6158bbbc0f13a36413b18b945144d0a837da229
+          path: jsdoc-plugin-hia-sys
+
+      - name: Check out source theme owner
+        uses: actions/checkout@v6
+        with:
+          repository: mandolin/jsdoc-theme-hia
+          ref: dd8ec3eb5f1a93ee2bc7345dd98a134662304895
+          path: jsdoc-theme-hia
 
       - name: Set up Node.js
         uses: actions/setup-node@v6

@@ -1,5 +1,8 @@
 # Changelog
 
+- 中文：干净CI显式检出并精确固定自文档化/来源测试所需的插件与主题owner，补运行目录及引用防漂移测试。
+- English: Clean CI explicitly checks out and pins plugin/theme owners required by self-documentation and provenance tests, with working-directory and reference drift checks.
+
 ## Unreleased — Supported runtime baseline
 
 - 源清单、锁与本地/CI运行基线对齐Node.js 22.23.4和24.22.1，两平台门禁及拒绝漂移检查同步；旧已发布工件不改写，本次不发布npm。

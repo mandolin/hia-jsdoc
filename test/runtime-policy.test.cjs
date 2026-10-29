@@ -16,6 +16,22 @@ const expected = "^22.23.4 || ^24.22.1";
 /** @lang zh-CN 读取本仓受信JSON，无写入。 @lang en Reads trusted repository JSON without writes. */
 const json = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
 
+/** @lang zh-CN 干净CI须显式检出实际自文档化所需两个相邻owner，精确绑定经验证来源；不能依赖开发机目录或浮动main。 @lang en Clean CI explicitly checks out both sibling owners required by actual self-documentation, pinning verified sources rather than developer folders or floating main branches. */
+test("clean CI pins sibling owners and runs inside the primary checkout", () => {
+  // <lang><zh-CN>只核本仓明确的工作流形态，不宣称通用YAML或远端提交可用性验证。</zh-CN><en>Check this repository's explicit workflow shape, not general YAML semantics or remote commit availability.</en></lang>
+  const workflow = fs.readFileSync(path.join(root, ".github/workflows/ci.yml"), "utf8").replace(/\r\n/gu, "\n");
+  assert.match(workflow, /defaults:\s*\n\s+run:\s*\n\s+working-directory: hia-jsdoc/u);
+  assert.match(workflow, /name: Check out repository\s+uses: actions\/checkout@v6\s+with:\s+path: hia-jsdoc/u);
+  for (const [name, ref] of [["jsdoc-plugin-hia-sys", "d6158bbbc0f13a36413b18b945144d0a837da229"], ["jsdoc-theme-hia", "dd8ec3eb5f1a93ee2bc7345dd98a134662304895"]]) {
+    // <lang><zh-CN>每段repository/ref/path必须同属于一次checkout，阻止仅在其它步骤或注释出现期望文本。</zh-CN><en>Repository/ref/path must belong to the same checkout block, not merely appear in another step or comment.</en></lang>
+    const block = workflow.split(/\n\s+- name:/u).find((step) => step.includes(`repository: mandolin/${name}\n`));
+    assert.ok(block, "Required sibling checkout is missing.");
+    assert.match(block, /uses: actions\/checkout@v6/u);
+    assert.ok(block.includes(`ref: ${ref}\n`));
+    assert.ok(block.split("\n").some((line) => line.trim() === `path: ${name}`));
+  }
+});
+
 /** @lang zh-CN 源清单与实际锁的根/工作区条目必须一致，不修改包版本。 @lang en Root/workspace source manifests and actual lock entries must agree, without changing package versions. */
 test("required frontend manifests and lock entries declare the tested Node range", () => {
   const manifest = json("package.json");

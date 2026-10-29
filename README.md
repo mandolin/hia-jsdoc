@@ -8,6 +8,14 @@ and npm availability remain separate. The repository default is Node.js 24.22.1.
 
 中文：当前源码运行范围为上述两条已确认版本线，CI/安装验收与实际npm发布分别核对。
 
+For contributor regression tests, place `hia-jsdoc`, `jsdoc-plugin-hia-sys`,
+and `jsdoc-theme-hia` side by side. CI pins both sibling owners in
+`.github/workflows/ci.yml`; standalone users install the published plugin and
+theme through their project configuration. The test checkout does not replace
+consumer package installation checks.
+
+中文：贡献者回归使用上述三个相邻仓库，CI精确固定两个owner提交；普通用户按项目配置安装插件和主题，源码联调不代替安装消费验收。
+
 
 The Portal UI-locale bridge declares capability `1.0.0`, matching the current
 `@hia-doc/renderer-html` owner report. Historical `0.1.0-draft` reports remain an
