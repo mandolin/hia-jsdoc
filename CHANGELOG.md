@@ -1,5 +1,8 @@
 # Changelog
 
+- 中文：补齐八包实际导出/默认/错误/副作用与生成链参考并常驻检查；拒绝插件路径不再进入公开诊断data，保持code/phase/index及正常排序。
+- English: Inventory actual exports/defaults/errors/effects and generation responsibilities in each package with permanent checks; rejected plugin paths no longer enter public diagnostic data, preserving codes, phases, indices and normal ordering.
+
 - 中文：新增配置/umbrella 1.0.0、新旧精确读取和显式无损配置迁移；两份schema实际入包，旧schema保留原文。Integration/页映射保持0.1.0正式兼容profile，源码映射1.1.0不变。
 - English: Add config/umbrella 1.0.0, exact versioned reading and explicit lossless config migration; ship both schemas while preserving the old schema source. Integration/page maps retain exact 0.1.0 compatibility profiles, with source-map 1.1.0 unchanged.
 

@@ -46,14 +46,14 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: mandolin/jsdoc-plugin-hia-sys
-          ref: d6158bbbc0f13a36413b18b945144d0a837da229
+          ref: e75e9cef879e4e39b2554957d65edc384d3b5a9d
           path: jsdoc-plugin-hia-sys
 
       - name: Check out source theme owner
         uses: actions/checkout@v6
         with:
           repository: mandolin/jsdoc-theme-hia
-          ref: dd8ec3eb5f1a93ee2bc7345dd98a134662304895
+          ref: 50420e1f429e37a8bccdb2da8c40c76f97b77c48
           path: jsdoc-theme-hia
 
       - name: Set up Node.js

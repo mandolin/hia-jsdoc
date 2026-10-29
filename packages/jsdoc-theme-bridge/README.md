@@ -18,3 +18,25 @@ semantic tokens or a skin allowlist. Consumers read the skin catalog from the `@
 `documentation-presentation-profile.theme.skins` projection.
 
 The current presentation descriptor declares exact documentation-presentation-profile 1.0.0 and must be paired with its theme writer. The project runner records the actual matching artifact identity. This source update does not change package versions or published archives.
+
+## Public API
+
+| Export | Behavior |
+| --- | --- |
+| `createHiaJsdocThemeBridge` | `options = {}` → new descriptor with package/version/template/enabled and presentation. Nullish defaults use jsdoc-spec; enabled defaults true, skin classic, scheme system, pageMode multi-page and sourceMode fetch. packageName also selects the skin-catalog owner. |
+| `getHiaJsdocThemeTemplate` | `options = {}` → descriptor.template. |
+
+The presentation descriptor selects exact documentation-presentation-profile
+1.0.0 and an owner catalog projection. It is not a generated complete profile or
+a copied CSS/DOM/catalog. Explicit custom package/version/template choices remain
+local metadata; runtime validation and matching the actual theme are separate.
+
+**Errors:** helpers do not check template existence, registry availability or all
+selection enums. The project runner validates its admitted closed selections and
+pairs actual presentation output with the bridge. An identity match is not a
+complete semantic profile validator or source publication authorization.
+
+**Side effects:** no filesystem access, installation or rendering. The returned
+object is new; its version is metadata, never evidence of an npm release.
+
+中文：桥接只声明模板与中性呈现选择，主题负责真实输出；不执行安装/渲染，不把版本元数据当发行事实。

@@ -111,3 +111,47 @@ symbol-reference validation. Invalid, missing or failed-build maps receive a pub
 from the output directory. With the option omitted or false, a prior map in a reused directory is cleared.
 
 The current theme bridge declares documentation-presentation-profile 1.0.0. Artifact inventory reads the generated contract/version and requires an admitted exact identity paired with that bridge. Unreadable, unsupported or mismatched identities produce HIA_JSDOC_PRESENTATION_ARTIFACT_INVALID without a presentation entry; independent artifacts can remain in a partial producer result. This check does not validate the complete profile or authorize source disclosure. No new runtime dependency on the main monorepo is introduced.
+
+## Complete export and CLI inventory
+
+Runtime constants: `HIA_JSDOC_RUNNER_VERSION`, `HIA_JSDOC_INPUT_KINDS`,
+`HIA_JSDOC_OUTPUT_KINDS`. Current-schema constants:
+`HIA_JSDOC_CONFIG_JSON_SCHEMA`, `HIA_JSDOC_CONFIG_SCHEMA_ID`,
+`HIA_JSDOC_CONFIG_SCHEMA_VERSION`. Exact legacy constants:
+`HIA_JSDOC_LEGACY_CONFIG_JSON_SCHEMA`, `HIA_JSDOC_LEGACY_CONFIG_SCHEMA_ID`,
+`HIA_JSDOC_LEGACY_CONFIG_SCHEMA_VERSION`.
+
+Reading APIs: `getHiaJsdocConfigSchema`, `readHiaJsdocConfig`,
+`migrateHiaJsdocConfig`, `loadHiaJsdocConfig`, as specified above.
+
+| Execution export | Behavior |
+| --- | --- |
+| `writeHiaJsdocConfig` | `(filePath, options = {})` creates parent directories and writes generated JSON; returns absolute path and config. Relative file paths use options.cwd or process cwd. |
+| `runHiaJsdoc` | `(options = {})` writes config (default hia-jsdoc.conf.json) and synchronously invokes installed JSDoc with shell disabled. Returns ok/status/stdout/stderr/configPath/config; raw process output is trusted local debugging data. |
+| `runHiaJsdocProject` | `(request, context = {})` validates absolute workspace/output and relative inputs, creates output and runtime config, invokes JSDoc, inventories artifacts, optionally writes result manifest; returns the versioned result. No incremental/watch execution is promised. |
+
+The hia-jsdoc bin accepts --config/-c, --out-dir/-o, --workspace-root,
+--include-pattern, --mode, --version/-v and --help/-h plus explicit input paths.
+With --config it reads strict JSON; output/pattern/mode flags override that
+request. Workspace-root only constructs requests without --config. No inputs or
+invalid args/config fail with exit 1 and a fixed message. Help/version exit 0;
+only success exits 0 after a build, partial/failed exit 1. This loader does not
+execute CommonJS config even though upstream JSDoc supports that format.
+
+Project defaults: both, JavaScript .mjs/.cjs/.js/.jsx pattern, recurse true,
+writeResultManifest true, sourcesContentPolicy none, profileIds [jsdoc].
+Requested source paths are relative to workspace; project output must be a
+nonroot contained directory. Repeated build output is not a full clean mirror.
+
+**Errors:** reading/TypeError boundaries are documented above. Execution can
+return failed or partial; trusted callbacks and filesystem/config writes can
+also throw local exceptions. Low-level raw errors/output must not be published.
+The project boundary is stricter than writeHiaJsdocConfig/runHiaJsdoc, which are
+trusted local low-level tools rather than contained or sandboxed APIs.
+
+**Side effects:** execution APIs write files/run JSDoc and project runs may clear
+a fixed stale map; reading/schema selection/migration do not. Output inventory
+pairs wire identity and same-build maps but does not establish complete profile
+semantics, source consent or final site deployment.
+
+中文：十六个根导出另加两个JSON资源与CLI均为公开面；读/迁移不执行，低层写/运行接口有本地副作用，项目入口另有边界但不是插件沙箱。

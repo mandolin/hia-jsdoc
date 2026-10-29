@@ -23,3 +23,29 @@ The umbrella metadata also embeds `portalUiLocaleBridge`, a translation-free cap
 The optional `hia.docSourceMap` setting accepts only `{ enabled: boolean }`. The output filename is fixed by the
 JSDoc plugin; a later `baseConfig` override must retain the same closed setting. Omitting it preserves the existing
 generated config shape.
+
+## Public API
+
+| Export | Input, defaults and result |
+| --- | --- |
+| `createHiaJsdocConfig` | `options = {}` → a new JSDoc config. Mode defaults to both; source include defaults to src and the standard JSDoc `.js/.jsdoc/.jsx` pattern; destination defaults to docs/api; integration defaults to destination/hia-integration.json. Theme and Integration are selected by mode unless explicitly overridden. |
+| `mergeJsdocConfig` | `(preset, userConfig = {})` → a new merge result. User fields win; plugin arrays are concatenated and deduplicated in first-occurrence order. source/opts/hia and named source/i18n/presentation/theme/integration/umbrella sections are shallow-merged. Deeper nested objects are replaced, not recursively merged. |
+
+Options also accept recurse (default true), extraPlugins, plugin, theme, hia and
+baseConfig. The latter is applied last. Project-runner defaults differ from this
+low-level preset, notably its broader JavaScript extension pattern and output
+root. A baseConfig override does not bypass the project runner's final output
+validation. Returned nested user values may retain references; this is not a deep
+clone. The preset passes source/i18n metadata and neutral presentation selections
+to their owners; it does not itself extract source, translate fields or render HTML.
+
+**Errors:** unknown mode and malformed closed docSourceMap switches throw
+TypeError. Low-level config composition is not a complete validator for all
+JSDoc, third-party or theme options; use the versioned project loader/runner for
+its stricter declared input and output boundaries.
+
+**Side effects:** no filesystem writes or plugin execution. Constructing config
+may retain trusted local plugin paths/settings; it is not a publishable artifact.
+The merge does not promise recursive ownership isolation or authorization.
+
+中文：配置按既有后覆盖与分层浅合并，不是任意深合并；构造无写盘/执行，项目运行器另核最终输出。生成链内容由插件/主题/Portal各自负责。

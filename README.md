@@ -29,6 +29,9 @@ This repository provides a preset, runner and bridge layer around JSDoc, `@mando
 
 ## Packages
 
+See the [public package/API inventory](API.md) for root/subpath/bin, defaults,
+errors, effects and source/i18n generation responsibilities.
+
 - `@hia-doc/jsdoc-spec`: JSDoc usage, configuration and rule drafts for HIA.
 - `@hia-doc/jsdoc-preset`: JSDoc config preset and merge helpers.
 - `@hia-doc/jsdoc-runner`: Standalone and HIA integration runner.

@@ -20,3 +20,20 @@ and npm availability remain separate. The repository default is Node.js 24.22.1.
 Defines JSDoc documentation source-map inputs.
 
 The current slice only exposes a source-map reference helper. TS/CoffeeScript/LiveScript generated JS linkage remains a later bridge task.
+
+## Public API
+
+`createJsdocDocSourceMapRef` has signature `(options = {})` and returns a new object with kind
+hia-doc-source-map-ref, profile jsdoc, current umbrella profileVersion, href
+(default null) and sourcesContentPolicy (default none). The other policies are
+reference/embed; the helper copies values and is not their semantic validator.
+
+**Errors:** there is no filesystem/path/policy validator in this helper. Invalid
+caller object shapes can fail locally; downstream artifact validation is separate.
+
+**Side effects:** no reads/writes, source embedding, map generation or coordinate
+inference. This reference cannot establish same-character source-map precision,
+source permission or existence of href. Original stored references are not
+migrated, and actual doc-source-map wire version remains 1.1.0.
+
+中文：引用helper只生成元数据，不能把profileVersion当地图wire版本、精度或公开授权。

@@ -33,3 +33,36 @@ additive: it does not erase unrelated files or old configuration already in a
 consumer directory. Use a clean deployment directory when publishing a site.
 
 中文：暂存复制排除本轮运行器的私有配置目录；既有目标目录仍为追加复制，不擅自删除其中原有内容，发布时应使用干净部署目录。
+
+## Public API
+
+| Entry/export | Behavior |
+| --- | --- |
+| Root `jsdocProducerDescriptor` | Frozen outer descriptor: documentation-producer@1.0.0, id jsdoc, current runner version; declared input/output kinds, sourceLinkage true, incremental/watch false. Nested arrays/objects are not promised deeply immutable. |
+| Root `jsdocProducer` | `{descriptor, produce(request, context = {})}`; synchronous delegation to runHiaJsdocProject, returning its documentation-producer-result. |
+| Root `default` | Alias of jsdocProducer. |
+| ./staged `stagedJsdocProducerDescriptor` | Same producer identity/kinds, staged display name. |
+| ./staged `stagedJsdocProducer` | Same produce signature; builds under workspaceRoot/.hia-jsdoc-staging, then copies nonfailed output to caller outputDirectory. |
+| ./staged `default` | Alias of stagedJsdocProducer. |
+
+Context may contain signal/reportProgress. Requests use absolute workspace/output
+directories, relative inputs and runner options/profileIds. Ordinary output stays
+inside workspace; staged output may be external to it. A staged run first checks
+its internal staging boundary, and attempts cleanup in finally. Its copy is
+additive and does not make a reused destination a clean mirror.
+
+**Errors:** invalid requests/boundaries may throw TypeError. Runner execution
+failure is a failed result; independent valid artifacts may yield partial.
+Staging copy/cleanup I/O may throw local exceptions rather than a producer result;
+callers must apply their own public error projection. Abort-before-start returns
+failed. Context callbacks are trusted local code, not sandboxed.
+
+**Side effects:** actual synchronous JSDoc execution, runtime config writes,
+requested output files, optional result manifest, and staged copy/cleanup.
+Private .hia-jsdoc is excluded from new staged copies, but preexisting destination
+files are not removed wholesale. Raw local request/config/state must not be
+published. Integration/i18n/source-map projection remains with the plugin and
+page/source/profile output remains with the theme; this adapter does not add AST
+coverage, precision or visual acceptance.
+
+中文：普通/暂存生产器共用实际runner语义；暂存是追加复制而非镜像，I/O/回调可能抛本地异常，公开方须处理，不得把私有配置或状态直接发布。
