@@ -15,6 +15,30 @@ Runs JSDoc in standalone and HIA integration modes.
 
 `runHiaJsdocProject()` wraps the same JSDoc execution in a `documentation-producer-result` contract for HIA project builds.
 
+## Project input and output boundaries
+
+Project options enforce their declared string, boolean and object types. Omission
+selects defaults; an explicit `null` does not substitute for a valid option.
+Profile identifiers must be unique. Existing open configuration extensions and
+non-output `baseConfig` precedence remain supported.
+
+The project wrapper validates the **effective merged configuration before any
+output creation or stale-map cleanup**, in every mode. `opts.destination` must
+resolve to the requested `outputDirectory`; enabled integration must write its
+fixed `hia-integration.json` there. Other-build or outside destinations are
+rejected. Equivalent paths are accepted when mapping is disabled; the existing
+stricter enabled-map pairing rules remain in effect. Disabled integration does
+not interpret its unused output path.
+
+Public producer results and CLI failures omit raw JSDoc output, private argument
+values, configuration excerpts and local filesystem errors. Config loading
+reports fixed `SyntaxError`/read errors; the trusted low-level `runHiaJsdoc()`
+interface retains raw `stdout`/`stderr` for local debugging. Generated configs
+are local runtime state. These checks do not sandbox trusted plugins or the
+low-level execution API.
+
+中文：项目入口按已有schema类型拒绝无效显式值与重复标识符，所有模式写盘前核最终合并输出。公开失败不回显私有原文；受信低层接口仍保留本地调试输出，第三方插件执行不是沙箱。
+
 The runner validates the closed page/source/scheme selections, inventories `documentation-presentation-profile.json` and
 `hia-page-map.json`, and leaves page partitioning, source assets, reader behavior and skin implementation to
 `@mandolin/jsdoc-theme-hia`.

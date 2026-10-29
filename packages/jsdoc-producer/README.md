@@ -17,3 +17,10 @@ This package exposes a thin `documentation-producer@0.1.0-draft` descriptor and 
 
 The staged adapter clears any prior `hia-doc-source-map.json` in a reused caller output and copies the current sidecar
 only when the runner includes it in the producer result. A failed run does not copy staging output.
+
+The staged copy excludes the runner's private `.hia-jsdoc` configuration
+directory, which may contain local paths or plugin settings. Copying remains
+additive: it does not erase unrelated files or old configuration already in a
+consumer directory. Use a clean deployment directory when publishing a site.
+
+中文：暂存复制排除本轮运行器的私有配置目录；既有目标目录仍为追加复制，不擅自删除其中原有内容，发布时应使用干净部署目录。

@@ -48,10 +48,13 @@ export const stagedJsdocProducer = Object.freeze({
         fs.rmSync(path.join(outputDirectory, "hia-doc-source-map.json"), { force: true });
         const mapAccepted = result.artifacts.some((item) => item.kind === "doc-source-map" && item.path === "hia-doc-source-map.json");
         if (result.status !== "failed") {
+          // <lang><zh-CN>生成的运行配置可能含本机路径/插件私有选项，不属于可发布工件；既有目标目录仍按追加复制语义处理。</zh-CN><en>Generated runtime configuration can contain local paths/private plugin options and is not a publishable artifact; existing destinations retain additive copy semantics.</en></lang>
+          const runtimeConfigDirectory = path.join(stagingDirectory, ".hia-jsdoc");
           fs.cpSync(stagingDirectory, outputDirectory, {
             recursive: true,
             force: true,
             filter(source) {
+              if (source === runtimeConfigDirectory) return false;
               return source !== path.join(stagingDirectory, "hia-doc-source-map.json") || mapAccepted;
             }
           });

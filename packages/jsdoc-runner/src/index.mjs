@@ -80,8 +80,8 @@ export function writeHiaJsdocConfig(filePath, options = {}) {
  *
  * @param {object} request <lang><zh-CN>HIA JSDoc project request，包含 workspaceRoot、outputDirectory、inputs 与 options。</zh-CN><en>HIA JSDoc project request containing workspaceRoot, outputDirectory, inputs, and options.</en></lang>
  * @param {object} [context] <lang><zh-CN>可选 producer runtime context，用于中断与进度回调。</zh-CN><en>Optional producer runtime context for cancellation and progress callbacks.</en></lang>
- * @returns {object} <lang><zh-CN>符合 documentation producer result contract 的运行结果。</zh-CN><en>A runtime result that follows the documentation producer result contract.</en></lang>
- * @throws {TypeError} <lang><zh-CN>当 request 的路径、输入类型或 profile id 不合法时抛出。</zh-CN><en>Thrown when request paths, input kinds, or profile ids are invalid.</en></lang>
+ * @returns {object} <lang><zh-CN>符合documentation producer result的公开安全结果；CLI失败不携带原始stdout/stderr。</zh-CN><en>A public-safe documentation producer result; CLI failures carry no raw stdout/stderr.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>请求路径、类型、重复profile id或最终合并输出不合法时，在创建/清理输出之前拒绝。</zh-CN><en>Rejects invalid request paths, types, duplicate profile ids or effective outputs before creating/cleaning output.</en></lang>
  * @lang zh-CN 运行一次面向项目的 JSDoc 生产链，并输出 HIA documentation producer result。
  * @lang en Runs one project-oriented JSDoc build and emits an HIA documentation producer result.
  */
@@ -111,6 +111,8 @@ export function runHiaJsdocProject(request, context = {}) {
     baseConfig: normalized.options.baseConfig
   };
   const effectiveConfig = createHiaJsdocConfig(executionOptions);
+  // <lang><zh-CN>项目产物路径以请求输出根为基准；所有模式都核最终合并值，不能由baseConfig绕开请求边界。</zh-CN><en>Project artifact paths are relative to the requested output root; every mode checks the final merged values so baseConfig cannot bypass the request boundary.</en></lang>
+  assertEffectiveProjectOutput(effectiveConfig, normalized);
   const docSourceMapEnabled = effectiveConfig.opts?.hia?.docSourceMap?.enabled === true;
   if (docSourceMapEnabled && (effectiveConfig.opts?.hia?.integration?.enabled !== true
     || effectiveConfig.opts?.hia?.integration?.outputFile !== integrationOutputFile
@@ -159,7 +161,7 @@ export function runHiaJsdocProject(request, context = {}) {
     ...(execution.ok ? [] : [
       createDiagnostic(
         "HIA_JSDOC_RUNNER_FAILED",
-        docSourceMapEnabled ? "JSDoc CLI failed while building the requested documentation source map." : (execution.stderr || execution.stdout || "JSDoc CLI failed."),
+        docSourceMapEnabled ? "JSDoc CLI failed while building the requested documentation source map." : "JSDoc CLI failed while building the requested documentation.",
         "error"
       )
     ])
@@ -203,12 +205,27 @@ export function runHiaJsdocProject(request, context = {}) {
  * @param {object} [options] <lang><zh-CN>可选加载选项；cwd 控制相对路径基准。</zh-CN><en>Optional loading options; cwd controls the base for relative paths.</en></lang>
  * @returns {object} <lang><zh-CN>规范化后的 HIA JSDoc project request。</zh-CN><en>The normalized HIA JSDoc project request.</en></lang>
  * @throws {TypeError} <lang><zh-CN>当 schemaVersion、$schema、路径或输入配置不符合 contract 时抛出。</zh-CN><en>Thrown when schemaVersion, $schema, paths, or input config violate the contract.</en></lang>
+ * @throws {SyntaxError} <lang><zh-CN>无效JSON，错误正文不包含原文片段。</zh-CN><en>Invalid JSON, with no original excerpts in the error message.</en></lang>
+ * @throws {Error} <lang><zh-CN>本地读取失败，固定错误不包含路径和原始cause。</zh-CN><en>Local read failure with a fixed error omitting paths and the original cause.</en></lang>
  * @lang zh-CN 读取 versioned HIA JSDoc JSON config，并转成 project runner request。
  * @lang en Loads a versioned HIA JSDoc JSON config and converts it into a project runner request.
  */
 export function loadHiaJsdocConfig(configPath, options = {}) {
+  // <lang><zh-CN>路径仅用于本地读取，不复制到公开异常；底层I/O失败与JSON语法失败保留不同错误类别。</zh-CN><en>The path is used locally without copying it into public exceptions; I/O and JSON syntax failures retain distinct error categories.</en></lang>
   const absoluteConfigPath = path.resolve(options.cwd ?? process.cwd(), configPath);
-  const config = JSON.parse(fs.readFileSync(absoluteConfigPath, "utf8"));
+  let text;
+  try {
+    text = fs.readFileSync(absoluteConfigPath, "utf8");
+  } catch {
+    throw new Error("Could not read the HIA JSDoc configuration.");
+  }
+  // <lang><zh-CN>原生JSON错误可能包含输入片段，因此只保留固定SyntaxError，不附原始cause。</zh-CN><en>Native JSON errors can contain input excerpts; retain only a fixed SyntaxError without the original cause.</en></lang>
+  let config;
+  try {
+    config = JSON.parse(text);
+  } catch {
+    throw new SyntaxError("HIA JSDoc configuration must be valid JSON.");
+  }
   assertRecord(config, "HIA JSDoc config must be a JSON object.");
   assertKnownKeys(config, ["$schema", "schemaVersion", "workspaceRoot", "outputDirectory", "inputs", "options", "profileIds"], "config");
   if (config.schemaVersion !== HIA_JSDOC_CONFIG_SCHEMA_VERSION) {
@@ -218,6 +235,7 @@ export function loadHiaJsdocConfig(configPath, options = {}) {
     throw new TypeError(`$schema must be ${HIA_JSDOC_CONFIG_SCHEMA_ID}.`);
   }
 
+  // <lang><zh-CN>配置相对目录仍按既有本地基准解析，本批不改变缺省目录语义。</zh-CN><en>Resolve relative directories using the existing local base without changing directory defaults in this batch.</en></lang>
   const configDirectory = path.dirname(absoluteConfigPath);
   const workspaceDirectory = normalizeConfigDirectory(config.workspaceRoot ?? ".", "workspaceRoot");
   const outputDirectory = normalizeConfigDirectory(config.outputDirectory ?? "dist/hia-jsdoc", "outputDirectory");
@@ -262,6 +280,13 @@ export function runHiaJsdoc(options = {}) {
   };
 }
 
+/**
+ * @lang zh-CN 按既有schema类型准入并填缺省，不写文件或执行插件；未知值不回显，开放扩展处理保持。
+ * @lang en Admits existing schema types and fills defaults without writing files or executing plugins; unknown values are not echoed and open-extension handling is preserved.
+ * @param {object} value <lang><zh-CN>本地项目请求。</zh-CN><en>Local project request.</en></lang>
+ * @returns {object} <lang><zh-CN>规范化绝对目录、显式输入及运行选项。</zh-CN><en>Normalized absolute directories, explicit inputs and execution options.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>目录、输入、已声明类型或唯一标识符错误。</zh-CN><en>Invalid directories, inputs, declared types or unique identifiers.</en></lang>
+ */
 function normalizeProjectRequest(value) {
   assertRecord(value, "HIA JSDoc project request must be an object.");
   assertAbsoluteDirectory(value.workspaceRoot, "workspaceRoot");
@@ -270,26 +295,46 @@ function normalizeProjectRequest(value) {
     throw new TypeError("inputs must be a non-empty array.");
   }
 
+  // <lang><zh-CN>输入只接受已有两类；未知值不进入错误正文，避免把来源身份当公开诊断。</zh-CN><en>Accept only the two existing input kinds; unknown values never enter error text as public source identities.</en></lang>
   const inputs = value.inputs.map((input, index) => {
     assertRecord(input, `inputs[${index}] must be an object.`);
     assertKnownKeys(input, ["kind", "path"], `inputs[${index}]`);
     const inputPath = normalizeSafeRelativePath(input.path, `inputs[${index}].path`);
     const kind = input.kind ?? inferHiaJsdocInputKind(inputPath);
     if (!HIA_JSDOC_INPUT_KINDS.includes(kind)) {
-      throw new TypeError(`Unsupported HIA JSDoc input kind: ${kind}`);
+      throw new TypeError("Unsupported HIA JSDoc input kind.");
     }
     return { kind, path: inputPath };
   });
 
-  const runnerOptions = value.options ?? {};
+  // <lang><zh-CN>省略才采用缺省，显式null/错误类型按已声明schema拒绝；开放扩展字段保持原处理。</zh-CN><en>Only omission selects defaults; explicit null or invalid types are rejected according to the declared schema while open extensions retain existing handling.</en></lang>
+  const runnerOptions = value.options === undefined ? {} : value.options;
   assertRecord(runnerOptions, "options must be an object.");
-  const sourcesContentPolicy = runnerOptions.sourcesContentPolicy ?? "none";
-  if (!["none", "reference", "embed"].includes(sourcesContentPolicy)) {
-    throw new TypeError(`Unsupported sourcesContentPolicy: ${sourcesContentPolicy}`);
+  for (const field of ["extraPlugins", "plugin", "theme", "baseConfig", "hia"]) {
+    if (runnerOptions[field] !== undefined) assertRecord(runnerOptions[field], `options.${field} must be an object.`);
   }
+  for (const field of ["includePattern", "excludePattern"]) {
+    if (runnerOptions[field] !== undefined && (typeof runnerOptions[field] !== "string" || runnerOptions[field].length === 0)) {
+      throw new TypeError(`options.${field} must be a non-empty string.`);
+    }
+  }
+  for (const field of ["recurse", "writeResultManifest"]) {
+    if (runnerOptions[field] !== undefined && typeof runnerOptions[field] !== "boolean") {
+      throw new TypeError(`options.${field} must be a boolean.`);
+    }
+  }
+  if (runnerOptions.mode !== undefined && !["standalone", "hiaIntegration", "both"].includes(runnerOptions.mode)) {
+    throw new TypeError("Unsupported HIA JSDoc output mode.");
+  }
+  // <lang><zh-CN>源码策略是闭集，null不能被转换为默认none而掩盖无效显式声明。</zh-CN><en>The source-content policy is closed; null must not become default none and conceal an invalid explicit declaration.</en></lang>
+  const sourcesContentPolicy = runnerOptions.sourcesContentPolicy === undefined ? "none" : runnerOptions.sourcesContentPolicy;
+  if (!["none", "reference", "embed"].includes(sourcesContentPolicy)) {
+    throw new TypeError("Unsupported sourcesContentPolicy.");
+  }
+  // <lang><zh-CN>配置已声明标识符唯一；重复项在建立产物元数据之前拒绝，不静默重排或去重。</zh-CN><en>Configuration already declares identifiers unique; reject duplicates before artifact metadata without silently reordering or deduplicating.</en></lang>
   const profileIds = value.profileIds ?? ["jsdoc"];
-  if (!Array.isArray(profileIds) || profileIds.length === 0 || profileIds.some((id) => typeof id !== "string" || !SAFE_ID_PATTERN.test(id))) {
-    throw new TypeError("profileIds must be a non-empty array of lower-case identifiers.");
+  if (!Array.isArray(profileIds) || profileIds.length === 0 || profileIds.some((id) => typeof id !== "string" || !SAFE_ID_PATTERN.test(id)) || new Set(profileIds).size !== profileIds.length) {
+    throw new TypeError("profileIds must be a non-empty array of unique lower-case identifiers.");
   }
 
   return {
@@ -311,6 +356,29 @@ function normalizeProjectRequest(value) {
       baseConfig: runnerOptions.baseConfig ?? {}
     }
   };
+}
+
+/**
+ * @lang zh-CN 写盘前核项目最终输出；仅约束本wrapper配置的输出，不沙箱化受信插件或低层CLI。
+ * @lang en Checks effective project outputs before writes; constrains wrapper configuration, not trusted plugins or the low-level CLI through sandboxing.
+ * @param {object} config <lang><zh-CN>按既有优先级合并后的JSDoc配置。</zh-CN><en>JSDoc configuration merged with existing precedence.</en></lang>
+ * @param {object} request <lang><zh-CN>已核绝对工作区与输出根的请求。</zh-CN><en>Request with validated absolute workspace and output roots.</en></lang>
+ * @returns {void} <lang><zh-CN>只读检查，无文件创建或清理。</zh-CN><en>Read-only check without creating or cleaning files.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>最终输出与请求不一致或启用值类型错误。</zh-CN><en>Effective output differs from the request or the enabled value has an invalid type.</en></lang>
+ */
+function assertEffectiveProjectOutput(config, request) {
+  // <lang><zh-CN>不同词法形式可解析到同一输出；不允许转向另一个构建，即使它仍在工作区内。</zh-CN><en>Different lexical forms may resolve to the same output; redirecting to another build is forbidden even inside the workspace.</en></lang>
+  const destination = config.opts?.destination;
+  if (typeof destination !== "string" || !destination || path.resolve(request.workspaceRoot, destination) !== request.outputDirectory) {
+    throw new TypeError("The project runner requires its requested output destination.");
+  }
+  // <lang><zh-CN>关闭integration时其未使用路径不产生写入；启用时只允许本构建固定文件。</zh-CN><en>Disabled integration does not write its unused path; enabled integration permits only this build's fixed file.</en></lang>
+  const integration = config.opts?.hia?.integration;
+  if (typeof integration?.enabled !== "boolean") throw new TypeError("The project integration enabled option must be a boolean.");
+  if (integration.enabled && (typeof integration.outputFile !== "string" ||
+      path.resolve(request.workspaceRoot, integration.outputFile) !== path.join(request.outputDirectory, "hia-integration.json"))) {
+    throw new TypeError("The project runner requires its fixed integration output.");
+  }
 }
 
 function inferHiaJsdocInputKind(inputPath) {
@@ -491,20 +559,20 @@ function normalizeHiaOptions(value) {
     }
   }
   // <lang><zh-CN>presentation 只接受两个中性选择字段，不吸收 owner DOM/CSS 配置。</zh-CN><en>Presentation accepts only the two neutral selection fields and absorbs no owner DOM/CSS configuration.</en></lang>
-  const presentation = value.presentation ?? {};
+  const presentation = value.presentation === undefined ? {} : value.presentation;
   assertRecord(presentation, "options.hia.presentation must be an object.");
   assertKnownKeys(presentation, ["pageMode", "sourceMode"], "options.hia.presentation");
   if (presentation.pageMode !== undefined && !["multi-page", "single-page"].includes(presentation.pageMode)) {
-    throw new TypeError(`Unsupported presentation pageMode: ${presentation.pageMode}`);
+    throw new TypeError("Unsupported presentation pageMode.");
   }
   if (presentation.sourceMode !== undefined && !["fetch", "embed", "link", "none"].includes(presentation.sourceMode)) {
-    throw new TypeError(`Unsupported presentation sourceMode: ${presentation.sourceMode}`);
+    throw new TypeError("Unsupported presentation sourceMode.");
   }
   // <lang><zh-CN>theme 的其他既有字段保持开放；只验证新增 scheme 与非空 skin selection。</zh-CN><en>Other existing theme fields remain open; only the new scheme and non-empty skin selection are validated.</en></lang>
-  const theme = value.theme ?? {};
+  const theme = value.theme === undefined ? {} : value.theme;
   assertRecord(theme, "options.hia.theme must be an object.");
   if (theme.scheme !== undefined && !["dark", "light", "system"].includes(theme.scheme)) {
-    throw new TypeError(`Unsupported theme scheme: ${theme.scheme}`);
+    throw new TypeError("Unsupported theme scheme.");
   }
   if (theme.skin !== undefined && (typeof theme.skin !== "string" || !theme.skin.trim())) {
     throw new TypeError("theme.skin must be a non-empty string when provided.");
@@ -664,10 +732,19 @@ function assertAbsoluteDirectory(value, label) {
   }
 }
 
+/**
+ * @lang zh-CN 对既有闭集对象拒绝未知键，错误只使用调用点固定标签而不反射用户键。
+ * @lang en Rejects unknown keys in existing closed objects, using only the call site's fixed label without reflecting user keys.
+ * @param {object} value <lang><zh-CN>已准入对象。</zh-CN><en>Admitted object.</en></lang>
+ * @param {string[]} allowed <lang><zh-CN>已有允许键。</zh-CN><en>Existing allowed keys.</en></lang>
+ * @param {string} label <lang><zh-CN>实现提供的固定字段位置。</zh-CN><en>Fixed field location supplied by the implementation.</en></lang>
+ * @returns {void} <lang><zh-CN>只读检查。</zh-CN><en>Read-only check.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>存在未知键。</zh-CN><en>An unknown key exists.</en></lang>
+ */
 function assertKnownKeys(value, allowed, label) {
   for (const key of Object.keys(value)) {
     if (!allowed.includes(key)) {
-      throw new TypeError(`${label}.${key} is not supported.`);
+      throw new TypeError(`${label} contains an unsupported field.`);
     }
   }
 }

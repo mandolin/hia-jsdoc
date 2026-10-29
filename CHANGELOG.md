@@ -1,5 +1,8 @@
 # Changelog
 
+- 中文：项目运行器在所有模式写盘前核baseConfig最终输出，执行已有选项类型与唯一标识符规则；公开失败不回显原始JSDoc/配置/路径，暂存复制排除私有运行配置。
+- English: Project runs validate effective baseConfig outputs before writes in every mode, enforce declared option types and unique identifiers, keep raw JSDoc/config/path data out of public failures, and exclude private runtime configuration from staged copies.
+
 - 中文：干净CI显式检出并精确固定自文档化/来源测试所需的插件与主题owner，补运行目录及引用防漂移测试。
 - English: Clean CI explicitly checks out and pins plugin/theme owners required by self-documentation and provenance tests, with working-directory and reference drift checks.
 
