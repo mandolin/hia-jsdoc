@@ -8,13 +8,29 @@
 export const HIA_JSDOC_UMBRELLA_CONTRACT = "hia-jsdoc-umbrella-config";
 
 /**
- * Declares the draft version of the HIA JSDoc umbrella configuration contract.
+ * Declares the current version of the HIA JSDoc umbrella configuration contract.
  *
  * @constant {string}
- * @lang zh-CN 声明 HIA JSDoc umbrella 配置合同的草案版本。
- * @lang en Declares the draft version of the HIA JSDoc umbrella configuration contract.
+ * @lang zh-CN 声明当前umbrella1.0.0；Integration/页映射保持精确0.1.0 profile。
+ * @lang en Declares current umbrella 1.0.0; Integration/page maps retain exact 0.1.0 profiles.
  */
-export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = "0.1.0-draft";
+export const HIA_JSDOC_UMBRELLA_CONTRACT_VERSION = "1.0.0";
+
+/**
+ * @lang zh-CN 精确读取新旧umbrella身份并返回原对象；仅验身份，不替代插件/主题/SDK内容校验或执行许可。
+ * @lang en Reads exact current/legacy umbrella identity and returns the original object; identity-only checking does not replace plugin/theme/SDK content validation or execution permission.
+ * @param {object} metadata <lang><zh-CN>已解析元数据，不自动迁移嵌套对象。</zh-CN><en>Parsed metadata; nested objects are not automatically migrated.</en></lang>
+ * @returns {object} <lang><zh-CN>原对象、原身份，无副作用。</zh-CN><en>Original object and identity, without side effects.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>未知或缺失身份，不回显输入。</zh-CN><en>Unknown or missing identity, without echoing input.</en></lang>
+ */
+export function readHiaJsdocUmbrellaConfig(metadata) {
+  if (!metadata || typeof metadata !== "object" || Array.isArray(metadata)
+    || metadata.contract !== HIA_JSDOC_UMBRELLA_CONTRACT
+    || !["0.1.0-draft", HIA_JSDOC_UMBRELLA_CONTRACT_VERSION].includes(metadata.contractVersion)) {
+    throw new TypeError("Unsupported HIA JSDoc umbrella configuration identity.");
+  }
+  return metadata;
+}
 
 /**
  * Names the published HIA JSDoc plugin package consumed by the umbrella preset.

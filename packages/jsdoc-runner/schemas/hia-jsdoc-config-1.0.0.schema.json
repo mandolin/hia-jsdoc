@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-1.0.0.schema.json",
+  "title": "HIA JSDoc Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "inputs"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://mandolin.github.io/HIA-Documentation/schemas/hia-jsdoc-config-1.0.0.schema.json"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "workspaceRoot": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "anyOf": [
+          {
+            "pattern": "^(?:[A-Za-z]:|/|\\\\|[A-Za-z][A-Za-z0-9+.-]*:)"
+          },
+          {
+            "pattern": "(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)"
+          }
+        ]
+      },
+      "default": "."
+    },
+    "outputDirectory": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "anyOf": [
+          {
+            "pattern": "^(?:[A-Za-z]:|/|\\\\|[A-Za-z][A-Za-z0-9+.-]*:)"
+          },
+          {
+            "pattern": "(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)"
+          }
+        ]
+      },
+      "default": "dist/hia-jsdoc"
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "javascript-source",
+              "javascript-module"
+            ],
+            "description": "省略时.mjs为javascript-module，其它路径为javascript-source。 / If omitted, .mjs selects javascript-module; other paths select javascript-source."
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "not": {
+              "anyOf": [
+                {
+                  "pattern": "^(?:[A-Za-z]:|/|\\\\|[A-Za-z][A-Za-z0-9+.-]*:)"
+                },
+                {
+                  "pattern": "(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "mode": {
+          "enum": [
+            "standalone",
+            "hiaIntegration",
+            "both"
+          ]
+        },
+        "includePattern": {
+          "type": "string",
+          "minLength": 1
+        },
+        "excludePattern": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recurse": {
+          "type": "boolean"
+        },
+        "writeResultManifest": {
+          "type": "boolean"
+        },
+        "sourcesContentPolicy": {
+          "enum": [
+            "none",
+            "reference",
+            "embed"
+          ]
+        },
+        "extraPlugins": {
+          "type": "object"
+        },
+        "plugin": {
+          "type": "object"
+        },
+        "hia": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "docSourceMap": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "enabled"
+              ],
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "presentation": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pageMode": {
+                  "enum": [
+                    "multi-page",
+                    "single-page"
+                  ]
+                },
+                "sourceMode": {
+                  "enum": [
+                    "fetch",
+                    "embed",
+                    "link",
+                    "none"
+                  ]
+                }
+              }
+            },
+            "theme": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "skin": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "scheme": {
+                  "enum": [
+                    "dark",
+                    "light",
+                    "system"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "theme": {
+          "type": "object"
+        },
+        "baseConfig": {
+          "type": "object"
+        }
+      }
+    },
+    "profileIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9._-]*$"
+      }
+    }
+  }
+}

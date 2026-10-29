@@ -202,7 +202,7 @@ test("loadHiaJsdocConfig normalizes versioned config", () => {
   assert.equal(request.options.hia.presentation.pageMode, "multi-page");
   assert.equal(request.options.hia.presentation.sourceMode, "fetch");
   assert.equal(HIA_JSDOC_CONFIG_SCHEMA_ID.includes("hia-jsdoc-config"), true);
-  assert.equal(HIA_JSDOC_CONFIG_SCHEMA_VERSION, "0.1.0-draft");
+  assert.equal(HIA_JSDOC_CONFIG_SCHEMA_VERSION, "1.0.0");
 });
 
 test("project runner rejects unknown presentation selections", () => {

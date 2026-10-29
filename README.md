@@ -56,6 +56,19 @@ single-page compatibility and `embed`, `link` or `none` source modes under `opts
 the skin catalog remain owned by `@mandolin/jsdoc-theme-hia`; the umbrella bridge carries only the selected skin/scheme and
 the catalog projection reference.
 
+## Configuration and artifact compatibility
+
+New project configuration and umbrella metadata use `1.0.0`; exact historical
+`0.1.0-draft` configuration remains readable without mutation. The runner ships
+both schemas and an explicit lossless migration API. See the
+[runner configuration reference](packages/jsdoc-runner/README.md#versioned-project-configuration).
+Integration and page-map retain exact `0.1.0` compatibility profiles; source maps
+remain `1.1.0`, while producer/presentation/UI-locale contracts remain `1.0.0`.
+These are independent wire identities, not a statement that every package is
+already published at version 1.0.0. See [profile guarantees](COMPATIBILITY.md).
+
+中文：配置/umbrella采用1.0.0，历史读取不改对象，迁移显式执行；必要工件身份分别承诺，不以统一换号代替兼容验证。
+
 ## Optional documentation source map
 
 Set `options.hia.docSourceMap.enabled` to `true` in a project runner config to request a standalone

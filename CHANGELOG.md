@@ -1,5 +1,8 @@
 # Changelog
 
+- 中文：新增配置/umbrella 1.0.0、新旧精确读取和显式无损配置迁移；两份schema实际入包，旧schema保留原文。Integration/页映射保持0.1.0正式兼容profile，源码映射1.1.0不变。
+- English: Add config/umbrella 1.0.0, exact versioned reading and explicit lossless config migration; ship both schemas while preserving the old schema source. Integration/page maps retain exact 0.1.0 compatibility profiles, with source-map 1.1.0 unchanged.
+
 - 中文：八个必要子包均携带本包MIT许可证并由pack门禁强制核对；新普通/暂存生产器描述及结果采用已确认SDK1.0.0，历史结果不改号。
 - English: All eight required child packages carry their own MIT license enforced by the pack gate; new ordinary/staged producer descriptors and results adopt the confirmed SDK 1.0.0 without relabeling historical results.
 

@@ -11,6 +11,58 @@ and npm availability remain separate. The repository default is Node.js 24.22.1.
 
 Runs JSDoc in standalone and HIA integration modes.
 
+## Versioned project configuration
+
+New project configurations use `schemaVersion: "1.0.0"`. Only `schemaVersion`
+and a nonempty `inputs` array are required. Each input requires `path`;
+omitted `kind` becomes `javascript-module` for a case-insensitive `.mjs` suffix,
+otherwise `javascript-source`. Omitted `workspaceRoot` is `.` relative to the
+config file; omitted `outputDirectory` is `dist/hia-jsdoc` relative to that root.
+Paths must remain relative without parent traversal. Explicit `null` is invalid
+for these current fields and `profileIds`.
+
+```json
+{"schemaVersion":"1.0.0","inputs":[{"path":"src"}]}
+```
+
+| API | Behavior |
+| --- | --- |
+| `loadHiaJsdocConfig(path, {cwd?})` | Reads JSON, dispatches its exact identity, returns a normalized runtime request. Does not write outputs or execute plugins. |
+| `readHiaJsdocConfig(value)` | Validates exact current/legacy identity and existing runtime semantics, returns the **same object** without changing versions or filling defaults. |
+| `migrateHiaJsdocConfig(value)` | Explicitly creates a detached current JSON configuration, preserves representable extensions/omissions, updates an existing `$schema`, then rechecks current rules. Does not write files. |
+| `getHiaJsdocConfigSchema(version = "1.0.0")` | Selects only `1.0.0` or exact `0.1.0-draft`; unknown versions throw `TypeError`. |
+
+Schema constants `HIA_JSDOC_CONFIG_JSON_SCHEMA`, `HIA_JSDOC_CONFIG_SCHEMA_ID` and
+`HIA_JSDOC_CONFIG_SCHEMA_VERSION` describe the current version. The corresponding
+`HIA_JSDOC_LEGACY_CONFIG_*` constants preserve the historical schema/ID/version.
+Both JSON resources are shipped through public package subpaths:
+
+```js
+import {migrateHiaJsdocConfig} from "@hia-doc/jsdoc-runner";
+import schema from "@hia-doc/jsdoc-runner/schemas/hia-jsdoc-config-1.0.0.schema.json" with {type: "json"};
+const oldConfig = {schemaVersion: "0.1.0-draft", inputs: [{path: "src"}]};
+const currentConfig = migrateHiaJsdocConfig(oldConfig);
+// oldConfig remains unchanged; persist currentConfig explicitly if desired.
+```
+
+The matching historical subpath ends in `hia-jsdoc-config-0.1.0-draft.schema.json`.
+`$id` is a stable identifier, not a promise that its URL currently serves a file.
+Schema `default` annotations do not mutate input. The historical schema is
+unchanged: it still requires both directories and `kind`, while its historical
+loader already accepted their omission and certain null defaults. Exact legacy
+reading preserves that behavior; it is **not** a historical schema conformance
+claim. Migration rejects old nulls that current rules cannot represent without
+coercion. Resolve those explicitly before migrating.
+
+Unknown/mismatched identities, invalid types/paths, unknown closed fields and
+unrepresentable migration values throw fixed `TypeError` messages. Migration
+rejects cycles, functions, undefined, non-finite numbers, accessors, special
+objects and sparse arrays instead of silently losing data. Open JSON extensions
+are preserved. Filesystem and plugin execution safety still require the project
+runner's execution-time checks; reading is not execution permission.
+
+中文：当前配置1.0.0与旧0.1.0-draft分别精确读取；旧schema原样分发，默认只在运行请求中填充。显式迁移返回独立对象，保留可表示扩展，不能无损迁移时明确拒绝；不自动写盘或执行插件。
+
 `runHiaJsdoc()` writes a generated config file and invokes the real JSDoc CLI from the installed `jsdoc` package.
 
 `runHiaJsdocProject()` wraps the same JSDoc execution in a `documentation-producer-result` contract for HIA project builds.

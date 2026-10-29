@@ -10,9 +10,13 @@ const require = createRequire(import.meta.url);
 export {
   HIA_JSDOC_CONFIG_JSON_SCHEMA,
   HIA_JSDOC_CONFIG_SCHEMA_ID,
-  HIA_JSDOC_CONFIG_SCHEMA_VERSION
+  HIA_JSDOC_CONFIG_SCHEMA_VERSION,
+  HIA_JSDOC_LEGACY_CONFIG_JSON_SCHEMA,
+  HIA_JSDOC_LEGACY_CONFIG_SCHEMA_ID,
+  HIA_JSDOC_LEGACY_CONFIG_SCHEMA_VERSION,
+  getHiaJsdocConfigSchema
 } from "./schema.mjs";
-import { HIA_JSDOC_CONFIG_SCHEMA_ID, HIA_JSDOC_CONFIG_SCHEMA_VERSION } from "./schema.mjs";
+import { HIA_JSDOC_CONFIG_SCHEMA_ID, HIA_JSDOC_CONFIG_SCHEMA_VERSION, getHiaJsdocConfigSchema } from "./schema.mjs";
 
 /**
  * Declares the runtime version of the HIA JSDoc runner package.
@@ -231,17 +235,93 @@ export function loadHiaJsdocConfig(configPath, options = {}) {
   } catch {
     throw new SyntaxError("HIA JSDoc configuration must be valid JSON.");
   }
+  // <lang><zh-CN>精确读取验证原对象；请求另按文件目录基准规范化。</zh-CN><en>Exact reading validates the original object; requests are separately normalized against the file directory.</en></lang>
+  readHiaJsdocConfig(config);
+  return configToProjectRequest(config, path.dirname(absoluteConfigPath));
+}
+
+/**
+ * @lang zh-CN 精确接纳当前或旧配置并返回同一对象；保持历史loader缺省行为，不将其当旧schema完全合规证明。
+ * @lang en Admits exact current or legacy config and returns the same object; preserves historical loader defaults without claiming full historical schema conformance.
+ * @param {object} config <lang><zh-CN>已解析配置，开放扩展保持既有接纳行为。</zh-CN><en>Parsed configuration; open extensions retain existing acceptance behavior.</en></lang>
+ * @returns {object} <lang><zh-CN>原对象、原身份，无填值、写盘或插件执行。</zh-CN><en>Original object and identity, without filling defaults, writing files or executing plugins.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>身份、配对或运行输入错误，不回显私有值。</zh-CN><en>Invalid identity, pairing or runtime input, without echoing private values.</en></lang>
+ */
+export function readHiaJsdocConfig(config) {
   assertRecord(config, "HIA JSDoc config must be a JSON object.");
   assertKnownKeys(config, ["$schema", "schemaVersion", "workspaceRoot", "outputDirectory", "inputs", "options", "profileIds"], "config");
-  if (config.schemaVersion !== HIA_JSDOC_CONFIG_SCHEMA_VERSION) {
-    throw new TypeError(`schemaVersion must be ${HIA_JSDOC_CONFIG_SCHEMA_VERSION}.`);
+  // <lang><zh-CN>对象必须显式声明版本，不能借选择器的默认参数猜测身份。</zh-CN><en>Objects must explicitly declare a version rather than infer identity from selector defaults.</en></lang>
+  if (typeof config.schemaVersion !== "string") throw new TypeError("A supported schemaVersion is required.");
+  const schema = getHiaJsdocConfigSchema(config.schemaVersion);
+  if (config.$schema !== undefined && config.$schema !== schema.$id) {
+    throw new TypeError("The configuration $schema must match its exact schemaVersion.");
   }
-  if (config.$schema !== undefined && config.$schema !== HIA_JSDOC_CONFIG_SCHEMA_ID) {
-    throw new TypeError(`$schema must be ${HIA_JSDOC_CONFIG_SCHEMA_ID}.`);
+  if (config.schemaVersion === HIA_JSDOC_CONFIG_SCHEMA_VERSION) {
+    // <lang><zh-CN>新schema只对省略取默认；旧null缺省可读，但不得静默换号迁移。</zh-CN><en>New schema defaults apply only to omission; legacy null defaults remain readable but cannot silently migrate by relabeling.</en></lang>
+    for (const field of ["workspaceRoot", "outputDirectory", "profileIds"]) {
+      if (config[field] === null) throw new TypeError("Explicit null is not a configuration default.");
+    }
+    if (Array.isArray(config.inputs) && config.inputs.some((input) => input?.kind === null)) {
+      throw new TypeError("Explicit null is not an input kind default.");
+    }
   }
+  configToProjectRequest(config, process.cwd());
+  return config;
+}
 
-  // <lang><zh-CN>配置相对目录仍按既有本地基准解析，本批不改变缺省目录语义。</zh-CN><en>Resolve relative directories using the existing local base without changing directory defaults in this batch.</en></lang>
-  const configDirectory = path.dirname(absoluteConfigPath);
+/**
+ * @lang zh-CN 显式生成当前配置的独立JSON副本；保留可表示扩展与省略，不写盘、不原地改号。
+ * @lang en Explicitly creates a detached current-config JSON copy, preserving representable extensions and omissions without writing files or relabeling input in place.
+ * @param {object} config <lang><zh-CN>当前或精确旧配置。</zh-CN><en>Current or exact legacy configuration.</en></lang>
+ * @returns {object} <lang><zh-CN>经当前规则复核的新对象；存在$schema时更新为匹配ID。</zh-CN><en>New object rechecked against current rules; an existing $schema is updated to the matching ID.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>无效配置、非JSON/循环扩展或新版无法无损接纳的旧值，不丢弃或强转。</zh-CN><en>Invalid config, non-JSON/cyclic extensions or legacy values the current version cannot admit losslessly; nothing is discarded or coerced.</en></lang>
+ */
+export function migrateHiaJsdocConfig(config) {
+  // <lang><zh-CN>先证明JSON无损，避免stringify丢函数/undefined或把非有限数变null。</zh-CN><en>Prove lossless JSON first so stringify cannot drop functions/undefined or convert non-finite numbers to null.</en></lang>
+  assertJsonConfigValue(config, new Set());
+  readHiaJsdocConfig(config);
+  // <lang><zh-CN>JSON值已核准，结构克隆保留负零等数值且不共享原嵌套对象。</zh-CN><en>After JSON-value admission, structural cloning preserves numeric values such as negative zero without sharing original nested objects.</en></lang>
+  const migrated = structuredClone(config);
+  migrated.schemaVersion = HIA_JSDOC_CONFIG_SCHEMA_VERSION;
+  if (Object.hasOwn(migrated, "$schema")) migrated.$schema = HIA_JSDOC_CONFIG_SCHEMA_ID;
+  return readHiaJsdocConfig(migrated);
+}
+
+/**
+ * @lang zh-CN 证明JSON可无损表示，拒绝访问器、符号、特殊对象、稀疏数组和祖先循环。
+ * @lang en Proves lossless JSON representation, rejecting accessors, symbols, special objects, sparse arrays and ancestor cycles.
+ * @param {unknown} value <lang><zh-CN>当前节点，值/键不回显。</zh-CN><en>Current node; values/keys are not echoed.</en></lang>
+ * @param {Set<object>} ancestors <lang><zh-CN>本次可变祖先集，共享的非循环对象可重复出现。</zh-CN><en>Mutable ancestors for this traversal; shared noncyclic objects may recur.</en></lang>
+ * @returns {void} <lang><zh-CN>仅验证，不执行访问器或写盘。</zh-CN><en>Validation only, without invoking accessors or writing files.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>数据不能无损表示。</zh-CN><en>Data cannot be represented losslessly.</en></lang>
+ */
+function assertJsonConfigValue(value, ancestors) {
+  if (value === null || typeof value === "string" || typeof value === "boolean" || (typeof value === "number" && Number.isFinite(value))) return;
+  if (typeof value !== "object" || ancestors.has(value) || (!Array.isArray(value) && ![Object.prototype, null].includes(Object.getPrototypeOf(value)))) {
+    throw new TypeError("Configuration migration requires lossless JSON data.");
+  }
+  // <lang><zh-CN>描述符避免访问器副作用；数组length是唯一允许的非枚举自有属性。</zh-CN><en>Descriptors avoid accessor side effects; array length is the only permitted non-enumerable own property.</en></lang>
+  const descriptors = Object.getOwnPropertyDescriptors(value);
+  const keys = Reflect.ownKeys(descriptors).filter((key) => !(Array.isArray(value) && key === "length"));
+  if (keys.some((key) => typeof key !== "string" || !descriptors[key].enumerable || !Object.hasOwn(descriptors[key], "value"))
+    || (Array.isArray(value) && (keys.length !== value.length || keys.some((key, index) => key !== String(index))))) {
+    throw new TypeError("Configuration migration requires lossless JSON data.");
+  }
+  ancestors.add(value);
+  for (const key of keys) assertJsonConfigValue(descriptors[key].value, ancestors);
+  ancestors.delete(value);
+}
+
+/**
+ * @lang zh-CN 按本地基准生成新运行请求，保留原配置；只计算路径，不读写文件。
+ * @lang en Creates a runtime request against a local base while preserving config; computes paths without reading or writing files.
+ * @param {object} config <lang><zh-CN>已核身份的配置。</zh-CN><en>Configuration with an admitted identity.</en></lang>
+ * @param {string} configDirectory <lang><zh-CN>本地绝对解析基准。</zh-CN><en>Local absolute resolution base.</en></lang>
+ * @returns {object} <lang><zh-CN>新的规范化请求。</zh-CN><en>New normalized request.</en></lang>
+ * @throws {TypeError} <lang><zh-CN>运行输入验证失败。</zh-CN><en>Runtime input validation fails.</en></lang>
+ */
+function configToProjectRequest(config, configDirectory) {
+  // <lang><zh-CN>保留旧目录/kind缺省及相对文件目录基准。</zh-CN><en>Preserve legacy directory/kind defaults and the config-file-relative base.</en></lang>
   const workspaceDirectory = normalizeConfigDirectory(config.workspaceRoot ?? ".", "workspaceRoot");
   const outputDirectory = normalizeConfigDirectory(config.outputDirectory ?? "dist/hia-jsdoc", "outputDirectory");
   const workspaceRoot = path.resolve(configDirectory, workspaceDirectory);

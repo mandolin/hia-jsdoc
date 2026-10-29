@@ -6,13 +6,16 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./src/index.mjs"
+    ".": "./src/index.mjs",
+    "./schemas/hia-jsdoc-config-1.0.0.schema.json": "./schemas/hia-jsdoc-config-1.0.0.schema.json",
+    "./schemas/hia-jsdoc-config-0.1.0-draft.schema.json": "./schemas/hia-jsdoc-config-0.1.0-draft.schema.json"
   },
   "bin": {
     "hia-jsdoc": "./src/cli.mjs"
   },
   "files": [
     "src",
+    "schemas",
     "README.md"
   ],
   "dependencies": {
