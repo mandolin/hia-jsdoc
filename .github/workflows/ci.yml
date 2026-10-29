@@ -46,14 +46,14 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: mandolin/jsdoc-plugin-hia-sys
-          ref: e75e9cef879e4e39b2554957d65edc384d3b5a9d
+          ref: 15970dc9da0f8e120677eab7eba3e959dcf42a34
           path: jsdoc-plugin-hia-sys
 
       - name: Check out source theme owner
         uses: actions/checkout@v6
         with:
           repository: mandolin/jsdoc-theme-hia
-          ref: 50420e1f429e37a8bccdb2da8c40c76f97b77c48
+          ref: 0df2ca9bbf40e159d8da69aac80b3c31136b1a05
           path: jsdoc-theme-hia
 
       - name: Set up Node.js
@@ -61,6 +61,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           package-manager-cache: false
+
+      - name: Prepare pinned owner archives
+        run: npm run prepare:owners
 
       - name: Install frozen dependencies
         run: npm ci --registry=https://registry.npmjs.org/

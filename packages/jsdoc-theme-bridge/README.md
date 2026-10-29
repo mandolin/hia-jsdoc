@@ -40,3 +40,9 @@ complete semantic profile validator or source publication authorization.
 object is new; its version is metadata, never evidence of an npm release.
 
 中文：桥接只声明模板与中性呈现选择，主题负责真实输出；不执行安装/渲染，不把版本元数据当发行事实。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

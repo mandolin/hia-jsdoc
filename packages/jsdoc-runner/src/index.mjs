@@ -25,7 +25,7 @@ import { HIA_JSDOC_CONFIG_SCHEMA_ID, HIA_JSDOC_CONFIG_SCHEMA_VERSION, getHiaJsdo
  * @lang zh-CN 声明 HIA JSDoc runner 包的运行时版本。
  * @lang en Declares the runtime version of the HIA JSDoc runner package.
  */
-export const HIA_JSDOC_RUNNER_VERSION = "0.0.0";
+export const HIA_JSDOC_RUNNER_VERSION = "1.0.0";
 
 /**
  * Lists the input kinds accepted by the HIA JSDoc project runner.

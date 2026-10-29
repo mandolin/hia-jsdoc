@@ -25,8 +25,8 @@ test("current config and umbrella writers use 1.0.0 without changing wire depend
   const umbrella = createHiaJsdocConfig().opts.hia.umbrella;
   assert.equal(umbrella.contractVersion, "1.0.0");
   assert.equal(umbrella.versions.contractVersion, "1.0.0");
-  assert.equal(umbrella.versions.plugin.version, "0.1.0");
-  assert.equal(umbrella.versions.theme.version, "0.1.0");
+  assert.equal(umbrella.versions.plugin.version, "1.0.0");
+  assert.equal(umbrella.versions.theme.version, "1.0.0");
 });
 
 test("versioned schemas preserve old required lists and expose new omission defaults", () => {

@@ -42,13 +42,13 @@ export function readHiaJsdocUmbrellaConfig(metadata) {
 export const HIA_JSDOC_PLUGIN_PACKAGE = "@mandolin/jsdoc-plugin-hia-sys";
 
 /**
- * Pins the published HIA JSDoc plugin version used by this compatibility layer.
+ * Pins the candidate HIA JSDoc plugin dependency version used by this compatibility layer.
  *
  * @constant {string}
- * @lang zh-CN 固定当前兼容层使用的已发布 HIA JSDoc 插件版本。
- * @lang en Pins the published HIA JSDoc plugin version used by this compatibility layer.
+ * @lang zh-CN 固定当前兼容层的精确插件候选依赖；不证明该版本已在npm发布。
+ * @lang en Pins the exact plugin candidate dependency without proving npm publication.
  */
-export const HIA_JSDOC_PLUGIN_VERSION = "0.1.0";
+export const HIA_JSDOC_PLUGIN_VERSION = "1.0.0";
 
 /**
  * Points JSDoc config generation at the local plugin entry resolved from dependencies.
@@ -69,13 +69,13 @@ export const HIA_JSDOC_PLUGIN_PATH = "node_modules/@mandolin/jsdoc-plugin-hia-sy
 export const HIA_JSDOC_THEME_PACKAGE = "@mandolin/jsdoc-theme-hia";
 
 /**
- * Pins the published HIA JSDoc theme version used by this compatibility layer.
+ * Pins the candidate HIA JSDoc theme dependency version used by this compatibility layer.
  *
  * @constant {string}
- * @lang zh-CN 固定当前兼容层使用的已发布 HIA JSDoc 主题版本。
- * @lang en Pins the published HIA JSDoc theme version used by this compatibility layer.
+ * @lang zh-CN 固定当前兼容层的精确主题候选依赖；可用性由实际发行另验。
+ * @lang en Pins the exact theme candidate dependency; availability requires separate publication verification.
  */
-export const HIA_JSDOC_THEME_VERSION = "0.1.0";
+export const HIA_JSDOC_THEME_VERSION = "1.0.0";
 
 /**
  * Points JSDoc config generation at the theme template resolved from dependencies.

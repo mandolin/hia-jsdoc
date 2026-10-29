@@ -49,3 +49,9 @@ may retain trusted local plugin paths/settings; it is not a publishable artifact
 The merge does not promise recursive ownership isolation or authorization.
 
 中文：配置按既有后覆盖与分层浅合并，不是任意深合并；构造无写盘/执行，项目运行器另核最终输出。生成链内容由插件/主题/Portal各自负责。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

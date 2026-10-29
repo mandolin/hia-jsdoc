@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0 source candidates
+
+- 中文：八个公开包、永久第一方依赖/运行与默认元数据协调1.0.0；私有开发根显式固定owner tarball与冻结锁，原清单消费不再改写两个bridge。工件wire与旧读保持，实际npm发布另验。
+- English: Coordinate eight public packages, permanent first-party edges and runtime/default metadata at 1.0.0; pin owner tarballs in the private development root/lock and consume original manifests without bridge rewrites. Preserve wire identities/legacy readers; npm publication is separate.
+
 - 中文：补齐八包实际导出/默认/错误/副作用与生成链参考并常驻检查；拒绝插件路径不再进入公开诊断data，保持code/phase/index及正常排序。
 - English: Inventory actual exports/defaults/errors/effects and generation responsibilities in each package with permanent checks; rejected plugin paths no longer enter public diagnostic data, preserving codes, phases, indices and normal ordering.
 
@@ -42,3 +47,9 @@
 
 - Initialize HIA JSDoc bootstrap workspace.
 - Add W-P9.5 umbrella preset, runner, published JPHS/JTH bridge dependencies, extra plugin registry, fixture generation and license audit.
+
+## Frozen source candidate setup
+
+Current child package candidates and their first-party runtime dependencies are exact 1.0.0. The root workspace stays private. Check out the sibling owners at owner-sources.json commits, run npm run prepare:owners, then npm ci. Preparation does not install, rewrite manifests/locks or publish; it checks origin/HEAD/package/archive SHA/SRI and writes only ignored .owner-packages. See [MIGRATION.md](MIGRATION.md). Candidate/registry and visual/deployment qualification remain separate.
+
+中文：源码候选的永久身份/依赖已协调；开发先准备固定owner归档再冻结安装，公开消费者不需要这套开发准备。实际发布/站点验收另验。

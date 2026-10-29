@@ -2,14 +2,15 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
+require("./prepare-owner-packages.cjs").verifyOwnerLock(root);
 const reviewedExternalPackages = new Map([
   ["@babel/helper-string-parser", { version: "7.29.7", license: "MIT" }],
   ["@babel/helper-validator-identifier", { version: "7.29.7", license: "MIT" }],
   ["@babel/parser", { version: "7.29.7", license: "MIT" }],
   ["@babel/types", { version: "7.29.7", license: "MIT" }],
   ["@jsdoc/salty", { version: "0.2.12", license: "Apache-2.0" }],
-  ["@mandolin/jsdoc-plugin-hia-sys", { version: "0.1.0", license: "MIT" }],
-  ["@mandolin/jsdoc-theme-hia", { version: "0.1.0", license: "MIT" }],
+  ["@mandolin/jsdoc-plugin-hia-sys", { version: "1.0.0", license: "MIT" }],
+  ["@mandolin/jsdoc-theme-hia", { version: "1.0.0", license: "MIT" }],
   ["@types/linkify-it", { version: "5.0.0", license: "MIT" }],
   ["@types/markdown-it", { version: "14.1.2", license: "MIT" }],
   ["@types/mdurl", { version: "2.0.0", license: "MIT" }],
@@ -74,7 +75,8 @@ for (const [packagePath, entry] of Object.entries(lock.packages || {})) {
     console.error(`Unexpected license for ${packageName}: ${license}, expected ${expected.license}`);
     failed = true;
   }
-  if (typeof entry.resolved === "string" && !entry.resolved.startsWith("https://registry.npmjs.org/")) {
+  // <lang><zh-CN>只有已由精确锁/SRI检查的两个第一方owner可来自本地归档；第三方仍必须来自官方registry。</zh-CN><en>Only the two first-party owners checked by exact lock/SRI may use local archives; third parties still require the official registry.</en></lang>
+  if (!['@mandolin/jsdoc-plugin-hia-sys', '@mandolin/jsdoc-theme-hia'].includes(packageName) && typeof entry.resolved === "string" && !entry.resolved.startsWith("https://registry.npmjs.org/")) {
     console.error(`Unexpected registry for ${packageName}: ${entry.resolved}`);
     failed = true;
   }

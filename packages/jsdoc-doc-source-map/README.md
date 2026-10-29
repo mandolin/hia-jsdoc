@@ -37,3 +37,9 @@ source permission or existence of href. Original stored references are not
 migrated, and actual doc-source-map wire version remains 1.1.0.
 
 中文：引用helper只生成元数据，不能把profileVersion当地图wire版本、精度或公开授权。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

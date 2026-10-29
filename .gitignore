@@ -1,4 +1,5 @@
 node_modules/
+.owner-packages/
 dist/
 coverage/
 *.tgz

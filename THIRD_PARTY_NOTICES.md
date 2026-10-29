@@ -1,12 +1,12 @@
 # Third Party Notices
 
-This workspace uses the following reviewed third-party packages for the W-P9.5 preset/runner fixture.
+This workspace uses the following reviewed dependencies for preset/runner execution and fixtures.
 
 | Package | Version | License | Purpose |
 | --- | --- | --- | --- |
 | `jsdoc` | `4.0.5` | Apache-2.0 | JSDoc CLI/runtime used by `@hia-doc/jsdoc-runner`. |
-| `@mandolin/jsdoc-plugin-hia-sys` | `0.1.0` | MIT | Published HIA JSDoc plugin dependency used through `@hia-doc/jsdoc-plugin-hia-bridge`. |
-| `@mandolin/jsdoc-theme-hia` | `0.1.0` | MIT | Published HIA JSDoc theme dependency used through `@hia-doc/jsdoc-theme-bridge`. |
+| `@mandolin/jsdoc-plugin-hia-sys` | `1.0.0` | MIT | Source-candidate HIA JSDoc plugin dependency used through `@hia-doc/jsdoc-plugin-hia-bridge`. |
+| `@mandolin/jsdoc-theme-hia` | `1.0.0` | MIT | Source-candidate HIA JSDoc theme dependency used through `@hia-doc/jsdoc-theme-bridge`. |
 | `@babel/helper-string-parser` | `7.29.7` | MIT | Transitive dependency of JSDoc parser tooling. |
 | `@babel/helper-validator-identifier` | `7.29.7` | MIT | Transitive dependency of JSDoc parser tooling. |
 | `@babel/parser` | `7.29.7` | MIT | Transitive dependency of JSDoc parser tooling. |
@@ -36,3 +36,7 @@ This workspace uses the following reviewed third-party packages for the W-P9.5 p
 | `uc.micro` | `2.1.0` | MIT | Transitive dependency of Markdown tooling. |
 | `underscore` | `1.13.8` | MIT | Transitive dependency of JSDoc. |
 | `xmlcreate` | `2.0.4` | Apache-2.0 | Transitive dependency of JSDoc output tooling. |
+
+The two first-party owner candidates use explicit pinned file tarballs only in the private development root; public package runtime edges remain exact 1.0.0. owner-sources.json and check:owners bind Git/SHA/SRI. No new third-party product dependency is introduced.
+
+中文：两个第一方候选的开发来源单独核Git/归档SRI，第三方仍锁官方registry/许可，不假称候选已发布。

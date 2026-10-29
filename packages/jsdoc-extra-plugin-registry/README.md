@@ -37,3 +37,9 @@ with the JSDoc process's permissions; optional is metadata, not an install or
 missing-plugin suppression guarantee.
 
 中文：规范化不执行插件，保留顺序/重复与配置引用；拒绝诊断不含原路径。词法筛选不是沙箱，optional也不保证忽略CLI加载失败。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

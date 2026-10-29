@@ -1,0 +1,22 @@
+{
+  "owners": [
+    {
+      "name": "@mandolin/jsdoc-plugin-hia-sys",
+      "repository": "jsdoc-plugin-hia-sys",
+      "commit": "15970dc9da0f8e120677eab7eba3e959dcf42a34",
+      "version": "1.0.0",
+      "archive": "mandolin-jsdoc-plugin-hia-sys-1.0.0.tgz",
+      "integrity": "sha512-5g0fLH5qjw3UhBE8jEyRZe2hiU2uhBVOuBuY9oybXjR0yLvFfk3pIuDDWWRiUpNla7O4DxiKgGFkdfEL2hrWLw==",
+      "sha256": "3727d16031e7cad5ef8aa4e82a12fc69df39b062aff560cd1d3574c21d28ce59"
+    },
+    {
+      "name": "@mandolin/jsdoc-theme-hia",
+      "repository": "jsdoc-theme-hia",
+      "commit": "0df2ca9bbf40e159d8da69aac80b3c31136b1a05",
+      "version": "1.0.0",
+      "archive": "mandolin-jsdoc-theme-hia-1.0.0.tgz",
+      "integrity": "sha512-y8Y07r+l7siuaK4foJBNVNG+f9gQxrf7ccRU6KGF5KkztsAzhfQvynC5rrNlAeDZS0mE7cT6RvkH4VPu6gKbUQ==",
+      "sha256": "1c87b3300a070a5c78de9d5d95b68511f7ac3c46693eb693b5e2a52285580121"
+    }
+  ]
+}

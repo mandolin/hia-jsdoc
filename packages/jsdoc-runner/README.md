@@ -155,3 +155,9 @@ pairs wire identity and same-build maps but does not establish complete profile
 semantics, source consent or final site deployment.
 
 中文：十六个根导出另加两个JSON资源与CLI均为公开面；读/迁移不执行，低层写/运行接口有本地副作用，项目入口另有边界但不是插件沙箱。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

@@ -99,12 +99,12 @@ test("normalizeExtraPluginRegistry keeps plugin order and diagnostics", () => {
   assert.ok(registry.diagnostics.some((diagnostic) => diagnostic.code === "HIA_JSDOC_PLUGIN_PATH_UNSAFE"));
 });
 
-test("version summary records published JPHS and JTH dependencies", () => {
+test("version summary records exact candidate plugin and theme dependencies", () => {
   const summary = createHiaJsdocVersionSummary();
   assert.equal(summary.plugin.package, "@mandolin/jsdoc-plugin-hia-sys");
-  assert.equal(summary.plugin.version, "0.1.0");
+  assert.equal(summary.plugin.version, "1.0.0");
   assert.equal(summary.theme.package, "@mandolin/jsdoc-theme-hia");
-  assert.equal(summary.theme.version, "0.1.0");
+  assert.equal(summary.theme.version, "1.0.0");
 });
 
 test("fixture build emits HIA integration output", async () => {

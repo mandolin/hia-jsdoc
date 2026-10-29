@@ -1,7 +1,7 @@
 /**
  * @file
- * @lang zh-CN 核八个必要包自己的许可证、已确认producer1.0.0写者和已发布依赖摘要；不将源码版本当registry发行。
- * @lang en Checks each required package's license, the confirmed producer 1.0.0 writer and published-dependency summaries without treating source versions as registry releases.
+ * @lang zh-CN 核八个必要包自己的许可证、已确认producer1.0.0写者和候选依赖摘要；不将源码版本当registry发行。
+ * @lang en Checks each required package's license, the confirmed producer 1.0.0 writer and candidate-dependency summaries without treating source versions as registry releases.
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -60,7 +60,7 @@ test("new failed results use the current identity without touching output", () =
   }
 });
 
-test("default dependency metadata stays aligned with the declared published edges", () => {
+test("default dependency metadata stays aligned with the declared candidate edges", () => {
   const summary = createHiaJsdocVersionSummary();
   for (const [name, part] of [["jsdoc-plugin-hia-bridge", "plugin"], ["jsdoc-theme-bridge", "theme"]]) {
     const manifest = JSON.parse(fs.readFileSync(path.join(root, "packages", name, "package.json"), "utf8"));

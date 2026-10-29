@@ -1,7 +1,7 @@
 {
   "name": "@hia-doc/jsdoc-plugin-hia-bridge",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "description": "Bridge for @mandolin/jsdoc-plugin-hia-sys.",
   "license": "MIT",
   "type": "module",
@@ -9,9 +9,27 @@
     ".": "./src/index.mjs"
   },
   "dependencies": {
-    "@mandolin/jsdoc-plugin-hia-sys": "0.1.0"
+    "@mandolin/jsdoc-plugin-hia-sys": "1.0.0"
   },
   "engines": {
     "node": "^22.23.4 || ^24.22.1"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "directory": "packages/jsdoc-plugin-hia-bridge",
+    "type": "git",
+    "url": "git+https://github.com/mandolin/hia-jsdoc.git"
+  },
+  "homepage": "https://github.com/mandolin/hia-jsdoc/tree/main/packages/jsdoc-plugin-hia-bridge",
+  "bugs": {
+    "url": "https://github.com/mandolin/hia-jsdoc/issues"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "MIGRATION.md",
+    "LICENSE"
+  ]
 }

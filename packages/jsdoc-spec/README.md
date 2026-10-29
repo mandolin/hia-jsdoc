@@ -13,7 +13,7 @@ Defines HIA JSDoc usage, configuration and compatibility rules.
 
 The current umbrella configuration identity is `hia-jsdoc-umbrella-config@1.0.0`.
 `createHiaJsdocVersionSummary()` and new preset metadata use this identity; their
-plugin/theme numbers continue to describe the declared published dependencies.
+plugin/theme numbers describe the exact 1.0.0 candidate dependencies, with registry publication verified separately.
 `readHiaJsdocUmbrellaConfig(metadata)` admits only exact `1.0.0` and
 `0.1.0-draft`, returning the original object and version. Invalid/missing identities
 throw a fixed `TypeError`. This helper checks **identity only**, without validating
@@ -44,10 +44,10 @@ bridge does not relabel or rebuild reports.
 | `HIA_JSDOC_UMBRELLA_CONTRACT` | hia-jsdoc-umbrella-config identity. |
 | `HIA_JSDOC_UMBRELLA_CONTRACT_VERSION` | Current 1.0.0. |
 | `HIA_JSDOC_PLUGIN_PACKAGE` | @mandolin/jsdoc-plugin-hia-sys. |
-| `HIA_JSDOC_PLUGIN_VERSION` | Declared published edge 0.1.0, not latest source. |
+| `HIA_JSDOC_PLUGIN_VERSION` | Exact candidate dependency 1.0.0; registry publication verified separately. |
 | `HIA_JSDOC_PLUGIN_PATH` | node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs. |
 | `HIA_JSDOC_THEME_PACKAGE` | @mandolin/jsdoc-theme-hia. |
-| `HIA_JSDOC_THEME_VERSION` | Declared published edge 0.1.0. |
+| `HIA_JSDOC_THEME_VERSION` | Exact candidate dependency 1.0.0. |
 | `HIA_JSDOC_THEME_TEMPLATE` | node_modules/@mandolin/jsdoc-theme-hia. |
 | `HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT` | documentation-presentation-profile. |
 | `HIA_JSDOC_PRESENTATION_PROFILE_CONTRACT_VERSION` | Current 1.0.0. |
@@ -73,3 +73,9 @@ rendering. Constants and version summaries do not prove npm publication, map
 precision, site availability or UI acceptance.
 
 中文：二十二个导出按真实责任列明；默认依赖摘要仍为manifest已声明边，不能把源码/契约1.0.0当作npm已发布。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

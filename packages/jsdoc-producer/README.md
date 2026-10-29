@@ -66,3 +66,9 @@ page/source/profile output remains with the theme; this adapter does not add AST
 coverage, precision or visual acceptance.
 
 中文：普通/暂存生产器共用实际runner语义；暂存是追加复制而非镜像，I/O/回调可能抛本地异常，公开方须处理，不得把私有配置或状态直接发布。
+
+## Package candidate and migration
+
+Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
+
+中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。

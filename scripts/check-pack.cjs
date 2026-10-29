@@ -40,7 +40,7 @@ for (const packageRoot of packageRoots) {
   const packageJson = JSON.parse(fs.readFileSync(path.join(packageRoot, "package.json"), "utf8"));
   const packedPaths = new Set((pack.files || []).map((file) => file.path.replaceAll("\\", "/")));
   // <lang><zh-CN>根许可证不会自动随子包分发，所有包都必须有实际入包的本包文件。</zh-CN><en>A root license is not automatically shipped with child packages; every package needs its own files in the actual inventory.</en></lang>
-  for (const requiredPath of ["LICENSE", "README.md", "package.json", "src/index.mjs"]) {
+  for (const requiredPath of ["LICENSE", "README.md", "MIGRATION.md", "package.json", "src/index.mjs"]) {
     if (!packedPaths.has(requiredPath)) {
       console.error(`Missing ${requiredPath} in ${packageJson.name} pack dry-run.`);
       failed = true;
