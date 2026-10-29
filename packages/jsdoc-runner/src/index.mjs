@@ -50,7 +50,8 @@ export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([
 ]);
 
 const RESULT_CONTRACT = "documentation-producer-result";
-const RESULT_CONTRACT_VERSION = "0.1.0-draft";
+/** @lang zh-CN 新构建采用已确认SDK结果1.0.0；不读取或重标保存的历史结果。 @lang en New builds use the confirmed SDK result 1.0.0 without reading or relabeling saved historical results. */
+const RESULT_CONTRACT_VERSION = "1.0.0";
 const PRODUCER_ID = "jsdoc";
 const SAFE_ID_PATTERN = /^[a-z0-9][a-z0-9._-]*$/;
 
@@ -175,6 +176,10 @@ export function runHiaJsdocProject(request, context = {}) {
       docSourceMapEnabled
     )
     : [];
+  // <lang><zh-CN>已确认SDK要求success至少有一个工件；真实CLI退出0仍须实际有交付工件。</zh-CN><en>The confirmed SDK requires at least one artifact for success; actual CLI exit zero still requires delivery artifacts.</en></lang>
+  if (execution.ok && artifacts.length === 0) {
+    diagnostics.push(createDiagnostic("HIA_JSDOC_OUTPUT_EMPTY", "JSDoc produced no documentation artifacts.", "error"));
+  }
   const status = diagnostics.some((diagnostic) => diagnostic.severity === "error")
     ? (artifacts.length > 0 ? "partial" : "failed")
     : "success";

@@ -15,6 +15,15 @@ Runs JSDoc in standalone and HIA integration modes.
 
 `runHiaJsdocProject()` wraps the same JSDoc execution in a `documentation-producer-result` contract for HIA project builds.
 
+New project results use contract version `1.0.0`, matching the current
+`@hia-doc/plugin-sdk` reader. Existing saved `0.1.0-draft` results remain unchanged
+and require an exact compatible reader. This does not change the package version
+or the config, Integration, page-map and source-map identities.
+If execution produces no artifacts, the result is `failed` with
+`HIA_JSDOC_OUTPUT_EMPTY`; a zero CLI exit code alone cannot establish success.
+
+中文：新运行结果采用已确认的1.0.0协议；不换号迁移历史结果，也不改变其它工件身份或宣布npm可用。
+
 ## Project input and output boundaries
 
 Project options enforce their declared string, boolean and object types. Omission

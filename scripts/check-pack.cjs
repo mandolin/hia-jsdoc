@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @lang zh-CN 核八个独立包的实际npm dry-run清单，强制各包携带其许可证/README/入口；不发布或用根目录文件冒充包内容。
+ * @lang en Checks actual npm dry-run inventories for eight independent packages, requiring each license/README/entry without publishing or substituting root files for package contents.
+ */
 const { spawnSync } = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -34,6 +39,13 @@ for (const packageRoot of packageRoots) {
   const [pack] = JSON.parse(result.stdout);
   const packageJson = JSON.parse(fs.readFileSync(path.join(packageRoot, "package.json"), "utf8"));
   const packedPaths = new Set((pack.files || []).map((file) => file.path.replaceAll("\\", "/")));
+  // <lang><zh-CN>根许可证不会自动随子包分发，所有包都必须有实际入包的本包文件。</zh-CN><en>A root license is not automatically shipped with child packages; every package needs its own files in the actual inventory.</en></lang>
+  for (const requiredPath of ["LICENSE", "README.md", "package.json", "src/index.mjs"]) {
+    if (!packedPaths.has(requiredPath)) {
+      console.error(`Missing ${requiredPath} in ${packageJson.name} pack dry-run.`);
+      failed = true;
+    }
+  }
   for (const file of pack.files || []) {
     const filePath = file.path.replaceAll("\\", "/");
     if (filePath.includes("/node_modules/") || filePath.startsWith("node_modules/") || filePath.endsWith(".tgz")) {

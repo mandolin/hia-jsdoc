@@ -9,12 +9,12 @@ import {
  * Describes the HIA JSDoc documentation producer for orchestration layers.
  *
  * @constant {object}
- * @lang zh-CN 描述供 HIA 编排层发现和选择的 JSDoc documentation producer 能力。
- * @lang en Describes the HIA JSDoc documentation producer for orchestration layers.
+ * @lang zh-CN 描述供编排层发现的JSDoc能力，采用已确认SDK1.0.0协议；包版本与其它工件身份独立。
+ * @lang en Describes JSDoc capabilities for orchestration using the confirmed SDK 1.0.0 protocol; package versions and other artifact identities remain independent.
  */
 export const jsdocProducerDescriptor = Object.freeze({
   contract: "documentation-producer",
-  contractVersion: "0.1.0-draft",
+  contractVersion: "1.0.0",
   id: "jsdoc",
   version: HIA_JSDOC_RUNNER_VERSION,
   displayName: "HIA JSDoc",

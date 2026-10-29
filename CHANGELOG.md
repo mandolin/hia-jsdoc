@@ -1,5 +1,8 @@
 # Changelog
 
+- 中文：八个必要子包均携带本包MIT许可证并由pack门禁强制核对；新普通/暂存生产器描述及结果采用已确认SDK1.0.0，历史结果不改号。
+- English: All eight required child packages carry their own MIT license enforced by the pack gate; new ordinary/staged producer descriptors and results adopt the confirmed SDK 1.0.0 without relabeling historical results.
+
 - 中文：项目运行器在所有模式写盘前核baseConfig最终输出，执行已有选项类型与唯一标识符规则；公开失败不回显原始JSDoc/配置/路径，暂存复制排除私有运行配置。
 - English: Project runs validate effective baseConfig outputs before writes in every mode, enforce declared option types and unique identifiers, keep raw JSDoc/config/path data out of public failures, and exclude private runtime configuration from staged copies.
 
