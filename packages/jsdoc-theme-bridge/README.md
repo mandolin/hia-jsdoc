@@ -17,7 +17,7 @@ It also declares adoption of `documentation-presentation-profile@1.0.0` without 
 semantic tokens or a skin allowlist. Consumers read the skin catalog from the `@mandolin/jsdoc-theme-hia`-owned
 `documentation-presentation-profile.theme.skins` projection.
 
-The current presentation descriptor declares exact documentation-presentation-profile 1.0.0 and must be paired with its theme writer. The project runner records the actual matching artifact identity. This source update does not change package versions or published archives.
+The current presentation descriptor declares exact documentation-presentation-profile 1.0.0 and must be paired with its theme writer. The project runner records the actual matching artifact identity. Package identity is independently coordinated at 1.0.0; historical published archives remain unchanged.
 
 ## Public API
 

@@ -69,8 +69,8 @@ runner's execution-time checks; reading is not execution permission.
 
 New project results use contract version `1.0.0`, matching the current
 `@hia-doc/plugin-sdk` reader. Existing saved `0.1.0-draft` results remain unchanged
-and require an exact compatible reader. This does not change the package version
-or the config, Integration, page-map and source-map identities.
+and require an exact compatible reader. Protocol adoption alone does not infer
+package or other wire versions; current package identity is independently 1.0.0.
 If execution produces no artifacts, the result is `failed` with
 `HIA_JSDOC_OUTPUT_EMPTY`; a zero CLI exit code alone cannot establish success.
 
