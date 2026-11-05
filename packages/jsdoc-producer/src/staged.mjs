@@ -23,11 +23,22 @@ export const stagedJsdocProducerDescriptor = Object.freeze({
  */
 export const stagedJsdocProducer = Object.freeze({
   descriptor: stagedJsdocProducerDescriptor,
+  /**
+   * @lang zh-CN 在已验证工作区暂存同步运行JSDoc，再追加复制非失败产物并清理暂存；不保证目标目录原子镜像。
+   * @lang en Runs JSDoc synchronously in verified workspace staging, additively copies nonfailed artifacts and cleans staging; the destination is not an atomic mirror.
+   * @param {object} request <lang><zh-CN>显式绝对工作区/输出根及相对输入。</zh-CN><en>Explicit absolute workspace/output roots and relative inputs.</en></lang>
+   * @param {object} [context={}] <lang><zh-CN>原样委派给普通生产器的受信上下文。</zh-CN><en>Trusted context passed unchanged to the ordinary producer.</en></lang>
+   * @returns {object} <lang><zh-CN>普通生产器结果，复制不改变工件语义或失败状态。</zh-CN><en>The ordinary producer result; copying changes neither artifact semantics nor failure status.</en></lang>
+   * @throws {*} <lang><zh-CN>根验证、执行、复制或finally清理的本地错误；不自动脱敏。</zh-CN><en>Local errors from root checks, execution, copying or finally cleanup; not automatically redacted.</en></lang>
+   */
   produce(request, context = {}) {
+    // <lang><zh-CN>规范化本轮显式根；这些绝对路径仅供本地执行，不是可发布元数据。</zh-CN><en>Normalize explicit invocation roots; these absolute paths are local execution data, not publishable metadata.</en></lang>
     const workspaceRoot = normalizeAbsolutePath(request?.workspaceRoot, "workspaceRoot");
     const outputDirectory = normalizeAbsolutePath(request?.outputDirectory, "outputDirectory");
+    // <lang><zh-CN>固定暂存根与进程作用域名称限定清理对象，需通过后续真实路径核验。</zh-CN><en>A fixed staging root and process-scoped name constrain cleanup targets, subject to subsequent physical checks.</en></lang>
     const stagingRoot = path.join(workspaceRoot, ".hia-jsdoc-staging");
     const stagingDirectory = path.join(stagingRoot, `${process.pid}-${createStagingName(outputDirectory)}`);
+    // <lang><zh-CN>仅成功验证后允许finally清理；异常路径不得删除未核实目录。</zh-CN><en>Finally cleanup is allowed only after successful verification; failure paths cannot delete unverified directories.</en></lang>
     let stagingBoundaryVerified = false;
 
     try {

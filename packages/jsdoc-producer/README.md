@@ -67,6 +67,13 @@ coverage, precision or visual acceptance.
 
 中文：普通/暂存生产器共用实际runner语义；暂存是追加复制而非镜像，I/O/回调可能抛本地异常，公开方须处理，不得把私有配置或状态直接发布。
 
+Both `produce` methods carry their own native JSDoc documentation, including
+parameters, result semantics and local errors. Document the methods themselves
+when consuming nested APIs; the producer object's description alone does not
+describe a call. Method documentation does not alter synchronous runner behavior.
+
+中文：普通与暂存的produce方法各自保留原生参数、返回及错误注释，不以外层对象摘要代替方法文档，也不改变同步执行行为。
+
 ## Package candidate and migration
 
 Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
