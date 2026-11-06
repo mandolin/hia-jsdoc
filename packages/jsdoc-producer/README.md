@@ -74,6 +74,13 @@ describe a call. Method documentation does not alter synchronous runner behavior
 
 中文：普通与暂存的produce方法各自保留原生参数、返回及错误注释，不以外层对象摘要代替方法文档，也不改变同步执行行为。
 
+Descriptor properties carry individual English and Simplified Chinese JSDoc
+descriptions for contract identity, implementation version, input/output kinds
+and capabilities. The staged adapter documents its own display name and reuses
+the ordinary descriptor's remaining fields.
+
+中文：描述符逐属性提供中英文原生说明，覆盖协议身份、实现版本、输入输出种类及能力。暂存适配器说明自身显示名称，其余字段沿用普通描述符。
+
 ## Package candidate and migration
 
 Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.

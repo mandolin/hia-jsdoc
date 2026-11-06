@@ -11,6 +11,10 @@ import { jsdocProducer, jsdocProducerDescriptor } from "./index.mjs";
  */
 export const stagedJsdocProducerDescriptor = Object.freeze({
   ...jsdocProducerDescriptor,
+  /**
+   * @lang zh-CN 暂存适配器在宿主中显示的名称。
+   * @lang en Name presented by the host for the staged adapter.
+   */
   displayName: "HIA JSDoc Staged Adapter"
 });
 
