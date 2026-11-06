@@ -26,32 +26,9 @@ import { HIA_JSDOC_CONFIG_SCHEMA_ID, HIA_JSDOC_CONFIG_SCHEMA_VERSION, getHiaJsdo
  * @lang en Declares the runtime version of the HIA JSDoc runner package.
  */
 export const HIA_JSDOC_RUNNER_VERSION = "1.0.0";
-
-/**
- * Lists the input kinds accepted by the HIA JSDoc project runner.
- *
- * @constant {string[]}
- * @lang zh-CN 列出 HIA JSDoc project runner 接受的输入类型。
- * @lang en Lists the input kinds accepted by the HIA JSDoc project runner.
- */
-export const HIA_JSDOC_INPUT_KINDS = Object.freeze(["javascript-source", "javascript-module"]);
-
-/**
- * Lists the artifact kinds that the HIA JSDoc project runner may produce.
- *
- * @constant {string[]}
- * @lang zh-CN 列出 HIA JSDoc project runner 可能产出的 artifact 类型。
- * @lang en Lists the artifact kinds that the HIA JSDoc project runner may produce.
- */
-export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([
-  "jsdoc-html",
-  "jsdoc-search-index",
-  "jsdoc-theme-metadata",
-  "jsdoc-integration",
-  "doc-source-map",
-  "documentation-presentation-profile",
-  "jsdoc-page-map"
-]);
+/** @lang zh-CN 复用包内纯数据定义的同一冻结对象。 @lang en Reuses the same frozen objects from owner-local plain-data definitions. */
+import {HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS} from './frozen-arrays.mjs';
+export {HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS};
 
 const RESULT_CONTRACT = "documentation-producer-result";
 /** @lang zh-CN 新构建采用已确认SDK结果1.0.0；不读取或重标保存的历史结果。 @lang en New builds use the confirmed SDK result 1.0.0 without reading or relabeling saved historical results. */
