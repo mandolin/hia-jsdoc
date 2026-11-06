@@ -1,0 +1,7 @@
+# 中文：被原始字节摘要绑定的配置来源和资源统一LF，跨平台检出保持证据有效。
+# English: Keep digest-bound configuration sources and resources in LF so cross-platform checkouts retain valid evidence.
+/packages/jsdoc-runner/src/schema.mjs text eol=lf
+/packages/jsdoc-runner/src/schema-legacy.mjs text eol=lf
+/packages/jsdoc-runner/schemas/hia-jsdoc-config-1.0.0.schema.json text eol=lf
+/packages/jsdoc-runner/schemas/hia-jsdoc-config-0.1.0-draft.schema.json text eol=lf
+/packages/jsdoc-runner/evidence/*.json text eol=lf

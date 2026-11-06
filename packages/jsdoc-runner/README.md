@@ -154,7 +154,31 @@ a fixed stale map; reading/schema selection/migration do not. Output inventory
 pairs wire identity and same-build maps but does not establish complete profile
 semantics, source consent or final site deployment.
 
-中文：十六个根导出另加两个JSON资源与CLI均为公开面；读/迁移不执行，低层写/运行接口有本地副作用，项目入口另有边界但不是插件沙箱。
+中文：十六个根导出另加两个Schema JSON、一个独立draft证据JSON与CLI均为公开面；读/迁移不执行，低层写/运行接口有本地副作用，项目入口另有边界但不是插件沙箱。
+
+## Configuration derivation evidence
+
+The explicit JSON subpath
+`@hia-doc/jsdoc-runner/evidence/hia-jsdoc-config-1.0.0.derivation-evidence-0.1.0-draft.json`
+ships an `artifact-derivation-evidence@0.1.0-draft` record using
+`plain-data-initialization@0.1.0-draft`. Config schema 1.0.0 and the independent
+evidence draft have separate versions. Input paths (`src/schema.mjs` and
+`src/schema-legacy.mjs`) and output paths are relative to this package root.
+
+The record describes actual finite-data JSON production. Consumers should verify
+the installed source/output bytes, replay the rule with the explicit SDK draft
+entry and apply their independent source policy. Package tests verify identities
+and resource byte digests. Full module runtime and producer authenticity remain
+separate verification dimensions.
+
+Maintainers generate a fresh package-root record using the core workspace's
+`pnpm run json-resource:jsdoc-config:build` command. Its reported output contains
+`package/evidence/` with this file. Copy the reviewed record into this package
+after source changes, then run package checks and the independent core audit.
+
+中文说明。此侧车使用独立0.1.0-draft证据与初始化规则，实际源和输出路径都相对
+安装后的包根。资源摘要、SDK重放、独立源码核验及主体信任分别管理。它记录有限
+数据生产，主模块完整运行状态另验；源变化后应重新生成并核验侧车。
 
 ## Package candidate and migration
 
