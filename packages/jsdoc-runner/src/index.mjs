@@ -17,18 +17,9 @@ export {
   getHiaJsdocConfigSchema
 } from "./schema.mjs";
 import { HIA_JSDOC_CONFIG_SCHEMA_ID, HIA_JSDOC_CONFIG_SCHEMA_VERSION, getHiaJsdocConfigSchema } from "./schema.mjs";
-
-/**
- * Declares the runtime version of the HIA JSDoc runner package.
- *
- * @constant {string}
- * @lang zh-CN 声明 HIA JSDoc runner 包的运行时版本。
- * @lang en Declares the runtime version of the HIA JSDoc runner package.
- */
-export const HIA_JSDOC_RUNNER_VERSION = "1.0.0";
 /** @lang zh-CN 复用包内纯数据定义的同一冻结对象。 @lang en Reuses the same frozen objects from owner-local plain-data definitions. */
-import {HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS} from './frozen-arrays.mjs';
-export {HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS};
+import {HIA_JSDOC_RUNNER_VERSION, HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS} from './metadata.mjs';
+export {HIA_JSDOC_RUNNER_VERSION, HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS} from './metadata.mjs';
 
 const RESULT_CONTRACT = "documentation-producer-result";
 /** @lang zh-CN 新构建采用已确认SDK结果1.0.0；不读取或重标保存的历史结果。 @lang en New builds use the confirmed SDK result 1.0.0 without reading or relabeling saved historical results. */

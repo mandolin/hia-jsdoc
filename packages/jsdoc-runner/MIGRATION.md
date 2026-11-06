@@ -48,3 +48,9 @@ tarballs can be consumed together without editing their manifests. Until actual
 publication is verified, do not assume npm registry installation of 1.0.0 exists.
 Publishing/provenance, dist-tags and a clean site deployment remain separate
 release decisions; source qualification does not perform them.
+
+## Metadata subpath
+
+Tools can import pure runner metadata from `@hia-doc/jsdoc-runner/metadata`. Existing root imports continue to expose the same version and array objects. Producer descriptors retain mutable shallow copies of the arrays; staged descriptors keep their existing shared references.
+
+中文说明。工具发现可采用metadata子入口；原根入口继续引用同一定义。生产器的数组副本仍可变，暂存描述符继续共享基础副本。

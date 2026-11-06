@@ -1,22 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
-import { jsdocProducer, jsdocProducerDescriptor } from "./index.mjs";
-
-/**
- * Describes the JSDoc adapter that stages output inside its source workspace before publishing it to an orchestration output directory.
- *
- * @constant {object}
- * @lang zh-CN 描述先在 JSDoc 源工作区内完成生成，再将已验证产物复制到编排输出目录的 adapter。
- * @lang en Describes the adapter that builds inside the JSDoc source workspace before copying verified artifacts to an orchestration output directory.
- */
-export const stagedJsdocProducerDescriptor = Object.freeze({
-  ...jsdocProducerDescriptor,
-  /**
-   * @lang zh-CN 暂存适配器在宿主中显示的名称。
-   * @lang en Name presented by the host for the staged adapter.
-   */
-  displayName: "HIA JSDoc Staged Adapter"
-});
+import {jsdocProducer} from './index.mjs';
+/** @lang zh-CN 复用暂存纯模块的同一描述符。 @lang en Reuses the same staged descriptor from its pure module. */
+import {stagedJsdocProducerDescriptor} from './staged-descriptor.mjs';
+export {stagedJsdocProducerDescriptor} from './staged-descriptor.mjs';
 
 /**
  * Runs JSDoc with an in-workspace staging directory, then copies result artifacts into the caller-controlled output directory.

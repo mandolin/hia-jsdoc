@@ -9,7 +9,8 @@
     ".": "./src/index.mjs",
     "./evidence/hia-jsdoc-config-1.0.0.derivation-evidence-0.1.0-draft.json": "./evidence/hia-jsdoc-config-1.0.0.derivation-evidence-0.1.0-draft.json",
     "./schemas/hia-jsdoc-config-1.0.0.schema.json": "./schemas/hia-jsdoc-config-1.0.0.schema.json",
-    "./schemas/hia-jsdoc-config-0.1.0-draft.schema.json": "./schemas/hia-jsdoc-config-0.1.0-draft.schema.json"
+    "./schemas/hia-jsdoc-config-0.1.0-draft.schema.json": "./schemas/hia-jsdoc-config-0.1.0-draft.schema.json",
+    "./metadata": "./src/metadata.mjs"
   },
   "bin": {
     "hia-jsdoc": "./src/cli.mjs"

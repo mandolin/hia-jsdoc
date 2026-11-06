@@ -185,3 +185,13 @@ after source changes, then run package checks and the independent core audit.
 Current source package identity is 1.0.0, with exact matching first-party runtime dependencies and public access metadata. See the shipped [migration guide](MIGRATION.md). Actual npm publication is verified separately; do not assume an unpublished registry version is available.
 
 中文：当前包为1.0.0源码候选，永久依赖与版本元数据协调；实际发布另验，旧wire不改号。
+
+## Pure metadata
+
+```js
+import { HIA_JSDOC_RUNNER_VERSION, HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS } from "@hia-doc/jsdoc-runner/metadata";
+```
+
+This entry exposes the runner version and frozen input/output kind arrays from the same definitions used by the root API. It contains pure data definitions, with no runner execution dependencies.
+
+中文说明。metadata子入口提供版本及冻结的输入/输出种类，根入口与该入口引用同一定义。执行构建继续使用原运行API。

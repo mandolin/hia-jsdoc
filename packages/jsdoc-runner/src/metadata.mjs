@@ -1,4 +1,4 @@
-/** @file @lang zh-CN 包内冻结数组纯数据定义，无导入和运行器副作用。 @lang en Owner-local frozen-array plain-data definitions without imports or runner side effects. */
+/** @file @lang zh-CN 运行器纯元数据，含版本及冻结输入/输出种类。 @lang en Pure runner metadata containing its version and frozen input/output kinds. */
 
 /**
  * Lists the input kinds accepted by the HIA JSDoc project runner.
@@ -25,3 +25,12 @@ export const HIA_JSDOC_OUTPUT_KINDS = Object.freeze([
   "documentation-presentation-profile",
   "jsdoc-page-map"
 ]);
+
+/**
+ * Declares the runtime version of the HIA JSDoc runner package.
+ *
+ * @constant {string}
+ * @lang zh-CN 声明 HIA JSDoc runner 包的运行时版本。
+ * @lang en Declares the runtime version of the HIA JSDoc runner package.
+ */
+export const HIA_JSDOC_RUNNER_VERSION = "1.0.0";
