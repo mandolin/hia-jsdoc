@@ -195,3 +195,51 @@ import { HIA_JSDOC_RUNNER_VERSION, HIA_JSDOC_INPUT_KINDS, HIA_JSDOC_OUTPUT_KINDS
 This entry exposes the runner version and frozen input/output kind arrays from the same definitions used by the root API. It contains pure data definitions, with no runner execution dependencies.
 
 中文说明。metadata子入口提供版本及冻结的输入/输出种类，根入口与该入口引用同一定义。执行构建继续使用原运行API。
+
+## Command reference
+
+中文。以下为当前1.0.0源码候选的完整选项。请在安装项目的npm脚本调用，或用 `npm exec --offline -- hia-jsdoc --help` 选择本地bin。`--help/-h` 退出0，`--version/-v` 输出运行器版本，构建仅success退出0，partial/failed和参数/配置错误退出1。错误使用固定消息，工件和JSDoc运行配置会写入输出目录，旧输出目录可能保留其它文件。
+
+English. These are the complete options for the 1.0.0 source candidate. Invoke through the installed project's npm script or select its local binary with `npm exec --offline -- hia-jsdoc --help`. Help exits 0; version prints the runner version. Only successful builds exit 0; partial/failed builds and argument/config errors exit 1. Errors use controlled messages. Artifacts and runtime JSDoc config are written, and reused output directories may retain other files.
+
+| Option | 中文 | English |
+| --- | --- | --- |
+| `--config/-c <file>` | 调用目录下的严格JSON配置 | Strict JSON config resolved from cwd |
+| `--workspace-root <dir>` | 仅直接模式，相对调用目录，默认`.` | Direct mode only, cwd-relative, default `.` |
+| `--out-dir/-o <dir>` | 两模式覆盖输出，相对有效工作区 | Output override in both modes, relative to effective workspace |
+| `--include-pattern <regex>` | 两模式覆盖文件名正则，默认覆盖mjs/cjs/js/jsx | Filename regex override in both modes, default includes mjs/cjs/js/jsx |
+| `--mode <mode>` | standalone、hiaIntegration、both，默认both | standalone, hiaIntegration, or both; default both |
+| `--help/-h` | 根帮助，退出0 | Root help, exit 0 |
+| `--version/-v` | 运行器实现版本 | Runner implementation version |
+| 位置输入 / positional inputs | 无配置时必填，相对工作区 | Required without config, relative to workspace |
+
+### Config and direct modes
+
+中文。配置路径相对调用目录，配置workspaceRoot相对配置目录，outputDirectory相对工作区。配置模式忽略位置输入和workspace-root；out-dir、mode和include-pattern在读取后覆盖。直接模式默认输出dist/hia-jsdoc。配置/直接模式最终均须通过运行器路径与输入校验。
+
+English. Resolve config from cwd, its workspaceRoot from the config directory, and outputDirectory from the workspace. Config mode ignores positional inputs and workspace-root; out-dir, mode, and include-pattern override after loading. Direct mode defaults to dist/hia-jsdoc. Both modes undergo final runner path/input validation.
+
+中文。mode选择集成与HIA主题规则。hiaIntegration关闭HIA主题时，上游JSDoc默认模板仍可能写出HTML，请按实际工件清单检查输出。
+
+English. Mode selects integration and HIA-theme rules. With the HIA theme disabled in hiaIntegration mode, upstream JSDoc's default template may still write HTML. Inspect the actual artifact inventory.
+
+保存以下内容为项目根的 `hia-jsdoc.config.json`，并准备本项目允许读取的sample.js。Save this as `hia-jsdoc.config.json` at the project root and prepare an authorized sample.js.
+
+```json
+{"schemaVersion":"1.0.0","workspaceRoot":".","outputDirectory":"dist/hia-jsdoc","inputs":[{"kind":"javascript-source","path":"sample.js"}],"options":{"mode":"both"}}
+```
+
+```sh
+npm exec --offline -- hia-jsdoc --config hia-jsdoc.config.json
+npm exec --offline -- hia-jsdoc --workspace-root . --mode hiaIntegration --out-dir dist/jsdoc-direct sample.js
+```
+
+### Installation and version routing
+
+中文。运行器依赖JSDoc和preset，但插件与主题是另外的安装前置。默认插件路径为工作区的 `node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs`，默认主题为 `node_modules/@mandolin/jsdoc-theme-hia`。本页候选要求配套的 `@hia-doc/jsdoc-runner`、`@mandolin/jsdoc-plugin-hia-sys`、`@mandolin/jsdoc-theme-hia` 1.0.0及内部依赖。它们是受信可执行插件/模板，安装前须批准这些本地包。自定义布局可用options.plugin.pluginPath和options.theme.template显式配置受信路径。
+
+English. The runner depends on JSDoc and the preset, while the plugin and theme are separate installation prerequisites. Defaults use workspace paths `node_modules/@mandolin/jsdoc-plugin-hia-sys/src/index.cjs` and `node_modules/@mandolin/jsdoc-theme-hia`. This candidate requires matching 1.0.0 runner/plugin/theme packages and internal dependencies. Approve these locally executable plugins/templates before installation. For a different layout, explicitly configure trusted options.plugin.pluginPath and options.theme.template paths.
+
+中文。候选归档须连同配套依赖一起传入npm install，离线安装须另备第三方依赖缓存。走注册表时先分别用npm view核查这些版本再安装。用 `npm list @hia-doc/jsdoc-runner @mandolin/jsdoc-plugin-hia-sys @mandolin/jsdoc-theme-hia --depth=0` 核本地包，用 `hia-jsdoc --version` 核运行器版本。旧0.1.x配置教程按旧安装版本阅读，当前配置schemaVersion为1.0.0，各产物版本另按精确契约解释。
+
+English. Install candidate archives together with matching dependencies; offline installs also need a prepared third-party cache. For registry installs, verify each target with npm view before installation. Check local packages with `npm list @hia-doc/jsdoc-runner @mandolin/jsdoc-plugin-hia-sys @mandolin/jsdoc-theme-hia --depth=0` and the runner with `hia-jsdoc --version`. Read older 0.1.x tutorials against their installed versions. Current config schemaVersion is 1.0.0, while artifacts retain independent exact contract versions.

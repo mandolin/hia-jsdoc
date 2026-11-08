@@ -4,10 +4,16 @@
  * @lang en Checks actual npm dry-run inventories for eight independent packages, requiring each license/README/entry without publishing or substituting root files for package contents.
  */
 const { spawnSync } = require("node:child_process");
+const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
+// <lang><zh-CN>运行器随包README须保留完整选项及两模式/安装参考；词项检查只防缺失，语义另由实际命令验证。</zh-CN><en>The bundled runner README retains options and mode/installation references; token checks catch omissions while actual commands verify semantics.</en></lang>
+const runnerReadme = fs.readFileSync(path.join(root, "packages/jsdoc-runner/README.md"), "utf8");
+for (const token of ["## Command reference", "### Config and direct modes", "### Installation and version routing", "--config/-c", "--workspace-root", "--out-dir/-o", "--include-pattern", "--mode", "--help/-h", "--version/-v"]) {
+  assert.ok(runnerReadme.includes(token), `Runner documentation is missing ${token}.`);
+}
 const packageRoots = fs.readdirSync(path.join(root, "packages"), { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
   .map((entry) => path.join(root, "packages", entry.name))
