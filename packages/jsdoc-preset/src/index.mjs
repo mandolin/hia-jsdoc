@@ -12,7 +12,7 @@ import { createHiaJsdocThemeBridge } from "@hia-doc/jsdoc-theme-bridge";
 /**
  * Creates a JSDoc configuration that wires the HIA plugin, HIA theme, integration output, and extra plugins.
  *
- * @param {object} [options] <lang><zh-CN>HIA JSDoc preset 配置覆盖项。</zh-CN><en>Configuration overrides for the HIA JSDoc preset.</en></lang>
+ * @param {object} [options] <lang><zh-CN>HIA JSDoc preset配置覆盖项，可显式提供hia.siteNavigation与hia.uiLocale，省略时保留原结构。</zh-CN><en>Preset overrides including explicit hia.siteNavigation and hia.uiLocale, retaining the original structure when omitted.</en></lang>
  * @returns {object} <lang><zh-CN>可直接写入 JSDoc config file 的配置对象。</zh-CN><en>A configuration object that can be written directly to a JSDoc config file.</en></lang>
  * @throws {TypeError} <lang><zh-CN>当 mode 不是已支持的 HIA JSDoc 模式时抛出。</zh-CN><en>Thrown when mode is not a supported HIA JSDoc mode.</en></lang>
  * @lang zh-CN 创建串接 HIA 插件、HIA 主题、integration 输出和额外插件的 JSDoc 配置。
@@ -54,6 +54,9 @@ export function createHiaJsdocConfig(options = {}) {
       recurse: options.recurse ?? true,
       hia: {
         mode: mode === "both" ? "standalone" : mode,
+        // <lang><zh-CN>只透传显式站点选择，普通配置保持原结构；主题owner在写出前校验契约和界面语言。</zh-CN><en>Forward explicit site selections only, retaining ordinary config structure; the theme owner validates contract and UI locale before writes.</en></lang>
+        ...(options.hia?.siteNavigation === undefined ? {} : { siteNavigation: options.hia.siteNavigation }),
+        ...(options.hia?.uiLocale === undefined ? {} : { uiLocale: options.hia.uiLocale }),
         source: {
           basePath: options.hia?.source?.basePath ?? ".",
           mode: options.hia?.source?.mode ?? "all",

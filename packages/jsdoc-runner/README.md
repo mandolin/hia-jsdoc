@@ -1,5 +1,16 @@
 # JSDoc Runner
 
+## Host navigation forwarding
+
+Set `options.hia.siteNavigation` and an explicit `options.hia.uiLocale` (`en`
+or `zh-CN`) in the versioned project configuration. The preset forwards these
+values to `opts.hia` in the actual JSDoc configuration. The selected template
+must support the shared site-chrome entry and its optional renderer peer.
+Navigation data follows `documentation-site-navigation@0.1.0-draft` and carries
+public website targets independently of source disclosure authority.
+
+中文说明。运行器/preset只透传明确提供的站点与界面语言选项，未提供时保持原配置结构。模板在写出页面前验证导航、语言与依赖。普通JSDoc CLI也可以在真实JSDoc配置的`opts.hia`下使用同名字段。
+
 ## Supported runtime
 
 Current source supports Node.js `^22.23.4 || ^24.22.1`. Release checks use

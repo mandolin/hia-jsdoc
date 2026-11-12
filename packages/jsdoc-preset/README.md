@@ -1,5 +1,13 @@
 # JSDoc Preset
 
+## Optional site chrome
+
+`createHiaJsdocConfig` forwards explicit `hia.siteNavigation` and `hia.uiLocale`
+to the generated JSDoc `opts.hia`. The template validates these selections and
+loads its optional shared-renderer peer. Omitted fields stay absent.
+
+中文说明。站点输入与显式界面语言沿运行器/preset/真实JSDoc配置传递，校验和呈现由主题负责。原生页映射、源码许可及其他配置语义按既有契约处理。
+
 ## Supported runtime
 
 Current source supports Node.js `^22.23.4 || ^24.22.1`. Release checks use
