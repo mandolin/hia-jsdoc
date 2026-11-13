@@ -12,11 +12,11 @@
     {
       "name": "@mandolin/jsdoc-theme-hia",
       "repository": "jsdoc-theme-hia",
-      "commit": "ef3933b0f7a05961d2c88bf412996dfcae6098aa",
+      "commit": "ed91857ad6e2182ce283c5c695a37741b1b22597",
       "version": "1.0.0",
       "archive": "mandolin-jsdoc-theme-hia-1.0.0.tgz",
-      "integrity": "sha512-XwX8OloLag0QWxbLRCHOcQmZlX5gA8E/xRp3LWnZ5zOSBsVOsddkrBEYtIqKGcRInwi6cPkylMhYNcLd9nXiLw==",
-      "sha256": "4a92abea7ff97bbc504d0805130c3852cb2571c00053c41c6e532fb696efec70"
+      "integrity": "sha512-7BibUYO2nkHCj/7ynenZbNyya9GgxhlYWD9JaMYR7VaP5cmAUWr7SeLRyPxryiF8tA8jspr/bgfpb0lpfx9riA==",
+      "sha256": "2eebb6422428c1b48223e12bf2d085de131baf2e63c7523da809e4b027372f12"
     }
   ]
 }
