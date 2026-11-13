@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import fs from "node:fs";
-import { mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, symlink } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -258,8 +258,35 @@ test("staged jsdoc producer copies artifacts to an external orchestration output
     assert.ok(result.artifacts.some((artifact) => artifact.kind === "documentation-presentation-profile"));
     assert.ok(existsSync(path.join(outputDirectory, "hia-integration.json")));
     assert.ok(existsSync(path.join(outputDirectory, "documentation-presentation-profile.json")));
-    assert.equal(existsSync(path.join(root, ".hia-jsdoc-staging")), false);
+    // <lang><zh-CN>清理责任限于本次唯一子目录；共享父目录可能仍承载其它执行或处于Windows删除待定状态。</zh-CN><en>Cleanup responsibility covers this invocation's unique child, while the shared parent may still serve other executions or remain pending deletion on Windows.</en></lang>
+    const invocationDirectory = path.join(root, ".hia-jsdoc-staging", `${process.pid}-${path.basename(outputDirectory)}`);
+    assert.equal(existsSync(invocationDirectory), false);
   } finally {
     await rm(outputDirectory, { recursive: true, force: true });
+  }
+});
+
+test("staged cleanup preserves another invocation's directory in the shared parent", async () => {
+  // <lang><zh-CN>工作区、输出和并存任务均为本测试的合成目录，依赖通过目录链接读取复用。</zh-CN><en>Workspace, output and the concurrent task are synthetic directories owned by this test, reading shared dependencies through a directory link.</en></lang>
+  const repository = fileURLToPath(new URL("..", import.meta.url));
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), "hia-jsdoc-stage-concurrent-"));
+  const workspaceRoot = path.join(temporaryRoot, "workspace");
+  const outputDirectory = path.join(temporaryRoot, "published");
+  const siblingDirectory = path.join(workspaceRoot, ".hia-jsdoc-staging", "other-invocation");
+  try {
+    await mkdir(siblingDirectory, {recursive: true});
+    fs.writeFileSync(path.join(workspaceRoot, "sample.js"), "/** @lang zh-CN 合成问候。\n * @lang en Synthetic greeting. */\nfunction greet() {}\n");
+    fs.writeFileSync(path.join(siblingDirectory, "sentinel.txt"), "OTHER_INVOCATION");
+    await symlink(path.join(repository, "node_modules"), path.join(workspaceRoot, "node_modules"), process.platform === "win32" ? "junction" : "dir");
+    const result = stagedJsdocProducer.produce({workspaceRoot, outputDirectory, inputs: [{kind:"javascript-source", path:"sample.js"}]});
+    assert.equal(result.status, "success");
+    assert.equal(existsSync(path.join(workspaceRoot, ".hia-jsdoc-staging", `${process.pid}-published`)), false);
+    assert.equal(fs.readFileSync(path.join(siblingDirectory, "sentinel.txt"), "utf8"), "OTHER_INVOCATION");
+  } finally {
+    // <lang><zh-CN>核真实临时根及固定前缀，仅移除本测试树，目录链接自身随树清理。</zh-CN><en>Check the physical temporary root and fixed prefix before removing only this test tree, including its directory link itself.</en></lang>
+    const realRoot = fs.realpathSync(temporaryRoot);
+    assert.equal(path.dirname(realRoot), fs.realpathSync(os.tmpdir()));
+    assert.ok(path.basename(realRoot).startsWith("hia-jsdoc-stage-concurrent-"));
+    await rm(realRoot, {recursive: true, force: true});
   }
 });
