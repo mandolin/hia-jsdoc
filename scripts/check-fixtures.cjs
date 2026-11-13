@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const {hasFixtureLocalPathLeakage} = require("./fixture-privacy.cjs");
 
 const root = path.resolve(__dirname, "..");
 const fixtureRoot = path.join(root, "fixtures", "basic");
@@ -102,17 +103,11 @@ function expectEqual(actual, expected, label) {
 }
 
 function expectNoLocalPathLeakage(directory) {
-  const forbidden = [
-    "K:\\Project",
-    "Github_mandolin",
-    "HIA-Documentation-Sys"
-  ];
+  // <lang><zh-CN>品牌正文可公开；路径及编码形式用共享纯检查拒绝，错误不回显命中内容。</zh-CN><en>Brand prose is public, while shared pure checks reject paths and encoded forms without echoing matched content.</en></lang>
   for (const filePath of listFiles(directory)) {
     const content = fs.readFileSync(filePath, "utf8");
-    for (const marker of forbidden) {
-      if (content.includes(marker)) {
-        fail(`Local path leakage in ${path.relative(root, filePath).replaceAll("\\", "/")}: ${marker}`);
-      }
+    if (hasFixtureLocalPathLeakage(content)) {
+      fail(`Local path leakage in ${path.relative(root, filePath).replaceAll("\\", "/")}.`);
     }
   }
 }

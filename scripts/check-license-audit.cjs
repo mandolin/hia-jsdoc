@@ -4,6 +4,11 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 require("./prepare-owner-packages.cjs").verifyOwnerLock(root);
 const reviewedExternalPackages = new Map([
+  ["ajv", { version: "8.17.1", license: "MIT" }],
+  ["fast-deep-equal", { version: "3.1.3", license: "MIT" }],
+  ["fast-uri", { version: "3.1.9", license: "BSD-3-Clause" }],
+  ["json-schema-traverse", { version: "1.0.0", license: "MIT" }],
+  ["require-from-string", { version: "2.0.2", license: "MIT" }],
   ["@babel/helper-string-parser", { version: "7.29.7", license: "MIT" }],
   ["@babel/helper-validator-identifier", { version: "7.29.7", license: "MIT" }],
   ["@babel/parser", { version: "7.29.7", license: "MIT" }],

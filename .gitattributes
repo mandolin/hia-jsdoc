@@ -5,3 +5,13 @@
 /packages/jsdoc-runner/schemas/hia-jsdoc-config-1.0.0.schema.json text eol=lf
 /packages/jsdoc-runner/schemas/hia-jsdoc-config-0.1.0-draft.schema.json text eol=lf
 /packages/jsdoc-runner/evidence/*.json text eol=lf
+
+# 中文：命令来源与生成资产跨平台采用原始LF字节。
+# English: Command sources and generated assets use original LF bytes across platforms.
+/packages/jsdoc-runner/src/cli.mjs text eol=lf
+/packages/jsdoc-runner/src/command-content.mjs text eol=lf
+/packages/jsdoc-runner/src/metadata.mjs text eol=lf
+/packages/jsdoc-runner/src/index.mjs text eol=lf
+/packages/jsdoc-runner/README.md text eol=lf
+/packages/jsdoc-runner/package.json text eol=lf
+/packages/jsdoc-runner/src/command-documentation/* text eol=lf

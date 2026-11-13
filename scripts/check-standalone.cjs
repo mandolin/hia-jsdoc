@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const {hasFixtureLocalPathLeakage} = require("./fixture-privacy.cjs");
 
 const root = path.resolve(__dirname, "..");
 const output = path.join(root, "examples", "standalone", "dist", "hia-jsdoc");
@@ -33,11 +34,10 @@ for (const artifact of manifest.artifacts ?? []) {
 const serialized = listFiles(output)
   .map((filePath) => fs.readFileSync(filePath, "utf8"))
   .join("\n");
-for (const marker of ["K:\\Project", "Github_mandolin", "HIA-Documentation-Sys"]) {
-  if (serialized.includes(marker)) {
-    console.error(`Local path leakage in HIA JSDoc standalone output: ${marker}`);
-    failed = true;
-  }
+// <lang><zh-CN>复用示例路径检查，品牌正文可公开，私有路径使用固定错误。</zh-CN><en>Reuse fixture path checks, allowing public brand prose and reporting private paths through a fixed error.</en></lang>
+if (hasFixtureLocalPathLeakage(serialized)) {
+  console.error("Local path leakage in HIA JSDoc standalone output.");
+  failed = true;
 }
 
 if (failed) {

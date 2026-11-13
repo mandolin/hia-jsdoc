@@ -7,3 +7,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .DS_Store
+
+packages/jsdoc-runner/src/.command-documentation-*
+packages/jsdoc-runner/src/command-documentation.lock

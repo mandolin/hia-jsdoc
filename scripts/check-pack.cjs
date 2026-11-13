@@ -70,7 +70,7 @@ for (const packageRoot of packageRoots) {
   if (packageJson.name === "@hia-doc/jsdoc-runner") {
     // <lang><zh-CN>运行器入口必须与它静态导入的封闭地图校验模块一起分发。</zh-CN><en>Ship the runner entry together with the closed map validator it imports statically.</en></lang>
     // <lang><zh-CN>侧车绑定的源与输出必须实际入包，独立安装后才可重新核原始字节。</zh-CN><en>Sources and outputs bound by the sidecar must actually ship so standalone installations can recheck original bytes.</en></lang>
-    for (const requiredPath of ["src/cli.mjs", "src/doc-source-map-validation.mjs", "src/schema.mjs", "src/schema-legacy.mjs", "schemas/hia-jsdoc-config-1.0.0.schema.json", "schemas/hia-jsdoc-config-0.1.0-draft.schema.json", "evidence/hia-jsdoc-config-1.0.0.derivation-evidence-0.1.0-draft.json"]) {
+    for (const requiredPath of ["src/command-documentation/description.json", "src/command-documentation/observations.json", "src/command-documentation/document.hia.json", "src/command-documentation/command.schema.json", "src/command-documentation/document.schema.json", "src/command-documentation/help.mjs", "src/command-documentation/generation.json", "src/cli.mjs", "src/doc-source-map-validation.mjs", "src/schema.mjs", "src/schema-legacy.mjs", "schemas/hia-jsdoc-config-1.0.0.schema.json", "schemas/hia-jsdoc-config-0.1.0-draft.schema.json", "evidence/hia-jsdoc-config-1.0.0.derivation-evidence-0.1.0-draft.json"]) {
       if (!packedPaths.has(requiredPath)) {
         console.error(`Missing ${requiredPath} in @hia-doc/jsdoc-runner pack dry-run.`);
         failed = true;

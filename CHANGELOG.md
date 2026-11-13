@@ -1,5 +1,11 @@
 # Changelog
 
+## Command help and documentation
+
+- Generate bilingual 80/120-column CLI help and standard command documentation from shared field content.
+- Verify actual parseArgs declarations, package-relative source bytes and bundled schemas/assets during development checks.
+- 中文。七开关及位置输入共享描述，配置覆盖、重复末值和空值行为逐项说明，并纳入归档与离线门禁。
+
 ## 1.0.0 source candidates
 
 - 中文：八个公开包、永久第一方依赖/运行与默认元数据协调1.0.0；私有开发根显式固定owner tarball与冻结锁，原清单消费不再改写两个bridge。工件wire与旧读保持，实际npm发布另验。

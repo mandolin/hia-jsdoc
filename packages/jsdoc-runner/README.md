@@ -254,3 +254,17 @@ English. The runner depends on JSDoc and the preset, while the plugin and theme 
 中文。候选归档须连同配套依赖一起传入npm install，离线安装须另备第三方依赖缓存。走注册表时先分别用npm view核查这些版本再安装。用 `npm list @hia-doc/jsdoc-runner @mandolin/jsdoc-plugin-hia-sys @mandolin/jsdoc-theme-hia --depth=0` 核本地包，用 `hia-jsdoc --version` 核运行器版本。旧0.1.x配置教程按旧安装版本阅读，当前配置schemaVersion为1.0.0，各产物版本另按精确契约解释。
 
 English. Install candidate archives together with matching dependencies; offline installs also need a prepared third-party cache. For registry installs, verify each target with npm view before installation. Check local packages with `npm list @hia-doc/jsdoc-runner @mandolin/jsdoc-plugin-hia-sys @mandolin/jsdoc-theme-hia --depth=0` and the runner with `hia-jsdoc --version`. Read older 0.1.x tutorials against their installed versions. Current config schemaVersion is 1.0.0, while artifacts retain independent exact contract versions.
+
+## Generated command documentation and help
+
+中文。`hia-jsdoc --help`和`-h`由同一字段级双语描述生成80/120列纯文本，七开关及位置输入同时投影为标准HiaDocument。真实宽终端使用120列，重定向和其余终端使用80列。Node严格解析先于帮助，未知开关/缺值返回固定stderr/1；合法参数带help时跳过业务配置读取与执行。重复带值选项取最后一个值，`--`后全部作为位置输入。
+
+English. `hia-jsdoc --help` and `-h` render 80/120-column plain text from the same field-level bilingual description that produces a standard HiaDocument for seven switches and positional inputs. Wide terminals use 120 columns; redirected output and other terminals use 80. Strict Node argument parsing precedes help, so unknown switches and missing values produce fixed stderr/1. Valid arguments with help skip business config loading and execution. Repeated value options use the last value, and all tokens after `--` are positional inputs.
+
+中文。配置模式只接受非空out-dir/include-pattern/mode覆盖，空字符串保留配置。直接模式空输出指向工作区根并受既有输出边界拒绝；空mode与include-pattern由运行器拒绝。运行真实JSDoc并执行所选受信插件/模板，写运行配置及文档，失败可能保留部分输出，原输出目录中的旧文件可能继续存在。
+
+English. Config mode applies only nonempty out-dir/include-pattern/mode overrides; empty strings retain configured values. In direct mode an empty output selects the workspace root and is rejected by the existing output boundary, while empty mode and include-pattern values are rejected by the runner. Builds invoke actual JSDoc and execute selected trusted plugins/templates, writing runtime configuration and documentation. Failures may leave partial output, and older files in reused output directories may remain.
+
+The `src/command-documentation/` package directory ships `description.json`, `observations.json`, `document.hia.json`, `command.schema.json`, `document.schema.json`, `help.mjs` and `generation.json`. Maintainers run `npm run commands:check` for offline source/declaration/schema freshness checks and `npm run commands:build -- --core-module <core-entry>` to regenerate through an explicitly selected compatible core. Provenance records actual parser-call lines with unknown column units/end boundaries and SHA-256 digests of original package-relative source bytes. Digest-bound sources and assets use repository-scoped LF attributes.
+
+中文。七份资产在运行器包内分发，正常CLI只加载静态帮助。开发期重新生成显式选择core，日常离线门禁独立核真实parseArgs声明、原字节来源、schema和输出组。来源锚点仅到真实解析调用行，列单位及终点未知；限定LF属性保证跨平台摘要一致。

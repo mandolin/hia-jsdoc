@@ -1,0 +1,57 @@
+[
+  {
+    "commandId": "hia-jsdoc",
+    "sourceDigests": {
+      "src/cli.mjs": "32447befbb6febf3003764a7596da5dc4040d12c031e3d71fb1a253665d6282e",
+      "src/command-content.mjs": "fddbbc033638d21106cbf6b03b526dd8281dc385754c271d4e4987e72465ccea",
+      "src/metadata.mjs": "46b4c6198825d756674e82b4a3cbb4fd48161d7f53d01daf31b664ff9cd919fe",
+      "src/index.mjs": "e28f64dac3a86ef6641515e3bbbc2d2237966c6a4108d7d817b872dc3b6eefb1",
+      "src/schema.mjs": "f0096de975fb457d63ee2237bff3f0a20ed53944979ce90c815c01d4cd6618a0",
+      "src/schema-legacy.mjs": "f9567dad4d2c576c91a2ff706021e0224d0e0d23f56e09fb81797936d0664a0f",
+      "schemas/hia-jsdoc-config-0.1.0-draft.schema.json": "66a08073e3a07d8a255914edde1f1c73a221b7da5e1c53347e79b2006eae0bd6",
+      "schemas/hia-jsdoc-config-1.0.0.schema.json": "10242b1c12a7553c63453160cb3a7cea591c1dfaadd2bd42c6a7d372a5b451e4",
+      "README.md": "b44ac3c7d4b9bf57da451aa290342359e12d9c8f5f1ce9eb2bd8943375a82d44",
+      "package.json": "d77069301a0a206ba3a19854982bcd54df97b89094b8f24c1d06f26efb48c37c"
+    },
+    "options": [
+      {
+        "name": "config",
+        "valueType": "string",
+        "short": "c"
+      },
+      {
+        "name": "help",
+        "valueType": "boolean",
+        "short": "h"
+      },
+      {
+        "name": "include-pattern",
+        "valueType": "string"
+      },
+      {
+        "name": "mode",
+        "valueType": "string"
+      },
+      {
+        "name": "out-dir",
+        "valueType": "string",
+        "short": "o"
+      },
+      {
+        "name": "version",
+        "valueType": "boolean",
+        "short": "v"
+      },
+      {
+        "name": "workspace-root",
+        "valueType": "string"
+      }
+    ],
+    "positionals": [
+      {
+        "name": "positionals",
+        "valueType": "string"
+      }
+    ]
+  }
+]

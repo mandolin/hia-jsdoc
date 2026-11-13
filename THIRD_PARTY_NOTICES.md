@@ -40,3 +40,17 @@ This workspace uses the following reviewed dependencies for preset/runner execut
 The two first-party owner candidates use explicit pinned file tarballs only in the private development root; public package runtime edges remain exact 1.0.0. owner-sources.json and check:owners bind Git/SHA/SRI. No new third-party product dependency is introduced.
 
 中文：两个第一方候选的开发来源单独核Git/归档SRI，第三方仍锁官方registry/许可，不假称候选已发布。
+
+## Command documentation development checks
+
+中文。工作区开发门禁使用Ajv验证自包含schema，以下五个精确锁依赖仅用于开发。来源为官方npm归档中的package.json和LICENSE，Ajv许可证另核官方仓库。
+
+The workspace uses Ajv to validate self-contained command/document schemas during development. The following exact locked dependencies are development-only. Licenses are reviewed against official npm package manifests and license files, with Ajv also checked against its official repository.
+
+| Package | Version | License | Purpose |
+| --- | --- | --- | --- |
+| `ajv` | `8.17.1` | MIT | Development JSON Schema validator |
+| `fast-deep-equal` | `3.1.3` | MIT | Development-only validator dependency |
+| `fast-uri` | `3.1.9` | BSD-3-Clause | Development-only validator dependency |
+| `json-schema-traverse` | `1.0.0` | MIT | Development-only validator dependency |
+| `require-from-string` | `2.0.2` | MIT | Development-only validator dependency |

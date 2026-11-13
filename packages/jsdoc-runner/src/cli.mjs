@@ -31,7 +31,10 @@ try {
   });
 
   if (values.help) {
-    process.stdout.write(`HIA JSDoc ${HIA_JSDOC_RUNNER_VERSION}\n\nUsage:\n  hia-jsdoc --config hia-jsdoc.config.json\n  hia-jsdoc [options] <input...>\n\nOptions:\n  -c, --config <path>\n  -o, --out-dir <path>\n      --workspace-root <path>\n      --include-pattern <regex>\n      --mode <standalone|hiaIntegration|both>\n  -v, --version\n`);
+    // <lang><zh-CN>静态帮助与文档来自同一内容，重定向为80列，真实宽终端使用120列。</zh-CN><en>Static help and documentation share content, using 80 columns for redirection and 120 for actual wide terminals.</en></lang>
+    const help = await import("./command-documentation/help.mjs");
+    process.stdout.write(process.stdout.isTTY && process.stdout.columns >= 120
+      ? help.HIA_JSDOC_HELP_120 : help.HIA_JSDOC_HELP_80);
     process.exit(0);
   }
 
