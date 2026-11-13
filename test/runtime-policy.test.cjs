@@ -24,7 +24,11 @@ test("clean CI pins sibling owners and runs inside the primary checkout", () => 
   assert.match(workflow, /name: Check out repository\s+uses: actions\/checkout@v6\s+with:\s+path: hia-jsdoc/u);
   // <lang><zh-CN>插件从自身模块位置解析JSDoc peer；仅检出源码不能证明4.0.5解析器可见。</zh-CN><en>The plugin resolves its JSDoc peer from its own module location; source checkout alone does not make the 4.0.5 parser visible.</en></lang>
   assert.match(workflow, /working-directory: jsdoc-plugin-hia-sys\s+run: npm ci --registry=https:\/\/registry\.npmjs\.org\//u);
-  for (const [name, ref] of [["jsdoc-plugin-hia-sys", "15970dc9da0f8e120677eab7eba3e959dcf42a34"], ["jsdoc-theme-hia", "ef3933b0f7a05961d2c88bf412996dfcae6098aa"]]) {
+  // <lang><zh-CN>精确提交直接取本仓采用表，避免测试保留已取代的副本SHA。</zh-CN><en>Read exact revisions from this repository's adoption table so the test cannot retain a superseded duplicate SHA.</en></lang>
+  const owners = json("owner-sources.json").owners;
+  assert.deepEqual(owners.map(owner => owner.repository).sort(), ["jsdoc-plugin-hia-sys", "jsdoc-theme-hia"]);
+  for (const { repository: name, commit: ref } of owners) {
+    assert.match(ref, /^[a-f0-9]{40}$/u);
     // <lang><zh-CN>每段repository/ref/path必须同属于一次checkout，阻止仅在其它步骤或注释出现期望文本。</zh-CN><en>Repository/ref/path must belong to the same checkout block, not merely appear in another step or comment.</en></lang>
     const block = workflow.split(/\n\s+- name:/u).find((step) => step.includes(`repository: mandolin/${name}\n`));
     assert.ok(block, "Required sibling checkout is missing.");
