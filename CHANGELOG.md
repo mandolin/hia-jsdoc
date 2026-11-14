@@ -2,6 +2,8 @@
 
 ## Unreleased — Narrow JSDoc table adoption
 
+- 中文：同步采用共享导航参数表修复，保留原生最小表宽及名称/类型的正常断词，固定归档SHA/SRI和安装锁。
+- English: Adopt the shared-navigation parameter-table fix, retaining native minimum widths and normal identifier word boundaries with pinned archive digests and installation lock.
 - 中文：固定采用已验证的JSDoc主题源码修复，参数表在窄屏正文内可局部横向滚动；同步归档摘要、锁及CI来源。
 - English: Pin the verified JSDoc theme fix for locally scrollable parameter tables on narrow screens, coordinating archive digests, locks and CI sources.
 
