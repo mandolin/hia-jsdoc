@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased — Shared dark and print appearance
+
+- 中文：固定采用独立主题的语义前景与纸面调色板修复，同步主题归档、安装锁和CI精确来源。
+- English: Pin the standalone theme's semantic foreground and paper-palette fix, coordinating its archive, installation lock and exact CI source.
+
 ## Unreleased — Narrow JSDoc table adoption
 
 - 中文：同步采用共享导航参数表修复，保留原生最小表宽及名称/类型的正常断词，固定归档SHA/SRI和安装锁。
