@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased — Initial code typography adoption
+
+- 中文：固定采用共享页面首屏代码偏好修复，协调主题归档、完整性锁与CI来源。
+- English: Pin initial code-preference rendering for shared pages, coordinating the theme archive, integrity lock and CI source.
+
 ## Unreleased — Shared dark and print appearance
 
 - 中文：固定采用独立主题的语义前景与纸面调色板修复，同步主题归档、安装锁和CI精确来源。
