@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased — Initial source-reader layout adoption
+
+- 中文：固定采用共享框架源码读取区的首屏空间预留，协调主题归档、完整性锁与 CI 来源。
+- English: Pin first-paint source-reader space reservation under shared chrome, coordinating the theme archive, integrity lock and CI source.
+
 ## Unreleased — Initial code typography adoption
 
 - 中文：固定采用共享页面首屏代码偏好修复，协调主题归档、完整性锁与CI来源。
